@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Long Sleeve"
+  },
+  {
+    "name": "Short Sleeve"
+  },
+  {
+    "name": "Sweatshirts",
+    "subTypes": ["Crewnecks", "Hoodies", "1/4 Zips"]
+  }
+]

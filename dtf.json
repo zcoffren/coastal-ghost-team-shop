@@ -1,0 +1,96 @@
+[
+  {
+    "name": "Boo Boys Blackout",
+    "designId": "D004",
+    "image": "assets/master-files/DTF%20Decals%20Only/Boo%20Boys%20Blackout.png",
+    "placements": [
+      { "label": "Large Front", "dimensions": "9 x 8.26", "price": 8 },
+      { "label": "Medium Front", "dimensions": "8 x 7.34", "price": 6 },
+      { "label": "Toddler", "dimensions": "5.25 x 4.82", "price": 4 },
+      { "label": "Small Left Chest", "dimensions": "3.26 x 3", "price": 3 }
+    ]
+  },
+  {
+    "name": "Coastal Ghost Baseball Wordmark",
+    "designId": "D002",
+    "image": "assets/master-files/DTF%20Decals%20Only/Coastal%20Ghost%20Baseball%20Wordmark.png",
+    "placements": [
+      { "label": "Large Front", "dimensions": "8.89 x 4.68", "price": 6 },
+      { "label": "Medium Front", "dimensions": "7.62 x 4.01", "price": 5 },
+      { "label": "Toddler", "dimensions": "5.25 x 2.76", "price": 4 },
+      { "label": "Small Left Chest", "dimensions": "3.89 x 2.05", "price": 3 }
+    ]
+  },
+  {
+    "name": "Coastal Ghost Baseball Gray Wordmark",
+    "designId": "D005",
+    "image": "assets/master-files/DTF%20Decals%20Only/Coastal%20Ghost%20Baseball%20Gray%20Wordmark.png",
+    "placements": [
+      { "label": "Large Front", "dimensions": "8.89 x 4.68", "price": 6 },
+      { "label": "Medium Front", "dimensions": "7.62 x 4.01", "price": 5 },
+      { "label": "Toddler", "dimensions": "5.25 x 2.76", "price": 4 },
+      { "label": "Small Left Chest", "dimensions": "3.89 x 2.05", "price": 3 }
+    ]
+  },
+  {
+    "name": "Spooky State",
+    "designId": "D007",
+    "image": "assets/master-files/DTF%20Decals%20Only/Spooky%20State.png",
+    "placements": [
+      { "label": "Large Front", "dimensions": "9 x 6.79", "price": 7 },
+      { "label": "Medium Front", "dimensions": "7 x 5.28", "price": 5 },
+      { "label": "Toddler", "dimensions": "5 x 3.77", "price": 4 },
+      { "label": "Small Left Chest", "dimensions": "3.26 x 2.64", "price": 3 }
+    ]
+  },
+  {
+    "name": "Fantom Club",
+    "designId": "D010",
+    "image": "assets/master-files/DTF%20Decals%20Only/Fantom%20Club.png",
+    "placements": [
+      { "label": "Large Front", "dimensions": "8.5 x 8.74", "price": 8 },
+      { "label": "Medium Front", "dimensions": "7.5 x 7.71", "price": 6 },
+      { "label": "Toddler", "dimensions": "5.25 x 5.4", "price": 4 }
+    ]
+  },
+  {
+    "name": "CG SWVA Alt Logo",
+    "designId": null,
+    "image": "assets/master-files/DTF%20Decals%20Only/CG%20SWVA%20Alt%20Logo.png",
+    "placements": [],
+    "pricingPending": true,
+    "notes": "No matching Design ID or Decal Pricing row found in the master file. Preserve this design and add pricing once it is confirmed."
+  },
+  {
+    "name": "Coastal Ghost NRV Official Logo (No Background)",
+    "designId": null,
+    "image": "assets/master-files/DTF%20Decals%20Only/Coastal%20Ghost%20NRV%20Official%20Logo%20No%20Background.png",
+    "placements": [],
+    "pricingPending": true,
+    "notes": "No matching Design ID or Decal Pricing row found in the master file. Preserve this design and add pricing once it is confirmed."
+  },
+  {
+    "name": "Ethereal Ghost Wordmark",
+    "designId": null,
+    "image": "assets/master-files/DTF%20Decals%20Only/Ghost%20wordmark.png",
+    "placements": [],
+    "pricingPending": true,
+    "notes": "No matching Design ID or Decal Pricing row found in the master file. Preserve this design and add pricing once it is confirmed."
+  },
+  {
+    "name": "Ghost Wordmark",
+    "designId": null,
+    "image": "assets/master-files/DTF%20Decals%20Only/Ghost%20wordmark.png",
+    "placements": [],
+    "pricingPending": true,
+    "notes": "Could not be confidently matched to Coastal Ghost Wordmark (D003) in the master file. Preserve this design and confirm pricing before selling."
+  },
+  {
+    "name": "Gray Grinning Ghost Wordmark",
+    "designId": null,
+    "image": "assets/master-files/DTF%20Decals%20Only/Gray%20Grinning%20Ghost%20wordmark.png",
+    "placements": [],
+    "pricingPending": true,
+    "notes": "Could not be confidently matched to Coastal Ghost Gray Wordmark (D006) in the master file. Preserve this design and confirm pricing before selling."
+  }
+]

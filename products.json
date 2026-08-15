@@ -1,0 +1,844 @@
+[
+  {
+    "id": "P001",
+    "productName": "Long Sleeve Tee",
+    "design": "Boo Boys Blackout",
+    "designId": "D004",
+    "itemType": "Long Sleeve",
+    "fit": "Adult / Unisex",
+    "sizeRange": "Adult",
+    "brandStyle": "Gildan G540",
+    "garmentDescription": "Heavy Cotton Long-Sleeve T-Shirt",
+    "placement": "Medium Front",
+    "placements": ["Medium Front", "Left Chest", "Large Front"],
+    "basePrice": 20,
+    "upcharge2xl": 3,
+    "upcharge3xl": 4,
+    "availableSizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+    "colors": [
+      {
+        "name": "Charcoal Gray",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Unisex/Gildan%20G540%20Adult%20Heavy%20Cotton%20Long-Sleeve/Medium%20Front/Boo%20Boys%20Blackout%20-%20Medium%20Front%20Gildan%20540%20Long%20Sleeve%20Charcoal%20Gray.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Unisex/Gildan%20G540%20Adult%20Heavy%20Cotton%20Long-Sleeve/Medium%20Front/Boo%20Boys%20Blackout%20-%20Medium%20Front%20Gildan%20540%20Long%20Sleeve%20Charcoal%20Gray.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Unisex/Gildan%20G540%20Adult%20Heavy%20Cotton%20Long-Sleeve/Left%20Chest/Left%20Chest%20Charcoal%20Gray.png",
+          "Large Front": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Unisex/Gildan%20G540%20Adult%20Heavy%20Cotton%20Long-Sleeve/Large%20Front/Large%20Front%20Charcoal%20Gray.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Black",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Unisex/Gildan%20G540%20Adult%20Heavy%20Cotton%20Long-Sleeve/Medium%20Front/Boo%20Boys%20Blackout%20-%20Medium%20Front%20Gildan%20540%20Long%20Sleeve%20Black.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Unisex/Gildan%20G540%20Adult%20Heavy%20Cotton%20Long-Sleeve/Medium%20Front/Boo%20Boys%20Blackout%20-%20Medium%20Front%20Gildan%20540%20Long%20Sleeve%20Black.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Unisex/Gildan%20G540%20Adult%20Heavy%20Cotton%20Long-Sleeve/Left%20Chest/Left%20Chest%20Black.png",
+          "Large Front": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Unisex/Gildan%20G540%20Adult%20Heavy%20Cotton%20Long-Sleeve/Large%20Front/Large%20Front%20Black.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Sport Gray",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Unisex/Gildan%20G540%20Adult%20Heavy%20Cotton%20Long-Sleeve/Medium%20Front/Boo%20Boys%20Blackout%20-%20Medium%20Front%20Gildan%20540%20Long%20Sleeve%20Sport%20Gray.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Unisex/Gildan%20G540%20Adult%20Heavy%20Cotton%20Long-Sleeve/Medium%20Front/Boo%20Boys%20Blackout%20-%20Medium%20Front%20Gildan%20540%20Long%20Sleeve%20Sport%20Gray.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Unisex/Gildan%20G540%20Adult%20Heavy%20Cotton%20Long-Sleeve/Left%20Chest/Left%20Chest%20Sport%20Gray.png",
+          "Large Front": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Unisex/Gildan%20G540%20Adult%20Heavy%20Cotton%20Long-Sleeve/Large%20Front/Large%20Front%20Sport%20Gray.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Purple",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Unisex/Gildan%20G540%20Adult%20Heavy%20Cotton%20Long-Sleeve/Medium%20Front/Boo%20Boys%20Blackout%20-%20Medium%20Front%20Gildan%20540%20Long%20Sleeve%20Purple.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Unisex/Gildan%20G540%20Adult%20Heavy%20Cotton%20Long-Sleeve/Medium%20Front/Boo%20Boys%20Blackout%20-%20Medium%20Front%20Gildan%20540%20Long%20Sleeve%20Purple.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Unisex/Gildan%20G540%20Adult%20Heavy%20Cotton%20Long-Sleeve/Left%20Chest/Left%20Chest%20Purple.png",
+          "Large Front": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Unisex/Gildan%20G540%20Adult%20Heavy%20Cotton%20Long-Sleeve/Large%20Front/Large%20Front%20Purple.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "White",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Unisex/Gildan%20G540%20Adult%20Heavy%20Cotton%20Long-Sleeve/Medium%20Front/Boo%20Boys%20Blackout%20-%20Medium%20Front%20Gildan%20540%20Long%20Sleeve%20White.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Unisex/Gildan%20G540%20Adult%20Heavy%20Cotton%20Long-Sleeve/Medium%20Front/Boo%20Boys%20Blackout%20-%20Medium%20Front%20Gildan%20540%20Long%20Sleeve%20White.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Unisex/Gildan%20G540%20Adult%20Heavy%20Cotton%20Long-Sleeve/Left%20Chest/Left%20Chest%20White.png",
+          "Large Front": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Unisex/Gildan%20G540%20Adult%20Heavy%20Cotton%20Long-Sleeve/Large%20Front/Large%20Front%20White.png"
+        },
+        "mockupConfidence": "exact"
+      }
+    ],
+    "status": "Active",
+    "notes": "Imported from current order form. Full Boo Boys Blackout / Gildan G540 unisex mockup set supplied: 5 colors x 3 print placements, all exact. Master file lists Medium Front as the default placement and a single base price; Left Chest and Large Front are offered at that same base price until the workbook supplies placement-specific pricing."
+  },
+  {
+    "id": "P009",
+    "productName": "Long Sleeve Tee",
+    "design": "Boo Boys Blackout",
+    "designId": "D004",
+    "itemType": "Long Sleeve",
+    "fit": "Adult / Ladies",
+    "sizeRange": "Adult",
+    "brandStyle": "Bella + Canvas B6500",
+    "garmentDescription": "Ladies' Jersey Long-Sleeve T-Shirt",
+    "placement": "Medium Front",
+    "placements": ["Medium Front", "Left Chest"],
+    "basePrice": 30,
+    "upcharge2xl": 3,
+    "upcharge3xl": 4,
+    "availableSizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+    "colors": [
+      {
+        "name": "Black",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Womens/Bella%20+%20Canvas%20B6500%20Ladies%20Jersey%20Long-Sleeve/Medium%20Front/Medium%20Front%20Black.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Womens/Bella%20+%20Canvas%20B6500%20Ladies%20Jersey%20Long-Sleeve/Medium%20Front/Medium%20Front%20Black.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Womens/Bella%20+%20Canvas%20B6500%20Ladies%20Jersey%20Long-Sleeve/Left%20Chest/Left%20Chest%20Black.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Deep Heather",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Womens/Bella%20+%20Canvas%20B6500%20Ladies%20Jersey%20Long-Sleeve/Medium%20Front/Medium%20Front%20Deep%20Heather.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Womens/Bella%20+%20Canvas%20B6500%20Ladies%20Jersey%20Long-Sleeve/Medium%20Front/Medium%20Front%20Deep%20Heather.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Womens/Bella%20+%20Canvas%20B6500%20Ladies%20Jersey%20Long-Sleeve/Left%20Chest/Left%20Chest%20Deep%20Heather.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "White",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Womens/Bella%20+%20Canvas%20B6500%20Ladies%20Jersey%20Long-Sleeve/Medium%20Front/Medium%20Front%20White.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Womens/Bella%20+%20Canvas%20B6500%20Ladies%20Jersey%20Long-Sleeve/Medium%20Front/Medium%20Front%20White.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Long%20Sleeve/Womens/Bella%20+%20Canvas%20B6500%20Ladies%20Jersey%20Long-Sleeve/Left%20Chest/Left%20Chest%20White.png"
+        },
+        "mockupConfidence": "exact"
+      }
+    ],
+    "status": "Active",
+    "notes": "Womens Boo Boys Blackout long sleeve. Mockup set supplied: 3 colors x 2 print placements, all exact. The Bella + Canvas B6500 does not yet appear in the master workbook, so the $30 base price is provisional — derived from the ladies B6400 short sleeve ($25) plus the same $5 long-sleeve step seen between the unisex G640 ($15) and G540 ($20). Confirm against Size Pricing when the workbook adds this row."
+  },
+  {
+    "id": "P002",
+    "productName": "Short Sleeve Tee",
+    "design": "Boo Boys Blackout",
+    "designId": "D004",
+    "itemType": "Short Sleeve",
+    "fit": "Adult / Relaxed",
+    "sizeRange": "Adult",
+    "brandStyle": "Bella + Canvas B6400",
+    "garmentDescription": "Ladies' Relaxed Jersey Short-Sleeve T-Shirt",
+    "placement": "Medium Front",
+    "placements": ["Medium Front", "Left Chest"],
+    "basePrice": 25,
+    "upcharge2xl": 3,
+    "upcharge3xl": 4,
+    "availableSizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+    "colors": [
+      {
+        "name": "Asphalt Gray",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Womens/Bella%20+%20Canvas%20B6400%20Ladies%20Short%20Sleeve/Medium%20Front%20Asphalt%20Gray.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Womens/Bella%20+%20Canvas%20B6400%20Ladies%20Short%20Sleeve/Medium%20Front%20Asphalt%20Gray.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Womens/Bella%20+%20Canvas%20B6400%20Ladies%20Short%20Sleeve/Left%20Chest%20Asphalt%20Gray.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Vintage Black",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Womens/Bella%20+%20Canvas%20B6400%20Ladies%20Short%20Sleeve/Medium%20Front%20Vintage%20Black.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Womens/Bella%20+%20Canvas%20B6400%20Ladies%20Short%20Sleeve/Medium%20Front%20Vintage%20Black.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Womens/Bella%20+%20Canvas%20B6400%20Ladies%20Short%20Sleeve/Left%20Chest%20Vintage%20Black.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Athletic Gray",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Womens/Bella%20+%20Canvas%20B6400%20Ladies%20Short%20Sleeve/Medium%20Front%20Athletic%20Gray.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Womens/Bella%20+%20Canvas%20B6400%20Ladies%20Short%20Sleeve/Medium%20Front%20Athletic%20Gray.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Womens/Bella%20+%20Canvas%20B6400%20Ladies%20Short%20Sleeve/Left%20Chest%20Athletic%20Gray.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Purple",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Womens/Bella%20+%20Canvas%20B6400%20Ladies%20Short%20Sleeve/Medium%20Front%20Purple.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Womens/Bella%20+%20Canvas%20B6400%20Ladies%20Short%20Sleeve/Medium%20Front%20Purple.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Womens/Bella%20+%20Canvas%20B6400%20Ladies%20Short%20Sleeve/Left%20Chest%20Purple.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "White",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Womens/Bella%20+%20Canvas%20B6400%20Ladies%20Short%20Sleeve/Medium%20Front%20White.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Womens/Bella%20+%20Canvas%20B6400%20Ladies%20Short%20Sleeve/Medium%20Front%20White.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Womens/Bella%20+%20Canvas%20B6400%20Ladies%20Short%20Sleeve/Left%20Chest%20White.png"
+        },
+        "mockupConfidence": "exact"
+      }
+    ],
+    "status": "Active",
+    "notes": "Womens Boo Boys Blackout short sleeve. Full mockup set supplied: 5 colors x 2 print placements, all exact. The master workbook only lists Asphalt Gray for this B6400 row, so Vintage Black, Athletic Gray, Purple and White come from the supplied mockup set and should be confirmed on the next workbook update. Master file lists Medium Front as the default placement and a single base price; Left Chest is offered at that same base price until the workbook supplies placement-specific pricing."
+  },
+  {
+    "id": "P003",
+    "productName": "Short Sleeve Tee",
+    "design": "Boo Boys Blackout",
+    "designId": "D004",
+    "itemType": "Short Sleeve",
+    "fit": "Adult / Unisex",
+    "sizeRange": "Adult",
+    "brandStyle": "Gildan G640",
+    "garmentDescription": "Softstyle 4.5 oz T-Shirt",
+    "placement": "Medium Front",
+    "placements": ["Medium Front", "Left Chest", "Large Front"],
+    "basePrice": 15,
+    "upcharge2xl": 3,
+    "upcharge3xl": 4,
+    "availableSizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+    "colors": [
+      {
+        "name": "Heather Purple",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Medium%20Front/Medium%20Front%20Heather%20Purple.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Medium%20Front/Medium%20Front%20Heather%20Purple.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Left%20Chest/Left%20Chest%20Heather%20Purple.png",
+          "Large Front": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Large%20Front/Large%20Front%20Heather%20Purple.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Charcoal Gray",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Medium%20Front/Medium%20Front%20Charcoal%20Gray.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Medium%20Front/Medium%20Front%20Charcoal%20Gray.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Left%20Chest/Left%20Chest%20Charcoal%20Gray.png",
+          "Large Front": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Large%20Front/Large%20Front%20Charcoal%20Gray.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Graphite Heather",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Medium%20Front/Medium%20Front%20Graphite%20Heather.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Medium%20Front/Medium%20Front%20Graphite%20Heather.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Left%20Chest/Left%20Chest%20Graphite%20Heather.png",
+          "Large Front": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Large%20Front/Large%20Front%20Graphite%20Heather.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Sport Gray",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Medium%20Front/Medium%20Front%20Sport%20Gray.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Medium%20Front/Medium%20Front%20Sport%20Gray.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Left%20Chest/Left%20Chest%20Sport%20Gray.png",
+          "Large Front": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Large%20Front/Large%20Front%20Sport%20Gray.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Gold",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Medium%20Front/Medium%20Front%20Gold.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Medium%20Front/Medium%20Front%20Gold.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Left%20Chest/Left%20Chest%20Gold.png",
+          "Large Front": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Large%20Front/Large%20Front%20Gold.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "White",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Medium%20Front/Medium%20Front%20White.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Medium%20Front/Medium%20Front%20White.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Left%20Chest/Left%20Chest%20White.png",
+          "Large Front": "assets/master-files/Boo%20Boys%20Blackout/Short%20Sleeve/Unisex/Gildan%20G640%20Adult%20Softstyle%20Short%20Sleeve/Large%20Front/Large%20Front%20White.png"
+        },
+        "mockupConfidence": "exact"
+      }
+    ],
+    "status": "Active",
+    "notes": "Unisex Boo Boys Blackout short sleeve. Full mockup set supplied: 6 colors x 3 print placements (Medium Front, Left Chest, Large Front), all exact — including the Heather Purple colorway the master workbook lists for this row, so the earlier placeholder sample is no longer used. The workbook only lists Heather Purple for this G640 row, so Charcoal Gray, Graphite Heather, Sport Gray, Gold and White come from the supplied mockup set and should be confirmed on the next workbook update. The workbook also names Full Front as this row's default placement; the three supplied placements are offered at the same base price until the workbook provides placement-specific pricing."
+  },
+  {
+    "id": "P010",
+    "productName": "Crewneck Sweatshirt",
+    "design": "Boo Boys Blackout",
+    "designId": "D004",
+    "itemType": "Sweatshirts",
+    "subType": "Crewnecks",
+    "fit": "Adult / Unisex",
+    "sizeRange": "Adult",
+    "brandStyle": "Gildan G180",
+    "garmentDescription": "Adult Heavy Blend 50/50 Fleece Crewneck",
+    "placement": "Medium Front",
+    "placements": ["Medium Front", "Large Front"],
+    "basePrice": null,
+    "upcharge2xl": null,
+    "upcharge3xl": null,
+    "pricingPending": true,
+    "availableSizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+    "colors": [
+      {
+        "name": "Black",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Gildan%20G180%20Adult%20Heavy%20Blend%205050%20Fleece/Medium%20Front/Medium%20Front%20Black.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Gildan%20G180%20Adult%20Heavy%20Blend%205050%20Fleece/Medium%20Front/Medium%20Front%20Black.png",
+          "Large Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Gildan%20G180%20Adult%20Heavy%20Blend%205050%20Fleece/Large%20Front/Large%20Front%20Black.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Charcoal",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Gildan%20G180%20Adult%20Heavy%20Blend%205050%20Fleece/Large%20Front/Large%20Front%20Charcoal.png",
+        "images": {
+          "Large Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Gildan%20G180%20Adult%20Heavy%20Blend%205050%20Fleece/Large%20Front/Large%20Front%20Charcoal.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Purple",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Gildan%20G180%20Adult%20Heavy%20Blend%205050%20Fleece/Medium%20Front/Medium%20Front%20Purple.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Gildan%20G180%20Adult%20Heavy%20Blend%205050%20Fleece/Medium%20Front/Medium%20Front%20Purple.png",
+          "Large Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Gildan%20G180%20Adult%20Heavy%20Blend%205050%20Fleece/Large%20Front/Large%20Front%20Purple.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Gold",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Gildan%20G180%20Adult%20Heavy%20Blend%205050%20Fleece/Medium%20Front/Medium%20Front%20Gold.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Gildan%20G180%20Adult%20Heavy%20Blend%205050%20Fleece/Medium%20Front/Medium%20Front%20Gold.png",
+          "Large Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Gildan%20G180%20Adult%20Heavy%20Blend%205050%20Fleece/Large%20Front/Large%20Front%20Gold.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "White",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Gildan%20G180%20Adult%20Heavy%20Blend%205050%20Fleece/Medium%20Front/Medium%20Front%20White.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Gildan%20G180%20Adult%20Heavy%20Blend%205050%20Fleece/Medium%20Front/Medium%20Front%20White.png",
+          "Large Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Gildan%20G180%20Adult%20Heavy%20Blend%205050%20Fleece/Large%20Front/Large%20Front%20White.png"
+        },
+        "mockupConfidence": "exact"
+      }
+    ],
+    "status": "Active",
+    "notes": "Added from the supplied Boo Boys Blackout sweatshirt mockup set. The Gildan G180 does not appear in the master workbook, so no base price or 2XL/3XL upcharge can be sourced yet — the card and detail view show \"Pricing TBD\" and ordering stays disabled until the workbook supplies a Products row. Mockups supplied: Medium Front and Large Front for Black, Purple, Gold and White; Charcoal has Large Front only. Sport Gray was listed in the upload but both of its files arrived empty, so it is held back rather than shown with another color's mockup."
+  },
+  {
+    "id": "P011",
+    "productName": "Garment-Dyed Crewneck",
+    "design": "Boo Boys Blackout",
+    "designId": "D004",
+    "itemType": "Sweatshirts",
+    "subType": "Crewnecks",
+    "fit": "Adult / Unisex",
+    "sizeRange": "Adult",
+    "brandStyle": "Comfort Colors 1566",
+    "garmentDescription": "Garment-Dyed Heavyweight Crewneck",
+    "placement": "Medium Front",
+    "placements": ["Medium Front", "Left Chest", "Large Front"],
+    "basePrice": null,
+    "upcharge2xl": null,
+    "upcharge3xl": null,
+    "pricingPending": true,
+    "availableSizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+    "colors": [
+      {
+        "name": "Pepper",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Comfort%20Colors%201566%20Adult%20Crewneck/Medium%20Front%20Pepper.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Comfort%20Colors%201566%20Adult%20Crewneck/Medium%20Front%20Pepper.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Comfort%20Colors%201566%20Adult%20Crewneck/Left%20Chest%20Pepper.png",
+          "Large Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Comfort%20Colors%201566%20Adult%20Crewneck/Large%20Front%20Pepper.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Gray",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Comfort%20Colors%201566%20Adult%20Crewneck/Medium%20Front%20Gray.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Comfort%20Colors%201566%20Adult%20Crewneck/Medium%20Front%20Gray.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Comfort%20Colors%201566%20Adult%20Crewneck/Left%20Chest%20Gray.png",
+          "Large Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Comfort%20Colors%201566%20Adult%20Crewneck/Large%20Front%20Gray.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Violet",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Comfort%20Colors%201566%20Adult%20Crewneck/Medium%20Front%20Violet.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Comfort%20Colors%201566%20Adult%20Crewneck/Medium%20Front%20Violet.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Comfort%20Colors%201566%20Adult%20Crewneck/Left%20Chest%20Violet.png",
+          "Large Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Comfort%20Colors%201566%20Adult%20Crewneck/Large%20Front%20Violet.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "White",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Comfort%20Colors%201566%20Adult%20Crewneck/Medium%20Front%20White.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Comfort%20Colors%201566%20Adult%20Crewneck/Medium%20Front%20White.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Comfort%20Colors%201566%20Adult%20Crewneck/Left%20Chest%20White.png",
+          "Large Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Unisex/Comfort%20Colors%201566%20Adult%20Crewneck/Large%20Front%20White.png"
+        },
+        "mockupConfidence": "exact"
+      }
+    ],
+    "status": "Active",
+    "notes": "Added from the supplied Boo Boys Blackout sweatshirt mockup set — 4 colors x 3 print placements, all exact. The Comfort Colors 1566 does not appear in the master workbook, so no base price or 2XL/3XL upcharge can be sourced yet; ordering stays disabled until the workbook supplies a Products row."
+  },
+  {
+    "id": "P012",
+    "productName": "Youth Crewneck Sweatshirt",
+    "design": "Boo Boys Blackout",
+    "designId": "D004",
+    "itemType": "Sweatshirts",
+    "subType": "Crewnecks",
+    "fit": "Youth / Unisex",
+    "sizeRange": "Youth",
+    "brandStyle": "Gildan G180B",
+    "garmentDescription": "Youth Heavy Blend 50/50 Fleece Crewneck",
+    "placement": "Medium Front",
+    "placements": ["Medium Front", "Left Chest"],
+    "basePrice": null,
+    "upcharge2xl": null,
+    "upcharge3xl": null,
+    "pricingPending": true,
+    "availableSizes": ["XS", "S", "M", "L", "XL"],
+    "colors": [
+      {
+        "name": "Black",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Youth/Gildan%20G180B%20Youth%20Heavy%20Blend%205050/Left%20Chest%20Black.png",
+        "images": {
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Youth/Gildan%20G180B%20Youth%20Heavy%20Blend%205050/Left%20Chest%20Black.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Dark Heather",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Youth/Gildan%20G180B%20Youth%20Heavy%20Blend%205050/Medium%20Front%20Dark%20Heather.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Youth/Gildan%20G180B%20Youth%20Heavy%20Blend%205050/Medium%20Front%20Dark%20Heather.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Youth/Gildan%20G180B%20Youth%20Heavy%20Blend%205050/Left%20Chest%20Dark%20Heather.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Sport Gray",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Youth/Gildan%20G180B%20Youth%20Heavy%20Blend%205050/Medium%20Front%20Sport%20Gray.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Youth/Gildan%20G180B%20Youth%20Heavy%20Blend%205050/Medium%20Front%20Sport%20Gray.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Youth/Gildan%20G180B%20Youth%20Heavy%20Blend%205050/Left%20Chest%20Sport%20Gray.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "White",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Youth/Gildan%20G180B%20Youth%20Heavy%20Blend%205050/Medium%20Front%20White.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Youth/Gildan%20G180B%20Youth%20Heavy%20Blend%205050/Medium%20Front%20White.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Crew%20Neck/Youth/Gildan%20G180B%20Youth%20Heavy%20Blend%205050/Left%20Chest%20White.png"
+        },
+        "mockupConfidence": "exact"
+      }
+    ],
+    "status": "Active",
+    "notes": "Added from the supplied Boo Boys Blackout sweatshirt mockup set. The Gildan G180B does not appear in the master workbook and the Size Pricing sheet has no Youth/Toddler figures yet, so no base price is available and ordering stays disabled until the workbook supplies them. Mockups supplied: Medium Front and Left Chest for Dark Heather, Sport Gray and White; Black has Left Chest only."
+  },
+  {
+    "id": "P013",
+    "productName": "Hooded Sweatshirt",
+    "design": "Boo Boys Blackout",
+    "designId": "D004",
+    "itemType": "Sweatshirts",
+    "subType": "Hoodies",
+    "fit": "Adult / Unisex",
+    "sizeRange": "Adult",
+    "brandStyle": "Gildan G185",
+    "garmentDescription": "Adult Heavy Blend 50/50 Hooded Sweatshirt",
+    "placement": "Medium Front",
+    "placements": ["Medium Front", "Left Chest"],
+    "basePrice": null,
+    "upcharge2xl": null,
+    "upcharge3xl": null,
+    "pricingPending": true,
+    "availableSizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+    "colors": [
+      {
+        "name": "Black",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Unisex/Gildan%20G185%20Adult%20Heavy%20Blend%205050%20Hoodie/Medium%20Front/Medium%20Front%20Black.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Unisex/Gildan%20G185%20Adult%20Heavy%20Blend%205050%20Hoodie/Medium%20Front/Medium%20Front%20Black.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Unisex/Gildan%20G185%20Adult%20Heavy%20Blend%205050%20Hoodie/Left%20Chest/Left%20Chest%20Black.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Charcoal",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Unisex/Gildan%20G185%20Adult%20Heavy%20Blend%205050%20Hoodie/Medium%20Front/Medium%20Front%20Charcoal.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Unisex/Gildan%20G185%20Adult%20Heavy%20Blend%205050%20Hoodie/Medium%20Front/Medium%20Front%20Charcoal.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Unisex/Gildan%20G185%20Adult%20Heavy%20Blend%205050%20Hoodie/Left%20Chest/Left%20Chest%20Charcoal.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Purple",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Unisex/Gildan%20G185%20Adult%20Heavy%20Blend%205050%20Hoodie/Medium%20Front/Medium%20Front%20Purple.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Unisex/Gildan%20G185%20Adult%20Heavy%20Blend%205050%20Hoodie/Medium%20Front/Medium%20Front%20Purple.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Unisex/Gildan%20G185%20Adult%20Heavy%20Blend%205050%20Hoodie/Left%20Chest/Left%20Chest%20Purple.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Gold",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Unisex/Gildan%20G185%20Adult%20Heavy%20Blend%205050%20Hoodie/Medium%20Front/Medium%20Front%20Gold.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Unisex/Gildan%20G185%20Adult%20Heavy%20Blend%205050%20Hoodie/Medium%20Front/Medium%20Front%20Gold.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Unisex/Gildan%20G185%20Adult%20Heavy%20Blend%205050%20Hoodie/Left%20Chest/Left%20Chest%20Gold.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "White",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Unisex/Gildan%20G185%20Adult%20Heavy%20Blend%205050%20Hoodie/Medium%20Front/Medium%20Front%20White.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Unisex/Gildan%20G185%20Adult%20Heavy%20Blend%205050%20Hoodie/Medium%20Front/Medium%20Front%20White.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Unisex/Gildan%20G185%20Adult%20Heavy%20Blend%205050%20Hoodie/Left%20Chest/Left%20Chest%20White.png"
+        },
+        "mockupConfidence": "exact"
+      }
+    ],
+    "status": "Active",
+    "notes": "Added from the supplied Boo Boys Blackout sweatshirt mockup set — 5 colors x 2 print placements, all exact. The Gildan G185 does not appear in the master workbook, so no base price or 2XL/3XL upcharge can be sourced yet; ordering stays disabled until the workbook supplies a Products row."
+  },
+  {
+    "id": "P014",
+    "productName": "Youth Hooded Sweatshirt",
+    "design": "Boo Boys Blackout",
+    "designId": "D004",
+    "itemType": "Sweatshirts",
+    "subType": "Hoodies",
+    "fit": "Youth / Unisex",
+    "sizeRange": "Youth",
+    "brandStyle": "Gildan G185B",
+    "garmentDescription": "Youth Heavy Blend 50/50 Hooded Sweatshirt",
+    "placement": "Medium Front",
+    "placements": ["Medium Front", "Left Chest"],
+    "basePrice": null,
+    "upcharge2xl": null,
+    "upcharge3xl": null,
+    "pricingPending": true,
+    "availableSizes": ["XS", "S", "M", "L", "XL"],
+    "colors": [
+      {
+        "name": "Black",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Youth/Gildan%20G185B%20Youth%20Heavy%20Blend%205050%20Hoodie/Medium%20Front/Medium%20Front%20Black.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Youth/Gildan%20G185B%20Youth%20Heavy%20Blend%205050%20Hoodie/Medium%20Front/Medium%20Front%20Black.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Youth/Gildan%20G185B%20Youth%20Heavy%20Blend%205050%20Hoodie/Left%20Chest/Left%20Chest%20Black.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Charcoal",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Youth/Gildan%20G185B%20Youth%20Heavy%20Blend%205050%20Hoodie/Medium%20Front/Medium%20Front%20Charcoal.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Youth/Gildan%20G185B%20Youth%20Heavy%20Blend%205050%20Hoodie/Medium%20Front/Medium%20Front%20Charcoal.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Youth/Gildan%20G185B%20Youth%20Heavy%20Blend%205050%20Hoodie/Left%20Chest/Left%20Chest%20Charcoal.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Purple",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Youth/Gildan%20G185B%20Youth%20Heavy%20Blend%205050%20Hoodie/Medium%20Front/Medium%20Front%20Purple.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Youth/Gildan%20G185B%20Youth%20Heavy%20Blend%205050%20Hoodie/Medium%20Front/Medium%20Front%20Purple.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Youth/Gildan%20G185B%20Youth%20Heavy%20Blend%205050%20Hoodie/Left%20Chest/Left%20Chest%20Purple.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Gold",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Youth/Gildan%20G185B%20Youth%20Heavy%20Blend%205050%20Hoodie/Medium%20Front/Medium%20Front%20Gold.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Youth/Gildan%20G185B%20Youth%20Heavy%20Blend%205050%20Hoodie/Medium%20Front/Medium%20Front%20Gold.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Youth/Gildan%20G185B%20Youth%20Heavy%20Blend%205050%20Hoodie/Left%20Chest/Left%20Chest%20Gold.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "White",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Youth/Gildan%20G185B%20Youth%20Heavy%20Blend%205050%20Hoodie/Medium%20Front/Medium%20Front%20White.png",
+        "images": {
+          "Medium Front": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Youth/Gildan%20G185B%20Youth%20Heavy%20Blend%205050%20Hoodie/Medium%20Front/Medium%20Front%20White.png",
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Youth/Gildan%20G185B%20Youth%20Heavy%20Blend%205050%20Hoodie/Left%20Chest/Left%20Chest%20White.png"
+        },
+        "mockupConfidence": "exact"
+      }
+    ],
+    "status": "Active",
+    "notes": "Added from the supplied Boo Boys Blackout sweatshirt mockup set — 5 colors x 2 print placements, all exact. The Gildan G185B does not appear in the master workbook and the Size Pricing sheet has no Youth/Toddler figures yet, so no base price is available and ordering stays disabled until the workbook supplies them."
+  },
+  {
+    "id": "P015",
+    "productName": "Sponge Fleece Hoodie",
+    "design": "Boo Boys Blackout",
+    "designId": "D004",
+    "itemType": "Sweatshirts",
+    "subType": "Hoodies",
+    "fit": "Adult / Unisex",
+    "sizeRange": "Adult",
+    "brandStyle": "Bella + Canvas 3719",
+    "garmentDescription": "Sponge Fleece Pullover Hoodie",
+    "placement": "Left Chest",
+    "basePrice": null,
+    "upcharge2xl": null,
+    "upcharge3xl": null,
+    "pricingPending": true,
+    "availableSizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+    "colors": [
+      {
+        "name": "Black",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Unisex/Bella%20+%20Canvas%203719%20Sponge%20Fleece%20Hoodie/Left%20Chest/Left%20Chest%20Black.png",
+        "images": {
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Unisex/Bella%20+%20Canvas%203719%20Sponge%20Fleece%20Hoodie/Left%20Chest/Left%20Chest%20Black.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Deep Heather",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Unisex/Bella%20+%20Canvas%203719%20Sponge%20Fleece%20Hoodie/Left%20Chest/Left%20Chest%20Deep%20Heather.png",
+        "images": {
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Unisex/Bella%20+%20Canvas%203719%20Sponge%20Fleece%20Hoodie/Left%20Chest/Left%20Chest%20Deep%20Heather.png"
+        },
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "White",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Unisex/Bella%20+%20Canvas%203719%20Sponge%20Fleece%20Hoodie/Left%20Chest/Left%20Chest%20White.png",
+        "images": {
+          "Left Chest": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Hoodies/Unisex/Bella%20+%20Canvas%203719%20Sponge%20Fleece%20Hoodie/Left%20Chest/Left%20Chest%20White.png"
+        },
+        "mockupConfidence": "exact"
+      }
+    ],
+    "status": "Active",
+    "notes": "Added from the supplied Boo Boys Blackout sweatshirt mockup set. The Bella + Canvas 3719 does not appear in the master workbook, so no base price or 2XL/3XL upcharge can be sourced yet; ordering stays disabled until the workbook supplies a Products row. Only the Left Chest mockups for Black, Deep Heather and White came through with image data — the Mustard and Team Purple colorways and every Medium Front file arrived empty in the upload, so they are held back until real files are supplied."
+  },
+  {
+    "id": "P004",
+    "productName": "1/4-Zip Sweatshirt",
+    "design": "Boo Boys Blackout",
+    "designId": "D004",
+    "itemType": "Sweatshirts",
+    "subType": "1/4 Zips",
+    "fit": "Adult / Unisex",
+    "sizeRange": "Adult",
+    "brandStyle": "Sport-Tek ST253",
+    "garmentDescription": "1/4-Zip Sweatshirt",
+    "placement": "Standard",
+    "basePrice": 45,
+    "upcharge2xl": 3,
+    "upcharge3xl": 4,
+    "availableSizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+    "colors": [
+      {
+        "name": "Black",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Quarter%20Zip/Unisex/Sport-Tek%20ST253%20Athletic%20Quarter%20Zip/Black.png",
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Graphite Heather",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Quarter%20Zip/Unisex/Sport-Tek%20ST253%20Athletic%20Quarter%20Zip/Graphite%20Heather.png",
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Vintage Heather Gray",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Quarter%20Zip/Unisex/Sport-Tek%20ST253%20Athletic%20Quarter%20Zip/Vintage%20Heather%20Gray.png",
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Athletic Heather Gray",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Quarter%20Zip/Unisex/Sport-Tek%20ST253%20Athletic%20Quarter%20Zip/Athletic%20Heather%20Gray.png",
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "White",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Quarter%20Zip/Unisex/Sport-Tek%20ST253%20Athletic%20Quarter%20Zip/White.png",
+        "mockupConfidence": "exact"
+      }
+    ],
+    "status": "Active",
+    "notes": "Boo Boys Blackout on the Sport-Tek ST253. The workbook lists this garment/design pairing as two single-color rows (P004 Vintage Heather, P005 White); they are consolidated here as one product with a colors[] array, per the shop's one-card-per-garment rule. The supplied mockup set replaces the earlier approximate sample with 5 exact left-chest mockups — Vintage Heather Gray and White match the workbook rows, and Black, Graphite Heather and Athletic Heather Gray come from the supplied set and should be confirmed on the next workbook update."
+  },
+  {
+    "id": "P016",
+    "productName": "Ladies' 1/4-Zip Sweatshirt",
+    "design": "Boo Boys Blackout",
+    "designId": "D004",
+    "itemType": "Sweatshirts",
+    "subType": "1/4 Zips",
+    "fit": "Adult / Ladies",
+    "sizeRange": "Adult",
+    "brandStyle": "Sport-Tek LST253",
+    "garmentDescription": "1/4-Zip Sweatshirt",
+    "placement": "Standard",
+    "basePrice": 45,
+    "upcharge2xl": 3,
+    "upcharge3xl": 4,
+    "availableSizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+    "colors": [
+      {
+        "name": "Black",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Quarter%20Zip/Womens/Sport-Tek%20LST253/Black.png",
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Graphite Heather",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Quarter%20Zip/Womens/Sport-Tek%20LST253/Graphite%20Heather.png",
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Athletic Heather",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Quarter%20Zip/Womens/Sport-Tek%20LST253/Athletic%20Heather.png",
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "White",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Quarter%20Zip/Womens/Sport-Tek%20LST253/White.png",
+        "mockupConfidence": "exact"
+      }
+    ],
+    "status": "Active",
+    "notes": "Added from the supplied Boo Boys Blackout sweatshirt mockup set — 4 exact left-chest mockups. The Sport-Tek LST253 is the ladies cut of the ST253 and does not have its own workbook row, so the $45 base price and 3XL/2XL upcharges are carried over from the unisex ST253 rows (P004) and should be confirmed on the next workbook update."
+  },
+  {
+    "id": "P017",
+    "productName": "Interlock 1/4-Zip",
+    "design": "Boo Boys Blackout",
+    "designId": "D004",
+    "itemType": "Sweatshirts",
+    "subType": "1/4 Zips",
+    "fit": "Adult / Unisex",
+    "sizeRange": "Adult",
+    "brandStyle": "Port Authority K807",
+    "garmentDescription": "Interlock 1/4-Zip",
+    "placement": "Standard",
+    "basePrice": 40,
+    "upcharge2xl": 3,
+    "upcharge3xl": 4,
+    "availableSizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+    "colors": [
+      {
+        "name": "Black",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Quarter%20Zip/Unisex/Port%20Authority%20K807%20Quarter%20Zip/Black.png",
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Charcoal Heather Gray",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Quarter%20Zip/Unisex/Port%20Authority%20K807%20Quarter%20Zip/Charcoal%20Heather%20Gray.png",
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Heather Gray",
+        "image": "assets/master-files/Boo%20Boys%20Blackout/Sweatshirts/Quarter%20Zip/Unisex/Port%20Authority%20K807%20Quarter%20Zip/Heather%20Gray.png",
+        "mockupConfidence": "exact"
+      }
+    ],
+    "status": "Active",
+    "notes": "Boo Boys Blackout on the Port Authority K807, added from the supplied sweatshirt mockup set — 3 exact left-chest mockups. The workbook's two K807 rows carry the Coastal Ghost (P007) and Spooky State (P008) designs rather than Boo Boys Blackout, so this design/garment pairing is new; the $40 base price and upcharges come from those K807 rows."
+  },
+  {
+    "id": "P006",
+    "productName": "1/4-Zip Sweatshirt",
+    "design": "Coastal Ghost",
+    "designId": null,
+    "itemType": "Sweatshirts",
+    "subType": "1/4 Zips",
+    "fit": "Adult / Unisex",
+    "sizeRange": "Adult",
+    "brandStyle": "Sport-Tek ST253",
+    "garmentDescription": "1/4-Zip Sweatshirt",
+    "placement": "Standard",
+    "basePrice": 45,
+    "upcharge2xl": 3,
+    "upcharge3xl": 4,
+    "availableSizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+    "colors": [
+      {
+        "name": "White",
+        "image": "assets/master-files/Coastal%20Ghost/Sweatshirts/Quarter%20Zip/Womens/Sport-Tek%20LST253/White.png",
+        "mockupConfidence": "exact"
+      }
+    ],
+    "status": "Active",
+    "notes": "Imported from current order form. Master file lists design as 'Coastal Ghost' without a Design ID match on the Designs sheet."
+  },
+  {
+    "id": "P007",
+    "productName": "Interlock 1/4-Zip",
+    "design": "Coastal Ghost",
+    "designId": null,
+    "itemType": "Sweatshirts",
+    "subType": "1/4 Zips",
+    "fit": "Adult / Unisex",
+    "sizeRange": "Adult",
+    "brandStyle": "Port Authority K807",
+    "garmentDescription": "Interlock 1/4-Zip",
+    "placement": "Standard",
+    "basePrice": 40,
+    "upcharge2xl": 3,
+    "upcharge3xl": 4,
+    "availableSizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+    "colors": [
+      {
+        "name": "Not specified",
+        "image": "assets/master-files/Coastal%20Ghost/Sweatshirts/Quarter%20Zip/Unisex/Port%20Authority%20K807%20Quarter%20Zip/Black.png",
+        "mockupConfidence": "approximate"
+      }
+    ],
+    "status": "Active",
+    "notes": "Imported from current order form. Master file does not specify an exact color for this row; showing the Port Authority K807 sample until confirmed."
+  },
+  {
+    "id": "P008",
+    "productName": "Interlock 1/4-Zip",
+    "design": "Spooky State",
+    "designId": "D007",
+    "itemType": "Sweatshirts",
+    "subType": "1/4 Zips",
+    "fit": "Adult / Unisex",
+    "sizeRange": "Adult",
+    "brandStyle": "Port Authority K807",
+    "garmentDescription": "Interlock 1/4-Zip",
+    "placement": "Standard",
+    "basePrice": 40,
+    "upcharge2xl": 3,
+    "upcharge3xl": 4,
+    "availableSizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+    "colors": [
+      {
+        "name": "Black",
+        "image": "assets/master-files/Spooky%20State/Sweatshirts/Spooky%20State%20-%20Port%20Authority%20Quarter%20Zip%20Black.png",
+        "mockupConfidence": "exact"
+      },
+      {
+        "name": "Charcoal Heather Gray",
+        "image": "assets/master-files/Spooky%20State/Sweatshirts/Spooky%20State%20-%20Port%20Authority%20Quarter%20Zip%20Charcoal%20Heather%20Gray.png",
+        "mockupConfidence": "exact"
+      }
+    ],
+    "status": "Active",
+    "notes": "Imported from current order form."
+  }
+]
