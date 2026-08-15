@@ -1,77 +1,338 @@
-/* Coastal Ghost Team Shop — Order review
-   Checkout is intentionally lightweight for now: no payment provider is
-   wired in yet. This renders a review of the Family Order so it can be
-   confirmed with the team, and is the natural place to plug in Venmo,
-   Apple Pay, or a hosted checkout later without changing the cart model. */
+// Coastal Ghost Team Shop
+// Checkout and order review functionality
 
-function buildOrderSummaryText() {
-  const items = Cart.items;
-  const lines = items.map((item) => {
-    const bits = [item.design, item.color, item.size, item.placement].filter(Boolean).join(" / ");
-    return `${item.quantity}x ${item.name} (${bits}) — ${formatCurrency(Cart.lineTotal(item))}`;
-  });
-  lines.push("", `Family Order Total: ${formatCurrency(Cart.grandTotal())}`);
-  return lines.join("\n");
-}
+function beginCheckout() {
 
-function renderOrderReview() {
-  const items = Cart.items;
+  if (!cart || cart.length === 0) {
 
-  if (items.length === 0) {
-    document.getElementById("modalPanel").innerHTML = `
-      <h2 id="modalTitle">Family Order</h2>
-      <p class="subtitle">Your family order is empty. Add a product or DTF transfer to get started.</p>
-    `;
-    document.getElementById("modalImage").parentElement.style.display = "none";
-    document.getElementById("productModal").classList.add("open");
+    alert(
+      "Your Family Order is empty. Please add items before checking out."
+    );
+
     return;
+
   }
 
-  const rows = items
-    .map((item) => {
-      const bits = [item.design, item.color, item.size, item.placement].filter(Boolean).join(" · ");
-      return `<li><span>${item.quantity}x ${item.name} — ${bits}</span><span>${formatCurrency(
-        Cart.lineTotal(item)
-      )}</span></li>`;
-    })
-    .join("");
+  const content = document.getElementById("content");
 
-  document.getElementById("modalImage").parentElement.style.display = "none";
-  document.getElementById("modalPanel").innerHTML = `
-    <h2 id="modalTitle">Review Family Order</h2>
-    <p class="subtitle">Confirm everything below before checkout opens.</p>
-    <div class="checkout-panel">
-      <ul>${rows}</ul>
-      <div class="cart-total-row">
-        <span>Total</span>
-        <span>${formatCurrency(Cart.grandTotal())}</span>
+  if (!content) return;
+
+
+  content.innerHTML = `
+
+    <button
+      class="back"
+      onclick="showAllProducts()"
+    >
+      ← Continue Shopping
+    </button>
+
+
+    <section class="checkout">
+
+      <h1>Review Your Family Order</h1>
+
+      <p>
+        Please review the items below before submitting your order.
+      </p>
+
+
+      <div class="checkout-items">
+
+        ${cart.map((item, index) => `
+
+          <div class="checkout-item">
+
+            ${
+              item.colorImage
+                ? `
+                  <img
+                    src="${item.colorImage}"
+                    alt="${item.design}"
+                  >
+                `
+                : ""
+            }
+
+
+            <div class="checkout-item-details">
+
+              <h3>
+                ${item.design}
+              </h3>
+
+              <p>
+                ${item.item}
+              </p>
+
+              <p>
+
+                ${item.color
+                  ? `Color: ${item.color}`
+                  : ""
+                }
+
+                ${item.size
+                  ? ` · Size: ${item.size}`
+                  : ""
+                }
+
+              </p>
+
+              <p>
+                Quantity: ${item.quantity}
+              </p>
+
+            </div>
+
+
+            <div class="checkout-item-total">
+
+              $${(
+                Number(item.price) *
+                Number(item.quantity)
+              ).toFixed(2)}
+
+            </div>
+
+
+            <button
+              class="remove"
+              onclick="removeFromCart(${index}); beginCheckout();"
+            >
+              Remove
+            </button>
+
+          </div>
+
+        `).join("")}
+
       </div>
-    </div>
-    <p class="note">Online checkout (Venmo, Apple Pay, or a hosted payment page) is coming soon. For now this order can be copied and sent to the team.</p>
-    <button class="btn btn-secondary btn-block" id="copyOrderBtn">Copy Order Summary</button>
-    <button class="btn btn-primary btn-block" id="backToShopBtn">Continue Shopping</button>
+
+
+      <div class="checkout-total">
+
+        <span>
+          Order Total
+        </span>
+
+        <strong>
+          $${getCartTotal().toFixed(2)}
+        </strong>
+
+      </div>
+
+
+      <form
+        id="checkout-form"
+        class="checkout-form"
+        onsubmit="submitOrder(event)"
+      >
+
+        <h2>Order Information</h2>
+
+
+        <label>
+
+          Name
+
+          <input
+            type="text"
+            id="customer-name"
+            required
+          >
+
+        </label>
+
+
+        <label>
+
+          Email
+
+          <input
+            type="email"
+            id="customer-email"
+            required
+          >
+
+        </label>
+
+
+        <label>
+
+          Phone Number
+
+          <input
+            type="tel"
+            id="customer-phone"
+          >
+
+        </label>
+
+
+        <label>
+
+          Additional Notes
+
+          <textarea
+            id="customer-notes"
+            rows="4"
+            placeholder="Anything we should know about your order?"
+          ></textarea>
+
+        </label>
+
+
+        <button
+          type="submit"
+          class="checkout-button"
+        >
+
+          Submit Order
+
+        </button>
+
+      </form>
+
+    </section>
+
   `;
-
-  document.getElementById("copyOrderBtn").addEventListener("click", async () => {
-    try {
-      await navigator.clipboard.writeText(buildOrderSummaryText());
-      showToast("Order summary copied to clipboard.");
-    } catch (err) {
-      showToast("Could not copy automatically — please select the text manually.");
-    }
-  });
-
-  document.getElementById("backToShopBtn").addEventListener("click", () => {
-    document.getElementById("productModal").classList.remove("open");
-    document.getElementById("modalImage").parentElement.style.display = "";
-  });
-
-  document.getElementById("productModal").classList.add("open");
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("checkoutBtn").addEventListener("click", () => {
-    closeCartDrawer();
-    renderOrderReview();
-  });
-});
+
+// --------------------------------------------------
+// SUBMIT ORDER
+// --------------------------------------------------
+
+function submitOrder(event) {
+
+  event.preventDefault();
+
+
+  const order = {
+
+    customer: {
+
+      name:
+        document.getElementById(
+          "customer-name"
+        ).value,
+
+      email:
+        document.getElementById(
+          "customer-email"
+        ).value,
+
+      phone:
+        document.getElementById(
+          "customer-phone"
+        ).value,
+
+      notes:
+        document.getElementById(
+          "customer-notes"
+        ).value
+
+    },
+
+
+    items: cart,
+
+
+    total: getCartTotal(),
+
+
+    submittedAt:
+      new Date().toISOString()
+
+  };
+
+
+  console.log(
+    "Coastal Ghost Team Shop Order:",
+    order
+  );
+
+
+  showOrderConfirmation(order);
+
+}
+
+
+// --------------------------------------------------
+// ORDER CONFIRMATION
+// --------------------------------------------------
+
+function showOrderConfirmation(order) {
+
+  const content =
+    document.getElementById("content");
+
+  if (!content) return;
+
+
+  content.innerHTML = `
+
+    <section class="order-confirmation">
+
+      <h1>
+        👻 Order Submitted!
+      </h1>
+
+
+      <p>
+        Thank you, ${order.customer.name}.
+      </p>
+
+
+      <p>
+        Your Coastal Ghost Family Order has been prepared for submission.
+      </p>
+
+
+      <div class="confirmation-total">
+
+        <span>
+          Order Total
+        </span>
+
+        <strong>
+          $${Number(order.total).toFixed(2)}
+        </strong>
+
+      </div>
+
+
+      <p class="confirmation-note">
+
+        Payment instructions will be provided after the order is reviewed.
+
+      </p>
+
+
+      <button
+        class="checkout-button"
+        onclick="finishOrder()"
+      >
+
+        Finish
+
+      </button>
+
+    </section>
+
+  `;
+}
+
+
+// --------------------------------------------------
+// FINISH ORDER
+// --------------------------------------------------
+
+function finishOrder() {
+
+  clearCart();
+
+  showAllProducts();
+
+}
