@@ -1,154 +1,498 @@
-/* Coastal Ghost Team Shop — Family Order cart
-   Cart lives in localStorage so a family can build one order across
-   multiple products before checkout is wired up to real payments. */
+// Coastal Ghost Team Shop
+// Family Order cart functionality
 
-const CART_STORAGE_KEY = "coastalGhostFamilyOrder";
+let cart = [];
 
-const Cart = {
-  items: [],
+// Load an existing cart if one is saved
+try {
+  const savedCart = localStorage.getItem("coastalGhostCart");
 
-  load() {
-    try {
-      const raw = localStorage.getItem(CART_STORAGE_KEY);
-      this.items = raw ? JSON.parse(raw) : [];
-    } catch (err) {
-      this.items = [];
-    }
-    return this.items;
-  },
-
-  save() {
-    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(this.items));
-  },
-
-  // A cart line is unique per product + color + size + placement combo.
-  lineKey(item) {
-    return [item.productId, item.color, item.size, item.placement].join("::");
-  },
-
-  add(item) {
-    const key = this.lineKey(item);
-    const existing = this.items.find((i) => this.lineKey(i) === key);
-    if (existing) {
-      existing.quantity += item.quantity;
-    } else {
-      this.items.push(item);
-    }
-    this.save();
-  },
-
-  updateQuantity(key, quantity) {
-    const line = this.items.find((i) => this.lineKey(i) === key);
-    if (!line) return;
-    if (quantity <= 0) {
-      this.remove(key);
-      return;
-    }
-    line.quantity = quantity;
-    this.save();
-  },
-
-  remove(key) {
-    this.items = this.items.filter((i) => this.lineKey(i) !== key);
-    this.save();
-  },
-
-  clear() {
-    this.items = [];
-    this.save();
-  },
-
-  lineTotal(item) {
-    return item.unitPrice * item.quantity;
-  },
-
-  grandTotal() {
-    return this.items.reduce((sum, item) => sum + this.lineTotal(item), 0);
-  },
-
-  itemCount() {
-    return this.items.reduce((sum, item) => sum + item.quantity, 0);
-  },
-};
-
-function formatCurrency(amount) {
-  return `$${amount.toFixed(2)}`;
+  if (savedCart) {
+    cart = JSON.parse(savedCart);
+  }
+} catch (error) {
+  console.warn("Could not load saved cart:", error);
 }
 
-function renderCart() {
-  const listEl = document.getElementById("cartItems");
-  const totalEl = document.getElementById("cartTotal");
-  const countEl = document.getElementById("cartCount");
 
-  const items = Cart.items;
-  countEl.textContent = Cart.itemCount();
+// --------------------------------------------------
+// ADD PRODUCT TO CART
+// --------------------------------------------------
 
-  if (items.length === 0) {
-    listEl.innerHTML = `<p class="cart-empty">Your family order is empty.<br>Add a product to get started.</p>`;
-    totalEl.textContent = formatCurrency(0);
+function addProductToCart(productId) {
+
+  const product = products.find(
+    item => item.id === productId
+  );
+
+  if (!product) {
+    console.error("Product not found:", productId);
     return;
   }
 
-  listEl.innerHTML = items
-    .map((item) => {
-      const key = Cart.lineKey(item);
-      const metaBits = [item.design, item.color, item.size, item.placement]
-        .filter(Boolean)
-        .join(" · ");
-      // DTF artwork is fitted inside the square thumb; garment photos still fill it.
-      const imgClass = (item.image || "").startsWith("assets/dtf/") ? ' class="is-art"' : "";
-      return `
-        <div class="cart-item" data-key="${encodeURIComponent(key)}">
-          <img${imgClass} src="${item.image || ""}" alt="${item.name}" />
-          <div class="cart-item-info">
-            <h4>${item.name}</h4>
-            <p>${metaBits}</p>
-            <p>Qty ${item.quantity} &times; ${formatCurrency(item.unitPrice)}</p>
-          </div>
-          <div class="cart-item-actions">
-            <span class="line-total">${formatCurrency(Cart.lineTotal(item))}</span>
-            <button class="remove-btn" data-action="remove">Remove</button>
-          </div>
-        </div>
-      `;
-    })
-    .join("");
 
-  totalEl.textContent = formatCurrency(Cart.grandTotal());
+  const quantityInput = document.getElementById(
+    `qty-${productId}`
+  );
+
+  const quantity = Math.max(
+    1,
+    Number(quantityInput?.value || 1)
+  );
+
+
+  const selectedColor =
+    product.selectedColor ||
+    product.colors?.[0] ||
+    { name: "Default" };
+
+
+  const selectedSize =
+    product.selectedSize ||
+    product.sizes?.[0] ||
+    "";
+
+
+  const price = getProductPrice(
+    product,
+    selectedSize
+  );
+
+
+  const cartItem = {
+    id: `${product.id}-${selectedColor.name}-${selectedSize}`,
+    productId: product.id,
+
+    design: product.design || "",
+    item: product.item || "",
+    brand: product.brand || product.name || "",
+
+    placement: product.placement || "",
+    fit: product.fit || "",
+
+    color: selectedColor.name || "",
+    colorImage: selectedColor.image || "",
+
+    size: selectedSize,
+
+    quantity: quantity,
+
+    price: Number(price)
+  };
+
+
+  // Check whether this exact item is already in the cart
+  const existingItem = cart.find(
+    item => item.id === cartItem.id
+  );
+
+
+  if (existingItem) {
+
+    existingItem.quantity += quantity;
+
+  } else {
+
+    cart.push(cartItem);
+
+  }
+
+
+  saveCart();
+  updateCartUI();
+
+  showAddedMessage(
+    `${cartItem.design} added to your Family Order`
+  );
 }
 
-function showToast(message) {
-  const toast = document.getElementById("toast");
-  toast.textContent = message;
-  toast.classList.add("show");
-  clearTimeout(showToast._t);
-  showToast._t = setTimeout(() => toast.classList.remove("show"), 2200);
+
+// --------------------------------------------------
+// SAVE CART
+// --------------------------------------------------
+
+function saveCart() {
+
+  try {
+
+    localStorage.setItem(
+      "coastalGhostCart",
+      JSON.stringify(cart)
+    );
+
+  } catch (error) {
+
+    console.warn(
+      "Could not save Family Order:",
+      error
+    );
+
+  }
+
 }
 
-function openCartDrawer() {
-  document.getElementById("cartDrawer").classList.add("open");
-  document.getElementById("drawerBackdrop").classList.add("open");
+
+// --------------------------------------------------
+// CART TOTALS
+// --------------------------------------------------
+
+function getCartItemCount() {
+
+  return cart.reduce(
+    (total, item) =>
+      total + Number(item.quantity || 0),
+    0
+  );
+
 }
 
-function closeCartDrawer() {
-  document.getElementById("cartDrawer").classList.remove("open");
-  document.getElementById("drawerBackdrop").classList.remove("open");
+
+function getCartTotal() {
+
+  return cart.reduce(
+    (total, item) =>
+      total +
+      (
+        Number(item.price || 0) *
+        Number(item.quantity || 0)
+      ),
+    0
+  );
+
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  Cart.load();
+
+// --------------------------------------------------
+// UPDATE CART DISPLAY
+// --------------------------------------------------
+
+function updateCartUI() {
+
+  const count = getCartItemCount();
+
+  const total = getCartTotal();
+
+
+  // Update cart count anywhere it appears
+  document
+    .querySelectorAll("[data-cart-count]")
+    .forEach(element => {
+
+      element.textContent = count;
+
+    });
+
+
+  // Update cart total anywhere it appears
+  document
+    .querySelectorAll("[data-cart-total]")
+    .forEach(element => {
+
+      element.textContent =
+        `$${total.toFixed(2)}`;
+
+    });
+
+
+  // Update the main cart container
   renderCart();
+}
 
-  document.getElementById("openCartBtn").addEventListener("click", openCartDrawer);
-  document.getElementById("closeCartBtn").addEventListener("click", closeCartDrawer);
-  document.getElementById("drawerBackdrop").addEventListener("click", closeCartDrawer);
 
-  document.getElementById("cartItems").addEventListener("click", (e) => {
-    const btn = e.target.closest('[data-action="remove"]');
-    if (!btn) return;
-    const row = btn.closest(".cart-item");
-    const key = decodeURIComponent(row.dataset.key);
-    Cart.remove(key);
-    renderCart();
-  });
-});
+// --------------------------------------------------
+// RENDER FAMILY ORDER
+// --------------------------------------------------
+
+function renderCart() {
+
+  const cartContainer =
+    document.getElementById("cart");
+
+  if (!cartContainer) return;
+
+
+  if (!cart.length) {
+
+    cartContainer.innerHTML = `
+      <div class="cart-empty">
+
+        <h2>Your Family Order is Empty</h2>
+
+        <p>
+          Select products, colors, sizes,
+          and quantities to begin your order.
+        </p>
+
+      </div>
+    `;
+
+    return;
+
+  }
+
+
+  cartContainer.innerHTML = `
+
+    <div class="cart-header">
+
+      <h2>
+        Family Order
+      </h2>
+
+      <div class="cart-summary">
+
+        <span>
+          ${getCartItemCount()} item${
+            getCartItemCount() === 1
+              ? ""
+              : "s"
+          }
+        </span>
+
+        <strong>
+          $${getCartTotal().toFixed(2)}
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    <div class="cart-items">
+
+      ${cart.map((item, index) => `
+
+        <div class="cart-item">
+
+          ${
+            item.colorImage
+              ? `
+                <img
+                  src="${item.colorImage}"
+                  alt="${item.design}"
+                >
+              `
+              : ""
+          }
+
+
+          <div class="cart-item-info">
+
+            <strong>
+              ${item.design}
+            </strong>
+
+            <div>
+              ${item.item}
+            </div>
+
+            <small>
+
+              ${item.brand}
+
+              ${
+                item.color
+                  ? ` · ${item.color}`
+                  : ""
+              }
+
+              ${
+                item.size
+                  ? ` · Size ${item.size}`
+                  : ""
+              }
+
+            </small>
+
+          </div>
+
+
+          <div class="cart-item-quantity">
+
+            <button
+              onclick="changeCartQuantity(
+                ${index},
+                -1
+              )"
+            >
+              −
+            </button>
+
+            <span>
+              ${item.quantity}
+            </span>
+
+            <button
+              onclick="changeCartQuantity(
+                ${index},
+                1
+              )"
+            >
+              +
+            </button>
+
+          </div>
+
+
+          <div class="cart-item-price">
+
+            $${(
+              Number(item.price) *
+              Number(item.quantity)
+            ).toFixed(2)}
+
+          </div>
+
+
+          <button
+            class="remove"
+            onclick="removeFromCart(${index})"
+          >
+
+            Remove
+
+          </button>
+
+        </div>
+
+      `).join("")}
+
+    </div>
+
+
+    <div class="cart-footer">
+
+      <div>
+
+        <span>
+          Order Total
+        </span>
+
+        <strong>
+          $${getCartTotal().toFixed(2)}
+        </strong>
+
+      </div>
+
+
+      <button
+        class="checkout-button"
+        onclick="beginCheckout()"
+      >
+
+        Continue to Checkout
+
+      </button>
+
+    </div>
+
+  `;
+}
+
+
+// --------------------------------------------------
+// CHANGE QUANTITY
+// --------------------------------------------------
+
+function changeCartQuantity(index, amount) {
+
+  if (!cart[index]) return;
+
+
+  cart[index].quantity += amount;
+
+
+  if (cart[index].quantity <= 0) {
+
+    cart.splice(index, 1);
+
+  }
+
+
+  saveCart();
+  updateCartUI();
+
+}
+
+
+// --------------------------------------------------
+// REMOVE FROM CART
+// --------------------------------------------------
+
+function removeFromCart(index) {
+
+  if (!cart[index]) return;
+
+  cart.splice(index, 1);
+
+  saveCart();
+  updateCartUI();
+
+}
+
+
+// --------------------------------------------------
+// CLEAR CART
+// --------------------------------------------------
+
+function clearCart() {
+
+  cart = [];
+
+  saveCart();
+
+  updateCartUI();
+
+}
+
+
+// --------------------------------------------------
+// ADDED MESSAGE
+// --------------------------------------------------
+
+function showAddedMessage(message) {
+
+  let messageElement =
+    document.getElementById("cart-message");
+
+
+  if (!messageElement) {
+
+    messageElement =
+      document.createElement("div");
+
+    messageElement.id =
+      "cart-message";
+
+    messageElement.className =
+      "cart-message";
+
+    document.body.appendChild(
+      messageElement
+    );
+
+  }
+
+
+  messageElement.textContent = message;
+
+  messageElement.classList.add("show");
+
+
+  setTimeout(() => {
+
+    messageElement.classList.remove("show");
+
+  }, 2500);
+
+}
+
+
+// --------------------------------------------------
+// INITIALIZE CART
+// --------------------------------------------------
+
+document.addEventListener(
+  "DOMContentLoaded",
+  updateCartUI
+);
