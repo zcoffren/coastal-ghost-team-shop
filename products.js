@@ -1,424 +1,823 @@
-// Coastal Ghost Team Shop
-// Product browsing, color selection, size selection, and product rendering
+// ==================================================
+// COASTAL GHOST TEAM SHOP
+// PRODUCTS + ASSET MANIFEST LOADER
+// ==================================================
 
-const money = (value) => Number(value || 0).toFixed(2);
+let assets = [];
+let productGroups = [];
+let activeProducts = [];
 
-const uniqueValues = (array) => [...new Set(array)];
 
-let products = [];
-let designs = [];
-let itemTypes = [];
-let sizePricing = [];
+// ==================================================
+// LOAD ALL MANIFEST CHUNKS
+// ==================================================
 
 async function loadShopData() {
+
   try {
-    const [
-      productsResponse,
-      designsResponse,
-      itemTypesResponse,
-      sizePricingResponse
-    ] = await Promise.all([
-      fetch("data/products.json"),
-      fetch("data/designs.json"),
-      fetch("data/itemTypes.json"),
-      fetch("data/sizePricing.json")
-    ]);
 
-    products = await productsResponse.json();
-    designs = await designsResponse.json();
-    itemTypes = await itemTypesResponse.json();
-    sizePricing = await sizePricingResponse.json();
+    // Load the manifest index first
+    const indexResponse = await fetch(
+      "data/manifest-index.json"
+    );
 
-    renderProducts(products);
+    if (!indexResponse.ok) {
+      throw new Error(
+        "Could not load manifest-index.json"
+      );
+    }
+
+    const manifestIndex =
+      await indexResponse.json();
+
+
+    // ----------------------------------------------
+    // LOAD ALL ASSET CHUNKS
+    // ----------------------------------------------
+
+    const assetResponses =
+      await Promise.all(
+
+        manifestIndex.assetChunks.map(
+          async (file) => {
+
+            const response =
+              await fetch(`data/${file}`);
+
+            if (!response.ok) {
+              throw new Error(
+                `Could not load ${file}`
+              );
+            }
+
+            return response.json();
+
+          }
+        )
+      );
+
+
+    // Combine all asset chunks
+    assets =
+      assetResponses.flat();
+
+
+    // ----------------------------------------------
+    // LOAD ALL PRODUCT GROUP CHUNKS
+    // ----------------------------------------------
+
+    const groupResponses =
+      await Promise.all(
+
+        manifestIndex.productGroupChunks.map(
+          async (file) => {
+
+            const response =
+              await fetch(`data/${file}`);
+
+            if (!response.ok) {
+              throw new Error(
+                `Could not load ${file}`
+              );
+            }
+
+            return response.json();
+
+          }
+        )
+      );
+
+
+    // Combine all product groups
+    productGroups =
+      groupResponses.flat();
+
+
+    console.log(
+      "Coastal Ghost assets loaded:",
+      assets.length
+    );
+
+    console.log(
+      "Product groups loaded:",
+      productGroups.length
+    );
+
+
+    // Build products from the manifest
+    activeProducts =
+      buildProductsFromManifest();
+
+
+    // Show the main product view
+    showAllProducts();
+
 
   } catch (error) {
-    console.error("Unable to load shop data:", error);
 
-    const content = document.getElementById("content");
+    console.error(
+      "Unable to load Coastal Ghost shop data:",
+      error
+    );
 
-    if (content) {
-      content.innerHTML = `
-        <div class="note">
-          <h2>We're loading the shop...</h2>
-          <p>
-            Product data could not be loaded yet. Check that the
-            data files are in the <strong>data</strong> folder.
-          </p>
-        </div>
-      `;
-    }
+    showLoadError(error);
+
   }
+
 }
 
 
-// --------------------------------------------------
+// ==================================================
+// BUILD PRODUCTS FROM MANIFEST
+// ==================================================
+
+function buildProductsFromManifest() {
+
+  return productGroups.map(
+    (group, index) => {
+
+      // Find all assets belonging to this group
+      const groupAssets =
+        assets.filter(
+          asset =>
+            asset.collection ===
+              group.collection &&
+            asset.category ===
+              group.category &&
+            asset.product ===
+              group.product &&
+            asset.placement ===
+              group.placement
+        );
+
+
+      // Convert the assets into color options
+      const colors =
+        groupAssets.map(
+          asset => ({
+
+            name:
+              asset.color ||
+              "Default",
+
+            image:
+              asset.webPath ||
+              asset.path ||
+              asset.image ||
+              ""
+
+          })
+        );
+
+
+      // Remove duplicate colors
+      const uniqueColors =
+        colors.filter(
+          (color, colorIndex, array) =>
+            colorIndex ===
+            array.findIndex(
+              item =>
+                item.name === color.name
+            )
+        );
+
+
+      return {
+
+        id:
+          group.id ||
+          `product-${index + 1}`,
+
+        collection:
+          group.collection || "",
+
+        design:
+          group.collection || "",
+
+        category:
+          group.category || "",
+
+        item:
+          group.category || "",
+
+        product:
+          group.product || "",
+
+        brand:
+          group.product || "",
+
+        placement:
+          group.placement || "",
+
+        fit:
+          getFitFromCategory(
+            group.category || ""
+          ),
+
+        colors:
+          uniqueColors,
+
+        selectedColor:
+          uniqueColors[0] || null,
+
+        sizes:
+          getSizesForCategory(
+            group.category || ""
+          ),
+
+        selectedSize:
+          getSizesForCategory(
+            group.category || ""
+          )[0] || "",
+
+        base:
+          0
+
+      };
+
+    }
+  );
+
+}
+
+
+// ==================================================
+// DETERMINE FIT / SIZE RANGE
+// ==================================================
+
+function getFitFromCategory(category) {
+
+  const value =
+    category.toLowerCase();
+
+
+  if (value.includes("youth")) {
+    return "Youth";
+  }
+
+
+  if (value.includes("women")) {
+    return "Women's";
+  }
+
+
+  if (value.includes("unisex")) {
+    return "Adult / Unisex";
+  }
+
+
+  return "All";
+
+}
+
+
+// ==================================================
+// DETERMINE AVAILABLE SIZES
+// ==================================================
+
+function getSizesForCategory(category) {
+
+  const value =
+    category.toLowerCase();
+
+
+  if (value.includes("youth")) {
+
+    return [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ];
+
+  }
+
+
+  if (value.includes("women")) {
+
+    return [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL",
+      "3XL"
+    ];
+
+  }
+
+
+  return [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL",
+    "4XL"
+  ];
+
+}
+
+
+// ==================================================
+// SHOW ALL PRODUCTS
+// ==================================================
+
+function showAllProducts() {
+
+  renderProducts(
+    activeProducts
+  );
+
+}
+
+
+// ==================================================
 // SHOP BY DESIGN
-// --------------------------------------------------
+// ==================================================
 
 function browseByDesign() {
 
-  const values = uniqueValues(
-    products
-      .map(product => product.design)
-      .filter(Boolean)
-  );
+  const collections =
+    [
+      ...new Set(
+        activeProducts.map(
+          product =>
+            product.collection
+        )
+      )
+    ];
+
 
   renderCategoryThumbnails(
-    values,
-    "design",
+    collections,
+    "collection",
     "Shop by Design"
   );
+
 }
 
 
-// --------------------------------------------------
+// ==================================================
 // SHOP BY ITEM TYPE
-// --------------------------------------------------
+// ==================================================
 
 function browseByItemType() {
 
-  const values = uniqueValues(
-    products
-      .map(product => product.item)
-      .filter(Boolean)
-  );
+  const categories =
+    [
+      ...new Set(
+        activeProducts.map(
+          product =>
+            product.category
+        )
+      )
+    ];
+
 
   renderCategoryThumbnails(
-    values,
-    "item",
+    categories,
+    "category",
     "Shop by Item Type"
   );
+
 }
 
 
-// --------------------------------------------------
+// ==================================================
 // SHOP BY FIT & SIZE RANGE
-// --------------------------------------------------
+// ==================================================
 
 function browseByFit() {
 
-  const values = uniqueValues(
-    products
-      .map(product => product.fit)
-      .filter(Boolean)
-  );
+  const fits =
+    [
+      ...new Set(
+        activeProducts.map(
+          product =>
+            product.fit
+        )
+      )
+    ];
+
 
   renderCategoryThumbnails(
-    values,
+    fits,
     "fit",
     "Shop by Fit & Size Range"
   );
+
 }
 
 
-// --------------------------------------------------
-// CATEGORY THUMBNAILS
-// --------------------------------------------------
+// ==================================================
+// RENDER CATEGORY THUMBNAILS
+// ==================================================
 
-function renderCategoryThumbnails(values, key, title) {
+function renderCategoryThumbnails(
+  values,
+  key,
+  title
+) {
 
-  const content = document.getElementById("content");
+  const content =
+    document.getElementById(
+      "content"
+    );
 
   if (!content) return;
 
+
   content.innerHTML = `
-    <button class="back" onclick="showAllProducts()">
+
+    <button
+      class="back"
+      onclick="showAllProducts()"
+    >
       ← Back to All Products
     </button>
 
     <h1>${title}</h1>
 
     <div class="thumbgrid">
+
       ${values.map(value => {
 
-        const product = products.find(
-          item => item[key] === value
-        );
+        const product =
+          activeProducts.find(
+            item =>
+              item[key] === value
+          );
+
 
         const image =
           product?.colors?.[0]?.image ||
-          product?.image ||
           "";
 
+
         return `
+
           <button
             class="thumb"
-            onclick="filterProducts('${key}', ${JSON.stringify(value)})"
+            onclick='filterProducts(
+              "${key}",
+              ${JSON.stringify(value)}
+            )'
           >
-
-            ${
-              image
-                ? `<img src="${image}" alt="${value}">`
-                : ""
-            }
-
-            <div>
-              ${value}
-
-              <small>
-                View products
-              </small>
-            </div>
-
-          </button>
-        `;
-
-      }).join("")}
-    </div>
-  `;
-}
-
-
-// --------------------------------------------------
-// FILTER PRODUCTS
-// --------------------------------------------------
-
-function filterProducts(key, value) {
-
-  const filteredProducts = products.filter(
-    product => product[key] === value
-  );
-
-  renderProducts(filteredProducts);
-}
-
-
-// --------------------------------------------------
-// SHOW ALL PRODUCTS
-// --------------------------------------------------
-
-function showAllProducts() {
-  renderProducts(products);
-}
-
-
-// --------------------------------------------------
-// RENDER PRODUCTS
-// --------------------------------------------------
-
-function renderProducts(productList) {
-
-  const content = document.getElementById("content");
-
-  if (!content) return;
-
-  content.innerHTML = `
-    <div class="grid">
-
-      ${productList.map(product => {
-
-        if (!product.selectedColor && product.colors?.length) {
-          product.selectedColor = product.colors[0];
-        }
-
-        if (!product.selectedSize && product.sizes?.length) {
-          product.selectedSize = product.sizes[0];
-        }
-
-        const image =
-          product.selectedColor?.image ||
-          product.colors?.[0]?.image ||
-          product.image ||
-          "";
-
-        const price = getProductPrice(
-          product,
-          product.selectedSize
-        );
-
-        return `
-          <article class="card">
 
             ${
               image
                 ? `
                   <img
-                    class="productimg"
-                    id="img-${product.id}"
                     src="${image}"
-                    alt="${product.design} ${product.item}"
+                    alt="${value}"
                   >
                 `
                 : ""
             }
 
-            <div class="body">
+            <div>
 
-              <div class="eyebrow">
-                ${product.design || ""}
-                ·
-                ${product.item || ""}
-              </div>
+              ${value}
 
-              <h2>
-                ${product.brand || product.name || product.item}
-              </h2>
-
-              <div class="meta">
-
-                ${
-                  product.placement
-                    ? product.placement
-                    : ""
-                }
-
-                ${
-                  product.fit
-                    ? ` · ${product.fit}`
-                    : ""
-                }
-
-              </div>
-
-
-              <div
-                class="price"
-                id="price-${product.id}"
-              >
-                $${money(price)}
-              </div>
-
-
-              ${
-                product.colors?.length
-                  ? `
-                    <span class="label">
-                      Select Color
-                    </span>
-
-                    <div
-                      class="choices"
-                      id="colors-${product.id}"
-                    >
-
-                      ${product.colors.map((color, index) => `
-
-                        <button
-                          class="choice ${
-                            index === 0
-                              ? "selected"
-                              : ""
-                          }"
-
-                          onclick="selectColor(
-                            '${product.id}',
-                            ${JSON.stringify(color.name)}
-                          )"
-                        >
-
-                          ${color.name}
-
-                        </button>
-
-                      `).join("")}
-
-                    </div>
-                  `
-                  : ""
-              }
-
-
-              ${
-                product.sizes?.length
-                  ? `
-                    <span class="label">
-                      Select Size
-                    </span>
-
-                    <div
-                      class="choices"
-                      id="sizes-${product.id}"
-                    >
-
-                      ${product.sizes.map((size, index) => `
-
-                        <button
-                          class="choice ${
-                            index === 0
-                              ? "selected"
-                              : ""
-                          }"
-
-                          onclick="selectSize(
-                            '${product.id}',
-                            '${size}'
-                          )"
-                        >
-
-                          ${size}
-
-                        </button>
-
-                      `).join("")}
-
-                    </div>
-                  `
-                  : ""
-              }
-
-
-              <span class="label">
-                Quantity
-              </span>
-
-              <input
-                class="qty"
-                id="qty-${product.id}"
-                type="number"
-                min="1"
-                value="1"
-              >
-
-
-              <button
-                class="add"
-                onclick="addProductToCart('${product.id}')"
-              >
-
-                Add to Family Order
-
-              </button>
+              <small>
+                View products
+              </small>
 
             </div>
 
-          </article>
+          </button>
+
         `;
 
       }).join("")}
 
     </div>
+
   `;
+
 }
 
 
-// --------------------------------------------------
+// ==================================================
+// FILTER PRODUCTS
+// ==================================================
+
+function filterProducts(
+  key,
+  value
+) {
+
+  const filtered =
+    activeProducts.filter(
+      product =>
+        product[key] === value
+    );
+
+
+  renderProducts(filtered);
+
+}
+
+
+// ==================================================
+// RENDER PRODUCTS
+// ==================================================
+
+function renderProducts(productList) {
+
+  const content =
+    document.getElementById(
+      "content"
+    );
+
+  if (!content) return;
+
+
+  if (!productList.length) {
+
+    content.innerHTML = `
+
+      <div class="note">
+
+        <h2>
+          No products found
+        </h2>
+
+        <p>
+          We're still adding products
+          to this section.
+        </p>
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  content.innerHTML = `
+
+    <div class="grid">
+
+      ${productList.map(
+        product => {
+
+          const image =
+            product.selectedColor?.image ||
+            product.colors?.[0]?.image ||
+            "";
+
+
+          const price =
+            getProductPrice(
+              product,
+              product.selectedSize
+            );
+
+
+          return `
+
+            <article
+              class="card"
+            >
+
+              ${
+                image
+                  ? `
+
+                    <img
+                      class="productimg"
+                      id="img-${product.id}"
+                      src="${image}"
+                      alt="${product.design}"
+                    >
+
+                  `
+                  : ""
+              }
+
+
+              <div class="body">
+
+                <div class="eyebrow">
+
+                  ${product.design}
+
+                  ·
+
+                  ${product.item}
+
+                </div>
+
+
+                <h2>
+
+                  ${product.product}
+
+                </h2>
+
+
+                ${
+                  product.placement
+                    ? `
+
+                      <div class="meta">
+
+                        ${product.placement}
+
+                      </div>
+
+                    `
+                    : ""
+                }
+
+
+                <div
+                  class="price"
+                  id="price-${product.id}"
+                >
+
+                  ${
+                    price > 0
+                      ? `$${price.toFixed(2)}`
+                      : "Price TBD"
+                  }
+
+                </div>
+
+
+                ${
+                  product.colors?.length > 1
+                    ? `
+
+                      <span class="label">
+                        Select Color
+                      </span>
+
+                      <div
+                        class="choices"
+                        id="colors-${product.id}"
+                      >
+
+                        ${product.colors.map(
+                          color => `
+
+                            <button
+                              class="choice ${
+                                product.selectedColor?.name ===
+                                color.name
+                                  ? "selected"
+                                  : ""
+                              }"
+
+                              onclick='selectColor(
+                                "${product.id}",
+                                ${JSON.stringify(color.name)}
+                              )'
+                            >
+
+                              ${color.name}
+
+                            </button>
+
+                          `
+                        ).join("")}
+
+                      </div>
+
+                    `
+                    : ""
+                }
+
+
+                <span class="label">
+                  Select Size
+                </span>
+
+
+                <div
+                  class="choices"
+                  id="sizes-${product.id}"
+                >
+
+                  ${product.sizes.map(
+                    size => `
+
+                      <button
+                        class="choice ${
+                          product.selectedSize ===
+                          size
+                            ? "selected"
+                            : ""
+                        }"
+
+                        onclick='selectSize(
+                          "${product.id}",
+                          "${size}"
+                        )'
+                      >
+
+                        ${size}
+
+                      </button>
+
+                    `
+                  ).join("")}
+
+                </div>
+
+
+                <span class="label">
+                  Quantity
+                </span>
+
+
+                <input
+                  class="qty"
+                  id="qty-${product.id}"
+                  type="number"
+                  min="1"
+                  value="1"
+                >
+
+
+                <button
+                  class="add"
+                  onclick="addProductToCart(
+                    '${product.id}'
+                  )"
+                >
+
+                  Add to Family Order
+
+                </button>
+
+              </div>
+
+            </article>
+
+          `;
+
+        }
+      ).join("")}
+
+    </div>
+
+  `;
+
+}
+
+
+// ==================================================
 // SELECT COLOR
-// --------------------------------------------------
+// ==================================================
 
-function selectColor(productId, colorName) {
+function selectColor(
+  productId,
+  colorName
+) {
 
-  const product = products.find(
-    item => item.id === productId
-  );
+  const product =
+    activeProducts.find(
+      item =>
+        item.id === productId
+    );
 
   if (!product) return;
 
-  const selectedColor =
+
+  const color =
     product.colors.find(
-      color => color.name === colorName
+      item =>
+        item.name === colorName
     );
 
-  if (!selectedColor) return;
-
-  product.selectedColor = selectedColor;
+  if (!color) return;
 
 
-  const image = document.getElementById(
-    `img-${productId}`
-  );
+  product.selectedColor =
+    color;
 
-  if (image && selectedColor.image) {
-    image.src = selectedColor.image;
+
+  const image =
+    document.getElementById(
+      `img-${productId}`
+    );
+
+
+  if (
+    image &&
+    color.image
+  ) {
+
+    image.src =
+      color.image;
+
   }
 
 
@@ -428,31 +827,46 @@ function selectColor(productId, colorName) {
     )
     .forEach(button => {
 
-      button.classList.remove("selected");
+      button.classList.remove(
+        "selected"
+      );
 
       if (
-        button.textContent.trim() === colorName
+        button.textContent.trim() ===
+        colorName
       ) {
-        button.classList.add("selected");
+
+        button.classList.add(
+          "selected"
+        );
+
       }
 
     });
+
 }
 
 
-// --------------------------------------------------
+// ==================================================
 // SELECT SIZE
-// --------------------------------------------------
+// ==================================================
 
-function selectSize(productId, size) {
+function selectSize(
+  productId,
+  size
+) {
 
-  const product = products.find(
-    item => item.id === productId
-  );
+  const product =
+    activeProducts.find(
+      item =>
+        item.id === productId
+    );
 
   if (!product) return;
 
-  product.selectedSize = size;
+
+  product.selectedSize =
+    size;
 
 
   document
@@ -461,90 +875,104 @@ function selectSize(productId, size) {
     )
     .forEach(button => {
 
-      button.classList.remove("selected");
+      button.classList.remove(
+        "selected"
+      );
 
       if (
-        button.textContent.trim() === size
+        button.textContent.trim() ===
+        size
       ) {
-        button.classList.add("selected");
+
+        button.classList.add(
+          "selected"
+        );
+
       }
 
     });
 
 
-  const price = getProductPrice(
-    product,
-    size
-  );
+  const price =
+    getProductPrice(
+      product,
+      size
+    );
 
-  const priceElement = document.getElementById(
-    `price-${productId}`
-  );
+
+  const priceElement =
+    document.getElementById(
+      `price-${productId}`
+    );
+
 
   if (priceElement) {
+
     priceElement.textContent =
-      `$${money(price)}`;
+      price > 0
+        ? `$${price.toFixed(2)}`
+        : "Price TBD";
+
   }
+
 }
 
 
-// --------------------------------------------------
-// CALCULATE PRODUCT PRICE
-// --------------------------------------------------
+// ==================================================
+// PRODUCT PRICE
+// ==================================================
 
-function getProductPrice(product, size) {
+function getProductPrice(
+  product,
+  size
+) {
 
-  let basePrice =
-    Number(product.base || product.price || 0);
+  // Pricing will be connected
+  // to your final pricing data later.
 
+  return Number(
+    product.base || 0
+  );
 
-  if (product.sizePrices) {
-
-    const matchingPrice =
-      product.sizePrices.find(
-        item => item.size === size
-      );
-
-    if (matchingPrice) {
-      return Number(
-        matchingPrice.price
-      );
-    }
-
-  }
-
-
-  if (
-    size === "2XL" &&
-    product.u2
-  ) {
-    basePrice += Number(product.u2);
-  }
-
-
-  if (
-    size === "3XL" &&
-    product.u3
-  ) {
-    basePrice += Number(product.u3);
-  }
-
-
-  if (
-    size === "4XL" &&
-    product.u4
-  ) {
-    basePrice += Number(product.u4);
-  }
-
-
-  return basePrice;
 }
 
 
-// --------------------------------------------------
-// INITIALIZE SHOP
-// --------------------------------------------------
+// ==================================================
+// LOAD ERROR
+// ==================================================
+
+function showLoadError(error) {
+
+  const content =
+    document.getElementById(
+      "content"
+    );
+
+  if (!content) return;
+
+
+  content.innerHTML = `
+
+    <div class="note">
+
+      <h2>
+        Shop data could not load
+      </h2>
+
+      <p>
+        ${error.message}
+      </p>
+
+    </div>
+
+  `;
+
+}
+
+
+// ==================================================
+// INITIALIZE
+// ==================================================
 
 document.addEventListener(
   "DOMContentLoaded",
