@@ -1092,3 +1092,16 @@ button { font-family: inherit; cursor: pointer; }
   border-left: 1px solid rgba(255, 255, 255, 0.12);
   border-right: 1px solid rgba(255, 255, 255, 0.12);
 }
+
+/* =========================================================
+   SECTION NAVIGATION / SCROLL POSITION FIX
+   Keeps section headings visible below the sticky header
+   ========================================================= */
+
+#designSection,
+#itemTypeSection,
+#fitSection,
+#productSection,
+#dtfSection {
+  scroll-margin-top: 150px;
+}
