@@ -1,77 +1,399 @@
-/* Coastal Ghost Team Shop — Order review
-   Checkout is intentionally lightweight for now: no payment provider is
-   wired in yet. This renders a review of the Family Order so it can be
-   confirmed with the team, and is the natural place to plug in Venmo,
-   Apple Pay, or a hosted checkout later without changing the cart model. */
+// ============================================
+// Coastal Ghost Team Shop
+// checkout.js
+// ============================================
 
-function buildOrderSummaryText() {
-  const items = Cart.items;
-  const lines = items.map((item) => {
-    const bits = [item.design, item.color, item.size, item.placement].filter(Boolean).join(" / ");
-    return `${item.quantity}x ${item.name} (${bits}) — ${formatCurrency(Cart.lineTotal(item))}`;
+document.addEventListener("DOMContentLoaded", () => {
+  const checkoutBtn = document.getElementById("checkoutBtn");
+
+  if (!checkoutBtn) return;
+
+  checkoutBtn.addEventListener("click", () => {
+    const cart = getCartForCheckout();
+
+    if (!cart.length) {
+      showCheckoutToast("Your Family Order is empty.");
+      return;
+    }
+
+    openOrderReview(cart);
   });
-  lines.push("", `Family Order Total: ${formatCurrency(Cart.grandTotal())}`);
-  return lines.join("\n");
-}
+});
 
-function renderOrderReview() {
-  const items = Cart.items;
 
-  if (items.length === 0) {
-    document.getElementById("modalPanel").innerHTML = `
-      <h2 id="modalTitle">Family Order</h2>
-      <p class="subtitle">Your family order is empty. Add a product or DTF transfer to get started.</p>
-    `;
-    document.getElementById("modalImage").parentElement.style.display = "none";
-    document.getElementById("productModal").classList.add("open");
-    return;
+// ============================================
+// GET CART
+// ============================================
+
+function getCartForCheckout() {
+  // Try cart.js helper first
+  if (typeof getCart === "function") {
+    return getCart();
   }
 
-  const rows = items
-    .map((item) => {
-      const bits = [item.design, item.color, item.size, item.placement].filter(Boolean).join(" · ");
-      return `<li><span>${item.quantity}x ${item.name} — ${bits}</span><span>${formatCurrency(
-        Cart.lineTotal(item)
-      )}</span></li>`;
-    })
-    .join("");
+  // Try window.Cart
+  if (window.Cart && typeof window.Cart.getItems === "function") {
+    return window.Cart.getItems();
+  }
 
-  document.getElementById("modalImage").parentElement.style.display = "none";
-  document.getElementById("modalPanel").innerHTML = `
-    <h2 id="modalTitle">Review Family Order</h2>
-    <p class="subtitle">Confirm everything below before checkout opens.</p>
-    <div class="checkout-panel">
-      <ul>${rows}</ul>
-      <div class="cart-total-row">
-        <span>Total</span>
-        <span>${formatCurrency(Cart.grandTotal())}</span>
+  // Fall back to localStorage
+  try {
+    return JSON.parse(
+      localStorage.getItem("coastalGhostCart")
+    ) || [];
+  } catch (error) {
+    return [];
+  }
+}
+
+
+// ============================================
+// CALCULATE ORDER TOTAL
+// ============================================
+
+function getCheckoutTotal(cart) {
+  return cart.reduce((total, item) => {
+    const quantity = Number(item.quantity || 1);
+    const price = Number(item.price || item.unitPrice || 0);
+
+    return total + (price * quantity);
+  }, 0);
+}
+
+
+// ============================================
+// OPEN ORDER REVIEW
+// ============================================
+
+function openOrderReview(cart) {
+  const existingModal = document.getElementById("orderReviewModal");
+
+  if (existingModal) {
+    existingModal.remove();
+  }
+
+  const total = getCheckoutTotal(cart);
+
+  const modal = document.createElement("div");
+
+  modal.id = "orderReviewModal";
+  modal.className = "modal-overlay checkout-modal";
+
+  modal.innerHTML = `
+    <div class="modal checkout-review-modal">
+
+      <button
+        class="modal-close"
+        id="closeOrderReview"
+        aria-label="Close"
+      >
+        &times;
+      </button>
+
+      <div class="checkout-review">
+
+        <div class="checkout-review-header">
+          <span class="eyebrow">Coastal Ghost Baseball</span>
+          <h2>Review Your Family Order</h2>
+
+          <p>
+            Check your selections before submitting your order.
+          </p>
+        </div>
+
+        <div class="checkout-order-items">
+          ${cart.map(renderCheckoutItem).join("")}
+        </div>
+
+        <div class="checkout-summary">
+
+          <div class="checkout-total-row">
+            <span>Total Items</span>
+
+            <strong>
+              ${cart.reduce(
+                (total, item) =>
+                  total + Number(item.quantity || 1),
+                0
+              )}
+            </strong>
+          </div>
+
+          <div class="checkout-total-row checkout-grand-total">
+            <span>Family Order Total</span>
+
+            <strong>
+              $${total.toFixed(2)}
+            </strong>
+          </div>
+
+        </div>
+
+        <div class="checkout-actions">
+
+          <button
+            class="btn btn-secondary"
+            id="backToCartBtn"
+            type="button"
+          >
+            Back to Order
+          </button>
+
+          <button
+            class="btn btn-primary"
+            id="copyOrderBtn"
+            type="button"
+          >
+            Copy Order Details
+          </button>
+
+        </div>
+
       </div>
+
     </div>
-    <p class="note">Online checkout (Venmo, Apple Pay, or a hosted payment page) is coming soon. For now this order can be copied and sent to the team.</p>
-    <button class="btn btn-secondary btn-block" id="copyOrderBtn">Copy Order Summary</button>
-    <button class="btn btn-primary btn-block" id="backToShopBtn">Continue Shopping</button>
   `;
 
-  document.getElementById("copyOrderBtn").addEventListener("click", async () => {
-    try {
-      await navigator.clipboard.writeText(buildOrderSummaryText());
-      showToast("Order summary copied to clipboard.");
-    } catch (err) {
-      showToast("Could not copy automatically — please select the text manually.");
+  document.body.appendChild(modal);
+
+  // Close button
+  document
+    .getElementById("closeOrderReview")
+    .addEventListener("click", closeOrderReview);
+
+  // Click outside modal
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeOrderReview();
     }
   });
 
-  document.getElementById("backToShopBtn").addEventListener("click", () => {
-    document.getElementById("productModal").classList.remove("open");
-    document.getElementById("modalImage").parentElement.style.display = "";
-  });
+  // Back to cart
+  document
+    .getElementById("backToCartBtn")
+    .addEventListener("click", () => {
+      closeOrderReview();
 
-  document.getElementById("productModal").classList.add("open");
+      const cartDrawer = document.getElementById("cartDrawer");
+      const drawerBackdrop =
+        document.getElementById("drawerBackdrop");
+
+      if (cartDrawer) {
+        cartDrawer.classList.add("open");
+      }
+
+      if (drawerBackdrop) {
+        drawerBackdrop.classList.add("active");
+      }
+    });
+
+  // Copy order
+  document
+    .getElementById("copyOrderBtn")
+    .addEventListener("click", () => {
+      copyOrderDetails(cart);
+    });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("checkoutBtn").addEventListener("click", () => {
-    closeCartDrawer();
-    renderOrderReview();
+
+// ============================================
+// RENDER ORDER ITEM
+// ============================================
+
+function renderCheckoutItem(item) {
+  const quantity = Number(item.quantity || 1);
+  const price = Number(item.price || item.unitPrice || 0);
+
+  const lineTotal = price * quantity;
+
+  const image =
+    item.image ||
+    item.imagePath ||
+    "";
+
+  const productName =
+    item.productName ||
+    item.name ||
+    item.product ||
+    "Coastal Ghost Item";
+
+  const details = [
+    item.design,
+    item.itemType || item.item,
+    item.fit,
+    item.brand,
+    item.color,
+    item.size,
+    item.option
+  ]
+    .filter(Boolean)
+    .join(" · ");
+
+  return `
+    <div class="checkout-item">
+
+      ${
+        image
+          ? `
+          <div class="checkout-item-image">
+            <img
+              src="${image}"
+              alt="${productName}"
+            />
+          </div>
+          `
+          : ""
+      }
+
+      <div class="checkout-item-details">
+
+        <h3>${productName}</h3>
+
+        ${
+          details
+            ? `<p>${details}</p>`
+            : ""
+        }
+
+        <div class="checkout-item-bottom">
+
+          <span>
+            Qty: ${quantity}
+          </span>
+
+          <strong>
+            $${lineTotal.toFixed(2)}
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+  `;
+}
+
+
+// ============================================
+// COPY ORDER DETAILS
+// ============================================
+
+function copyOrderDetails(cart) {
+  const total = getCheckoutTotal(cart);
+
+  let orderText =
+    "COASTAL GHOST BASEBALL – FAMILY ORDER\n";
+
+  orderText +=
+    "====================================\n\n";
+
+  cart.forEach((item, index) => {
+    const quantity =
+      Number(item.quantity || 1);
+
+    const price =
+      Number(item.price || item.unitPrice || 0);
+
+    const lineTotal =
+      quantity * price;
+
+    const productName =
+      item.productName ||
+      item.name ||
+      item.product ||
+      "Coastal Ghost Item";
+
+    const details = [
+      item.design,
+      item.itemType || item.item,
+      item.fit,
+      item.brand,
+      item.color,
+      item.size,
+      item.option
+    ]
+      .filter(Boolean)
+      .join(" | ");
+
+    orderText += `${index + 1}. ${productName}\n`;
+
+    if (details) {
+      orderText += `   ${details}\n`;
+    }
+
+    orderText +=
+      `   Quantity: ${quantity} × $${price.toFixed(2)} = $${lineTotal.toFixed(2)}\n\n`;
   });
-});
+
+  orderText +=
+    "====================================\n";
+
+  orderText +=
+    `FAMILY ORDER TOTAL: $${total.toFixed(2)}\n`;
+
+  navigator.clipboard
+    .writeText(orderText)
+    .then(() => {
+      showCheckoutToast(
+        "Order details copied to your clipboard!"
+      );
+
+      const copyBtn =
+        document.getElementById("copyOrderBtn");
+
+      if (copyBtn) {
+        const originalText =
+          copyBtn.textContent;
+
+        copyBtn.textContent =
+          "Order Copied!";
+
+        setTimeout(() => {
+          copyBtn.textContent =
+            originalText;
+        }, 2000);
+      }
+    })
+    .catch(() => {
+      showCheckoutToast(
+        "Unable to copy automatically."
+      );
+    });
+}
+
+
+// ============================================
+// CLOSE REVIEW
+// ============================================
+
+function closeOrderReview() {
+  const modal =
+    document.getElementById("orderReviewModal");
+
+  if (modal) {
+    modal.remove();
+  }
+}
+
+
+// ============================================
+// TOAST
+// ============================================
+
+function showCheckoutToast(message) {
+  const toast =
+    document.getElementById("toast");
+
+  if (!toast) {
+    alert(message);
+    return;
+  }
+
+  toast.textContent = message;
+
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3000);
+}
