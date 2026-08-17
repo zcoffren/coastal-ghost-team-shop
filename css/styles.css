@@ -1142,3 +1142,58 @@ button { font-family: inherit; cursor: pointer; }
   background: #241733 !important;
   color: #f3f0f5;
 }
+
+/* =========================================================
+   CATEGORY CARD FINAL STYLING
+   Matches current products.js structure
+   ========================================================= */
+
+.category-card {
+  background: #241733 !important;
+  border: 1px solid #4a3268;
+  border-radius: 16px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 0;
+  color: #f3f0f5;
+}
+
+/* Transparent PNG sits directly on the purple card */
+.category-card > img {
+  display: block;
+
+  width: 100%;
+  height: 185px;
+
+  object-fit: contain;
+
+  background: transparent !important;
+
+  padding: 8px 8px 0;
+}
+
+/* Category name */
+.category-card > span {
+  display: flex;
+  align-items: center;
+
+  min-height: 58px;
+
+  margin: 0;
+  padding: 10px 14px 14px;
+
+  background: #241733 !important;
+
+  color: #f3f0f5 !important;
+
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  letter-spacing: 0.01em;
+  text-align: left;
+}
