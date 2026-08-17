@@ -1,240 +1,1375 @@
-/* Coastal Ghost Team Shop — product catalog controller
-   Reads:
-   data/designs.json
-   data/styles.json
-   data/product-groups.json
-   data/dtf-products.json
-*/
+/* =========================================================
+   COASTAL GHOST TEAM SHOP — PRODUCTS
+   ========================================================= */
 
-let SHOP = { designs: [], styles: [], groups: [], dtf: [] };
+let SHOP = {
+  designs: [],
+  styles: [],
+  groups: [],
+  dtf: []
+};
+
 let activeProducts = [];
 
 const $ = (id) => document.getElementById(id);
-const money = (n) => `$${Number(n || 0).toFixed(2)}`;
-const titleCase = (s) => String(s || '').replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 
-async function loadShopData() {
-  const [designs, styles, groups, dtf] = await Promise.all([
-    fetch('data/designs.json').then(r => r.json()),
-    fetch('data/styles.json').then(r => r.json()),
-    fetch('data/product-groups.json').then(r => r.json()),
-    fetch('data/dtf-products.json').then(r => r.json())
-  ]);
-  SHOP = { designs, styles, groups, dtf };
-  buildCatalog();
+const money = (value) => {
+  const number = Number(value);
+
+  if (Number.isNaN(number) || value === null || value === undefined) {
+    return 'Price TBD';
+  }
+
+  return `$${number.toFixed(2)}`;
+};
+
+const titleCase = (value) =>
+  String(value || '')
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+
+
+/* =========================================================
+   LOAD DATA
+   ========================================================= */
+
+async function getJSON(path) {
+  const response = await fetch(path);
+
+  if (!response.ok) {
+    throw new Error(`Could not load ${path}`);
+  }
+
+  return response.json();
 }
 
+async function loadShopData() {
+  try {
+    const [designs, styles, groups, dtf] = await Promise.all([
+      getJSON('data/designs.json'),
+      getJSON('data/styles.json'),
+      getJSON('data/product-groups.json'),
+      getJSON('data/dtf-products.json')
+    ]);
+
+    SHOP.designs = Array.isArray(designs)
+      ? designs
+      : designs.designs || [];
+
+    SHOP.styles = Array.isArray(styles)
+      ? styles
+      : styles.styles || [];
+
+    SHOP.groups = Array.isArray(groups)
+      ? groups
+      : groups.groups || groups.products || [];
+
+    SHOP.dtf = Array.isArray(dtf)
+      ? dtf
+      : dtf.products || dtf.dtf || [];
+
+    console.log('SHOP DATA LOADED:', SHOP);
+
+    buildCatalog();
+
+  } catch (error) {
+    console.error('SHOP DATA ERROR:', error);
+
+    const grids = [
+      $('designGrid'),
+      $('itemTypeGrid'),
+      $('fitGrid'),
+      $('productGrid'),
+      $('dtfGrid')
+    ];
+
+    grids.forEach(grid => {
+      if (grid) {
+        grid.innerHTML =
+          '<p class="empty-message">Unable to load shop data.</p>';
+      }
+    });
+  }
+}
+
+
+/* =========================================================
+   DATA HELPERS
+   ========================================================= */
+
 function styleFor(styleId) {
-  return SHOP.styles.find(s => s.styleId === styleId);
+  return SHOP.styles.find((style) =>
+    style.styleId === styleId ||
+    style.id === styleId
+  );
+}
+
+function groupsWithStyles(groups) {
+  return groups.filter((group) => styleFor(group.styleId));
+}
+
+function getBasePrice(style) {
+  if (!style) return null;
+
+  return (
+    style.basePrice ??
+    style.price ??
+    style.base_price ??
+    null
+  );
+}
+
+function getSizeUpcharge(style, size) {
+  if (!style) return 0;
+
+  if (style.sizeUpcharges && style.sizeUpcharges[size] !== undefined) {
+    return Number(style.sizeUpcharges[size]) || 0;
+  }
+
+  if (style.upcharges && style.upcharges[size] !== undefined) {
+    return Number(style.upcharges[size]) || 0;
+  }
+
+  return 0;
+}
+
+function getSizes(style) {
+  if (!style) {
+    return ['S', 'M', 'L', 'XL', '2XL', '3XL'];
+  }
+
+  if (Array.isArray(style.sizes) && style.sizes.length) {
+    return style.sizes;
+  }
+
+  if (style.fit === 'Youth' || style.sizeRange === 'Youth') {
+    return ['XS', 'S', 'M', 'L', 'XL'];
+  }
+
+  return ['S', 'M', 'L', 'XL', '2XL', '3XL'];
+}
+
+function firstImage(group) {
+  if (!group) return '';
+
+  if (group.thumbnail) return group.thumbnail;
+
+  if (
+    Array.isArray(group.mockups) &&
+    group.mockups.length
+  ) {
+    return group.mockups[0].image || '';
+  }
+
+  return '';
+}
+
+function getMockups(group) {
+  if (Array.isArray(group.mockups)) {
+    return group.mockups;
+  }
+
+  return [];
 }
 
 function groupLabel(group) {
   const style = styleFor(group.styleId) || {};
-  return `${titleCase(group.design)} — ${style.productName || group.styleId}`;
+
+  const designName =
+    SHOP.designs.find(
+      (design) =>
+        design.id === group.design ||
+        design.designId === group.design
+    )?.name ||
+    titleCase(group.design);
+
+  return `${designName} — ${
+    style.productName ||
+    style.name ||
+    group.styleId ||
+    'Product'
+  }`;
 }
 
-function firstImage(group) {
-  return group.mockups?.[0]?.image || '';
-}
 
-function pricedGroups(groups) {
-  return groups.filter(g => styleFor(g.styleId)?.basePrice !== null && styleFor(g.styleId)?.basePrice !== undefined);
-}
+/* =========================================================
+   BUILD CATALOG
+   ========================================================= */
 
 function buildCatalog() {
   renderDesignCards();
   renderItemTypeCards();
   renderFitCards();
-  renderProducts(pricedGroups(SHOP.groups));
+
+  renderProducts(
+    groupsWithStyles(SHOP.groups)
+  );
+
   renderDTF();
+
   bindNav();
 }
 
+
+/* =========================================================
+   SHOP BY DESIGN
+   ========================================================= */
+
 function renderDesignCards() {
   const el = $('designGrid');
+
   if (!el) return;
-  const cards = SHOP.designs.map(d => {
-    const groups = pricedGroups(SHOP.groups.filter(g => g.design === d.id));
-    const image = d.thumbnail || firstImage(groups[0]);
-    if (!groups.length) return '';
-    return `<button class="category-card" type="button" data-design="${d.id}">
-      <img src="${image}" alt="${d.name}" loading="lazy">
-      <span>${d.name}</span>
-    </button>`;
-  }).join('');
+
+  const cards = SHOP.designs
+    .map((design) => {
+
+      const groups = groupsWithStyles(
+        SHOP.groups.filter(
+          (group) =>
+            group.design === design.id ||
+            group.design === design.designId
+        )
+      );
+
+      if (!groups.length) return '';
+
+      const image =
+        design.thumbnail ||
+        design.image ||
+        firstImage(groups[0]);
+
+      return `
+        <button
+          class="category-card"
+          type="button"
+          data-design="${design.id || design.designId}"
+        >
+          <img
+            src="${image}"
+            alt="${design.name}"
+            loading="lazy"
+          >
+
+          <span>${design.name}</span>
+        </button>
+      `;
+    })
+    .join('');
+
   el.innerHTML = cards;
-  el.querySelectorAll('[data-design]').forEach(btn => btn.addEventListener('click', () => {
-    const id = btn.dataset.design;
-    const list = pricedGroups(SHOP.groups.filter(g => g.design === id));
-    renderProducts(list, `${btn.textContent.trim()} Products`);
-    $('productSection')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }));
+
+  el.querySelectorAll('[data-design]')
+    .forEach((button) => {
+
+      button.addEventListener('click', () => {
+
+        const designId =
+          button.dataset.design;
+
+        const products =
+          groupsWithStyles(
+            SHOP.groups.filter(
+              (group) =>
+                group.design === designId
+            )
+          );
+
+        renderProducts(
+          products,
+          `${button.textContent.trim()} Products`
+        );
+
+        $('productSection')
+          ?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+
+      });
+
+    });
 }
+
+
+/* =========================================================
+   SHOP BY ITEM TYPE
+   ========================================================= */
 
 function renderItemTypeCards() {
   const el = $('itemTypeGrid');
+
   if (!el) return;
-  const types = [...new Set(SHOP.styles.map(s => s.itemType))];
-  el.innerHTML = types.map(type => {
-    const groups = pricedGroups(SHOP.groups.filter(g => styleFor(g.styleId)?.itemType === type));
-    if (!groups.length) return '';
-    return `<button class="category-card" type="button" data-type="${type}">
-      <img src="${firstImage(groups[0])}" alt="${type}" loading="lazy"><span>${type}</span>
-    </button>`;
-  }).join('');
-  el.querySelectorAll('[data-type]').forEach(btn => btn.addEventListener('click', () => {
-    const type = btn.dataset.type;
-    renderProducts(pricedGroups(SHOP.groups.filter(g => styleFor(g.styleId)?.itemType === type)), type);
-    $('productSection')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }));
+
+  const types = [
+    ...new Set(
+      SHOP.styles
+        .map(
+          (style) =>
+            style.itemType ||
+            style.productType
+        )
+        .filter(Boolean)
+    )
+  ];
+
+  el.innerHTML = types
+    .map((type) => {
+
+      const groups =
+        groupsWithStyles(
+          SHOP.groups.filter((group) => {
+
+            const style =
+              styleFor(group.styleId);
+
+            return (
+              style &&
+              (
+                style.itemType === type ||
+                style.productType === type
+              )
+            );
+
+          })
+        );
+
+      if (!groups.length) return '';
+
+      return `
+        <button
+          class="category-card"
+          type="button"
+          data-type="${type}"
+        >
+          <img
+            src="${firstImage(groups[0])}"
+            alt="${type}"
+            loading="lazy"
+          >
+
+          <span>${type}</span>
+        </button>
+      `;
+
+    })
+    .join('');
+
+  el.querySelectorAll('[data-type]')
+    .forEach((button) => {
+
+      button.addEventListener('click', () => {
+
+        const type =
+          button.dataset.type;
+
+        const products =
+          groupsWithStyles(
+            SHOP.groups.filter((group) => {
+
+              const style =
+                styleFor(group.styleId);
+
+              return (
+                style &&
+                (
+                  style.itemType === type ||
+                  style.productType === type
+                )
+              );
+
+            })
+          );
+
+        renderProducts(
+          products,
+          type
+        );
+
+        $('productSection')
+          ?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+
+      });
+
+    });
 }
+
+
+/* =========================================================
+   SHOP BY FIT
+   ========================================================= */
 
 function renderFitCards() {
   const el = $('fitGrid');
+
   if (!el) return;
-  const fits = [...new Set(SHOP.styles.map(s => `${s.fit}|${s.sizeRange}`))];
-  el.innerHTML = fits.map(key => {
-    const [fit, range] = key.split('|');
-    const groups = pricedGroups(SHOP.groups.filter(g => {
-      const s = styleFor(g.styleId); return s && s.fit === fit && s.sizeRange === range;
-    }));
-    if (!groups.length) return '';
-    return `<button class="category-card" type="button" data-fit="${key}">
-      <img src="${firstImage(groups[0])}" alt="${fit}" loading="lazy"><span>${fit}</span>
-    </button>`;
-  }).join('');
-  el.querySelectorAll('[data-fit]').forEach(btn => btn.addEventListener('click', () => {
-    const [fit, range] = btn.dataset.fit.split('|');
-    renderProducts(pricedGroups(SHOP.groups.filter(g => {
-      const s = styleFor(g.styleId); return s && s.fit === fit && s.sizeRange === range;
-    })), `${fit} · ${range}`);
-    $('productSection')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }));
+
+  const fitGroups = [
+    ...new Set(
+      SHOP.styles
+        .map((style) => {
+
+          const fit =
+            style.fit ||
+            style.fitType ||
+            '';
+
+          const range =
+            style.sizeRange ||
+            style.size_range ||
+            '';
+
+          return `${fit}|${range}`;
+
+        })
+        .filter(
+          (value) => value !== '|'
+        )
+    )
+  ];
+
+  el.innerHTML = fitGroups
+    .map((key) => {
+
+      const [fit, range] =
+        key.split('|');
+
+      const groups =
+        groupsWithStyles(
+          SHOP.groups.filter((group) => {
+
+            const style =
+              styleFor(group.styleId);
+
+            if (!style) return false;
+
+            const styleFit =
+              style.fit ||
+              style.fitType ||
+              '';
+
+            const styleRange =
+              style.sizeRange ||
+              style.size_range ||
+              '';
+
+            return (
+              styleFit === fit &&
+              styleRange === range
+            );
+
+          })
+        );
+
+      if (!groups.length) return '';
+
+      const label =
+        range
+          ? `${fit} / ${range}`
+          : fit;
+
+      return `
+        <button
+          class="category-card"
+          type="button"
+          data-fit="${key}"
+        >
+          <img
+            src="${firstImage(groups[0])}"
+            alt="${label}"
+            loading="lazy"
+          >
+
+          <span>${label}</span>
+        </button>
+      `;
+
+    })
+    .join('');
+
+  el.querySelectorAll('[data-fit]')
+    .forEach((button) => {
+
+      button.addEventListener('click', () => {
+
+        const [fit, range] =
+          button.dataset.fit.split('|');
+
+        const products =
+          groupsWithStyles(
+            SHOP.groups.filter((group) => {
+
+              const style =
+                styleFor(group.styleId);
+
+              if (!style) return false;
+
+              const styleFit =
+                style.fit ||
+                style.fitType ||
+                '';
+
+              const styleRange =
+                style.sizeRange ||
+                style.size_range ||
+                '';
+
+              return (
+                styleFit === fit &&
+                styleRange === range
+              );
+
+            })
+          );
+
+        renderProducts(
+          products,
+          range
+            ? `${fit} / ${range}`
+            : fit
+        );
+
+        $('productSection')
+          ?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+
+      });
+
+    });
 }
 
-function renderProducts(groups, heading = 'All Products') {
+
+/* =========================================================
+   PRODUCT GRID
+   ========================================================= */
+
+function renderProducts(
+  groups,
+  heading = 'All Products'
+) {
+
   activeProducts = groups;
-  if ($('productSectionTitle')) $('productSectionTitle').textContent = heading;
-  if ($('productSectionSubtitle')) $('productSectionSubtitle').textContent = `${groups.length} product style${groups.length === 1 ? '' : 's'} currently available`;
-  const el = $('productGrid');
+
+  const title =
+    $('productSectionTitle');
+
+  const subtitle =
+    $('productSectionSubtitle');
+
+  const el =
+    $('productGrid');
+
+  if (title) {
+    title.textContent = heading;
+  }
+
+  if (subtitle) {
+    subtitle.textContent =
+      `${groups.length} product style${
+        groups.length === 1
+          ? ''
+          : 's'
+      } currently available`;
+  }
+
   if (!el) return;
-  el.innerHTML = groups.map(g => {
-    const s = styleFor(g.styleId);
-    const image = firstImage(g);
-    return `<article class="product-card">
-      <div class="product-card-image"><img src="${image}" alt="${groupLabel(g)}" loading="lazy"></div>
-      <div class="product-card-body">
-        <div class="product-meta">${s.itemType} · ${s.fit}</div>
-        <h3>${groupLabel(g)}</h3>
-        <p>${s.brand || g.styleId.toUpperCase()} · ${g.mockups.length} mockup${g.mockups.length === 1 ? '' : 's'}</p>
-        <strong>From ${money(s.basePrice)}</strong>
-        <button class="btn btn-primary" type="button" data-product="${g.id}">Choose Options</button>
-      </div>
-    </article>`;
-  }).join('');
-  el.querySelectorAll('[data-product]').forEach(btn => btn.addEventListener('click', () => openProduct(btn.dataset.product)));
+
+  if (!groups.length) {
+    el.innerHTML = `
+      <p class="empty-message">
+        No products are currently available in this category.
+      </p>
+    `;
+
+    return;
+  }
+
+  el.innerHTML =
+    groups.map((group) => {
+
+      const style =
+        styleFor(group.styleId);
+
+      const mockups =
+        getMockups(group);
+
+      const image =
+        firstImage(group);
+
+      const price =
+        getBasePrice(style);
+
+      const itemType =
+        style.itemType ||
+        style.productType ||
+        '';
+
+      const fit =
+        style.fit ||
+        style.fitType ||
+        '';
+
+      return `
+        <article class="product-card">
+
+          <div class="product-card-image">
+            <img
+              src="${image}"
+              alt="${groupLabel(group)}"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="product-card-body">
+
+            <div class="product-meta">
+              ${itemType}
+              ${fit ? ` · ${fit}` : ''}
+            </div>
+
+            <h3>
+              ${groupLabel(group)}
+            </h3>
+
+            <p>
+              ${
+                style.brand ||
+                group.styleId ||
+                ''
+              }
+              · ${mockups.length} color/mockup option${
+                mockups.length === 1
+                  ? ''
+                  : 's'
+              }
+            </p>
+
+            <strong>
+              ${
+                price === null
+                  ? 'Price TBD'
+                  : `From ${money(price)}`
+              }
+            </strong>
+
+            <button
+              class="btn btn-primary"
+              type="button"
+              data-product="${group.id}"
+            >
+              Choose Options
+            </button>
+
+          </div>
+
+        </article>
+      `;
+
+    })
+    .join('');
+
+  el.querySelectorAll('[data-product]')
+    .forEach((button) => {
+
+      button.addEventListener(
+        'click',
+        () => openProduct(
+          button.dataset.product
+        )
+      );
+
+    });
 }
+
+
+/* =========================================================
+   PRODUCT MODAL
+   ========================================================= */
 
 function openProduct(id) {
-  const group = SHOP.groups.find(g => g.id === id);
-  const style = styleFor(group.styleId);
-  if (!group || !style) return;
-  const modal = $('productModal');
-  const image = $('modalImage');
-  image.src = firstImage(group);
-  image.alt = groupLabel(group);
 
-  const colors = [...new Set(group.mockups.map(m => m.color))];
-  const placements = [...new Set(group.mockups.map(m => m.placement))];
-  const sizes = style.sizeRange === 'Youth' ? ['XS','S','M','L','XL'] : ['S','M','L','XL','2XL','3XL'];
-  const select = (label, values, id) => `<label class="field-label">${label}<select id="${id}">${values.map(v => `<option value="${v}">${v}</option>`).join('')}</select></label>`;
+  const group =
+    SHOP.groups.find(
+      (product) =>
+        product.id === id
+    );
+
+  if (!group) return;
+
+  const style =
+    styleFor(group.styleId);
+
+  if (!style) return;
+
+  const modal =
+    $('productModal');
+
+  const image =
+    $('modalImage');
+
+  const mockups =
+    getMockups(group);
+
+  if (!mockups.length) return;
+
+  image.src =
+    firstImage(group);
+
+  image.alt =
+    groupLabel(group);
+
+
+  const colors = [
+    ...new Set(
+      mockups
+        .map(
+          (mockup) =>
+            mockup.color
+        )
+        .filter(Boolean)
+    )
+  ];
+
+  const placements = [
+    ...new Set(
+      mockups
+        .map(
+          (mockup) =>
+            mockup.placement
+        )
+        .filter(Boolean)
+    )
+  ];
+
+  const sizes =
+    getSizes(style);
+
+  const createSelect =
+    (label, values, id) => `
+      <label class="field-label">
+
+        ${label}
+
+        <select id="${id}">
+          ${values
+            .map(
+              (value) =>
+                `<option value="${value}">
+                  ${value}
+                </option>`
+            )
+            .join('')
+          }
+        </select>
+
+      </label>
+    `;
+
 
   $('modalPanel').innerHTML = `
-    <div class="product-meta">${style.itemType} · ${style.fit}</div>
-    <h2 id="modalTitle">${groupLabel(group)}</h2>
-    <p>${style.brand || group.styleId.toUpperCase()}</p>
-    <div class="product-options">
-      ${select('Color', colors, 'productColor')}
-      ${select('Logo Placement', placements, 'productPlacement')}
-      ${select('Size', sizes, 'productSize')}
-      <label class="field-label">Quantity<input id="productQty" type="number" min="1" value="1"></label>
-    </div>
-    <div class="modal-price" id="modalPrice">${money(style.basePrice)}</div>
-    <button class="btn btn-primary btn-block" id="addProductBtn" type="button">Add to Family Order</button>`;
 
-  const colorSelect = $('productColor');
-  const placementSelect = $('productPlacement');
-  const sizeSelect = $('productSize');
-  const update = () => {
-    const match = group.mockups.find(m => m.color === colorSelect.value && m.placement === placementSelect.value)
-      || group.mockups.find(m => m.color === colorSelect.value)
-      || group.mockups[0];
-    image.src = match.image;
-    const up = style.sizeUpcharges?.[sizeSelect.value] || 0;
-    $('modalPrice').textContent = money(Number(style.basePrice) + Number(up));
-  };
-  colorSelect.addEventListener('change', update);
-  placementSelect.addEventListener('change', update);
-  sizeSelect.addEventListener('change', update);
-  $('addProductBtn').addEventListener('click', () => {
-    const qty = Math.max(1, Number($('productQty').value || 1));
-    const match = group.mockups.find(m => m.color === colorSelect.value && m.placement === placementSelect.value)
-      || group.mockups.find(m => m.color === colorSelect.value)
-      || group.mockups[0];
-    const unitPrice = Number(style.basePrice) + Number(style.sizeUpcharges?.[sizeSelect.value] || 0);
-    const item = { id: `${group.id}-${colorSelect.value}-${placementSelect.value}-${sizeSelect.value}`, name: groupLabel(group), styleId: group.styleId, design: group.design, color: colorSelect.value, placement: placementSelect.value, size: sizeSelect.value, qty, unitPrice, image: match.image };
-    window.dispatchEvent(new CustomEvent('coastalghost:add-to-cart', { detail: item }));
-    modal.classList.remove('open');
-    modal.style.display = 'none';
-  });
+    <div class="product-meta">
+      ${
+        style.itemType ||
+        style.productType ||
+        ''
+      }
+      ${
+        style.fit
+          ? ` · ${style.fit}`
+          : ''
+      }
+    </div>
+
+    <h2 id="modalTitle">
+      ${groupLabel(group)}
+    </h2>
+
+    <p>
+      ${
+        style.brand ||
+        group.styleId ||
+        ''
+      }
+    </p>
+
+    <div class="product-options">
+
+      ${
+        colors.length
+          ? createSelect(
+              'Color',
+              colors,
+              'productColor'
+            )
+          : ''
+      }
+
+      ${
+        placements.length
+          ? createSelect(
+              'Logo Placement',
+              placements,
+              'productPlacement'
+            )
+          : ''
+      }
+
+      ${createSelect(
+        'Size',
+        sizes,
+        'productSize'
+      )}
+
+      <label class="field-label">
+        Quantity
+
+        <input
+          id="productQty"
+          type="number"
+          min="1"
+          value="1"
+        >
+      </label>
+
+    </div>
+
+    <div
+      class="modal-price"
+      id="modalPrice"
+    ></div>
+
+    <button
+      class="btn btn-primary btn-block"
+      id="addProductBtn"
+      type="button"
+    >
+      Add to Family Order
+    </button>
+  `;
+
+
+  const colorSelect =
+    $('productColor');
+
+  const placementSelect =
+    $('productPlacement');
+
+  const sizeSelect =
+    $('productSize');
+
+
+  function getSelectedMockup() {
+
+    return (
+      mockups.find(
+        (mockup) =>
+          (
+            !colorSelect ||
+            mockup.color === colorSelect.value
+          ) &&
+          (
+            !placementSelect ||
+            mockup.placement === placementSelect.value
+          )
+      ) ||
+
+      mockups.find(
+        (mockup) =>
+          !colorSelect ||
+          mockup.color === colorSelect.value
+      ) ||
+
+      mockups[0]
+    );
+
+  }
+
+
+  function updateProduct() {
+
+    const match =
+      getSelectedMockup();
+
+    if (match?.image) {
+      image.src =
+        match.image;
+    }
+
+    const basePrice =
+      getBasePrice(style);
+
+    const upcharge =
+      getSizeUpcharge(
+        style,
+        sizeSelect.value
+      );
+
+    const finalPrice =
+      basePrice === null
+        ? null
+        : Number(basePrice) +
+          Number(upcharge);
+
+    $('modalPrice').textContent =
+      finalPrice === null
+        ? 'Price TBD'
+        : money(finalPrice);
+
+  }
+
+
+  colorSelect?.addEventListener(
+    'change',
+    updateProduct
+  );
+
+  placementSelect?.addEventListener(
+    'change',
+    updateProduct
+  );
+
+  sizeSelect?.addEventListener(
+    'change',
+    updateProduct
+  );
+
+
+  updateProduct();
+
+
+  $('addProductBtn')
+    .addEventListener('click', () => {
+
+      const qty =
+        Math.max(
+          1,
+          Number(
+            $('productQty').value || 1
+          )
+        );
+
+      const match =
+        getSelectedMockup();
+
+      const basePrice =
+        getBasePrice(style);
+
+      const unitPrice =
+        basePrice === null
+          ? 0
+          : Number(basePrice) +
+            getSizeUpcharge(
+              style,
+              sizeSelect.value
+            );
+
+      const item = {
+
+        id:
+          `${group.id}-` +
+          `${colorSelect?.value || 'default'}-` +
+          `${placementSelect?.value || 'default'}-` +
+          `${sizeSelect.value}`,
+
+        name:
+          groupLabel(group),
+
+        styleId:
+          group.styleId,
+
+        design:
+          group.design,
+
+        color:
+          colorSelect?.value || '',
+
+        placement:
+          placementSelect?.value || '',
+
+        size:
+          sizeSelect.value,
+
+        qty,
+
+        unitPrice,
+
+        image:
+          match?.image || ''
+
+      };
+
+
+      window.dispatchEvent(
+        new CustomEvent(
+          'coastalghost:add-to-cart',
+          {
+            detail: item
+          }
+        )
+      );
+
+
+      modal.classList.remove('open');
+
+      modal.style.display =
+        'none';
+
+    });
+
+
   modal.classList.add('open');
-  modal.style.display = 'flex';
+
+  modal.style.display =
+    'flex';
+
 }
+
+
+/* =========================================================
+   DTF PRODUCTS
+   ========================================================= */
 
 function renderDTF() {
-  const el = $('dtfGrid');
+
+  const el =
+    $('dtfGrid');
+
   if (!el) return;
-  el.innerHTML = SHOP.dtf.map((d, i) => `<article class="product-card">
-    <div class="product-card-image"><img src="${d.image}" alt="${d.name}" loading="lazy"></div>
-    <div class="product-card-body"><h3>${d.name}</h3><p>DTF iron-on transfer</p><button class="btn btn-primary" type="button" data-dtf="${i}">Choose Size</button></div>
-  </article>`).join('');
-  el.querySelectorAll('[data-dtf]').forEach(btn => btn.addEventListener('click', () => openDTF(Number(btn.dataset.dtf))));
+
+  if (!SHOP.dtf.length) {
+    el.innerHTML = '';
+    return;
+  }
+
+  el.innerHTML =
+    SHOP.dtf
+      .map((product, index) => `
+
+        <article class="product-card">
+
+          <div class="product-card-image">
+
+            <img
+              src="${product.image || ''}"
+              alt="${product.name || 'DTF Transfer'}"
+              loading="lazy"
+            >
+
+          </div>
+
+          <div class="product-card-body">
+
+            <h3>
+              ${product.name}
+            </h3>
+
+            <p>
+              DTF iron-on transfer
+            </p>
+
+            <button
+              class="btn btn-primary"
+              type="button"
+              data-dtf="${index}"
+            >
+              Choose Size
+            </button>
+
+          </div>
+
+        </article>
+
+      `)
+      .join('');
+
+
+  el.querySelectorAll('[data-dtf]')
+    .forEach((button) => {
+
+      button.addEventListener(
+        'click',
+        () =>
+          openDTF(
+            Number(
+              button.dataset.dtf
+            )
+          )
+      );
+
+    });
+
 }
+
 
 function openDTF(index) {
-  const d = SHOP.dtf[index];
-  const modal = $('productModal');
-  $('modalImage').src = d.image;
-  $('modalImage').alt = d.name;
-  $('modalPanel').innerHTML = `<h2 id="modalTitle">${d.name}</h2>
-    <label class="field-label">Transfer Size<select id="dtfOption">${d.options.map((o,i)=>`<option value="${i}">${o.label} — ${o.dimensions || ''} — ${money(o.price)}</option>`).join('')}</select></label>
-    <label class="field-label">Quantity<input id="dtfQty" type="number" min="1" value="1"></label>
-    <button class="btn btn-primary btn-block" id="addDTFBtn" type="button">Add to Family Order</button>`;
-  $('addDTFBtn').addEventListener('click', () => {
-    const opt = d.options[Number($('dtfOption').value)];
-    const qty = Math.max(1, Number($('dtfQty').value || 1));
-    window.dispatchEvent(new CustomEvent('coastalghost:add-to-cart', { detail: { id:`${d.id}-${opt.label}`, name:d.name, type:'DTF Transfer', option:opt.label, dimensions:opt.dimensions, qty, unitPrice:opt.price, image:d.image } }));
-    modal.classList.remove('open'); modal.style.display = 'none';
-  });
-  modal.classList.add('open'); modal.style.display = 'flex';
+
+  const product =
+    SHOP.dtf[index];
+
+  if (!product) return;
+
+  const modal =
+    $('productModal');
+
+  $('modalImage').src =
+    product.image || '';
+
+  $('modalImage').alt =
+    product.name || 'DTF Transfer';
+
+
+  const options =
+    Array.isArray(product.options)
+      ? product.options
+      : [];
+
+
+  $('modalPanel').innerHTML = `
+
+    <h2 id="modalTitle">
+      ${product.name}
+    </h2>
+
+    <label class="field-label">
+
+      Transfer Size
+
+      <select id="dtfOption">
+
+        ${options
+          .map(
+            (option, optionIndex) => `
+
+              <option value="${optionIndex}">
+
+                ${option.label}
+                ${
+                  option.dimensions
+                    ? ` — ${option.dimensions}`
+                    : ''
+                }
+                ${
+                  option.price !== undefined
+                    ? ` — ${money(option.price)}`
+                    : ''
+                }
+
+              </option>
+
+            `
+          )
+          .join('')}
+
+      </select>
+
+    </label>
+
+
+    <label class="field-label">
+
+      Quantity
+
+      <input
+        id="dtfQty"
+        type="number"
+        min="1"
+        value="1"
+      >
+
+    </label>
+
+
+    <button
+      class="btn btn-primary btn-block"
+      id="addDTFBtn"
+      type="button"
+    >
+      Add to Family Order
+    </button>
+
+  `;
+
+
+  $('addDTFBtn')
+    .addEventListener('click', () => {
+
+      const option =
+        options[
+          Number(
+            $('dtfOption').value
+          )
+        ];
+
+      if (!option) return;
+
+      const qty =
+        Math.max(
+          1,
+          Number(
+            $('dtfQty').value || 1
+          )
+        );
+
+      const item = {
+
+        id:
+          `${product.id}-${option.label}`,
+
+        name:
+          product.name,
+
+        type:
+          'DTF Transfer',
+
+        option:
+          option.label,
+
+        dimensions:
+          option.dimensions || '',
+
+        qty,
+
+        unitPrice:
+          Number(option.price || 0),
+
+        image:
+          product.image || ''
+
+      };
+
+
+      window.dispatchEvent(
+        new CustomEvent(
+          'coastalghost:add-to-cart',
+          {
+            detail: item
+          }
+        )
+      );
+
+
+      modal.classList.remove('open');
+
+      modal.style.display =
+        'none';
+
+    });
+
+
+  modal.classList.add('open');
+
+  modal.style.display =
+    'flex';
+
 }
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
 function bindNav() {
-  document.querySelectorAll('.shop-nav-btn').forEach(btn => btn.addEventListener('click', () => {
-    document.querySelectorAll('.shop-nav-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const type = btn.dataset.filterType;
-    if (type === 'all') renderProducts(pricedGroups(SHOP.groups));
-    else if (type === 'dtf') $('dtfSection')?.scrollIntoView({ behavior:'smooth' });
-    else if (type === 'design-menu') $('designSection')?.scrollIntoView({ behavior:'smooth' });
-    else if (type === 'item-menu') $('itemTypeSection')?.scrollIntoView({ behavior:'smooth' });
-    else if (type === 'fit-menu') $('fitSection')?.scrollIntoView({ behavior:'smooth' });
-  }));
-  $('closeModalBtn')?.addEventListener('click', () => { $('productModal').classList.remove('open'); $('productModal').style.display='none'; });
+
+  document
+    .querySelectorAll('.shop-nav-btn')
+    .forEach((button) => {
+
+      button.addEventListener(
+        'click',
+        () => {
+
+          document
+            .querySelectorAll('.shop-nav-btn')
+            .forEach(
+              (navButton) =>
+                navButton.classList.remove('active')
+            );
+
+          button.classList.add('active');
+
+          const type =
+            button.dataset.filterType;
+
+
+          if (type === 'all') {
+
+            renderProducts(
+              groupsWithStyles(
+                SHOP.groups
+              )
+            );
+
+          }
+
+          else if (type === 'dtf') {
+
+            $('dtfSection')
+              ?.scrollIntoView({
+                behavior: 'smooth'
+              });
+
+          }
+
+          else if (type === 'design-menu') {
+
+            $('designSection')
+              ?.scrollIntoView({
+                behavior: 'smooth'
+              });
+
+          }
+
+          else if (type === 'item-menu') {
+
+            $('itemTypeSection')
+              ?.scrollIntoView({
+                behavior: 'smooth'
+              });
+
+          }
+
+          else if (type === 'fit-menu') {
+
+            $('fitSection')
+              ?.scrollIntoView({
+                behavior: 'smooth'
+              });
+
+          }
+
+        }
+      );
+
+    });
+
+
+  $('closeModalBtn')
+    ?.addEventListener(
+      'click',
+      () => {
+
+        $('productModal')
+          .classList.remove('open');
+
+        $('productModal').style.display =
+          'none';
+
+      }
+    );
+
 }
 
-document.addEventListener('DOMContentLoaded', () => loadShopData().catch(err => {
-  console.error(err);
-  const grid = $('productGrid');
-  if (grid) grid.innerHTML = '<p>Unable to load product data. Check the data folder and file names.</p>';
-}));
+
+/* =========================================================
+   START SHOP
+   ========================================================= */
+
+document.addEventListener(
+  'DOMContentLoaded',
+  loadShopData
+);
