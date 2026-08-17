@@ -1589,26 +1589,43 @@ function openProduct(id) {
       }
 
 
-      <div
-        class="option-field"
+            <div
+        class="option-field quantity-field"
       >
 
-        <label
-          class="field-label"
-          for="productQty"
-        >
-
+        <span class="field-label">
           Quantity
+        </span>
 
-        </label>
+        <div class="quantity-control">
 
+          <button
+            type="button"
+            class="quantity-btn"
+            id="qtyMinus"
+            aria-label="Decrease quantity"
+          >
+            −
+          </button>
 
-        <input
-          id="productQty"
-          type="number"
-          min="1"
-          value="1"
-        >
+          <span
+            class="quantity-value"
+            id="productQty"
+            aria-live="polite"
+          >
+            1
+          </span>
+
+          <button
+            type="button"
+            class="quantity-btn"
+            id="qtyPlus"
+            aria-label="Increase quantity"
+          >
+            +
+          </button>
+
+        </div>
 
       </div>
 
