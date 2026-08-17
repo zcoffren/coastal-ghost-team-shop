@@ -1197,3 +1197,9 @@ button { font-family: inherit; cursor: pointer; }
   letter-spacing: 0.01em;
   text-align: left;
 }
+
+.category-card > span {
+  font-weight: 700;
+  text-align: center;
+  justify-content: center;
+}
