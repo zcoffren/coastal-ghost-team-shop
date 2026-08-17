@@ -304,12 +304,15 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .category-card h3 {
-  margin: 0;
-  padding: 12px 14px 14px;
+  margin: -12px 0 0;
+  padding: 0 14px 14px;
 
   min-height: 52px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
+
+  text-align: center;
 
   font-family: "Rubik", sans-serif;
   font-size: 16px;
