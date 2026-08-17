@@ -291,7 +291,7 @@ button { font-family: inherit; cursor: pointer; }
 
 .category-card {
   width: 190px;
-  min-height: 290px;
+  min-height: 240px;
 
   display: flex;
   flex-direction: column;
