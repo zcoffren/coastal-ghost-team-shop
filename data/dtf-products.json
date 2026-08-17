@@ -1,0 +1,262 @@
+[
+  {
+    "id": "D001",
+    "name": "Coastal Ghost Logo",
+    "image": "",
+    "options": [
+      {
+        "label": "Large Front",
+        "dimensions": "9 x 8.26",
+        "price": 8.0
+      },
+      {
+        "label": "Medium Front",
+        "dimensions": "8 x 7.34",
+        "price": 6.0
+      },
+      {
+        "label": "Toddler",
+        "dimensions": "5.25 x 4.82",
+        "price": 4.0
+      },
+      {
+        "label": "Small Left Chest",
+        "dimensions": "3.26 x 3",
+        "price": 3.0
+      }
+    ]
+  },
+  {
+    "id": "D002",
+    "name": "Coastal Ghost Baseball Wordmark",
+    "image": "assets/product-samples/dtf-decals/coastal-ghost-baseball-wordmark.png",
+    "options": [
+      {
+        "label": "Large Front",
+        "dimensions": "8.89 x 4.68",
+        "price": 6.0
+      },
+      {
+        "label": "Medium Front",
+        "dimensions": "7.62 x 4.01",
+        "price": 5.0
+      },
+      {
+        "label": "Toddler",
+        "dimensions": "5.25 x 2.76",
+        "price": 4.0
+      },
+      {
+        "label": "Small Left Chest",
+        "dimensions": "3.89 x 2.05",
+        "price": 3.0
+      }
+    ]
+  },
+  {
+    "id": "D003",
+    "name": "Coastal Ghost Wordmark",
+    "image": "",
+    "options": [
+      {
+        "label": "Large Front",
+        "dimensions": "8.5 x 3.81",
+        "price": 6.0
+      },
+      {
+        "label": "Medium Front",
+        "dimensions": "7.5 x 3.36",
+        "price": 5.0
+      },
+      {
+        "label": "Toddler",
+        "dimensions": "5.25 x 2.35",
+        "price": 4.0
+      },
+      {
+        "label": "Small Left Chest",
+        "dimensions": "4 x 1.79",
+        "price": 3.0
+      }
+    ]
+  },
+  {
+    "id": "D004",
+    "name": "Boo Boys Blackout",
+    "image": "assets/product-samples/dtf-decals/boo-boys-blackout.png",
+    "options": [
+      {
+        "label": "Large Front",
+        "dimensions": "9 x 8.26",
+        "price": 8.0
+      },
+      {
+        "label": "Medium Front",
+        "dimensions": "8 x 7.34",
+        "price": 6.0
+      },
+      {
+        "label": "Toddler",
+        "dimensions": "5.25 x 4.82",
+        "price": 4.0
+      },
+      {
+        "label": "Small Left Chest",
+        "dimensions": "3.26 x 3",
+        "price": 3.0
+      }
+    ]
+  },
+  {
+    "id": "D005",
+    "name": "Coastal Ghost Gray Baseball Wordmark",
+    "image": "",
+    "options": [
+      {
+        "label": "Large Front",
+        "dimensions": "8.89 x 4.68",
+        "price": 6.0
+      },
+      {
+        "label": "Medium Front",
+        "dimensions": "7.62 x 4.01",
+        "price": 5.0
+      },
+      {
+        "label": "Toddler",
+        "dimensions": "5.25 x 2.76",
+        "price": 4.0
+      },
+      {
+        "label": "Small Left Chest",
+        "dimensions": "3.89 x 2.05",
+        "price": 3.0
+      }
+    ]
+  },
+  {
+    "id": "D006",
+    "name": "Coastal Ghost Gray Wordmark",
+    "image": "",
+    "options": [
+      {
+        "label": "Large Front",
+        "dimensions": "8.5 x 3.81",
+        "price": 6.0
+      },
+      {
+        "label": "Medium Front",
+        "dimensions": "7.5 x 3.36",
+        "price": 5.0
+      },
+      {
+        "label": "Toddler",
+        "dimensions": "5.25 x 2.35",
+        "price": 4.0
+      },
+      {
+        "label": "Small Left Chest",
+        "dimensions": "4 x 1.79",
+        "price": 3.0
+      }
+    ]
+  },
+  {
+    "id": "D007",
+    "name": "Spooky State",
+    "image": "assets/product-samples/dtf-decals/spooky-state.png",
+    "options": [
+      {
+        "label": "Large Front",
+        "dimensions": "9 x 6.79",
+        "price": 7.0
+      },
+      {
+        "label": "Medium Front",
+        "dimensions": "7 x 5.28",
+        "price": 5.0
+      },
+      {
+        "label": "Toddler",
+        "dimensions": "5 x 3.77",
+        "price": 4.0
+      },
+      {
+        "label": "Small Left Chest",
+        "dimensions": "3.26 x 2.64",
+        "price": 3.0
+      }
+    ]
+  },
+  {
+    "id": "D008",
+    "name": "Phantom Purple Wordmark",
+    "image": "",
+    "options": [
+      {
+        "label": "Large Front",
+        "dimensions": "8.5 x 3.81",
+        "price": 6.0
+      },
+      {
+        "label": "Medium Front",
+        "dimensions": "7.5 x 3.36",
+        "price": 5.0
+      },
+      {
+        "label": "Toddler",
+        "dimensions": "5.25 x 2.35",
+        "price": 4.0
+      },
+      {
+        "label": "Small Left Chest",
+        "dimensions": "4 x 1.79",
+        "price": 3.0
+      }
+    ]
+  },
+  {
+    "id": "D009",
+    "name": "Haunting Home Logo",
+    "image": "",
+    "options": [
+      {
+        "label": "Large Front",
+        "dimensions": "8.03 x 8.06",
+        "price": 7.0
+      },
+      {
+        "label": "Medium Front",
+        "dimensions": "6.28 x 6.33",
+        "price": 6.0
+      },
+      {
+        "label": "Toddler",
+        "dimensions": "4.53 x 4.56",
+        "price": 4.0
+      }
+    ]
+  },
+  {
+    "id": "D010",
+    "name": "Fantom Club",
+    "image": "assets/product-samples/dtf-decals/fantom-club.png",
+    "options": [
+      {
+        "label": "Large Front",
+        "dimensions": "8.5 x 8.74",
+        "price": 8.0
+      },
+      {
+        "label": "Medium Front",
+        "dimensions": "7.5 x 7.71",
+        "price": 6.0
+      },
+      {
+        "label": "Toddler",
+        "dimensions": "5.25 x 5.4",
+        "price": 4.0
+      }
+    ]
+  }
+]
