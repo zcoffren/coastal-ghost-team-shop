@@ -1,0 +1,42 @@
+[
+  {
+    "id": "boo-boys-blackout",
+    "name": "Boo Boys Blackout",
+    "thumbnail": "assets/product-samples/boo-boys-blackout/unisex-hoodies/3719-left-chest-team-purple.png"
+  },
+  {
+    "id": "cg-swva-alt-logo",
+    "name": "CG SWVA Alt Logo",
+    "thumbnail": ""
+  },
+  {
+    "id": "coastal-ghost-baseball-gray-wordmark",
+    "name": "Coastal Ghost Baseball Gray Wordmark",
+    "thumbnail": ""
+  },
+  {
+    "id": "coastal-ghost-baseball-wordmark",
+    "name": "Coastal Ghost Baseball Wordmark",
+    "thumbnail": ""
+  },
+  {
+    "id": "coastal-ghost",
+    "name": "Coastal Ghost",
+    "thumbnail": "assets/product-samples/coastal-ghost/unisex-crewneck/1566-large-front-white.png"
+  },
+  {
+    "id": "fantom-club",
+    "name": "Fantom Club",
+    "thumbnail": ""
+  },
+  {
+    "id": "ghost-wordmark",
+    "name": "Ghost Wordmark",
+    "thumbnail": ""
+  },
+  {
+    "id": "spooky-state",
+    "name": "Spooky State",
+    "thumbnail": "assets/product-samples/spooky-state/unisex-hoodies/3719-medium-front-team-purple.png"
+  }
+]

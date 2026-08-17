@@ -1,0 +1,212 @@
+[
+  {
+    "styleId": "g540",
+    "brand": "Gildan",
+    "itemType": "Long Sleeve",
+    "productFolder": "unisex-long-sleeve",
+    "productName": "Long Sleeve Tee",
+    "fit": "Adult / Unisex",
+    "sizeRange": "Adult",
+    "basePrice": 20.0,
+    "sizeUpcharges": {
+      "2XL": 3.0,
+      "3XL": 4.0
+    },
+    "status": "Active"
+  },
+  {
+    "styleId": "b6400",
+    "brand": "Bella + Canvas",
+    "itemType": "Short Sleeve",
+    "productFolder": "unisex-short-sleeve",
+    "productName": "Short Sleeve Tee",
+    "fit": "Adult / Relaxed",
+    "sizeRange": "Adult",
+    "basePrice": 25.0,
+    "sizeUpcharges": {
+      "2XL": 3.0,
+      "3XL": 4.0
+    },
+    "status": "Active"
+  },
+  {
+    "styleId": "g640",
+    "brand": "Gildan",
+    "itemType": "Short Sleeve",
+    "productFolder": "unisex-short-sleeve",
+    "productName": "Short Sleeve Tee",
+    "fit": "Adult / Unisex",
+    "sizeRange": "Adult",
+    "basePrice": 15.0,
+    "sizeUpcharges": {
+      "2XL": 3.0,
+      "3XL": 4.0
+    },
+    "status": "Active"
+  },
+  {
+    "styleId": "st253",
+    "brand": "Sport-Tek",
+    "itemType": "Quarter Zip",
+    "productFolder": "unisex-quarter-zip",
+    "productName": "1/4-Zip Sweatshirt",
+    "fit": "Adult / Unisex",
+    "sizeRange": "Adult",
+    "basePrice": 45.0,
+    "sizeUpcharges": {
+      "2XL": 3.0,
+      "3XL": 4.0
+    },
+    "status": "Active"
+  },
+  {
+    "styleId": "k807",
+    "brand": "Port Authority",
+    "itemType": "Quarter Zip",
+    "productFolder": "unisex-quarter-zip",
+    "productName": "Interlock 1/4-Zip",
+    "fit": "Adult / Unisex",
+    "sizeRange": "Adult",
+    "basePrice": 40.0,
+    "sizeUpcharges": {
+      "2XL": 3.0,
+      "3XL": 4.0
+    },
+    "status": "Active"
+  },
+  {
+    "styleId": "1566",
+    "brand": "",
+    "itemType": "Crewneck",
+    "productFolder": "unisex-crewneck",
+    "productName": "Crewneck Sweatshirt",
+    "fit": "Adult / Unisex",
+    "sizeRange": "Adult",
+    "basePrice": null,
+    "sizeUpcharges": {
+      "2XL": 0,
+      "3XL": 0
+    },
+    "status": "Draft"
+  },
+  {
+    "styleId": "g180",
+    "brand": "",
+    "itemType": "Crewneck",
+    "productFolder": "unisex-crewneck",
+    "productName": "Crewneck Sweatshirt",
+    "fit": "Adult / Unisex",
+    "sizeRange": "Adult",
+    "basePrice": null,
+    "sizeUpcharges": {
+      "2XL": 0,
+      "3XL": 0
+    },
+    "status": "Draft"
+  },
+  {
+    "styleId": "3719",
+    "brand": "",
+    "itemType": "Hoodie",
+    "productFolder": "unisex-hoodies",
+    "productName": "Pullover Hoodie",
+    "fit": "Adult / Unisex",
+    "sizeRange": "Adult",
+    "basePrice": null,
+    "sizeUpcharges": {
+      "2XL": 0,
+      "3XL": 0
+    },
+    "status": "Draft"
+  },
+  {
+    "styleId": "g185",
+    "brand": "",
+    "itemType": "Hoodie",
+    "productFolder": "unisex-hoodies",
+    "productName": "Pullover Hoodie",
+    "fit": "Adult / Unisex",
+    "sizeRange": "Adult",
+    "basePrice": null,
+    "sizeUpcharges": {
+      "2XL": 0,
+      "3XL": 0
+    },
+    "status": "Draft"
+  },
+  {
+    "styleId": "g185b",
+    "brand": "",
+    "itemType": "Hoodie",
+    "productFolder": "youth-hoodies",
+    "productName": "Youth Hoodie",
+    "fit": "Youth / Unisex",
+    "sizeRange": "Youth",
+    "basePrice": null,
+    "sizeUpcharges": {
+      "2XL": 0,
+      "3XL": 0
+    },
+    "status": "Draft"
+  },
+  {
+    "styleId": "g180b",
+    "brand": "",
+    "itemType": "Crewneck",
+    "productFolder": "youth-crewneck",
+    "productName": "Youth Crewneck",
+    "fit": "Youth / Unisex",
+    "sizeRange": "Youth",
+    "basePrice": null,
+    "sizeUpcharges": {
+      "2XL": 0,
+      "3XL": 0
+    },
+    "status": "Draft"
+  },
+  {
+    "styleId": "b6500",
+    "brand": "Bella + Canvas",
+    "itemType": "Long Sleeve",
+    "productFolder": "womens-long-sleeve",
+    "productName": "Women\u2019s Long Sleeve Tee",
+    "fit": "Adult / Relaxed",
+    "sizeRange": "Adult",
+    "basePrice": null,
+    "sizeUpcharges": {
+      "2XL": 0,
+      "3XL": 0
+    },
+    "status": "Needs pricing"
+  },
+  {
+    "styleId": "lst253",
+    "brand": "Sport-Tek",
+    "itemType": "Quarter Zip",
+    "productFolder": "womens-quarter-zip",
+    "productName": "Women\u2019s 1/4-Zip",
+    "fit": "Adult / Relaxed",
+    "sizeRange": "Adult",
+    "basePrice": null,
+    "sizeUpcharges": {
+      "2XL": 0,
+      "3XL": 0
+    },
+    "status": "Needs pricing"
+  },
+  {
+    "styleId": "lst",
+    "brand": "Sport-Tek",
+    "itemType": "Quarter Zip",
+    "productFolder": "womens-quarter-zip",
+    "productName": "Women\u2019s 1/4-Zip",
+    "fit": "Adult / Relaxed",
+    "sizeRange": "Adult",
+    "basePrice": null,
+    "sizeUpcharges": {
+      "2XL": 0,
+      "3XL": 0
+    },
+    "status": "Needs pricing"
+  }
+]
