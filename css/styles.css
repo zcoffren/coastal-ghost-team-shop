@@ -719,7 +719,7 @@ button { font-family: inherit; cursor: pointer; }
   padding: 10px 12px;
 }
 
-/* ---------- Family Order cart drawer ---------- */
+/* ---------- Order cart drawer ---------- */
 .cart-drawer {
   position: fixed;
   top: 0;
