@@ -1127,3 +1127,18 @@ button { font-family: inherit; cursor: pointer; }
 #dtfSection {
   scroll-margin-top: 150px;
 }
+
+/* FIX CATEGORY CARD BACKGROUND */
+
+.category-card {
+  background: #241733 !important;
+}
+
+.category-card img {
+  background: transparent !important;
+}
+
+.category-card h3 {
+  background: #241733 !important;
+  color: #f3f0f5;
+}
