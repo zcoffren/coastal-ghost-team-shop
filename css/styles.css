@@ -245,7 +245,7 @@ button { font-family: inherit; cursor: pointer; }
 .category-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 14px;
+  gap: 24px;
 }
 
 /* Breadcrumb shown while drilled into an item type's subcategories */
