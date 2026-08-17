@@ -1027,3 +1027,68 @@ button { font-family: inherit; cursor: pointer; }
   width: 100%;
   margin-top: 0;
 }
+
+/* =========================================================
+   QUANTITY CONTROL
+   ========================================================= */
+
+.quantity-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quantity-control {
+  display: inline-flex;
+  align-items: stretch;
+  width: fit-content;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.quantity-btn {
+  width: 42px;
+  height: 42px;
+
+  border: 0;
+
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.quantity-btn:hover {
+  background: #e5a832;
+  color: #160b20;
+}
+
+.quantity-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 48px;
+  height: 42px;
+
+  padding: 0 10px;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  color: #ffffff;
+
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
