@@ -290,27 +290,28 @@ button { font-family: inherit; cursor: pointer; }
    ========================================================= */
 
 .category-card {
+  width: 190px;
+  min-height: 290px;
+
   display: flex;
   flex-direction: column;
+
+  border-radius: 20px;
   overflow: hidden;
 }
 
 .category-card img {
-  display: block;
   width: 100%;
-  height: 185px;
+  height: 220px;
   object-fit: contain;
-  padding: 8px 8px 0;
+  display: block;
 }
 
 .category-card h3 {
-  margin: -20px 0 0;
-  padding: 0 14px 14px;
+  margin: 0;
+  padding: 4px 14px 14px;
 
-  min-height: 52px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  min-height: 0;
 
   text-align: center;
 
