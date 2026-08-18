@@ -1,7 +1,7 @@
 /* Coastal Ghost Team Shop — cart controller */
 
 (() => {
-  const STORAGE_KEY = 'coastalGhostFamilyOrder';
+  const STORAGE_KEY = 'coastalGhostOrder';
 
   let cart = [];
 
