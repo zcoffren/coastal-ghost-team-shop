@@ -264,7 +264,8 @@ modal.style.background = "rgba(0, 0, 0, 0.75)";
 
             <button
               class="btn btn-primary"
-              type="submit"
+              id="reviewOrderBtn"
+              type="button"
             >
               Review Order
             </button>
@@ -302,11 +303,6 @@ modal.style.background = "rgba(0, 0, 0, 0.75)";
         window.CoastalGhostCart.open();
       }
     });
-
-  document
-    .getElementById("customerInfoForm")
-    ?.addEventListener("submit", (event) => {
-      event.preventDefault();
 
       const customer = {
         firstName: document
@@ -480,6 +476,79 @@ modal.style.background = "rgba(0, 0, 0, 0.75)";
 
   document.body.appendChild(modal);
 
+  document
+  .getElementById("reviewOrderBtn")
+  ?.addEventListener(
+    "click",
+    () => {
+      const form =
+        document.getElementById(
+          "customerInfoForm"
+        );
+
+      if (!form) return;
+
+      if (!form.reportValidity()) {
+        return;
+      }
+
+      const customer = {
+        firstName:
+          document
+            .getElementById(
+              "customerFirstName"
+            )
+            .value
+            .trim(),
+
+        lastName:
+          document
+            .getElementById(
+              "customerLastName"
+            )
+            .value
+            .trim(),
+
+        email:
+          document
+            .getElementById(
+              "customerEmail"
+            )
+            .value
+            .trim(),
+
+        phone:
+          document
+            .getElementById(
+              "customerPhone"
+            )
+            .value
+            .trim(),
+
+        playerName:
+          document
+            .getElementById(
+              "playerName"
+            )
+            .value
+            .trim(),
+
+        notes:
+          document
+            .getElementById(
+              "orderNotes"
+            )
+            .value
+            .trim()
+      };
+
+      openOrderReview(
+        cart,
+        customer
+      );
+    }
+  );
+  
   document
     .getElementById("closeOrderReview")
     ?.addEventListener("click", closeOrderReview);
