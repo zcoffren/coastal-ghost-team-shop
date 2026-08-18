@@ -1,636 +1,305 @@
-// ============================================
-// Coastal Ghost Team Shop
-// checkout.js
-// ============================================
+/* Coastal Ghost Team Shop — cart controller */
 
-document.addEventListener("DOMContentLoaded", () => {
-  const checkoutBtn = document.getElementById("checkoutBtn");
+(() => {
+  const STORAGE_KEY = 'coastalGhostFamilyOrder';
 
-  if (!checkoutBtn) return;
+  let cart = [];
 
-  checkoutBtn.addEventListener("click", () => {
-    const cart = getCartForCheckout();
+  const $ = (id) => document.getElementById(id);
+
+  function money(value) {
+    return `$${Number(value || 0).toFixed(2)}`;
+  }
+
+  function loadCart() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      cart = saved ? JSON.parse(saved) : [];
+    } catch (error) {
+      console.error('Could not load cart:', error);
+      cart = [];
+    }
+  }
+
+  function saveCart() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+    } catch (error) {
+      console.error('Could not save cart:', error);
+    }
+  }
+
+  function getCartCount() {
+    return cart.reduce((total, item) => {
+      return total + Number(item.qty || 0);
+    }, 0);
+  }
+
+  function getCartTotal() {
+    return cart.reduce((total, item) => {
+      return total + (
+        Number(item.qty || 0) *
+        Number(item.unitPrice || 0)
+      );
+    }, 0);
+  }
+
+  function updateCartCount() {
+    const count = $('cartCount');
+
+    if (count) {
+      count.textContent = getCartCount();
+    }
+  }
+
+  function renderCart() {
+    const cartItems = $('cartItems');
+    const cartTotal = $('cartTotal');
+
+    updateCartCount();
+
+    if (cartTotal) {
+      cartTotal.textContent = money(getCartTotal());
+    }
+
+    if (!cartItems) return;
 
     if (!cart.length) {
-      showCheckoutToast("Your Cart is empty.");
+      cartItems.innerHTML = `
+        <div class="empty-cart">
+          <p>Your Family Order is empty.</p>
+          <p>Choose an item to get started.</p>
+        </div>
+      `;
       return;
     }
 
-    openOrderReview(cart);
-  });
-});
+    cartItems.innerHTML = cart.map((item, index) => {
+      const details = [];
 
+      if (item.color) details.push(item.color);
+      if (item.size) details.push(item.size);
+      if (item.placement) details.push(item.placement);
+      if (item.option) details.push(item.option);
+      if (item.dimensions) details.push(item.dimensions);
 
-// ============================================
-// GET CART
-// ============================================
-
-function getCartForCheckout() {
-  let possibleCarts = [];
-
-  // --------------------------------------------
-  // Try window.Cart first
-  // --------------------------------------------
-  if (
-    window.Cart &&
-    typeof window.Cart.getItems === "function"
-  ) {
-    try {
-      const cartItems = window.Cart.getItems();
-
-      if (Array.isArray(cartItems)) {
-        possibleCarts.push(cartItems);
-      }
-    } catch (error) {
-      console.warn("Could not get cart from window.Cart", error);
-    }
-  }
-
-
-  // --------------------------------------------
-  // Try getCart helper
-  // --------------------------------------------
-  if (typeof getCart === "function") {
-    try {
-      const cartItems = getCart();
-
-      if (Array.isArray(cartItems)) {
-        possibleCarts.push(cartItems);
-      }
-    } catch (error) {
-      console.warn("Could not get cart from getCart()", error);
-    }
-  }
-
-
-  // --------------------------------------------
-  // Try common localStorage cart keys
-  // --------------------------------------------
-  const cartKeys = [
-    "coastalGhostCart",
-    "cart",
-    "coastal-ghost-cart",
-    "coastalGhostOrder",
-    "order"
-  ];
-
-  cartKeys.forEach((key) => {
-    try {
-      const storedCart =
-        JSON.parse(localStorage.getItem(key));
-
-      if (Array.isArray(storedCart)) {
-        possibleCarts.push(storedCart);
-      }
-    } catch (error) {
-      // Ignore invalid localStorage data
-    }
-  });
-
-
-  // --------------------------------------------
-  // Return the first cart that actually has items
-  // --------------------------------------------
-  const populatedCart =
-    possibleCarts.find(
-      (cart) =>
-        Array.isArray(cart) &&
-        cart.length > 0
-    );
-
-  return populatedCart || [];
-}
-
-
-// ============================================
-// CALCULATE ORDER TOTAL
-// ============================================
-
-function getCheckoutTotal(cart) {
-  return cart.reduce((total, item) => {
-    const quantity =
-      Number(item.quantity || 1);
-
-    const price =
-      Number(
-        item.price ||
-        item.unitPrice ||
-        item.basePrice ||
-        0
-      );
-
-    return total + (price * quantity);
-  }, 0);
-}
-
-
-// ============================================
-// OPEN ORDER REVIEW
-// ============================================
-
-function openOrderReview(cart) {
-  const existingModal =
-    document.getElementById("orderReviewModal");
-
-  if (existingModal) {
-    existingModal.remove();
-  }
-
-  const total =
-    getCheckoutTotal(cart);
-
-  const modal =
-    document.createElement("div");
-
-  modal.id = "orderReviewModal";
-
-  modal.className =
-    "modal-overlay checkout-modal";
-
-  modal.innerHTML = `
-    <div class="modal checkout-review-modal">
-
-      <button
-        class="modal-close"
-        id="closeOrderReview"
-        aria-label="Close"
-      >
-        &times;
-      </button>
-
-      <div class="checkout-review">
-
-        <div class="checkout-review-header">
-
-          <span class="eyebrow">
-            Coastal Ghost Baseball
-          </span>
-
-          <h2>Review Your Order</h2>
-
-          <p>
-            Check your selections before checking out.
-          </p>
-
-        </div>
-
-
-        <div class="checkout-order-items">
-
-          ${cart
-            .map(renderCheckoutItem)
-            .join("")}
-
-        </div>
-
-
-        <div class="checkout-summary">
-
-          <div class="checkout-total-row">
-
-            <span>Total Items</span>
-
-            <strong>
-              ${cart.reduce(
-                (total, item) =>
-                  total +
-                  Number(item.quantity || 1),
-                0
-              )}
-            </strong>
-
+      return `
+        <article class="cart-item">
+          <div class="cart-item-image">
+            ${
+              item.image
+                ? `<img src="${item.image}" alt="${item.name || 'Product'}">`
+                : ''
+            }
           </div>
 
+          <div class="cart-item-details">
+            <strong>${item.name || 'Product'}</strong>
 
-          <div
-            class="
-              checkout-total-row
-              checkout-grand-total
-            "
-          >
+            ${
+              details.length
+                ? `<div class="cart-item-meta">${details.join(' · ')}</div>`
+                : ''
+            }
 
-            <span>Order Total</span>
+            <div class="cart-item-price">
+              ${money(item.unitPrice)} each
+            </div>
 
-            <strong>
-              $${total.toFixed(2)}
-            </strong>
+            <div class="cart-item-controls">
 
-          </div>
+              <div class="quantity-control">
+                <button
+                  type="button"
+                  class="cart-qty-btn"
+                  data-action="decrease"
+                  data-index="${index}"
+                  aria-label="Decrease quantity"
+                >
+                  −
+                </button>
 
-        </div>
+                <span>${item.qty}</span>
 
+                <button
+                  type="button"
+                  class="cart-qty-btn"
+                  data-action="increase"
+                  data-index="${index}"
+                  aria-label="Increase quantity"
+                >
+                  +
+                </button>
+              </div>
 
-        <div class="checkout-actions">
-
-          <button
-            class="btn btn-secondary"
-            id="backToCartBtn"
-            type="button"
-          >
-            Back to Order
-          </button>
-
-
-          <button
-            class="btn btn-primary"
-            id="copyOrderBtn"
-            type="button"
-          >
-            Check Out
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-  `;
-
-  document.body.appendChild(modal);
-
-
-  // ============================================
-  // CLOSE BUTTON
-  // ============================================
-
-  document
-    .getElementById("closeOrderReview")
-    .addEventListener(
-      "click",
-      closeOrderReview
-    );
-
-
-  // ============================================
-  // CLICK OUTSIDE MODAL
-  // ============================================
-
-  modal.addEventListener(
-    "click",
-    (event) => {
-      if (event.target === modal) {
-        closeOrderReview();
-      }
-    }
-  );
-
-
-  // ============================================
-  // BACK TO ORDER
-  // ============================================
-
-  document
-    .getElementById("backToCartBtn")
-    .addEventListener("click", () => {
-
-      closeOrderReview();
-
-      const cartDrawer =
-        document.getElementById(
-          "cartDrawer"
-        );
-
-      const drawerBackdrop =
-        document.getElementById(
-          "drawerBackdrop"
-        );
-
-      if (cartDrawer) {
-        cartDrawer.classList.add(
-          "open"
-        );
-      }
-
-      if (drawerBackdrop) {
-        drawerBackdrop.classList.add(
-          "active"
-        );
-      }
-
-    });
-
-
-  // ============================================
-  // CHECK OUT
-  // ============================================
-
-  document
-    .getElementById("copyOrderBtn")
-    .addEventListener("click", () => {
-
-      copyOrderDetails(cart);
-
-    });
-
-}
-
-
-// ============================================
-// RENDER ORDER ITEM
-// ============================================
-
-function renderCheckoutItem(item) {
-
-  const quantity =
-    Number(item.quantity || 1);
-
-  const price =
-    Number(
-      item.price ||
-      item.unitPrice ||
-      item.basePrice ||
-      0
-    );
-
-  const lineTotal =
-    price * quantity;
-
-  const image =
-    item.image ||
-    item.imagePath ||
-    "";
-
-  const productName =
-    item.productName ||
-    item.name ||
-    item.product ||
-    "Coastal Ghost Item";
-
-
-  const details = [
-
-    item.design,
-
-    item.itemType ||
-    item.item,
-
-    item.fit,
-
-    item.brand,
-
-    item.color,
-
-    item.size,
-
-    item.option
-
-  ]
-    .filter(Boolean)
-    .join(" · ");
-
-
-  return `
-
-    <div class="checkout-item">
-
-      ${
-        image
-          ? `
-            <div class="checkout-item-image">
-
-              <img
-                src="${image}"
-                alt="${productName}"
-              />
+              <button
+                type="button"
+                class="cart-remove"
+                data-action="remove"
+                data-index="${index}"
+              >
+                Remove
+              </button>
 
             </div>
-          `
-          : ""
-      }
 
+            <div class="cart-line-total">
+              ${money(Number(item.unitPrice) * Number(item.qty))}
+            </div>
 
-      <div class="checkout-item-details">
+          </div>
+        </article>
+      `;
+    }).join('');
 
-        <h3>
-          ${productName}
-        </h3>
+    cartItems.querySelectorAll('[data-action]').forEach(button => {
+      button.addEventListener('click', () => {
+        const index = Number(button.dataset.index);
+        const action = button.dataset.action;
 
-
-        ${
-          details
-            ? `
-              <p>
-                ${details}
-              </p>
-            `
-            : ""
+        if (action === 'increase') {
+          cart[index].qty += 1;
         }
 
+        if (action === 'decrease') {
+          cart[index].qty -= 1;
 
-        <div
-          class="checkout-item-bottom"
-        >
+          if (cart[index].qty <= 0) {
+            cart.splice(index, 1);
+          }
+        }
 
-          <span>
-            Qty: ${quantity}
-          </span>
+        if (action === 'remove') {
+          cart.splice(index, 1);
+        }
 
+        saveCart();
+        renderCart();
+      });
+    });
+  }
 
-          <strong>
-            $${lineTotal.toFixed(2)}
-          </strong>
+  function addToCart(item) {
+    if (!item) return;
 
-        </div>
+    const quantity = Math.max(
+      1,
+      Number(item.qty || 1)
+    );
 
-      </div>
+    const existingItem = cart.find(
+      cartItem => cartItem.id === item.id
+    );
 
-    </div>
+    if (existingItem) {
+      existingItem.qty += quantity;
+    } else {
+      cart.push({
+        ...item,
+        qty: quantity,
+        unitPrice: Number(item.unitPrice || 0)
+      });
+    }
 
-  `;
-}
+    saveCart();
+    renderCart();
+    openCart();
 
+    showToast(`${item.name || 'Item'} added to Family Order`);
+  }
 
-// ============================================
-// CHECK OUT / COPY ORDER DETAILS
-// ============================================
+  function openCart() {
+    const drawer = $('cartDrawer');
+    const backdrop = $('drawerBackdrop');
 
-function copyOrderDetails(cart) {
+    if (drawer) {
+      drawer.classList.add('open');
+    }
 
-  const total =
-    getCheckoutTotal(cart);
+    if (backdrop) {
+      backdrop.classList.add('open');
+    }
+  }
 
+  function closeCart() {
+    const drawer = $('cartDrawer');
+    const backdrop = $('drawerBackdrop');
 
-  let orderText =
-    "COASTAL GHOST BASEBALL – ORDER\n";
+    if (drawer) {
+      drawer.classList.remove('open');
+    }
 
+    if (backdrop) {
+      backdrop.classList.remove('open');
+    }
+  }
 
-  orderText +=
-    "====================================\n\n";
+  function showToast(message) {
+    const toast = $('toast');
 
+    if (!toast) return;
 
-  cart.forEach(
-    (item, index) => {
+    toast.textContent = message;
+    toast.classList.add('show');
 
-      const quantity =
-        Number(item.quantity || 1);
+    clearTimeout(window.coastalGhostToastTimer);
 
+    window.coastalGhostToastTimer = setTimeout(() => {
+      toast.classList.remove('show');
+    }, 2500);
+  }
 
-      const price =
-        Number(
-          item.price ||
-          item.unitPrice ||
-          item.basePrice ||
-          0
-        );
+  /*
+    This is the important connection.
 
+    products.js dispatches:
 
-      const lineTotal =
-        quantity * price;
+    coastalghost:add-to-cart
 
+    cart.js listens for that exact event.
+  */
 
-      const productName =
-        item.productName ||
-        item.name ||
-        item.product ||
-        "Coastal Ghost Item";
-
-
-      const details = [
-
-        item.design,
-
-        item.itemType ||
-        item.item,
-
-        item.fit,
-
-        item.brand,
-
-        item.color,
-
-        item.size,
-
-        item.option
-
-      ]
-        .filter(Boolean)
-        .join(" | ");
-
-
-      orderText +=
-        `${index + 1}. ${productName}\n`;
-
-
-      if (details) {
-
-        orderText +=
-          `   ${details}\n`;
-
-      }
-
-
-      orderText +=
-        `   Quantity: ${quantity} × $${price.toFixed(2)} = $${lineTotal.toFixed(2)}\n\n`;
-
+  window.addEventListener(
+    'coastalghost:add-to-cart',
+    (event) => {
+      addToCart(event.detail);
     }
   );
 
+  /*
+    Allow checkout.js or other scripts
+    to access the current cart.
+  */
 
-  orderText +=
-    "====================================\n";
+  window.CoastalGhostCart = {
+    getItems: () => [...cart],
 
+    getTotal: () => getCartTotal(),
 
-  orderText +=
-    `ORDER TOTAL: $${total.toFixed(2)}\n`;
+    getCount: () => getCartCount(),
 
+    clear: () => {
+      cart = [];
+      saveCart();
+      renderCart();
+    },
 
-  navigator.clipboard
-    .writeText(orderText)
+    add: addToCart,
 
-    .then(() => {
+    open: openCart,
 
-      showCheckoutToast(
-        "Order details copied to your clipboard!"
-      );
+    close: closeCart
+  };
 
+  document.addEventListener('DOMContentLoaded', () => {
+    loadCart();
+    renderCart();
 
-      const checkoutBtn =
-        document.getElementById(
-          "copyOrderBtn"
-        );
+    $('openCartBtn')?.addEventListener('click', openCart);
 
+    $('closeCartBtn')?.addEventListener('click', closeCart);
 
-      if (checkoutBtn) {
+    $('drawerBackdrop')?.addEventListener('click', closeCart);
+  });
 
-        const originalText =
-          checkoutBtn.textContent;
-
-
-        checkoutBtn.textContent =
-          "Order Copied!";
-
-
-        setTimeout(() => {
-
-          checkoutBtn.textContent =
-            originalText;
-
-        }, 2000);
-
-      }
-
-    })
-
-    .catch(() => {
-
-      showCheckoutToast(
-        "Unable to copy automatically."
-      );
-
-    });
-
-}
-
-
-// ============================================
-// CLOSE REVIEW
-// ============================================
-
-function closeOrderReview() {
-
-  const modal =
-    document.getElementById(
-      "orderReviewModal"
-    );
-
-
-  if (modal) {
-    modal.remove();
-  }
-
-}
-
-
-// ============================================
-// TOAST
-// ============================================
-
-function showCheckoutToast(message) {
-
-  const toast =
-    document.getElementById("toast");
-
-
-  if (!toast) {
-
-    alert(message);
-
-    return;
-
-  }
-
-
-  toast.textContent =
-    message;
-
-
-  toast.classList.add("show");
-
-
-  setTimeout(() => {
-
-    toast.classList.remove("show");
-
-  }, 3000);
-
-}
+})();
