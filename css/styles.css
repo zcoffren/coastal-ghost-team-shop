@@ -1262,3 +1262,68 @@ button { font-family: inherit; cursor: pointer; }
 .copy-order-number-btn:hover {
   background: rgba(255, 255, 255, 0.08);
 }
+
+/* =========================================
+   PRODUCT QUANTITY SELECTOR
+========================================= */
+
+.quantity-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quantity-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--sheet-white);
+}
+
+.product-quantity-control {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.quantity-btn {
+  width: 42px;
+  height: 42px;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--sheet-white);
+
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.quantity-btn:hover {
+  background: var(--ghastly-gold);
+  color: #14091f;
+}
+
+.quantity-value {
+  min-width: 52px;
+
+  text-align: center;
+
+  font-weight: 700;
+  font-size: 1rem;
+
+  color: var(--sheet-white);
+}
