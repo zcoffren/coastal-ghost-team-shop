@@ -2668,12 +2668,7 @@ function openDTF(index) {
 
             1,
 
-            Number(
-              $('dtfQty').value ||
-              1
-            )
-
-          );
+            selectedDtfQuantity
 
 
         const item = {
