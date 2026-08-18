@@ -125,6 +125,11 @@ function openCustomerInformation(cart) {
 
   modal.id = "orderReviewModal";
   modal.className = "modal-overlay checkout-modal";
+modal.style.display = "flex";
+modal.style.position = "fixed";
+modal.style.inset = "0";
+modal.style.zIndex = "99999";
+modal.style.background = "rgba(0, 0, 0, 0.75)";
 
   modal.innerHTML = `
     <div class="modal checkout-review-modal">
