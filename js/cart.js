@@ -67,7 +67,7 @@
     if (!cart.length) {
       cartItems.innerHTML = `
         <div class="empty-cart">
-          <p>Your Order is empty.</p>
+          <p>Your Cart is empty.</p>
           <p>Choose an item to get started.</p>
         </div>
       `;
