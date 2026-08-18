@@ -825,6 +825,41 @@ function openOrderConfirmation(order) {
 
 
   // VENMO
+  document
+  .getElementById("copyVenmoOrderBtn")
+  ?.addEventListener("click", () => {
+
+    navigator.clipboard
+      .writeText(order.orderNumber)
+      .then(() => {
+
+        const button =
+          document.getElementById(
+            "copyVenmoOrderBtn"
+          );
+
+        if (!button) return;
+
+        const originalText =
+          button.textContent;
+
+        button.textContent =
+          "Copied!";
+
+        setTimeout(() => {
+          button.textContent =
+            originalText;
+        }, 2000);
+
+      })
+      .catch(() => {
+        showCheckoutToast(
+          "Unable to copy automatically."
+        );
+      });
+
+  });
+  
  document
   .getElementById("venmoPaymentBtn")
   ?.addEventListener("click", () => {
