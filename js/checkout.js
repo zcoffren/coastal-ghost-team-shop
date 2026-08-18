@@ -809,18 +809,16 @@ function openOrderConfirmation(order) {
 
 
   // VENMO
-  document
-    .getElementById("venmoPaymentBtn")
-    ?.addEventListener(
-      "click",
-      () => {
+ document
+  .getElementById("venmoPaymentBtn")
+  ?.addEventListener("click", () => {
 
-        showCheckoutToast(
-          "Venmo payment setup is coming next."
-        );
-
-      }
+    window.open(
+      "https://venmo.com/u/Zachary-Coffren",
+      "_blank"
     );
+
+  });
 
 
   // DONE
