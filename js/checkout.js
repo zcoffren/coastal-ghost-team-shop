@@ -713,21 +713,37 @@ function openOrderConfirmation(order) {
 
         <div class="venmo-payment-section">
 
-          <h3>Pay with Venmo</h3>
+  <h3>Pay with Venmo</h3>
 
-          <p>
-            Include Order Number in Venmo comments.
-          </p>
+  <p class="venmo-order-instructions">
+    Include this Order Number in your Venmo comments:
+  </p>
 
-          <button
-            class="btn btn-primary"
-            id="venmoPaymentBtn"
-            type="button"
-          >
-            Pay $${order.total.toFixed(2)} with Venmo
-          </button>
+  <div class="venmo-order-number">
 
-        </div>
+    <strong id="venmoOrderNumber">
+      ${order.orderNumber}
+    </strong>
+
+    <button
+      type="button"
+      class="copy-order-number-btn"
+      id="copyVenmoOrderBtn"
+    >
+      Copy
+    </button>
+
+  </div>
+
+  <button
+    class="btn btn-primary"
+    id="venmoPaymentBtn"
+    type="button"
+  >
+    Pay $${order.total.toFixed(2)} with Venmo
+  </button>
+
+</div>
 
         <div class="checkout-actions">
 
