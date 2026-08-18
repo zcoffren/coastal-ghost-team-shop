@@ -365,10 +365,38 @@ function openOrderReview(cart, customer) {
   const modal = document.createElement("div");
 
   modal.id = "orderReviewModal";
-  modal.className = "modal-overlay checkout-modal";
+
+  modal.className =
+    "modal-overlay checkout-modal";
+
+  // Match the working Customer Information modal
+  modal.style.display = "flex";
+  modal.style.position = "fixed";
+  modal.style.inset = "0";
+  modal.style.zIndex = "99999";
+  modal.style.background =
+    "rgba(0, 0, 0, 0.75)";
+  modal.style.alignItems = "center";
+  modal.style.justifyContent = "center";
 
   modal.innerHTML = `
-    <div class="modal checkout-review-modal">
+    <div
+      class="modal checkout-review-modal"
+      style="
+        display: block;
+        position: relative;
+        z-index: 100000;
+        background: #21152e;
+        color: #f5f1e8;
+        max-width: 650px;
+        width: calc(100% - 32px);
+        max-height: 90vh;
+        overflow-y: auto;
+        margin: auto;
+        padding: 32px;
+        border-radius: 20px;
+      "
+    >
 
       <button
         class="modal-close"
@@ -382,6 +410,7 @@ function openOrderReview(cart, customer) {
       <div class="checkout-review">
 
         <div class="checkout-review-header">
+
           <span class="eyebrow">
             Coastal Ghost Baseball
           </span>
@@ -391,6 +420,7 @@ function openOrderReview(cart, customer) {
           <p>
             Check your selections before submitting your order.
           </p>
+
         </div>
 
         <div class="checkout-customer-summary">
@@ -398,14 +428,17 @@ function openOrderReview(cart, customer) {
           <h3>Customer Information</h3>
 
           <p>
+
             <strong>
               ${customer.firstName} ${customer.lastName}
             </strong>
 
             <br>
+
             ${customer.email}
 
             <br>
+
             ${customer.phone}
 
             ${
@@ -419,6 +452,7 @@ function openOrderReview(cart, customer) {
                 ? `<br><br>Notes: ${customer.notes}`
                 : ""
             }
+
           </p>
 
         </div>
@@ -430,19 +464,28 @@ function openOrderReview(cart, customer) {
         <div class="checkout-summary">
 
           <div class="checkout-total-row">
+
             <span>Total Items</span>
 
             <strong>
               ${totalItems}
             </strong>
+
           </div>
 
-          <div class="checkout-total-row checkout-grand-total">
+          <div
+            class="
+              checkout-total-row
+              checkout-grand-total
+            "
+          >
+
             <span>Order Total</span>
 
             <strong>
               $${total.toFixed(2)}
             </strong>
+
           </div>
 
         </div>
@@ -474,21 +517,33 @@ function openOrderReview(cart, customer) {
 
   document.body.appendChild(modal);
 
+
   document
     .getElementById("closeOrderReview")
-    ?.addEventListener("click", closeOrderReview);
+    ?.addEventListener(
+      "click",
+      closeOrderReview
+    );
+
 
   document
     .getElementById("backToCustomerInfoBtn")
-    ?.addEventListener("click", () => {
-      openCustomerInformation(cart);
-    });
+    ?.addEventListener(
+      "click",
+      () => {
+        openCustomerInformation(cart);
+      }
+    );
+
 
   document
     .getElementById("submitOrderBtn")
-    ?.addEventListener("click", () => {
-      submitOrder(cart, customer);
-    });
+    ?.addEventListener(
+      "click",
+      () => {
+        submitOrder(cart, customer);
+      }
+    );
 }
 
 
