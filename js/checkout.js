@@ -117,6 +117,8 @@ function getCheckoutTotal(cart) {
 // ============================================
 
 function openCustomerInformation(cart) {
+  console.log("OPENING CUSTOMER INFORMATION", cart);
+
   closeOrderReview();
 
   const modal = document.createElement("div");
