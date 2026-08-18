@@ -67,7 +67,7 @@
     if (!cart.length) {
       cartItems.innerHTML = `
         <div class="empty-cart">
-          <p>Your Family Order is empty.</p>
+          <p>Your Order is empty.</p>
           <p>Choose an item to get started.</p>
         </div>
       `;
@@ -205,7 +205,7 @@
     renderCart();
     openCart();
 
-    showToast(`${item.name || 'Item'} added to Family Order`);
+    showToast(`${item.name || 'Item'} added to Order`);
   }
 
   function openCart() {
