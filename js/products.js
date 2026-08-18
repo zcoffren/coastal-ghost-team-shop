@@ -1653,7 +1653,7 @@ function openProduct(id) {
       type="button"
     >
 
-      Add to Family Order
+      Add to Cart
 
     </button>
 
