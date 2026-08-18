@@ -3,22 +3,67 @@
 // checkout.js
 // ============================================
 
-document.addEventListener("DOMContentLoaded", () => {
+
+// ============================================
+// INITIALIZE CHECKOUT
+// ============================================
+
+function initializeCheckout() {
   const checkoutBtn = document.getElementById("checkoutBtn");
 
-  if (!checkoutBtn) return;
+  if (!checkoutBtn) {
+    console.warn("Checkout button not found.");
+    return;
+  }
 
-  checkoutBtn.addEventListener("click", () => {
-    const cart = getCartForCheckout();
+  // Prevent duplicate checkout handlers
+  checkoutBtn.onclick = handleCheckout;
+}
 
-    if (!cart.length) {
-      showCheckoutToast("Your Cart is Empty");
-      return;
-    }
 
+// ============================================
+// HANDLE CHECKOUT
+// ============================================
+
+function handleCheckout(event) {
+  if (event) {
+    event.preventDefault();
+  }
+
+  const cart = getCartForCheckout();
+
+  if (!cart || !cart.length) {
+    showCheckoutToast("Your Cart is Empty");
+    return;
+  }
+
+  // Close cart drawer
+  if (
+    window.CoastalGhostCart &&
+    typeof window.CoastalGhostCart.close === "function"
+  ) {
+    window.CoastalGhostCart.close();
+  }
+
+  // Small delay allows the drawer to close cleanly
+  setTimeout(() => {
     openCustomerInformation(cart);
-  });
-});
+  }, 150);
+}
+
+
+// ============================================
+// STARTUP
+// ============================================
+
+if (document.readyState === "loading") {
+  document.addEventListener(
+    "DOMContentLoaded",
+    initializeCheckout
+  );
+} else {
+  initializeCheckout();
+}
 
 
 // ============================================
@@ -26,8 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
 // ============================================
 
 function getCartForCheckout() {
-
-  // Primary connection to cart.js
   if (
     window.CoastalGhostCart &&
     typeof window.CoastalGhostCart.getItems === "function"
@@ -35,17 +78,12 @@ function getCartForCheckout() {
     return window.CoastalGhostCart.getItems();
   }
 
-  // Backup: direct localStorage access
   try {
     return JSON.parse(
       localStorage.getItem("coastalGhostFamilyOrder")
     ) || [];
   } catch (error) {
-    console.error(
-      "Unable to retrieve cart:",
-      error
-    );
-
+    console.error("Unable to retrieve cart:", error);
     return [];
   }
 }
@@ -56,31 +94,21 @@ function getCartForCheckout() {
 // ============================================
 
 function getCheckoutTotal(cart) {
+  return cart.reduce((total, item) => {
+    const quantity = Number(
+      item.qty ||
+      item.quantity ||
+      1
+    );
 
-  return cart.reduce(
-    (total, item) => {
+    const price = Number(
+      item.unitPrice ||
+      item.price ||
+      0
+    );
 
-      const quantity =
-        Number(
-          item.qty ||
-          item.quantity ||
-          1
-        );
-
-      const price =
-        Number(
-          item.unitPrice ||
-          item.price ||
-          0
-        );
-
-      return total + (
-        price * quantity
-      );
-
-    },
-    0
-  );
+    return total + (price * quantity);
+  }, 0);
 }
 
 
@@ -89,32 +117,41 @@ function getCheckoutTotal(cart) {
 // ============================================
 
 function openCustomerInformation(cart) {
+  console.log("OPENING CUSTOMER INFORMATION", cart);
 
-  const existingModal =
-    document.getElementById(
-      "orderReviewModal"
-    );
+  closeOrderReview();
 
-  if (existingModal) {
-    existingModal.remove();
-  }
+  const modal = document.createElement("div");
 
-  const modal =
-    document.createElement("div");
-
-  modal.id =
-    "orderReviewModal";
-
-  modal.className =
-    "modal-overlay checkout-modal";
+  modal.id = "orderReviewModal";
+  modal.className = "modal-overlay checkout-modal";
+modal.style.display = "flex";
+modal.style.position = "fixed";
+modal.style.inset = "0";
+modal.style.zIndex = "99999";
+modal.style.background = "rgba(0, 0, 0, 0.75)";
 
   modal.innerHTML = `
-    <div class="modal checkout-review-modal">
+    <div class="modal checkout-review-modal" style="
+  display: block;
+  position: relative;
+  z-index: 100000;
+  background: #21152e;
+  color: #f5f1e8;
+  max-width: 650px;
+  width: calc(100% - 32px);
+  max-height: 90vh;
+  overflow-y: auto;
+  margin: auto;
+  padding: 32px;
+  border-radius: 20px;
+">
 
       <button
         class="modal-close"
         id="closeOrderReview"
         aria-label="Close"
+        type="button"
       >
         &times;
       </button>
@@ -122,7 +159,6 @@ function openCustomerInformation(cart) {
       <div class="checkout-review">
 
         <div class="checkout-review-header">
-
           <span class="eyebrow">
             Coastal Ghost Baseball
           </span>
@@ -132,7 +168,6 @@ function openCustomerInformation(cart) {
           <p>
             Enter your information to complete your order.
           </p>
-
         </div>
 
         <form
@@ -143,7 +178,6 @@ function openCustomerInformation(cart) {
           <div class="checkout-form-row">
 
             <div class="checkout-form-group">
-
               <label for="customerFirstName">
                 First Name
               </label>
@@ -153,11 +187,9 @@ function openCustomerInformation(cart) {
                 id="customerFirstName"
                 required
               >
-
             </div>
 
             <div class="checkout-form-group">
-
               <label for="customerLastName">
                 Last Name
               </label>
@@ -167,14 +199,11 @@ function openCustomerInformation(cart) {
                 id="customerLastName"
                 required
               >
-
             </div>
 
           </div>
 
-
           <div class="checkout-form-group">
-
             <label for="customerEmail">
               Email
             </label>
@@ -184,12 +213,9 @@ function openCustomerInformation(cart) {
               id="customerEmail"
               required
             >
-
           </div>
 
-
           <div class="checkout-form-group">
-
             <label for="customerPhone">
               Phone Number
             </label>
@@ -199,12 +225,9 @@ function openCustomerInformation(cart) {
               id="customerPhone"
               required
             >
-
           </div>
 
-
           <div class="checkout-form-group">
-
             <label for="playerName">
               Player Name
               <span>(Optional)</span>
@@ -214,12 +237,9 @@ function openCustomerInformation(cart) {
               type="text"
               id="playerName"
             >
-
           </div>
 
-
           <div class="checkout-form-group">
-
             <label for="orderNotes">
               Order Notes
               <span>(Optional)</span>
@@ -230,9 +250,7 @@ function openCustomerInformation(cart) {
               rows="4"
               placeholder="Anything we should know about your order?"
             ></textarea>
-
           </div>
-
 
           <div class="checkout-actions">
 
@@ -244,15 +262,16 @@ function openCustomerInformation(cart) {
               Back to Cart
             </button>
 
-
             <button
               class="btn btn-primary"
-              id="reviewOrderBtn"
-              type="button"
+              type="submit"
             >
               Review Order
             </button>
 
+document
+  .getElementById("reviewOrderBtn")
+  ?.addEventListener("click", () => {
           </div>
 
         </form>
@@ -264,127 +283,68 @@ function openCustomerInformation(cart) {
 
   document.body.appendChild(modal);
 
-
-  // Close
   document
     .getElementById("closeOrderReview")
-    ?.addEventListener(
-      "click",
-      closeOrderReview
-    );
+    ?.addEventListener("click", closeOrderReview);
 
-
-  // Click outside
-  modal.addEventListener(
-    "click",
-    (event) => {
-
-      if (event.target === modal) {
-        closeOrderReview();
-      }
-
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeOrderReview();
     }
-  );
+  });
 
-
-  // Back to cart
   document
     .getElementById("backToCartBtn")
-    ?.addEventListener(
-      "click",
-      () => {
+    ?.addEventListener("click", () => {
+      closeOrderReview();
 
-        closeOrderReview();
-
-        if (
-          window.CoastalGhostCart &&
-          typeof window.CoastalGhostCart.open === "function"
-        ) {
-          window.CoastalGhostCart.open();
-        }
-
+      if (
+        window.CoastalGhostCart &&
+        typeof window.CoastalGhostCart.open === "function"
+      ) {
+        window.CoastalGhostCart.open();
       }
-    );
+    });
 
-
-  // Review Order
   document
-    .getElementById("reviewOrderBtn")
-    ?.addEventListener(
-      "click",
-      () => {
+    .getElementById("customerInfoForm")
+    ?.addEventListener("submit", (event) => {
+      event.preventDefault();
 
-        const form =
-          document.getElementById(
-            "customerInfoForm"
-          );
+      const customer = {
+        firstName: document
+          .getElementById("customerFirstName")
+          .value
+          .trim(),
 
-        if (!form) return;
+        lastName: document
+          .getElementById("customerLastName")
+          .value
+          .trim(),
 
-        if (!form.reportValidity()) {
-          return;
-        }
+        email: document
+          .getElementById("customerEmail")
+          .value
+          .trim(),
 
-        const customer = {
+        phone: document
+          .getElementById("customerPhone")
+          .value
+          .trim(),
 
-          firstName:
-            document
-              .getElementById(
-                "customerFirstName"
-              )
-              .value
-              .trim(),
+        playerName: document
+          .getElementById("playerName")
+          .value
+          .trim(),
 
-          lastName:
-            document
-              .getElementById(
-                "customerLastName"
-              )
-              .value
-              .trim(),
+        notes: document
+          .getElementById("orderNotes")
+          .value
+          .trim()
+      };
 
-          email:
-            document
-              .getElementById(
-                "customerEmail"
-              )
-              .value
-              .trim(),
-
-          phone:
-            document
-              .getElementById(
-                "customerPhone"
-              )
-              .value
-              .trim(),
-
-          playerName:
-            document
-              .getElementById(
-                "playerName"
-              )
-              .value
-              .trim(),
-
-          notes:
-            document
-              .getElementById(
-                "orderNotes"
-              )
-              .value
-              .trim()
-
-        };
-
-        openOrderReview(
-          cart,
-          customer
-        );
-
-      }
-    );
-
+      openOrderReview(cart, customer);
+    });
 }
 
 
@@ -392,63 +352,45 @@ function openCustomerInformation(cart) {
 // OPEN ORDER REVIEW
 // ============================================
 
-function openOrderReview(
-  cart,
-  customer
-) {
+function openOrderReview(cart, customer) {
+  closeOrderReview();
 
-  const existingModal =
-    document.getElementById(
-      "orderReviewModal"
+  const total = getCheckoutTotal(cart);
+
+  const totalItems = cart.reduce((total, item) => {
+    return total + Number(
+      item.qty ||
+      item.quantity ||
+      1
     );
+  }, 0);
 
-  if (existingModal) {
-    existingModal.remove();
-  }
+  const modal = document.createElement("div");
 
-  const total =
-    getCheckoutTotal(cart);
-
-  const totalItems =
-    cart.reduce(
-      (total, item) => {
-
-        return total +
-          Number(
-            item.qty ||
-            item.quantity ||
-            1
-          );
-
-      },
-      0
-    );
-
-  const modal =
-    document.createElement("div");
-
-  modal.id =
-    "orderReviewModal";
-
-  modal.className =
-    "modal-overlay checkout-modal";
+  modal.id = "orderReviewModal";
+  modal.className = "modal-overlay checkout-modal";
 
   modal.innerHTML = `
     <div class="modal checkout-review-modal">
+
+modal.style.display = "flex";
+modal.style.position = "fixed";
+modal.style.inset = "0";
+modal.style.zIndex = "99999";
+modal.style.background = "rgba(0, 0, 0, 0.75)";
 
       <button
         class="modal-close"
         id="closeOrderReview"
         aria-label="Close"
+        type="button"
       >
         &times;
       </button>
 
-
       <div class="checkout-review">
 
         <div class="checkout-review-header">
-
           <span class="eyebrow">
             Coastal Ghost Baseball
           </span>
@@ -458,89 +400,61 @@ function openOrderReview(
           <p>
             Check your selections before submitting your order.
           </p>
-
         </div>
-
 
         <div class="checkout-customer-summary">
 
-          <h3>
-            Customer Information
-          </h3>
+          <h3>Customer Information</h3>
 
           <p>
-
             <strong>
-              ${customer.firstName}
-              ${customer.lastName}
+              ${customer.firstName} ${customer.lastName}
             </strong>
 
             <br>
-
             ${customer.email}
 
             <br>
-
             ${customer.phone}
 
             ${
               customer.playerName
-                ? `
-                  <br>
-                  Player:
-                  ${customer.playerName}
-                `
+                ? `<br>Player: ${customer.playerName}`
                 : ""
             }
 
+            ${
+              customer.notes
+                ? `<br><br>Notes: ${customer.notes}`
+                : ""
+            }
           </p>
 
         </div>
 
-
         <div class="checkout-order-items">
-
-          ${cart
-            .map(renderCheckoutItem)
-            .join("")}
-
+          ${cart.map(renderCheckoutItem).join("")}
         </div>
-
 
         <div class="checkout-summary">
 
           <div class="checkout-total-row">
-
-            <span>
-              Total Items
-            </span>
+            <span>Total Items</span>
 
             <strong>
               ${totalItems}
             </strong>
-
           </div>
 
-
-          <div
-            class="
-              checkout-total-row
-              checkout-grand-total
-            "
-          >
-
-            <span>
-              Order Total
-            </span>
+          <div class="checkout-total-row checkout-grand-total">
+            <span>Order Total</span>
 
             <strong>
               $${total.toFixed(2)}
             </strong>
-
           </div>
 
         </div>
-
 
         <div class="checkout-actions">
 
@@ -551,7 +465,6 @@ function openOrderReview(
           >
             Back
           </button>
-
 
           <button
             class="btn btn-primary"
@@ -570,41 +483,21 @@ function openOrderReview(
 
   document.body.appendChild(modal);
 
-
   document
     .getElementById("closeOrderReview")
-    ?.addEventListener(
-      "click",
-      closeOrderReview
-    );
-
+    ?.addEventListener("click", closeOrderReview);
 
   document
     .getElementById("backToCustomerInfoBtn")
-    ?.addEventListener(
-      "click",
-      () => {
-
-        openCustomerInformation(cart);
-
-      }
-    );
-
+    ?.addEventListener("click", () => {
+      openCustomerInformation(cart);
+    });
 
   document
     .getElementById("submitOrderBtn")
-    ?.addEventListener(
-      "click",
-      () => {
-
-        submitOrder(
-          cart,
-          customer
-        );
-
-      }
-    );
-
+    ?.addEventListener("click", () => {
+      submitOrder(cart, customer);
+    });
 }
 
 
@@ -613,28 +506,21 @@ function openOrderReview(
 // ============================================
 
 function generateOrderNumber() {
+  const now = new Date();
 
-  const now =
-    new Date();
+  const year = now.getFullYear();
 
-  const year =
-    now.getFullYear();
+  const month = String(
+    now.getMonth() + 1
+  ).padStart(2, "0");
 
-  const month =
-    String(
-      now.getMonth() + 1
-    ).padStart(2, "0");
+  const day = String(
+    now.getDate()
+  ).padStart(2, "0");
 
-  const day =
-    String(
-      now.getDate()
-    ).padStart(2, "0");
-
-  const random =
-    Math.floor(
-      1000 +
-      Math.random() * 9000
-    );
+  const random = Math.floor(
+    1000 + Math.random() * 9000
+  );
 
   return `CG-${year}${month}${day}-${random}`;
 }
@@ -644,73 +530,40 @@ function generateOrderNumber() {
 // SUBMIT ORDER
 // ============================================
 
-function submitOrder(
-  cart,
-  customer
-) {
+function submitOrder(cart, customer) {
+  const orderNumber = generateOrderNumber();
 
-  const orderNumber =
-    generateOrderNumber();
-
-  const total =
-    getCheckoutTotal(cart);
+  const total = getCheckoutTotal(cart);
 
   const order = {
-
     orderNumber,
-
-    orderDate:
-      new Date().toISOString(),
-
+    orderDate: new Date().toISOString(),
     customer,
-
     items: cart,
-
     total,
-
-    paymentStatus:
-      "Pending",
-
-    productionStatus:
-      "New"
-
+    paymentStatus: "Pending",
+    productionStatus: "New"
   };
 
-
-  // Temporary local browser storage.
-  // This will later be replaced by
-  // Google Sheets submission.
-
   try {
-
-    const existingOrders =
-      JSON.parse(
-        localStorage.getItem(
-          "coastalGhostOrders"
-        )
-      ) || [];
+    const existingOrders = JSON.parse(
+      localStorage.getItem("coastalGhostOrders")
+    ) || [];
 
     existingOrders.push(order);
 
     localStorage.setItem(
       "coastalGhostOrders",
-      JSON.stringify(
-        existingOrders
-      )
+      JSON.stringify(existingOrders)
     );
-
   } catch (error) {
-
     console.error(
       "Unable to save order:",
       error
     );
-
   }
 
-
   openOrderConfirmation(order);
-
 }
 
 
@@ -720,64 +573,68 @@ function submitOrder(
 
 function openOrderConfirmation(order) {
 
-  const existingModal =
-    document.getElementById(
-      "orderReviewModal"
-    );
+  // Remove the review modal
+  const reviewModal =
+    document.getElementById("orderReviewModal");
 
-  if (existingModal) {
-    existingModal.remove();
+  if (reviewModal) {
+    reviewModal.remove();
+  }
+
+  // Remove any existing confirmation modal
+  const existingConfirmation =
+    document.getElementById("orderConfirmationModal");
+
+  if (existingConfirmation) {
+    existingConfirmation.remove();
   }
 
   const modal =
     document.createElement("div");
 
-  modal.id =
-    "orderReviewModal";
+  // Give confirmation its OWN ID
+  modal.id = "orderConfirmationModal";
 
   modal.className =
     "modal-overlay checkout-modal";
 
+  // Force visibility for now
+  modal.style.display = "flex";
+  modal.style.position = "fixed";
+  modal.style.inset = "0";
+  modal.style.zIndex = "99999";
+  modal.style.background =
+    "rgba(0, 0, 0, 0.75)";
+  modal.style.alignItems = "center";
+  modal.style.justifyContent = "center";
 
   modal.innerHTML = `
     <div class="modal checkout-review-modal">
 
       <button
         class="modal-close"
-        id="closeOrderReview"
+        id="closeConfirmation"
         aria-label="Close"
+        type="button"
       >
         &times;
       </button>
 
+      <div class="checkout-review checkout-confirmation">
 
-      <div
-        class="
-          checkout-review
-          checkout-confirmation
-        "
-      >
+        <div class="checkout-review-header">
 
-        <div
-          class="checkout-review-header"
-        >
-
-          <div
-            class="order-confirmation-ghost"
-          >
+          <div class="order-confirmation-ghost">
             👻
           </div>
-
 
           <span class="eyebrow">
             Coastal Ghost Baseball
           </span>
 
-
           <h2>
             Order Received!
           </h2>
-
 
           <p>
             Your order has been submitted
@@ -786,10 +643,7 @@ function openOrderConfirmation(order) {
 
         </div>
 
-
-        <div
-          class="order-number-box"
-        >
+        <div class="order-number-box">
 
           <span>
             Order Number
@@ -801,17 +655,9 @@ function openOrderConfirmation(order) {
 
         </div>
 
+        <div class="checkout-summary">
 
-        <div
-          class="checkout-summary"
-        >
-
-          <div
-            class="
-              checkout-total-row
-              checkout-grand-total
-            "
-          >
+          <div class="checkout-total-row checkout-grand-total">
 
             <span>
               Amount Due
@@ -825,10 +671,7 @@ function openOrderConfirmation(order) {
 
         </div>
 
-
-        <div
-          class="venmo-payment-section"
-        >
+        <div class="venmo-payment-section">
 
           <h3>
             Pay with Venmo
@@ -837,7 +680,6 @@ function openOrderConfirmation(order) {
           <p>
             Include Order Number in Venmo comments.
           </p>
-
 
           <button
             class="btn btn-primary"
@@ -849,10 +691,7 @@ function openOrderConfirmation(order) {
 
         </div>
 
-
-        <div
-          class="checkout-actions"
-        >
+        <div class="checkout-actions">
 
           <button
             class="btn btn-secondary"
@@ -861,7 +700,6 @@ function openOrderConfirmation(order) {
           >
             Copy Order Number
           </button>
-
 
           <button
             class="btn btn-secondary"
@@ -878,88 +716,64 @@ function openOrderConfirmation(order) {
     </div>
   `;
 
-
   document.body.appendChild(modal);
 
 
+  // Close button
   document
-    .getElementById("closeOrderReview")
-    ?.addEventListener(
-      "click",
-      closeOrderReview
-    );
+    .getElementById("closeConfirmation")
+    ?.addEventListener("click", () => {
+      modal.remove();
+    });
 
 
-  document
-    .getElementById("copyConfirmationBtn")
-    ?.addEventListener(
-      "click",
-      () => {
-
-        navigator.clipboard
-          .writeText(
-            order.orderNumber
-          )
-          .then(() => {
-
-            const button =
-              document.getElementById(
-                "copyConfirmationBtn"
-              );
-
-            if (!button) return;
-
-            const originalText =
-              button.textContent;
-
-            button.textContent =
-              "Order Number Copied!";
-
-            setTimeout(() => {
-
-              button.textContent =
-                originalText;
-
-            }, 2000);
-
-          });
-
-      }
-    );
-
-
-  // Venmo will be connected next
-  document
-    .getElementById("venmoPaymentBtn")
-    ?.addEventListener(
-      "click",
-      () => {
-
-        showCheckoutToast(
-          "Venmo payment setup is coming next."
-        );
-
-      }
-    );
-
-
+  // Done button
   document
     .getElementById("finishOrderBtn")
-    ?.addEventListener(
-      "click",
-      () => {
+    ?.addEventListener("click", () => {
+      modal.remove();
+    });
 
-        closeOrderReview();
 
-        if (
-          window.CoastalGhostCart &&
-          typeof window.CoastalGhostCart.clear === "function"
-        ) {
-          window.CoastalGhostCart.clear();
-        }
+  // Copy order number
+  document
+    .getElementById("copyConfirmationBtn")
+    ?.addEventListener("click", () => {
 
-      }
-    );
+      navigator.clipboard
+        .writeText(order.orderNumber)
+        .then(() => {
+
+          showCheckoutToast(
+            "Order number copied!"
+          );
+
+        });
+
+    });
+
+
+  // Close if clicking outside
+  modal.addEventListener("click", (event) => {
+
+    if (event.target === modal) {
+      modal.remove();
+    }
+
+  });
+
+
+  // Venmo button
+  document
+    .getElementById("venmoPaymentBtn")
+    ?.addEventListener("click", () => {
+
+      showCheckoutToast(
+        "Opening Venmo..."
+      );
+
+      // We will connect your Venmo payment link here.
+    });
 
 }
 
@@ -969,23 +783,19 @@ function openOrderConfirmation(order) {
 // ============================================
 
 function renderCheckoutItem(item) {
+  const quantity = Number(
+    item.qty ||
+    item.quantity ||
+    1
+  );
 
-  const quantity =
-    Number(
-      item.qty ||
-      item.quantity ||
-      1
-    );
+  const price = Number(
+    item.unitPrice ||
+    item.price ||
+    0
+  );
 
-  const price =
-    Number(
-      item.unitPrice ||
-      item.price ||
-      0
-    );
-
-  const lineTotal =
-    price * quantity;
+  const lineTotal = price * quantity;
 
   const image =
     item.image ||
@@ -997,7 +807,6 @@ function renderCheckoutItem(item) {
     item.productName ||
     item.product ||
     "Coastal Ghost Item";
-
 
   const details = [];
 
@@ -1021,7 +830,6 @@ function renderCheckoutItem(item) {
     details.push(item.dimensions);
   }
 
-
   return `
     <div class="checkout-item">
 
@@ -1029,46 +837,30 @@ function renderCheckoutItem(item) {
         image
           ? `
             <div class="checkout-item-image">
-
               <img
                 src="${image}"
                 alt="${productName}"
               >
-
             </div>
           `
           : ""
       }
 
+      <div class="checkout-item-details">
 
-      <div
-        class="checkout-item-details"
-      >
-
-        <h3>
-          ${productName}
-        </h3>
-
+        <h3>${productName}</h3>
 
         ${
           details.length
-            ? `
-              <p>
-                ${details.join(" · ")}
-              </p>
-            `
+            ? `<p>${details.join(" · ")}</p>`
             : ""
         }
 
-
-        <div
-          class="checkout-item-bottom"
-        >
+        <div class="checkout-item-bottom">
 
           <span>
             Qty: ${quantity}
           </span>
-
 
           <strong>
             $${lineTotal.toFixed(2)}
@@ -1080,7 +872,6 @@ function renderCheckoutItem(item) {
 
     </div>
   `;
-
 }
 
 
@@ -1089,16 +880,13 @@ function renderCheckoutItem(item) {
 // ============================================
 
 function closeOrderReview() {
-
-  const modal =
-    document.getElementById(
-      "orderReviewModal"
-    );
+  const modal = document.getElementById(
+    "orderReviewModal"
+  );
 
   if (modal) {
     modal.remove();
   }
-
 }
 
 
@@ -1107,26 +895,19 @@ function closeOrderReview() {
 // ============================================
 
 function showCheckoutToast(message) {
-
   const toast =
     document.getElementById("toast");
 
   if (!toast) {
-
     alert(message);
-
     return;
   }
 
-  toast.textContent =
-    message;
+  toast.textContent = message;
 
   toast.classList.add("show");
 
   setTimeout(() => {
-
     toast.classList.remove("show");
-
   }, 3000);
-
 }
