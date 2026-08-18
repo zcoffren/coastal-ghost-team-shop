@@ -2308,7 +2308,7 @@ function renderDTF() {
 
               <p>
 
-                DTF iron-on transfer
+                DTF transfer
 
               </p>
 
@@ -2477,22 +2477,36 @@ function openDTF(index) {
       class="option-field"
     >
 
-      <label
-        class="field-label"
-        for="dtfQty"
-      >
+      <div class="quantity-selector">
+  <span class="quantity-label">Quantity</span>
 
-        Quantity
+  <div class="quantity-control product-quantity-control">
 
-      </label>
+    <button
+      type="button"
+      id="decreaseQuantityBtn"
+      class="quantity-btn"
+    >
+      −
+    </button>
 
+    <span
+      id="dtfQuantity"
+      class="quantity-value"
+    >
+      1
+    </span>
 
-      <input
-        id="dtfQty"
-        type="number"
-        min="1"
-        value="1"
-      >
+    <button
+      type="button"
+      id="increaseQuantityBtn"
+      class="quantity-btn"
+    >
+      +
+    </button>
+
+  </div>
+</div>
 
     </div>
 
