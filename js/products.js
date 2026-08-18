@@ -1234,7 +1234,7 @@ function renderProducts(
                   mockups.length
                 }
 
-                color/mockup option${
+                color option${
                   mockups.length === 1
                     ? ''
                     : 's'
