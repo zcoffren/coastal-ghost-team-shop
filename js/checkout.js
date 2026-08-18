@@ -618,19 +618,48 @@ function submitOrder(cart, customer) {
 // ============================================
 
 function openOrderConfirmation(order) {
+  // Close the Review Order modal first
   closeOrderReview();
 
   const modal = document.createElement("div");
 
-  modal.id = "orderReviewModal";
-  modal.className = "modal-overlay checkout-modal";
+  modal.id = "orderConfirmationModal";
+
+  modal.className =
+    "modal-overlay checkout-modal";
+
+  // Match the working modal display setup
+  modal.style.display = "flex";
+  modal.style.position = "fixed";
+  modal.style.inset = "0";
+  modal.style.zIndex = "99999";
+  modal.style.background =
+    "rgba(0, 0, 0, 0.75)";
+  modal.style.alignItems = "center";
+  modal.style.justifyContent = "center";
 
   modal.innerHTML = `
-    <div class="modal checkout-review-modal">
+    <div
+      class="modal checkout-review-modal"
+      style="
+        display: block;
+        position: relative;
+        z-index: 100000;
+        background: #21152e;
+        color: #f5f1e8;
+        max-width: 650px;
+        width: calc(100% - 32px);
+        max-height: 90vh;
+        overflow-y: auto;
+        margin: auto;
+        padding: 32px;
+        border-radius: 20px;
+      "
+    >
 
       <button
         class="modal-close"
-        id="closeOrderReview"
+        id="closeOrderConfirmation"
         aria-label="Close"
         type="button"
       >
@@ -727,56 +756,92 @@ function openOrderConfirmation(order) {
 
   document.body.appendChild(modal);
 
-  document
-    .getElementById("closeOrderReview")
-    ?.addEventListener("click", closeOrderReview);
 
+  // CLOSE CONFIRMATION
+  document
+    .getElementById("closeOrderConfirmation")
+    ?.addEventListener(
+      "click",
+      () => {
+        modal.remove();
+      }
+    );
+
+
+  // COPY ORDER NUMBER
   document
     .getElementById("copyConfirmationBtn")
-    ?.addEventListener("click", () => {
+    ?.addEventListener(
+      "click",
+      () => {
 
-      navigator.clipboard
-        .writeText(order.orderNumber)
-        .then(() => {
-          const button = document.getElementById(
-            "copyConfirmationBtn"
-          );
+        navigator.clipboard
+          .writeText(order.orderNumber)
+          .then(() => {
 
-          if (!button) return;
+            const button =
+              document.getElementById(
+                "copyConfirmationBtn"
+              );
 
-          const originalText = button.textContent;
+            if (!button) return;
 
-          button.textContent =
-            "Order Number Copied!";
+            const originalText =
+              button.textContent;
 
-          setTimeout(() => {
-            button.textContent = originalText;
-          }, 2000);
-        });
-    });
+            button.textContent =
+              "Order Number Copied!";
 
+            setTimeout(() => {
+              button.textContent =
+                originalText;
+            }, 2000);
+
+          })
+          .catch(() => {
+            showCheckoutToast(
+              "Unable to copy automatically."
+            );
+          });
+
+      }
+    );
+
+
+  // VENMO
   document
     .getElementById("venmoPaymentBtn")
-    ?.addEventListener("click", () => {
-      showCheckoutToast(
-        "Venmo payment setup is coming next."
-      );
-    });
+    ?.addEventListener(
+      "click",
+      () => {
 
+        showCheckoutToast(
+          "Venmo payment setup is coming next."
+        );
+
+      }
+    );
+
+
+  // DONE
   document
     .getElementById("finishOrderBtn")
-    ?.addEventListener("click", () => {
-      closeOrderReview();
+    ?.addEventListener(
+      "click",
+      () => {
 
-      if (
-        window.CoastalGhostCart &&
-        typeof window.CoastalGhostCart.clear === "function"
-      ) {
-        window.CoastalGhostCart.clear();
+        modal.remove();
+
+        if (
+          window.CoastalGhostCart &&
+          typeof window.CoastalGhostCart.clear === "function"
+        ) {
+          window.CoastalGhostCart.clear();
+        }
+
       }
-    });
+    );
 }
-
 
 // ============================================
 // RENDER ORDER ITEM
