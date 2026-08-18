@@ -1702,43 +1702,7 @@ function openProduct(id) {
 
       }
     );
-   
-let selectedDtfQuantity = 1;
 
-const dtfQuantityValue =
-  $('dtfQty');
-
-
-$('decreaseDtfQty')
-  ?.addEventListener(
-    'click',
-    () => {
-
-      if (selectedDtfQuantity > 1) {
-
-        selectedDtfQuantity--;
-
-        dtfQuantityValue.textContent =
-          selectedDtfQuantity;
-
-      }
-
-    }
-  );
-
-
-$('increaseDtfQty')
-  ?.addEventListener(
-    'click',
-    () => {
-
-      selectedDtfQuantity++;
-
-      dtfQuantityValue.textContent =
-        selectedDtfQuantity;
-
-    }
-  );
 
   /*
      Returns ONLY a mockup that matches the
@@ -2569,7 +2533,7 @@ function openDTF(index) {
       type="button"
     >
 
-      Add to Cart
+      Add to Family Order
 
     </button>
 
@@ -2668,7 +2632,12 @@ function openDTF(index) {
 
             1,
 
-            selectedDtfQuantity
+            Number(
+              $('dtfQty').value ||
+              1
+            )
+
+          );
 
 
         const item = {
