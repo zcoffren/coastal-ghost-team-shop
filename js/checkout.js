@@ -364,10 +364,19 @@ function openOrderReview(cart, customer) {
 
   const modal = document.createElement("div");
 
-  modal.id = "orderReviewModal";
-  modal.className = "modal-overlay checkout-modal";
+ const modal = document.createElement("div");
 
-  modal.innerHTML = `
+modal.id = "orderReviewModal";
+modal.className = "modal-overlay checkout-modal";
+
+// Force the Review Order screen to display
+modal.style.display = "flex";
+modal.style.position = "fixed";
+modal.style.inset = "0";
+modal.style.zIndex = "99999";
+modal.style.background = "rgba(0, 0, 0, 0.75)";
+
+modal.innerHTML = `
     <div class="modal checkout-review-modal">
 
       <button
