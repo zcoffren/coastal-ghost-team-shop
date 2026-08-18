@@ -2,7 +2,7 @@
   {
     "id": "D001",
     "name": "Coastal Ghost Logo",
-    "image": "",
+    "image": "assets/product-samples/dtf-decals/coastal-ghost.png",
     "options": [
       {
         "label": "Large Front",
@@ -56,7 +56,7 @@
   {
     "id": "D003",
     "name": "Coastal Ghost Wordmark",
-    "image": "",
+    "image": "assets/product-samples/dtf-decals/ghost-wordmark.png",
     "options": [
       {
         "label": "Large Front",
@@ -110,7 +110,7 @@
   {
     "id": "D005",
     "name": "Coastal Ghost Gray Baseball Wordmark",
-    "image": "",
+    "image": "assets/product-samples/dtf-decals/coastal-ghost-baseball-gray-wordmark.png",
     "options": [
       {
         "label": "Large Front",
@@ -130,33 +130,6 @@
       {
         "label": "Small Left Chest",
         "dimensions": "3.89 x 2.05",
-        "price": 3.0
-      }
-    ]
-  },
-  {
-    "id": "D006",
-    "name": "Coastal Ghost Gray Wordmark",
-    "image": "",
-    "options": [
-      {
-        "label": "Large Front",
-        "dimensions": "8.5 x 3.81",
-        "price": 6.0
-      },
-      {
-        "label": "Medium Front",
-        "dimensions": "7.5 x 3.36",
-        "price": 5.0
-      },
-      {
-        "label": "Toddler",
-        "dimensions": "5.25 x 2.35",
-        "price": 4.0
-      },
-      {
-        "label": "Small Left Chest",
-        "dimensions": "4 x 1.79",
         "price": 3.0
       }
     ]
@@ -218,7 +191,7 @@
   {
     "id": "D009",
     "name": "Haunting Home Logo",
-    "image": "",
+    "image": "assets/product-samples/dtf-decals/cg-swva-alt-logo.png",
     "options": [
       {
         "label": "Large Front",
