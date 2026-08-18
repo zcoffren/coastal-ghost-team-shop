@@ -132,7 +132,20 @@ modal.style.zIndex = "99999";
 modal.style.background = "rgba(0, 0, 0, 0.75)";
 
   modal.innerHTML = `
-    <div class="modal checkout-review-modal">
+    <div class="modal checkout-review-modal" style="
+  display: block;
+  position: relative;
+  z-index: 100000;
+  background: #21152e;
+  color: #f5f1e8;
+  max-width: 650px;
+  width: calc(100% - 32px);
+  max-height: 90vh;
+  overflow-y: auto;
+  margin: auto;
+  padding: 32px;
+  border-radius: 20px;
+">
 
       <button
         class="modal-close"
