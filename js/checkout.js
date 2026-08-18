@@ -262,12 +262,12 @@ modal.style.background = "rgba(0, 0, 0, 0.75)";
               Back to Cart
             </button>
 
-           <button
-  class="btn btn-primary"
-  type="submit"
->
-  Review Order
-</button>
+            <button
+              class="btn btn-primary"
+              type="submit"
+            >
+              Review Order
+            </button>
 
           </div>
 
@@ -302,6 +302,11 @@ modal.style.background = "rgba(0, 0, 0, 0.75)";
         window.CoastalGhostCart.open();
       }
     });
+
+  document
+    .getElementById("customerInfoForm")
+    ?.addEventListener("submit", (event) => {
+      event.preventDefault();
 
       const customer = {
         firstName: document
@@ -364,12 +369,6 @@ function openOrderReview(cart, customer) {
 
   modal.innerHTML = `
     <div class="modal checkout-review-modal">
-
-modal.style.display = "flex";
-modal.style.position = "fixed";
-modal.style.inset = "0";
-modal.style.zIndex = "99999";
-modal.style.background = "rgba(0, 0, 0, 0.75)";
 
       <button
         class="modal-close"
@@ -476,75 +475,6 @@ modal.style.background = "rgba(0, 0, 0, 0.75)";
   document.body.appendChild(modal);
 
   document
-      const form =
-        document.getElementById(
-          "customerInfoForm"
-        );
-
-      if (!form) return;
-
-      if (!form.reportValidity()) {
-        return;
-      }
-
-      const customer = {
-        firstName:
-          document
-            .getElementById(
-              "customerFirstName"
-            )
-            .value
-            .trim(),
-
-        lastName:
-          document
-            .getElementById(
-              "customerLastName"
-            )
-            .value
-            .trim(),
-
-        email:
-          document
-            .getElementById(
-              "customerEmail"
-            )
-            .value
-            .trim(),
-
-        phone:
-          document
-            .getElementById(
-              "customerPhone"
-            )
-            .value
-            .trim(),
-
-        playerName:
-          document
-            .getElementById(
-              "playerName"
-            )
-            .value
-            .trim(),
-
-        notes:
-          document
-            .getElementById(
-              "orderNotes"
-            )
-            .value
-            .trim()
-      };
-
-      openOrderReview(
-        cart,
-        customer
-      );
-    }
-  );
-  
-  document
     .getElementById("closeOrderReview")
     ?.addEventListener("click", closeOrderReview);
 
@@ -633,48 +563,19 @@ function submitOrder(cart, customer) {
 // ============================================
 
 function openOrderConfirmation(order) {
+  closeOrderReview();
 
-  // Remove the review modal
-  const reviewModal =
-    document.getElementById("orderReviewModal");
+  const modal = document.createElement("div");
 
-  if (reviewModal) {
-    reviewModal.remove();
-  }
-
-  // Remove any existing confirmation modal
-  const existingConfirmation =
-    document.getElementById("orderConfirmationModal");
-
-  if (existingConfirmation) {
-    existingConfirmation.remove();
-  }
-
-  const modal =
-    document.createElement("div");
-
-  // Give confirmation its OWN ID
-  modal.id = "orderConfirmationModal";
-
-  modal.className =
-    "modal-overlay checkout-modal";
-
-  // Force visibility for now
-  modal.style.display = "flex";
-  modal.style.position = "fixed";
-  modal.style.inset = "0";
-  modal.style.zIndex = "99999";
-  modal.style.background =
-    "rgba(0, 0, 0, 0.75)";
-  modal.style.alignItems = "center";
-  modal.style.justifyContent = "center";
+  modal.id = "orderReviewModal";
+  modal.className = "modal-overlay checkout-modal";
 
   modal.innerHTML = `
     <div class="modal checkout-review-modal">
 
       <button
         class="modal-close"
-        id="closeConfirmation"
+        id="closeOrderReview"
         aria-label="Close"
         type="button"
       >
@@ -693,9 +594,7 @@ function openOrderConfirmation(order) {
             Coastal Ghost Baseball
           </span>
 
-          <h2>
-            Order Received!
-          </h2>
+          <h2>Order Received!</h2>
 
           <p>
             Your order has been submitted
@@ -706,9 +605,7 @@ function openOrderConfirmation(order) {
 
         <div class="order-number-box">
 
-          <span>
-            Order Number
-          </span>
+          <span>Order Number</span>
 
           <strong>
             ${order.orderNumber}
@@ -720,9 +617,7 @@ function openOrderConfirmation(order) {
 
           <div class="checkout-total-row checkout-grand-total">
 
-            <span>
-              Amount Due
-            </span>
+            <span>Amount Due</span>
 
             <strong>
               $${order.total.toFixed(2)}
@@ -734,9 +629,7 @@ function openOrderConfirmation(order) {
 
         <div class="venmo-payment-section">
 
-          <h3>
-            Pay with Venmo
-          </h3>
+          <h3>Pay with Venmo</h3>
 
           <p>
             Include Order Number in Venmo comments.
@@ -779,24 +672,10 @@ function openOrderConfirmation(order) {
 
   document.body.appendChild(modal);
 
-
-  // Close button
   document
-    .getElementById("closeConfirmation")
-    ?.addEventListener("click", () => {
-      modal.remove();
-    });
+    .getElementById("closeOrderReview")
+    ?.addEventListener("click", closeOrderReview);
 
-
-  // Done button
-  document
-    .getElementById("finishOrderBtn")
-    ?.addEventListener("click", () => {
-      modal.remove();
-    });
-
-
-  // Copy order number
   document
     .getElementById("copyConfirmationBtn")
     ?.addEventListener("click", () => {
@@ -804,38 +683,43 @@ function openOrderConfirmation(order) {
       navigator.clipboard
         .writeText(order.orderNumber)
         .then(() => {
-
-          showCheckoutToast(
-            "Order number copied!"
+          const button = document.getElementById(
+            "copyConfirmationBtn"
           );
 
-        });
+          if (!button) return;
 
+          const originalText = button.textContent;
+
+          button.textContent =
+            "Order Number Copied!";
+
+          setTimeout(() => {
+            button.textContent = originalText;
+          }, 2000);
+        });
     });
 
-
-  // Close if clicking outside
-  modal.addEventListener("click", (event) => {
-
-    if (event.target === modal) {
-      modal.remove();
-    }
-
-  });
-
-
-  // Venmo button
   document
     .getElementById("venmoPaymentBtn")
     ?.addEventListener("click", () => {
-
       showCheckoutToast(
-        "Opening Venmo..."
+        "Venmo payment setup is coming next."
       );
-
-      // We will connect your Venmo payment link here.
     });
 
+  document
+    .getElementById("finishOrderBtn")
+    ?.addEventListener("click", () => {
+      closeOrderReview();
+
+      if (
+        window.CoastalGhostCart &&
+        typeof window.CoastalGhostCart.clear === "function"
+      ) {
+        window.CoastalGhostCart.clear();
+      }
+    });
 }
 
 
