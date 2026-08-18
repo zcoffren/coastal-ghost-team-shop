@@ -269,9 +269,6 @@ modal.style.background = "rgba(0, 0, 0, 0.75)";
               Review Order
             </button>
 
-document
-  .getElementById("reviewOrderBtn")
-  ?.addEventListener("click", () => {
           </div>
 
         </form>
