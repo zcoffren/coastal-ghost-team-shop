@@ -262,13 +262,12 @@ modal.style.background = "rgba(0, 0, 0, 0.75)";
               Back to Cart
             </button>
 
-            <button
-              class="btn btn-primary"
-              id="reviewOrderBtn"
-              type="button"
-            >
-              Review Order
-            </button>
+           <button
+  class="btn btn-primary"
+  type="submit"
+>
+  Review Order
+</button>
 
           </div>
 
@@ -477,10 +476,6 @@ modal.style.background = "rgba(0, 0, 0, 0.75)";
   document.body.appendChild(modal);
 
   document
-  .getElementById("reviewOrderBtn")
-  ?.addEventListener(
-    "click",
-    () => {
       const form =
         document.getElementById(
           "customerInfoForm"
