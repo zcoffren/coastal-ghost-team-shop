@@ -3,22 +3,66 @@
 // checkout.js
 // ============================================
 
-document.addEventListener("DOMContentLoaded", () => {
-  const checkoutBtn = document.getElementById("checkoutBtn");
 
-  if (!checkoutBtn) return;
+// ============================================
+// INITIALIZE CHECKOUT
+// ============================================
 
-  checkoutBtn.addEventListener("click", () => {
-    const cart = getCartForCheckout();
+function initializeCheckout() {
+  const checkoutBtn =
+    document.getElementById("checkoutBtn");
 
-    if (!cart.length) {
-      showCheckoutToast("Your Cart is Empty");
-      return;
-    }
+  if (!checkoutBtn) {
+    console.warn(
+      "Checkout button not found."
+    );
+    return;
+  }
 
-    openCustomerInformation(cart);
-  });
-});
+  // Prevent duplicate listeners
+  checkoutBtn.onclick = null;
+
+  checkoutBtn.addEventListener(
+    "click",
+    handleCheckout
+  );
+}
+
+
+function handleCheckout() {
+  const cart =
+    getCartForCheckout();
+
+  if (!cart || !cart.length) {
+    showCheckoutToast(
+      "Your Cart is Empty"
+    );
+    return;
+  }
+
+  // Close the cart drawer before
+  // opening checkout
+  if (
+    window.CoastalGhostCart &&
+    typeof window.CoastalGhostCart.close === "function"
+  ) {
+    window.CoastalGhostCart.close();
+  }
+
+  openCustomerInformation(cart);
+}
+
+
+// Initialize whether the script loads
+// before or after the page DOM is ready
+if (document.readyState === "loading") {
+  document.addEventListener(
+    "DOMContentLoaded",
+    initializeCheckout
+  );
+} else {
+  initializeCheckout();
+}
 
 
 // ============================================
