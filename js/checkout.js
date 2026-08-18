@@ -370,6 +370,12 @@ function openOrderReview(cart, customer) {
   modal.innerHTML = `
     <div class="modal checkout-review-modal">
 
+modal.style.display = "flex";
+modal.style.position = "fixed";
+modal.style.inset = "0";
+modal.style.zIndex = "99999";
+modal.style.background = "rgba(0, 0, 0, 0.75)";
+
       <button
         class="modal-close"
         id="closeOrderReview"
@@ -569,6 +575,12 @@ function openOrderConfirmation(order) {
 
   modal.id = "orderReviewModal";
   modal.className = "modal-overlay checkout-modal";
+
+  modal.style.display = "flex";
+  modal.style.position = "fixed";
+  modal.style.inset = "0";
+  modal.style.zIndex = "99999";
+  modal.style.background = "rgba(0, 0, 0, 0.75)";
 
   modal.innerHTML = `
     <div class="modal checkout-review-modal">
