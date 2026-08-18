@@ -569,25 +569,48 @@ function submitOrder(cart, customer) {
 // ============================================
 
 function openOrderConfirmation(order) {
-  closeOrderReview();
 
-  const modal = document.createElement("div");
+  // Remove the review modal
+  const reviewModal =
+    document.getElementById("orderReviewModal");
 
-  modal.id = "orderReviewModal";
-  modal.className = "modal-overlay checkout-modal";
+  if (reviewModal) {
+    reviewModal.remove();
+  }
 
+  // Remove any existing confirmation modal
+  const existingConfirmation =
+    document.getElementById("orderConfirmationModal");
+
+  if (existingConfirmation) {
+    existingConfirmation.remove();
+  }
+
+  const modal =
+    document.createElement("div");
+
+  // Give confirmation its OWN ID
+  modal.id = "orderConfirmationModal";
+
+  modal.className =
+    "modal-overlay checkout-modal";
+
+  // Force visibility for now
   modal.style.display = "flex";
   modal.style.position = "fixed";
   modal.style.inset = "0";
   modal.style.zIndex = "99999";
-  modal.style.background = "rgba(0, 0, 0, 0.75)";
+  modal.style.background =
+    "rgba(0, 0, 0, 0.75)";
+  modal.style.alignItems = "center";
+  modal.style.justifyContent = "center";
 
   modal.innerHTML = `
     <div class="modal checkout-review-modal">
 
       <button
         class="modal-close"
-        id="closeOrderReview"
+        id="closeConfirmation"
         aria-label="Close"
         type="button"
       >
@@ -606,7 +629,9 @@ function openOrderConfirmation(order) {
             Coastal Ghost Baseball
           </span>
 
-          <h2>Order Received!</h2>
+          <h2>
+            Order Received!
+          </h2>
 
           <p>
             Your order has been submitted
@@ -617,7 +642,9 @@ function openOrderConfirmation(order) {
 
         <div class="order-number-box">
 
-          <span>Order Number</span>
+          <span>
+            Order Number
+          </span>
 
           <strong>
             ${order.orderNumber}
@@ -629,7 +656,9 @@ function openOrderConfirmation(order) {
 
           <div class="checkout-total-row checkout-grand-total">
 
-            <span>Amount Due</span>
+            <span>
+              Amount Due
+            </span>
 
             <strong>
               $${order.total.toFixed(2)}
@@ -641,7 +670,9 @@ function openOrderConfirmation(order) {
 
         <div class="venmo-payment-section">
 
-          <h3>Pay with Venmo</h3>
+          <h3>
+            Pay with Venmo
+          </h3>
 
           <p>
             Include Order Number in Venmo comments.
@@ -684,10 +715,24 @@ function openOrderConfirmation(order) {
 
   document.body.appendChild(modal);
 
-  document
-    .getElementById("closeOrderReview")
-    ?.addEventListener("click", closeOrderReview);
 
+  // Close button
+  document
+    .getElementById("closeConfirmation")
+    ?.addEventListener("click", () => {
+      modal.remove();
+    });
+
+
+  // Done button
+  document
+    .getElementById("finishOrderBtn")
+    ?.addEventListener("click", () => {
+      modal.remove();
+    });
+
+
+  // Copy order number
   document
     .getElementById("copyConfirmationBtn")
     ?.addEventListener("click", () => {
@@ -695,43 +740,38 @@ function openOrderConfirmation(order) {
       navigator.clipboard
         .writeText(order.orderNumber)
         .then(() => {
-          const button = document.getElementById(
-            "copyConfirmationBtn"
+
+          showCheckoutToast(
+            "Order number copied!"
           );
 
-          if (!button) return;
-
-          const originalText = button.textContent;
-
-          button.textContent =
-            "Order Number Copied!";
-
-          setTimeout(() => {
-            button.textContent = originalText;
-          }, 2000);
         });
+
     });
 
+
+  // Close if clicking outside
+  modal.addEventListener("click", (event) => {
+
+    if (event.target === modal) {
+      modal.remove();
+    }
+
+  });
+
+
+  // Venmo button
   document
     .getElementById("venmoPaymentBtn")
     ?.addEventListener("click", () => {
+
       showCheckoutToast(
-        "Venmo payment setup is coming next."
+        "Opening Venmo..."
       );
+
+      // We will connect your Venmo payment link here.
     });
 
-  document
-    .getElementById("finishOrderBtn")
-    ?.addEventListener("click", () => {
-      closeOrderReview();
-
-      if (
-        window.CoastalGhostCart &&
-        typeof window.CoastalGhostCart.clear === "function"
-      ) {
-        window.CoastalGhostCart.clear();
-      }
-    });
 }
 
 
