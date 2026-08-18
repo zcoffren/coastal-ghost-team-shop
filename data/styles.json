@@ -76,7 +76,7 @@
   },
   {
     "styleId": "1566",
-    "brand": "",
+    "brand": "Comfort Colors",
     "itemType": "Crewneck",
     "productFolder": "unisex-crewneck",
     "productName": "Crewneck Sweatshirt",
@@ -91,7 +91,7 @@
   },
   {
     "styleId": "g180",
-    "brand": "",
+    "brand": "Gildan",
     "itemType": "Crewneck",
     "productFolder": "unisex-crewneck",
     "productName": "Crewneck Sweatshirt",
@@ -106,7 +106,7 @@
   },
   {
     "styleId": "3719",
-    "brand": "",
+    "brand": "Bella + Canvas",
     "itemType": "Hoodie",
     "productFolder": "unisex-hoodies",
     "productName": "Pullover Hoodie",
@@ -121,7 +121,7 @@
   },
   {
     "styleId": "g185",
-    "brand": "",
+    "brand": "Gildan",
     "itemType": "Hoodie",
     "productFolder": "unisex-hoodies",
     "productName": "Pullover Hoodie",
@@ -136,7 +136,7 @@
   },
   {
     "styleId": "g185b",
-    "brand": "",
+    "brand": "Gildan",
     "itemType": "Hoodie",
     "productFolder": "youth-hoodies",
     "productName": "Youth Hoodie",
@@ -151,7 +151,7 @@
   },
   {
     "styleId": "g180b",
-    "brand": "",
+    "brand": "Gildan",
     "itemType": "Crewneck",
     "productFolder": "youth-crewneck",
     "productName": "Youth Crewneck",
@@ -184,22 +184,7 @@
     "brand": "Sport-Tek",
     "itemType": "Quarter Zip",
     "productFolder": "womens-quarter-zip",
-    "productName": "Women\u2019s 1/4-Zip",
-    "fit": "Adult / Relaxed",
-    "sizeRange": "Adult",
-    "basePrice": null,
-    "sizeUpcharges": {
-      "2XL": 0,
-      "3XL": 0
-    },
-    "status": "Needs pricing"
-  },
-  {
-    "styleId": "lst",
-    "brand": "Sport-Tek",
-    "itemType": "Quarter Zip",
-    "productFolder": "womens-quarter-zip",
-    "productName": "Women\u2019s 1/4-Zip",
+    "productName": "Womens 1/4-Zip",
     "fit": "Adult / Relaxed",
     "sizeRange": "Adult",
     "basePrice": null,
