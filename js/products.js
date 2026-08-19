@@ -2490,39 +2490,54 @@ function openDTF(index) {
       class="option-field"
     >
 
-      <div class="quantity-selector">
-  <span class="quantity-label">Quantity</span>
+      <div
+  class="option-field quantity-field"
+>
 
-  <div class="quantity-control product-quantity-control">
+  <div
+    class="field-label"
+  >
+
+    Quantity
+
+  </div>
+
+
+  <div
+    class="quantity-control"
+  >
 
     <button
       type="button"
-      id="decreaseQuantityBtn"
       class="quantity-btn"
+      id="dtfQtyMinus"
+      aria-label="Decrease quantity"
     >
       −
     </button>
 
+
     <span
-      id="dtfQuantity"
       class="quantity-value"
+      id="dtfQty"
+      aria-live="polite"
     >
       1
     </span>
 
+
     <button
       type="button"
-      id="increaseQuantityBtn"
       class="quantity-btn"
+      id="dtfQtyPlus"
+      aria-label="Increase quantity"
     >
       +
     </button>
 
   </div>
+
 </div>
-
-    </div>
-
 
     <div
       class="modal-price"
