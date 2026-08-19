@@ -2694,9 +2694,10 @@
         "color": "Purple",
         "image": "assets/product-samples/phantom-purple/youth-hoodies/g185b-medium-front-purple.png",
         "filename": "g185b-medium-front-purple.png"
-      },
+      }
     ]
-      {
+  },
+  {
     "id": "P054",
     "design": "haunting-home",
     "productFolder": "unisex-crewneck",
