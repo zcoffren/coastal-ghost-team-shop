@@ -2561,12 +2561,61 @@ function openDTF(index) {
       type="button"
     >
 
-      Add to Family Order
+      Add to Cart
 
     </button>
 
   `;
+let selectedDTFQuantity = 1;
 
+const dtfQuantityValue =
+  $('dtfQty');
+
+const dtfMinusButton =
+  $('dtfQtyMinus');
+
+const dtfPlusButton =
+  $('dtfQtyPlus');
+
+
+function updateDTFQuantity() {
+
+  if (!dtfQuantityValue) {
+    return;
+  }
+
+  dtfQuantityValue.textContent =
+    selectedDTFQuantity;
+
+}
+
+
+dtfMinusButton?.addEventListener(
+  'click',
+  () => {
+
+    selectedDTFQuantity =
+      Math.max(
+        1,
+        selectedDTFQuantity - 1
+      );
+
+    updateDTFQuantity();
+
+  }
+);
+
+
+dtfPlusButton?.addEventListener(
+  'click',
+  () => {
+
+    selectedDTFQuantity++;
+
+    updateDTFQuantity();
+
+  }
+);
 
   document
 
