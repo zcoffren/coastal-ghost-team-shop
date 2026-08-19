@@ -822,24 +822,16 @@ button { font-family: inherit; cursor: pointer; }
   gap: 6px;
 }
 
-.cart-item-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 6px;
-}
-
 /* Cart quantity controls */
 .cart-item-actions .quantity-control {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .cart-item-actions .quantity-control input,
 .cart-item-actions .quantity-control span {
-  min-width: 28px;
+  min-width: 32px;
   text-align: center;
 }
 
