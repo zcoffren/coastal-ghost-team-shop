@@ -2704,18 +2704,7 @@ dtfPlusButton?.addEventListener(
 
 
         const qty =
-
-          Math.max(
-
-            1,
-
-            Number(
-              $('dtfQty').value ||
-              1
-            )
-
-          );
-
+  selectedDTFQuantity;
 
         const item = {
 
