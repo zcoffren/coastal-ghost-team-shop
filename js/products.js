@@ -1522,7 +1522,20 @@ function openProduct(id) {
   const sizes =
     getSizes(style);
 
+const personalization = {
 
+  name: {
+    enabled: true,
+    price: 5
+  },
+
+  number: {
+    enabled: true,
+    price: 8
+  }
+
+};
+   
   $('modalPanel').innerHTML = `
 
     <div
