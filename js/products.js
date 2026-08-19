@@ -1664,59 +1664,59 @@ function openProduct(id) {
 
 let selectedQuantity = 1;
 
-const quantityValue =
-  $('productQty');
-
-const minusButton =
-  $('qtyMinus');
-
-const plusButton =
-  $('qtyPlus');
+const modalPanel =
+  $('modalPanel');
 
 
-function updateQuantity() {
-
-  if (!quantityValue) {
-    return;
-  }
-
-  quantityValue.textContent =
-    selectedQuantity;
-
-}
-
-
-minusButton?.addEventListener(
+modalPanel.addEventListener(
   'click',
   (event) => {
 
-    event.preventDefault();
-
-    selectedQuantity =
-      Math.max(
-        1,
-        selectedQuantity - 1
+    const button =
+      event.target.closest(
+        '#qtyMinus, #qtyPlus'
       );
 
-    updateQuantity();
-
-  }
-);
-
-
-plusButton?.addEventListener(
-  'click',
-  (event) => {
+    if (!button) {
+      return;
+    }
 
     event.preventDefault();
 
-    selectedQuantity++;
 
-    updateQuantity();
+    if (button.id === 'qtyMinus') {
+
+      selectedQuantity =
+        Math.max(
+          1,
+          selectedQuantity - 1
+        );
+
+    }
+
+
+    if (button.id === 'qtyPlus') {
+
+      selectedQuantity++;
+
+    }
+
+
+    const quantityValue =
+      modalPanel.querySelector(
+        '#productQty'
+      );
+
+
+    if (quantityValue) {
+
+      quantityValue.textContent =
+        selectedQuantity;
+
+    }
 
   }
 );
-
   /*
      Returns ONLY a mockup that matches the
      selected color + placement combination.
