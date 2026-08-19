@@ -1800,7 +1800,63 @@ addPlayerNumber?.addEventListener(
 
 </div>
 
+    <div
+      class="option-field"
+    >
 
+      <div
+        class="field-label"
+      >
+        Personalization
+      </div>
+
+
+      <label>
+
+        <input
+          type="checkbox"
+          id="addPlayerName"
+        >
+
+        Add Player Name
+        (+$5.00 each)
+
+      </label>
+
+
+      <input
+        type="text"
+        id="playerName"
+        placeholder="Player Name"
+        hidden
+      >
+
+
+      <br>
+
+
+      <label>
+
+        <input
+          type="checkbox"
+          id="addPlayerNumber"
+        >
+
+        Add Player Number
+        (+$8.00 each)
+
+      </label>
+
+
+      <input
+        type="text"
+        id="playerNumber"
+        placeholder="Player Number"
+        hidden
+      >
+
+    </div>
+    
 <div
   class="modal-price"
   id="modalPrice"
