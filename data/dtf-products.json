@@ -162,33 +162,6 @@
     ]
   },
   {
-    "id": "D008",
-    "name": "Phantom Purple Wordmark",
-    "image": "",
-    "options": [
-      {
-        "label": "Large Front",
-        "dimensions": "8.5 x 3.81",
-        "price": 6.0
-      },
-      {
-        "label": "Medium Front",
-        "dimensions": "7.5 x 3.36",
-        "price": 5.0
-      },
-      {
-        "label": "Toddler",
-        "dimensions": "5.25 x 2.35",
-        "price": 4.0
-      },
-      {
-        "label": "Small Left Chest",
-        "dimensions": "4 x 1.79",
-        "price": 3.0
-      }
-    ]
-  },
-  {
     "id": "D009",
     "name": "Haunting Home Logo",
     "image": "assets/product-samples/dtf-decals/cg-swva-alt-logo.png",
