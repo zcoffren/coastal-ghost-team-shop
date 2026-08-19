@@ -577,39 +577,97 @@ function generateOrderNumber() {
 // ============================================
 
 function submitOrder(cart, customer) {
-  const orderNumber = generateOrderNumber();
 
-  const total = getCheckoutTotal(cart);
+  const orderNumber =
+    generateOrderNumber();
+
+
+  const total =
+    getCheckoutTotal(cart);
+
 
   const order = {
+
     orderNumber,
-    orderDate: new Date().toISOString(),
+
+    orderDate:
+      new Date().toISOString(),
+
     customer,
-    items: cart,
+
+    items:
+      cart,
+
     total,
-    paymentStatus: "Pending",
-    productionStatus: "New"
+
+    paymentStatus:
+      "Pending",
+
+    productionStatus:
+      "New"
+
   };
 
-  try {
-    const existingOrders = JSON.parse(
-      localStorage.getItem("coastalGhostOrders")
-    ) || [];
 
-    existingOrders.push(order);
+  // ==========================================
+  // SEND ORDER TO GOOGLE SHEETS
+  // ==========================================
+
+  sendOrderToSpreadsheet(
+    order
+  );
+
+
+  // ==========================================
+  // SAVE LOCAL COPY
+  // ==========================================
+
+  try {
+
+    const existingOrders =
+      JSON.parse(
+        localStorage.getItem(
+          "coastalGhostOrders"
+        )
+      ) || [];
+
+
+    existingOrders.push(
+      order
+    );
+
 
     localStorage.setItem(
+
       "coastalGhostOrders",
-      JSON.stringify(existingOrders)
+
+      JSON.stringify(
+        existingOrders
+      )
+
     );
+
   } catch (error) {
+
     console.error(
+
       "Unable to save order:",
+
       error
+
     );
+
   }
 
-  openOrderConfirmation(order);
+
+  // ==========================================
+  // SHOW CONFIRMATION
+  // ==========================================
+
+  openOrderConfirmation(
+    order
+  );
+
 }
 
 
