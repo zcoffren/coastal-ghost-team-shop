@@ -1664,45 +1664,62 @@ function openProduct(id) {
      QUANTITY CONTROL
   */
 
-  let selectedQuantity =
-    1;
+  let selectedQuantity = 1;
 
+const panel =
+  $('modalPanel');
 
-  const quantityValue =
-    $('productQty');
+const quantityValue =
+  panel?.querySelector(
+    '#productQty'
+  );
 
+const minusButton =
+  panel?.querySelector(
+    '#qtyMinus'
+  );
 
-  $('qtyMinus')
-    ?.addEventListener(
-      'click',
-      () => {
+const plusButton =
+  panel?.querySelector(
+    '#qtyPlus'
+  );
 
-        if (selectedQuantity > 1) {
+function updateQuantity() {
 
-          selectedQuantity--;
+  if (!quantityValue) {
+    return;
+  }
 
-          quantityValue.textContent =
-            selectedQuantity;
+  quantityValue.textContent =
+    selectedQuantity;
 
-        }
+}
 
-      }
-    );
+minusButton?.addEventListener(
+  'click',
+  () => {
 
+    selectedQuantity =
+      Math.max(
+        1,
+        selectedQuantity - 1
+      );
 
-  $('qtyPlus')
-    ?.addEventListener(
-      'click',
-      () => {
+    updateQuantity();
 
-        selectedQuantity++;
+  }
+);
 
-        quantityValue.textContent =
-          selectedQuantity;
+plusButton?.addEventListener(
+  'click',
+  () => {
 
-      }
-    );
+    selectedQuantity++;
 
+    updateQuantity();
+
+  }
+);
 
   /*
      Returns ONLY a mockup that matches the
