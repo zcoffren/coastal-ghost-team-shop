@@ -2206,6 +2206,492 @@
         "color": "Purple",
         "image": "assets/product-samples/spooky-state/youth-hoodies/g185b-medium-front-purple.png",
         "filename": "g185b-medium-front-purple.png"
+      },
+       {
+    "id": "P041",
+    "design": "phantom-purple",
+    "productFolder": "unisex-crewneck",
+    "styleId": "1566",
+    "mockups": [
+      {
+        "placement": "Large Front",
+        "color": "Gray",
+        "image": "assets/product-samples/phantom-purple/unisex-crewneck/1566-large-front-gray.png",
+        "filename": "1566-large-front-gray.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Pepper",
+        "image": "assets/product-samples/phantom-purple/unisex-crewneck/1566-left-chest-pepper.png",
+        "filename": "1566-left-chest-pepper.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Pepper",
+        "image": "assets/product-samples/phantom-purple/unisex-crewneck/1566-medium-front-pepper.png",
+        "filename": "1566-medium-front-pepper.png"
+      }
+    ]
+  },
+  {
+    "id": "P042",
+    "design": "phantom-purple",
+    "productFolder": "unisex-crewneck",
+    "styleId": "g180",
+    "mockups": [
+      {
+        "placement": "Large Front",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/unisex-crewneck/g180-large-front-black.png",
+        "filename": "g180-large-front-black.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "Charcoal",
+        "image": "assets/product-samples/phantom-purple/unisex-crewneck/g180-large-front-charcoal.png",
+        "filename": "g180-large-front-charcoal.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "Purple",
+        "image": "assets/product-samples/phantom-purple/unisex-crewneck/g180-large-front-purple.png",
+        "filename": "g180-large-front-purple.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/unisex-crewneck/g180-medium-front-black.png",
+        "filename": "g180-medium-front-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Charcoal",
+        "image": "assets/product-samples/phantom-purple/unisex-crewneck/g180-medium-front-charcoal.png",
+        "filename": "g180-medium-front-charcoal.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Purple",
+        "image": "assets/product-samples/phantom-purple/unisex-crewneck/g180-medium-front-purple.png",
+        "filename": "g180-medium-front-purple.png"
+      }
+    ]
+  },
+  {
+    "id": "P043",
+    "design": "phantom-purple",
+    "productFolder": "unisex-hoodies",
+    "styleId": "3719",
+    "mockups": [
+      {
+        "placement": "Left Chest",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/unisex-hoodies/3719-left-chest-black.png",
+        "filename": "3719-left-chest-black.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Deep Heather",
+        "image": "assets/product-samples/phantom-purple/unisex-hoodies/3719-left-chest-deep-heather.png",
+        "filename": "3719-left-chest-deep-heather.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Team Purple",
+        "image": "assets/product-samples/phantom-purple/unisex-hoodies/3719-left-chest-team-purple.png",
+        "filename": "3719-left-chest-team-purple.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/unisex-hoodies/3719-medium-front-black.png",
+        "filename": "3719-medium-front-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Deep Heather",
+        "image": "assets/product-samples/phantom-purple/unisex-hoodies/3719-medium-front-deep-heather.png",
+        "filename": "3719-medium-front-deep-heather.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Team Purple",
+        "image": "assets/product-samples/phantom-purple/unisex-hoodies/3719-medium-front-team-purple.png",
+        "filename": "3719-medium-front-team-purple.png"
+      }
+    ]
+  },
+  {
+    "id": "P044",
+    "design": "phantom-purple",
+    "productFolder": "unisex-hoodies",
+    "styleId": "g185",
+    "mockups": [
+      {
+        "placement": "Left Chest",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/unisex-hoodies/g185-left-chest-black.png",
+        "filename": "g185-left-chest-black.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Charcoal",
+        "image": "assets/product-samples/phantom-purple/unisex-hoodies/g185-left-chest-charcoal.png",
+        "filename": "g185-left-chest-charcoal.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Purple",
+        "image": "assets/product-samples/phantom-purple/unisex-hoodies/g185-left-chest-purple.png",
+        "filename": "g185-left-chest-purple.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/unisex-hoodies/g185-medium-front-black.png",
+        "filename": "g185-medium-front-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Charcoal",
+        "image": "assets/product-samples/phantom-purple/unisex-hoodies/g185-medium-front-charcoal.png",
+        "filename": "g185-medium-front-charcoal.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Purple",
+        "image": "assets/product-samples/phantom-purple/unisex-hoodies/g185-medium-front-purple.png",
+        "filename": "g185-medium-front-purple.png"
+      }
+    ]
+  },
+  {
+    "id": "P045",
+    "design": "phantom-purple",
+    "productFolder": "unisex-long-sleeve",
+    "styleId": "g540",
+    "mockups": [
+      {
+        "placement": "Large Front",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/unisex-long-sleeve/g540-large-front-black.png",
+        "filename": "g540-large-front-black.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "Charcoal Gray",
+        "image": "assets/product-samples/phantom-purple/unisex-long-sleeve/g540-large-front-charcoal-gray.png",
+        "filename": "g540-large-front-charcoal-gray.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "Purple",
+        "image": "assets/product-samples/phantom-purple/unisex-long-sleeve/g540-large-front-purple.png",
+        "filename": "g540-large-front-purple.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/unisex-long-sleeve/g540-left-chest-black.png",
+        "filename": "g540-left-chest-black.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Charcoal Gray",
+        "image": "assets/product-samples/phantom-purple/unisex-long-sleeve/g540-left-chest-charcoal-gray.png",
+        "filename": "g540-left-chest-charcoal-gray.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Purple",
+        "image": "assets/product-samples/phantom-purple/unisex-long-sleeve/g540-left-chest-purple.png",
+        "filename": "g540-left-chest-purple.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/unisex-long-sleeve/g540-medium-front-black.png",
+        "filename": "g540-medium-front-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Charcoal Gray",
+        "image": "assets/product-samples/phantom-purple/unisex-long-sleeve/g540-medium-front-charcoal-gray.png",
+        "filename": "g540-medium-front-charcoal-gray.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Purple",
+        "image": "assets/product-samples/phantom-purple/unisex-long-sleeve/g540-medium-front-purple.png",
+        "filename": "g540-medium-front-purple.png"
+      }
+    ]
+  },
+  {
+    "id": "P046",
+    "design": "phantom-purple",
+    "productFolder": "unisex-quarter-zip",
+    "styleId": "k807",
+    "mockups": [
+      {
+        "placement": "Standard",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/unisex-quarter-zip/k807-black.png",
+        "filename": "k807-black.png"
+      },
+      {
+        "placement": "Standard",
+        "color": "Charcoal Heather Gray",
+        "image": "assets/product-samples/phantom-purple/unisex-quarter-zip/k807-charcoal-heather-gray.png",
+        "filename": "k807-charcoal-heather-gray.png"
+      },
+      {
+        "placement": "Standard",
+        "color": "Heather Gray",
+        "image": "assets/product-samples/phantom-purple/unisex-quarter-zip/k807-heather-gray.png",
+        "filename": "k807-heather-gray.png"
+      }
+    ]
+  },
+  {
+    "id": "P047",
+    "design": "phantom-purple",
+    "productFolder": "unisex-quarter-zip",
+    "styleId": "st253",
+    "mockups": [
+      {
+        "placement": "Standard",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/unisex-quarter-zip/st253-black.png",
+        "filename": "st253-black.png"
+      },
+      {
+        "placement": "Standard",
+        "color": "Graphite Heather",
+        "image": "assets/product-samples/phantom-purple/unisex-quarter-zip/st253-graphite-heather.png",
+        "filename": "st253-graphite-heather.png"
+      },
+      {
+        "placement": "Standard",
+        "color": "Vintage Heather Gray",
+        "image": "assets/product-samples/phantom-purple/unisex-quarter-zip/st253-vintage-heather-gray.png",
+        "filename": "st253-vintage-heather-gray.png"
+      }
+    ]
+  },
+  {
+    "id": "P048",
+    "design": "phantom-purple",
+    "productFolder": "unisex-short-sleeve",
+    "styleId": "g640",
+    "mockups": [
+      {
+        "placement": "Large Front",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/unisex-short-sleeve/g640-large-front-black.png",
+        "filename": "g640-large-front-black.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "Charcoal Gray",
+        "image": "assets/product-samples/phantom-purple/unisex-short-sleeve/g640-large-front-charcoal-gray.png",
+        "filename": "g640-large-front-charcoal-gray.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "Heather Purple",
+        "image": "assets/product-samples/phantom-purple/unisex-short-sleeve/g640-large-front-heather-purple.png",
+        "filename": "g640-large-front-heather-purple.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/unisex-short-sleeve/g640-left-chest-black.png",
+        "filename": "g640-left-chest-black.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Charcoal Gray",
+        "image": "assets/product-samples/phantom-purple/unisex-short-sleeve/g640-left-chest-charcoal-gray.png",
+        "filename": "g640-left-chest-charcoal-gray.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Heather Purple",
+        "image": "assets/product-samples/phantom-purple/unisex-short-sleeve/g640-left-chest-heather-purple.png",
+        "filename": "g640-left-chest-heather-purple.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/unisex-short-sleeve/g640-medium-front-black.png",
+        "filename": "g640-medium-front-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Charcoal Gray",
+        "image": "assets/product-samples/phantom-purple/unisex-short-sleeve/g640-medium-front-charcoal-gray.png",
+        "filename": "g640-medium-front-charcoal-gray.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Heather Purple",
+        "image": "assets/product-samples/phantom-purple/unisex-short-sleeve/g640-medium-front-heather-purple.png",
+        "filename": "g640-medium-front-heather-purple.png"
+      }
+    ]
+  },
+  {
+    "id": "P049",
+    "design": "phantom-purple",
+    "productFolder": "womens-long-sleeve",
+    "styleId": "b6500",
+    "mockups": [
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/womens-long-sleeve/b6500-medium-front-black.png",
+        "filename": "b6500-medium-front-black.png"
+      }
+    ]
+  },
+  {
+    "id": "P050",
+    "design": "phantom-purple",
+    "productFolder": "womens-quarter-zip",
+    "styleId": "lst253",
+    "mockups": [
+      {
+        "placement": "Standard",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/womens-quarter-zip/lst253-black.png",
+        "filename": "lst253-black.png"
+      },
+      {
+        "placement": "Standard",
+        "color": "Graphite Heather",
+        "image": "assets/product-samples/phantom-purple/womens-quarter-zip/lst253-graphite-heather.png",
+        "filename": "lst253-graphite-heather.png"
+      }
+    ]
+  },
+  {
+    "id": "P051",
+    "design": "phantom-purple",
+    "productFolder": "womens-short-sleeve",
+    "styleId": "b6400",
+    "mockups": [
+      {
+        "placement": "Left Chest",
+        "color": "Asphalt Gray",
+        "image": "assets/product-samples/phantom-purple/womens-short-sleeve/b6400-left-chest-asphalt-gray.png",
+        "filename": "b6400-left-chest-asphalt-gray.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Purple",
+        "image": "assets/product-samples/phantom-purple/womens-short-sleeve/b6400-left-chest-purple.png",
+        "filename": "b6400-left-chest-purple.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Vintage Black",
+        "image": "assets/product-samples/phantom-purple/womens-short-sleeve/b6400-left-chest-vintage-black.png",
+        "filename": "b6400-left-chest-vintage-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Asphalt Gray",
+        "image": "assets/product-samples/phantom-purple/womens-short-sleeve/b6400-medium-front-asphalt-gray.png",
+        "filename": "b6400-medium-front-asphalt-gray.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Purple",
+        "image": "assets/product-samples/phantom-purple/womens-short-sleeve/b6400-medium-front-purple.png",
+        "filename": "b6400-medium-front-purple.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Vintage Black",
+        "image": "assets/product-samples/phantom-purple/womens-short-sleeve/b6400-medium-front-vintage-black.png",
+        "filename": "b6400-medium-front-vintage-black.png"
+      }
+    ]
+  },
+  {
+    "id": "P052",
+    "design": "phantom-purple",
+    "productFolder": "youth-crewneck",
+    "styleId": "g180b",
+    "mockups": [
+      {
+        "placement": "Left Chest",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/youth-crewneck/g180b-left-chest-black.png",
+        "filename": "g180b-left-chest-black.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Dark Heather",
+        "image": "assets/product-samples/phantom-purple/youth-crewneck/g180b-left-chest-dark-heather.png",
+        "filename": "g180b-left-chest-dark-heather.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/youth-crewneck/g180b-medium-front-black.png",
+        "filename": "g180b-medium-front-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Dark Heather",
+        "image": "assets/product-samples/phantom-purple/youth-crewneck/g180b-medium-front-dark-heather.png",
+        "filename": "g180b-medium-front-dark-heather.png"
+      }
+    ]
+  },
+  {
+    "id": "P053",
+    "design": "spooky-state",
+    "productFolder": "youth-hoodies",
+    "styleId": "g185b",
+    "mockups": [
+      {
+        "placement": "Left Chest",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/youth-hoodies/g185b-left-chest-black.png",
+        "filename": "g185b-left-chest-black.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Charcoal",
+        "image": "assets/product-samples/phantom-purple/youth-hoodies/g185b-left-chest-charcoal.png",
+        "filename": "g185b-left-chest-charcoal.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Purple",
+        "image": "assets/product-samples/phantom-purple/youth-hoodies/g185b-left-chest-purple.png",
+        "filename": "g185b-left-chest-purple.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/youth-hoodies/g185b-medium-front-black.png",
+        "filename": "g185b-medium-front-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Charcoal",
+        "image": "assets/product-samples/phantom-purple/youth-hoodies/g185b-medium-front-charcoal.png",
+        "filename": "g185b-medium-front-charcoal.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Purple",
+        "image": "assets/product-samples/phantom-purple/youth-hoodies/g185b-medium-front-purple.png",
+        "filename": "g185b-medium-front-purple.png"
       }
     ]
   }
