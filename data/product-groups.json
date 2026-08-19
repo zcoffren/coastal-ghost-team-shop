@@ -2206,8 +2206,10 @@
         "color": "Purple",
         "image": "assets/product-samples/spooky-state/youth-hoodies/g185b-medium-front-purple.png",
         "filename": "g185b-medium-front-purple.png"
-      },
-       {
+      }
+    ]
+  },
+  {
     "id": "P041",
     "design": "phantom-purple",
     "productFolder": "unisex-crewneck",
