@@ -1142,7 +1142,33 @@ function renderProducts(
             group
           );
 
+const availableColors = [
 
+  ...new Set(
+
+    mockups.map(
+      (mockup) =>
+        mockup.color
+    )
+
+  )
+
+];
+
+
+const availablePlacements = [
+
+  ...new Set(
+
+    mockups.map(
+      (mockup) =>
+        mockup.placement
+    )
+
+  )
+
+];
+         
         const image =
           firstImage(
             group
