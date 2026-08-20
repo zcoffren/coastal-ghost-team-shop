@@ -1531,11 +1531,13 @@ const personalization = {
 
   number: {
     enabled: true,
-    price: 8
+    price: 3
   }
 
 };
    
+  $('modalPanel').innerHTML = `
+
     <div
       class="product-meta"
     >
@@ -1686,9 +1688,7 @@ const personalization = {
   <div
     class="field-label"
   >
-
     Personalization
-
   </div>
 
 
@@ -1702,10 +1702,8 @@ const personalization = {
     >
 
     <span>
-
       Add Player Name
       (+$5.00 each)
-
     </span>
 
   </label>
@@ -1736,10 +1734,8 @@ const personalization = {
     >
 
     <span>
-
       Add Player Number
-      (+$8.00 each)
-
+      (+$3.00 each)
     </span>
 
   </label>
@@ -1762,22 +1758,22 @@ const personalization = {
   </div>
 
 </div>
-    
-<div
-  class="modal-price"
-  id="modalPrice"
-></div>
+
+    <div
+      class="modal-price"
+      id="modalPrice"
+    ></div>
 
 
-<button
-  class="btn btn-primary btn-block"
-  id="addProductBtn"
-  type="button"
->
+    <button
+      class="btn btn-primary btn-block"
+      id="addProductBtn"
+      type="button"
+    >
 
-  Add to Cart
+      Add to Cart
 
-</button>
+    </button>
 
 `;
 /* =========================================================
