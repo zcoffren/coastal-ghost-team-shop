@@ -1531,7 +1531,7 @@ const personalization = {
 
   number: {
     enabled: true,
-    price: 3
+    price: 8
   }
 
 };
