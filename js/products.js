@@ -1798,9 +1798,10 @@ addPlayerName?.addEventListener(
     playerNameField.hidden =
       !addPlayerName.checked;
 
+    updatePrice();
+
   }
 );
-
 
 addPlayerNumber?.addEventListener(
   'change',
@@ -1809,8 +1810,10 @@ addPlayerNumber?.addEventListener(
     playerNumberField.hidden =
       !addPlayerNumber.checked;
 
+    updatePrice();
+
   }
-); 
+);
 /* =========================================================
    QUANTITY CONTROL
 ========================================================= */
