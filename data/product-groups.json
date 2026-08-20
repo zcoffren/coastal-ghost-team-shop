@@ -2810,24 +2810,6 @@
     "styleId": "3719",
     "mockups": [
       {
-        "placement": "Left Chest",
-        "color": "Deep Heather",
-        "image": "assets/product-samples/cg-swva-alt-logo/unisex-hoodies/3719-left-chest-deep-heather.png",
-        "filename": "3719-left-chest-deep-heather.png"
-      },
-      {
-        "placement": "Left Chest",
-        "color": "Mustard",
-        "image": "assets/product-samples/cg-swva-alt-logo/unisex-hoodies/3719-left-chest-mustard.png",
-        "filename": "3719-left-chest-mustard.png"
-      },
-      {
-        "placement": "Left Chest",
-        "color": "White",
-        "image": "assets/product-samples/cg-swva-alt-logo/unisex-hoodies/3719-left-chest-white.png",
-        "filename": "3719-left-chest-white.png"
-      },
-      {
         "placement": "Medium Front",
         "color": "Deep Heather",
         "image": "assets/product-samples/cg-swva-alt-logo/unisex-hoodies/3719-medium-front-deep-heather.png",
