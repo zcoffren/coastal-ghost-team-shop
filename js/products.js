@@ -1536,43 +1536,6 @@ const personalization = {
 
 };
    
-  $('modalPanel').innerHTML = `
-
-const addPlayerName =
-  $('addPlayerName');
-
-const playerNameField =
-  $('playerNameField');
-
-
-const addPlayerNumber =
-  $('addPlayerNumber');
-
-const playerNumberField =
-  $('playerNumberField');
-
-
-addPlayerName?.addEventListener(
-  'change',
-  () => {
-
-    playerNameField.hidden =
-      !addPlayerName.checked;
-
-  }
-);
-
-
-addPlayerNumber?.addEventListener(
-  'change',
-  () => {
-
-    playerNumberField.hidden =
-      !addPlayerNumber.checked;
-
-  }
-);
-
     <div
       class="product-meta"
     >
@@ -1775,7 +1738,7 @@ addPlayerNumber?.addEventListener(
     <span>
 
       Add Player Number
-      (+$3.00 each)
+      (+$8.00 each)
 
     </span>
 
@@ -1815,23 +1778,6 @@ addPlayerNumber?.addEventListener(
   Add to Cart
 
 </button>
-
-`;
-   
-    <div
-      class="modal-price"
-      id="modalPrice"
-    ></div>
-
-    <button
-      class="btn btn-primary btn-block"
-      id="addProductBtn"
-      type="button"
-    >
-
-      Add to Cart
-
-    </button>
 
 `;
 /* =========================================================
