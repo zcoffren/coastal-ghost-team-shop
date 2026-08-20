@@ -1776,41 +1776,6 @@ const personalization = {
     </button>
 
 `;
-
- const addPlayerName =
-  $('addPlayerName');
-
-const playerNameField =
-  $('playerNameField');
-
-
-const addPlayerNumber =
-  $('addPlayerNumber');
-
-const playerNumberField =
-  $('playerNumberField');
-
-
-addPlayerName?.addEventListener(
-  'change',
-  () => {
-
-    playerNameField.hidden =
-      !addPlayerName.checked;
-
-  }
-);
-
-
-addPlayerNumber?.addEventListener(
-  'change',
-  () => {
-
-    playerNumberField.hidden =
-      !addPlayerNumber.checked;
-
-  }
-);
    
 /* =========================================================
    QUANTITY CONTROL
@@ -1821,7 +1786,52 @@ let selectedQuantity = 1;
 const modalPanel =
   $('modalPanel');
 
+modalPanel.addEventListener(
+  'change',
+  (event) => {
 
+    if (
+      event.target.id ===
+      'addPlayerName'
+    ) {
+
+      const playerNameField =
+        modalPanel.querySelector(
+          '#playerNameField'
+        );
+
+      if (playerNameField) {
+
+        playerNameField.hidden =
+          !event.target.checked;
+
+      }
+
+    }
+
+
+    if (
+      event.target.id ===
+      'addPlayerNumber'
+    ) {
+
+      const playerNumberField =
+        modalPanel.querySelector(
+          '#playerNumberField'
+        );
+
+      if (playerNumberField) {
+
+        playerNumberField.hidden =
+          !event.target.checked;
+
+      }
+
+    }
+
+  }
+);
+   
 modalPanel.addEventListener(
   'click',
   (event) => {
