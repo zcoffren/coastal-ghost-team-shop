@@ -1776,6 +1776,41 @@ const personalization = {
     </button>
 
 `;
+
+  const addPlayerName =
+  $('addPlayerName');
+
+const playerNameField =
+  $('playerNameField');
+
+
+const addPlayerNumber =
+  $('addPlayerNumber');
+
+const playerNumberField =
+  $('playerNumberField');
+
+
+addPlayerName?.addEventListener(
+  'change',
+  () => {
+
+    playerNameField.hidden =
+      !addPlayerName.checked;
+
+  }
+);
+
+
+addPlayerNumber?.addEventListener(
+  'change',
+  () => {
+
+    playerNumberField.hidden =
+      !addPlayerNumber.checked;
+
+  }
+); 
 /* =========================================================
    QUANTITY CONTROL
 ========================================================= */
