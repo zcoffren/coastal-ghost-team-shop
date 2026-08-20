@@ -1091,7 +1091,7 @@ function showCheckoutToast(message) {
 function sendOrderToSpreadsheet(order) {
 
   const spreadsheetURL =
-    "https://script.google.com/macros/s/AKfycbw-osfYzPCuaATr-iMlw3xgSHsaWJB72XHaihpQUHgnAJOvZRtbqIaYm5Irvg1ZWhTRkQ/exec";
+    "https://script.google.com/macros/s/AKfycbxk7zZoW8F9wvYFvsgxSK7wNNGtUqfmiEg1LjrLAKtQASxcY1ZYWYOcUgVuc86i1fM0zA/exec";
 
 
   fetch(
