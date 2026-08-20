@@ -89,7 +89,7 @@ if (item.playerName) {
 
 if (item.playerNumber) {
   details.push(`Number: ${item.playerNumber}`);
-}
+},
       
       return `
         <article class="cart-item">
