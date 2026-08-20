@@ -83,6 +83,14 @@
       if (item.option) details.push(item.option);
       if (item.dimensions) details.push(item.dimensions);
 
+      if (item.playerName) {
+  details.push(`Name: ${item.playerName}`);
+}
+
+if (item.playerNumber) {
+  details.push(`Number: ${item.playerNumber}`);
+}
+      
       return `
         <article class="cart-item">
           <div class="cart-item-image">
