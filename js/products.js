@@ -2372,6 +2372,8 @@ const match =
           size:
             selectedSize,
 
+           playerName,
+           playerNumber,
 
           qty,
 
