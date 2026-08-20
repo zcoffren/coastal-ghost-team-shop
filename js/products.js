@@ -1803,6 +1803,7 @@ addPlayerName?.addEventListener(
   }
 );
 
+
 addPlayerNumber?.addEventListener(
   'change',
   () => {
@@ -1814,6 +1815,7 @@ addPlayerNumber?.addEventListener(
 
   }
 );
+   
 /* =========================================================
    QUANTITY CONTROL
 ========================================================= */
