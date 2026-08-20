@@ -1069,7 +1069,25 @@ button { font-family: inherit; cursor: pointer; }
   width: 100%;
   margin-top: 0;
 }
+/* Smaller product card typography */
 
+.product-card-body {
+  gap: 10px;
+}
+
+.product-card-body h3 {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.product-card-body p {
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.product-card-body strong {
+  font-size: 1rem;
+}
 /* =========================================================
    QUANTITY CONTROL
    ========================================================= */
