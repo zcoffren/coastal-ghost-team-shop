@@ -227,7 +227,7 @@ modal.style.background = "rgba(0, 0, 0, 0.75)";
           </div>
 
           <div class="checkout-form-group">
-            <label for="playerName">
+            <label for="customerPlayerName">
               Player Name
               <span>(Optional)</span>
             </label>
