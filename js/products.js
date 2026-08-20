@@ -2284,11 +2284,29 @@ modalPanel.addEventListener(
 
         const qty =
 
-          selectedQuantity;
+  selectedQuantity;
 
 
-        const match =
-          getSelectedMockup();
+const playerName =
+
+  $('addPlayerName')?.checked
+
+    ? $('playerName')?.value.trim()
+
+    : '';
+
+
+const playerNumber =
+
+  $('addPlayerNumber')?.checked
+
+    ? $('playerNumber')?.value.trim()
+
+    : '';
+
+
+const match =
+  getSelectedMockup();
 
 
         const basePrice =
