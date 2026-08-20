@@ -3,6 +3,7 @@
 // checkout.js
 // ============================================
 
+
 // ============================================
 // INITIALIZE CHECKOUT
 // ============================================
@@ -227,14 +228,14 @@ modal.style.background = "rgba(0, 0, 0, 0.75)";
           </div>
 
           <div class="checkout-form-group">
-            <label for="customerPlayerName">
+            <label for="playerName">
               Player Name
               <span>(Optional)</span>
             </label>
 
             <input
               type="text"
-              id="customerPlayerName"
+              id="playerName"
             >
           </div>
 
@@ -308,36 +309,40 @@ modal.style.background = "rgba(0, 0, 0, 0.75)";
       event.preventDefault();
 
       const customer = {
-  firstName: document
-    .getElementById("customerFirstName")
-    .value
-    .trim(),
+        firstName: document
+          .getElementById("customerFirstName")
+          .value
+          .trim(),
 
-  lastName: document
-    .getElementById("customerLastName")
-    .value
-    .trim(),
+        lastName: document
+          .getElementById("customerLastName")
+          .value
+          .trim(),
 
-  email: document
-    .getElementById("customerEmail")
-    .value
-    .trim(),
+        email: document
+          .getElementById("customerEmail")
+          .value
+          .trim(),
 
-  phone: document
-    .getElementById("customerPhone")
-    .value
-    .trim(),
+        phone: document
+          .getElementById("customerPhone")
+          .value
+          .trim(),
 
-  playerName: document
-    .getElementById("customerPlayerName")
-    .value
-    .trim(),
+        playerName: document
+          .getElementById("playerName")
+          .value
+          .trim(),
 
-  notes: document
-    .getElementById("orderNotes")
-    .value
-    .trim()
-};
+        notes: document
+          .getElementById("orderNotes")
+          .value
+          .trim()
+      };
+
+      openOrderReview(cart, customer);
+    });
+}
 
 
 // ============================================
