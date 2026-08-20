@@ -2120,32 +2120,66 @@ modalPanel.addEventListener(
       );
 
 
-    const finalPrice =
+const nameUpcharge =
 
-      basePrice === null
+  addPlayerName?.checked
 
-        ? null
+    ? personalization.name.price
 
-        : Number(
-            basePrice
-          ) +
-
-          Number(
-            upcharge
-          );
+    : 0;
 
 
-    $('modalPrice').textContent =
+const numberUpcharge =
 
-      finalPrice === null
+  addPlayerNumber?.checked
 
-        ? 'Price TBD'
+    ? personalization.number.price
 
-        : money(
-            finalPrice
-          );
+    : 0;
 
-  }
+
+const itemPrice =
+
+  basePrice === null
+
+    ? null
+
+    : Number(
+        basePrice
+      ) +
+
+      Number(
+        upcharge
+      ) +
+
+      Number(
+        nameUpcharge
+      ) +
+
+      Number(
+        numberUpcharge
+      );
+
+
+const finalPrice =
+
+  itemPrice === null
+
+    ? null
+
+    : itemPrice *
+      selectedQuantity;
+
+
+$('modalPrice').textContent =
+
+  finalPrice === null
+
+    ? 'Price TBD'
+
+    : money(
+        finalPrice
+      );
 
 
   /*
