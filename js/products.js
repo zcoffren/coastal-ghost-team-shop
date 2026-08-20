@@ -1536,6 +1536,8 @@ const personalization = {
 
 };
    
+  $('modalPanel').innerHTML = `
+
     <div
       class="product-meta"
     >
@@ -1677,15 +1679,22 @@ const personalization = {
 
     </div>
 
-<button
-  class="btn btn-primary btn-block"
-  id="addProductBtn"
-  type="button"
->
 
-  Add to Cart
+    <div
+      class="modal-price"
+      id="modalPrice"
+    ></div>
 
-</button>
+
+    <button
+      class="btn btn-primary btn-block"
+      id="addProductBtn"
+      type="button"
+    >
+
+      Add to Cart
+
+    </button>
 
 `;
 /* =========================================================
