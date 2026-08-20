@@ -1777,7 +1777,7 @@ const personalization = {
 
 `;
 
-  const addPlayerName =
+ const addPlayerName =
   $('addPlayerName');
 
 const playerNameField =
@@ -1798,8 +1798,6 @@ addPlayerName?.addEventListener(
     playerNameField.hidden =
       !addPlayerName.checked;
 
-    updateProduct();
-
   }
 );
 
@@ -1810,8 +1808,6 @@ addPlayerNumber?.addEventListener(
 
     playerNumberField.hidden =
       !addPlayerNumber.checked;
-
-    updateProduct();
 
   }
 );
