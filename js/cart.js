@@ -75,6 +75,7 @@
     }
 
     cartItems.innerHTML = cart.map((item, index) => {
+     
       const details = [];
 
 if (item.color) details.push(item.color);
@@ -82,14 +83,6 @@ if (item.size) details.push(item.size);
 if (item.placement) details.push(item.placement);
 if (item.option) details.push(item.option);
 if (item.dimensions) details.push(item.dimensions);
-
-if (item.playerName) {
-  details.push(`Name: ${item.playerName}`);
-}
-
-if (item.playerNumber) {
-  details.push(`Number: ${item.playerNumber}`);
-},
       
       return `
         <article class="cart-item">
