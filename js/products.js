@@ -1536,8 +1536,6 @@ const personalization = {
 
 };
    
-  $('modalPanel').innerHTML = `
-
     <div
       class="product-meta"
     >
@@ -1679,104 +1677,17 @@ const personalization = {
 
     </div>
 
-<!-- PERSONALIZATION -->
-
-<div
-  class="option-field personalization-field"
+<button
+  class="btn btn-primary btn-block"
+  id="addProductBtn"
+  type="button"
 >
 
-  <div
-    class="field-label"
-  >
-    Personalization
-  </div>
+  Add to Cart
 
-
-  <label
-    class="personalization-option"
-  >
-
-    <input
-      type="checkbox"
-      id="addPlayerName"
-    >
-
-    <span>
-      Add Player Name
-      (+$5.00 each)
-    </span>
-
-  </label>
-
-
-  <div
-    class="personalization-input"
-    id="playerNameField"
-    hidden
-  >
-
-    <input
-      type="text"
-      id="playerName"
-      placeholder="Player Name"
-    >
-
-  </div>
-
-
-  <label
-    class="personalization-option"
-  >
-
-    <input
-      type="checkbox"
-      id="addPlayerNumber"
-    >
-
-    <span>
-      Add Player Number
-      (+$8.00 each)
-    </span>
-
-  </label>
-
-
-  <div
-    class="personalization-input"
-    id="playerNumberField"
-    hidden
-  >
-
-    <input
-      type="text"
-      id="playerNumber"
-      placeholder="Player Number"
-      inputmode="numeric"
-      maxlength="3"
-    >
-
-  </div>
-
-</div>
-
-    <div
-      class="modal-price"
-      id="modalPrice"
-    ></div>
-
-
-    <button
-      class="btn btn-primary btn-block"
-      id="addProductBtn"
-      type="button"
-    >
-
-      Add to Cart
-
-    </button>
+</button>
 
 `;
-   
 /* =========================================================
    QUANTITY CONTROL
 ========================================================= */
@@ -1786,52 +1697,7 @@ let selectedQuantity = 1;
 const modalPanel =
   $('modalPanel');
 
-modalPanel.addEventListener(
-  'change',
-  (event) => {
 
-    if (
-      event.target.id ===
-      'addPlayerName'
-    ) {
-
-      const playerNameField =
-        modalPanel.querySelector(
-          '#playerNameField'
-        );
-
-      if (playerNameField) {
-
-        playerNameField.hidden =
-          !event.target.checked;
-
-      }
-
-    }
-
-
-    if (
-      event.target.id ===
-      'addPlayerNumber'
-    ) {
-
-      const playerNumberField =
-        modalPanel.querySelector(
-          '#playerNumberField'
-        );
-
-      if (playerNumberField) {
-
-        playerNumberField.hidden =
-          !event.target.checked;
-
-      }
-
-    }
-
-  }
-);
-   
 modalPanel.addEventListener(
   'click',
   (event) => {
@@ -2131,66 +1997,32 @@ modalPanel.addEventListener(
       );
 
 
-const nameUpcharge =
+    const finalPrice =
 
-  addPlayerName?.checked
+      basePrice === null
 
-    ? personalization.name.price
+        ? null
 
-    : 0;
+        : Number(
+            basePrice
+          ) +
 
-
-const numberUpcharge =
-
-  addPlayerNumber?.checked
-
-    ? personalization.number.price
-
-    : 0;
+          Number(
+            upcharge
+          );
 
 
-const itemPrice =
+    $('modalPrice').textContent =
 
-  basePrice === null
+      finalPrice === null
 
-    ? null
+        ? 'Price TBD'
 
-    : Number(
-        basePrice
-      ) +
+        : money(
+            finalPrice
+          );
 
-      Number(
-        upcharge
-      ) +
-
-      Number(
-        nameUpcharge
-      ) +
-
-      Number(
-        numberUpcharge
-      );
-
-
-const finalPrice =
-
-  itemPrice === null
-
-    ? null
-
-    : itemPrice *
-      selectedQuantity;
-
-
-$('modalPrice').textContent =
-
-  finalPrice === null
-
-    ? 'Price TBD'
-
-    : money(
-        finalPrice
-      );
+  }
 
 
   /*
