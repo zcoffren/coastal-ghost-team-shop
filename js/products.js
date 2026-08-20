@@ -2312,23 +2312,45 @@ const match =
           );
 
 
-        const unitPrice =
+        const nameUpcharge =
 
-          basePrice === null
+  $('addPlayerName')?.checked
 
-            ? 0
+    ? 5
 
-            : Number(
-                basePrice
-              ) +
+    : 0;
 
-              getSizeUpcharge(
 
-                style,
+const numberUpcharge =
 
-                selectedSize
+  $('addPlayerNumber')?.checked
 
-              );
+    ? 8
+
+    : 0;
+
+
+const unitPrice =
+
+  basePrice === null
+
+    ? 0
+
+    : Number(
+        basePrice
+      ) +
+
+      getSizeUpcharge(
+
+        style,
+
+        selectedSize
+
+      ) +
+
+      nameUpcharge +
+
+      numberUpcharge;
 
         const item = {
 
