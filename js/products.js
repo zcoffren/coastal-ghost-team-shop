@@ -1531,7 +1531,7 @@ const personalization = {
 
   number: {
     enabled: true,
-    price: 8
+    price: 3
   }
 
 };
@@ -1679,6 +1679,85 @@ const personalization = {
 
     </div>
 
+<!-- PERSONALIZATION -->
+
+<div
+  class="option-field personalization-field"
+>
+
+  <div
+    class="field-label"
+  >
+    Personalization
+  </div>
+
+
+  <label
+    class="personalization-option"
+  >
+
+    <input
+      type="checkbox"
+      id="addPlayerName"
+    >
+
+    <span>
+      Add Player Name
+      (+$5.00 each)
+    </span>
+
+  </label>
+
+
+  <div
+    class="personalization-input"
+    id="playerNameField"
+    hidden
+  >
+
+    <input
+      type="text"
+      id="playerName"
+      placeholder="Player Name"
+    >
+
+  </div>
+
+
+  <label
+    class="personalization-option"
+  >
+
+    <input
+      type="checkbox"
+      id="addPlayerNumber"
+    >
+
+    <span>
+      Add Player Number
+      (+$3.00 each)
+    </span>
+
+  </label>
+
+
+  <div
+    class="personalization-input"
+    id="playerNumberField"
+    hidden
+  >
+
+    <input
+      type="text"
+      id="playerNumber"
+      placeholder="Player Number"
+      inputmode="numeric"
+      maxlength="3"
+    >
+
+  </div>
+
+</div>
 
     <div
       class="modal-price"
