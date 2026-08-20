@@ -2333,7 +2333,6 @@ const match =
 
               );
 
-
         const item = {
 
           id:
@@ -2346,12 +2345,10 @@ const match =
 
             `${selectedSize}`,
 
-
           name:
             groupLabel(
               group
             ),
-
 
           styleId:
             group.styleId,
