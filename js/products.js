@@ -2286,23 +2286,7 @@ modalPanel.addEventListener(
 
           selectedQuantity;
 
-const playerName =
 
-  $('addPlayerName')?.checked
-
-    ? $('playerName')?.value.trim()
-
-    : '';
-
-
-const playerNumber =
-
-  $('addPlayerNumber')?.checked
-
-    ? $('playerNumber')?.value.trim()
-
-    : '';
-         
         const match =
           getSelectedMockup();
 
@@ -2313,67 +2297,37 @@ const playerNumber =
           );
 
 
-        const nameUpcharge =
+        const unitPrice =
 
-  $('addPlayerName')?.checked
+          basePrice === null
 
-    ? personalization.name.price
+            ? 0
 
-    : 0;
+            : Number(
+                basePrice
+              ) +
 
+              getSizeUpcharge(
 
-const numberUpcharge =
+                style,
 
-  $('addPlayerNumber')?.checked
+                selectedSize
 
-    ? personalization.number.price
+              );
 
-    : 0;
-
-
-const unitPrice =
-
-  basePrice === null
-
-    ? 0
-
-    : Number(
-        basePrice
-      ) +
-
-      getSizeUpcharge(
-
-        style,
-
-        selectedSize
-
-      ) +
-
-      Number(
-        nameUpcharge
-      ) +
-
-      Number(
-        numberUpcharge
-      );
 
         const item = {
 
           id:
 
-            id:
+            `${group.id}-` +
 
-  `${group.id}-` +
+            `${selectedColor || 'default'}-` +
 
-  `${selectedColor || 'default'}-` +
+            `${selectedPlacement || 'default'}-` +
 
-  `${selectedPlacement || 'default'}-` +
+            `${selectedSize}`,
 
-  `${selectedSize}-` +
-
-  `${playerName || 'no-name'}-` +
-
-  `${playerNumber || 'no-number'}`,
 
           name:
             groupLabel(
@@ -2398,18 +2352,13 @@ const unitPrice =
 
 
           size:
-  selectedSize,
+            selectedSize,
 
 
-playerName,
-
-playerNumber,
+          qty,
 
 
-qty,
-
-
-unitPrice,
+          unitPrice,
 
 
           image:
