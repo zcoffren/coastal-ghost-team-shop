@@ -77,8 +77,6 @@
     cartItems.innerHTML = cart.map((item, index) => {
       const details = [];
 
-      const details = [];
-
 if (item.color) details.push(item.color);
 if (item.size) details.push(item.size);
 if (item.placement) details.push(item.placement);
