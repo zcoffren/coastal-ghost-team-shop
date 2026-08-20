@@ -3,7 +3,6 @@
 // checkout.js
 // ============================================
 
-
 // ============================================
 // INITIALIZE CHECKOUT
 // ============================================
@@ -224,18 +223,6 @@ modal.style.background = "rgba(0, 0, 0, 0.75)";
               type="tel"
               id="customerPhone"
               required
-            >
-          </div>
-
-          <div class="checkout-form-group">
-            <label for="playerName">
-              Player Name
-              <span>(Optional)</span>
-            </label>
-
-            <input
-              type="text"
-              id="playerName"
             >
           </div>
 
