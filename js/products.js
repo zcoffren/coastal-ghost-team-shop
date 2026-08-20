@@ -2281,11 +2281,9 @@ modalPanel.addEventListener(
       'click',
       () => {
 
-
         const qty =
 
   selectedQuantity;
-
 
 const playerName =
 
@@ -2294,7 +2292,6 @@ const playerName =
     ? $('playerName')?.value.trim()
 
     : '';
-
 
 const playerNumber =
 
@@ -2335,15 +2332,19 @@ const match =
 
         const item = {
 
-          id:
+           id:
 
-            `${group.id}-` +
+  `${group.id}-` +
 
-            `${selectedColor || 'default'}-` +
+  `${selectedColor || 'default'}-` +
 
-            `${selectedPlacement || 'default'}-` +
+  `${selectedPlacement || 'default'}-` +
 
-            `${selectedSize}`,
+  `${selectedSize}-` +
+
+  `${playerName || 'no-name'}-` +
+
+  `${playerNumber || 'no-number'}`,
 
           name:
             groupLabel(
