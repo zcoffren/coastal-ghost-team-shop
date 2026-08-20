@@ -1798,7 +1798,7 @@ addPlayerName?.addEventListener(
     playerNameField.hidden =
       !addPlayerName.checked;
 
-    updatePrice();
+    updateProduct();
 
   }
 );
@@ -1810,7 +1810,7 @@ addPlayerNumber?.addEventListener(
     playerNumberField.hidden =
       !addPlayerNumber.checked;
 
-    updatePrice();
+    updateProduct();
 
   }
 );
