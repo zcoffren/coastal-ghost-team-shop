@@ -329,11 +329,6 @@ modal.style.background = "rgba(0, 0, 0, 0.75)";
           .value
           .trim(),
 
-        playerName: document
-          .getElementById("playerName")
-          .value
-          .trim(),
-
         notes: document
           .getElementById("orderNotes")
           .value
@@ -440,12 +435,6 @@ function openOrderReview(cart, customer) {
             <br>
 
             ${customer.phone}
-
-            ${
-              customer.playerName
-                ? `<br>Player: ${customer.playerName}`
-                : ""
-            }
 
             ${
               customer.notes
@@ -807,18 +796,10 @@ function openOrderConfirmation(order) {
 
           <button
             class="btn btn-secondary"
-            id="copyConfirmationBtn"
-            type="button"
-          >
-            Copy Order Number
-          </button>
-
-          <button
-            class="btn btn-secondary"
             id="finishOrderBtn"
             type="button"
           >
-            Done
+            I've paid. Close my cart.
           </button>
 
         </div>
