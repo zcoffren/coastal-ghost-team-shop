@@ -1531,7 +1531,7 @@ const personalization = {
 
   number: {
     enabled: true,
-    price: 3
+    price: 8
   }
 
 };
@@ -1735,7 +1735,7 @@ const personalization = {
 
     <span>
       Add Player Number
-      (+$3.00 each)
+      (+$8.00 each)
     </span>
 
   </label>
