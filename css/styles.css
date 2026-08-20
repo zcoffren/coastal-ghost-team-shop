@@ -1340,3 +1340,10 @@ button { font-family: inherit; cursor: pointer; }
 
   color: var(--sheet-white);
 }
+
+.personalization-option {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8px;
+}
