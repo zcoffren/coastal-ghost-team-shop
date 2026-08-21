@@ -1806,7 +1806,6 @@ const personalization = {
 const playerNameField =
   $('playerNameField');
 
-
 const addPlayerNumber =
   $('addPlayerNumber');
 
@@ -1833,7 +1832,86 @@ addPlayerNumber?.addEventListener(
       !addPlayerNumber.checked;
 
   }
-); 
+);
+
+
+/* =========================================================
+   PERSONALIZATION PREVIEW
+========================================================= */
+
+function updatePersonalizationExample() {
+
+  const nameChecked =
+    $('addPlayerName').checked;
+
+
+  const numberChecked =
+    $('addPlayerNumber').checked;
+
+
+  const example =
+    $('personalizationExample');
+
+
+  const image =
+    $('personalizationExampleImage');
+
+
+  // Nothing selected
+
+  if (
+    !nameChecked &&
+    !numberChecked
+  ) {
+
+    example.hidden = true;
+
+    image.src = "";
+
+    return;
+
+  }
+
+
+  // Name only
+
+  if (
+    nameChecked &&
+    !numberChecked
+  ) {
+
+    image.src =
+      "assets/product-samples/personalization/name.png";
+
+  }
+
+
+  // Number only
+
+  else if (
+    !nameChecked &&
+    numberChecked
+  ) {
+
+    image.src =
+      "assets/product-samples/personalization/number.png";
+
+  }
+
+
+  // Name and Number
+
+  else {
+
+    image.src =
+      "assets/product-samples/personalization/name-number.png";
+
+  }
+
+
+  example.hidden = false;
+
+}
 /* =========================================================
    QUANTITY CONTROL
 ========================================================= */
