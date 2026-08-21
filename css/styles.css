@@ -1400,3 +1400,20 @@ button { font-family: inherit; cursor: pointer; }
 
   border-radius: 8px;
 }
+/* =========================================
+   ORDER REVIEW ITEMS
+   ========================================= */
+
+.checkout-order-items .checkout-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+
+.checkout-order-items .checkout-item img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
