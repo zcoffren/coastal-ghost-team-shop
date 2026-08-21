@@ -740,10 +740,6 @@ ${
             Submit Order
           </button>
 
-        </div>
-
-      </div>
-
     </div>
   `;
 
