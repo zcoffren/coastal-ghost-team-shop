@@ -639,29 +639,29 @@
     "id": "P010",
     "design": "boo-boys-blackout",
     "productFolder": "womens-quarter-zip",
-    "styleId": "lst",
+    "styleId": "lst253",
     "mockups": [
       {
         "placement": "Standard",
-        "color": "253 Athletic Heather",
+        "color": "Athletic Heather",
         "image": "assets/product-samples/boo-boys-blackout/womens-quarter-zip/lst-253-athletic-heather.png",
         "filename": "lst-253-athletic-heather.png"
       },
       {
         "placement": "Standard",
-        "color": "253 Black",
+        "color": "Black",
         "image": "assets/product-samples/boo-boys-blackout/womens-quarter-zip/lst-253-black.png",
         "filename": "lst-253-black.png"
       },
       {
         "placement": "Standard",
-        "color": "253 Graphite Heather",
+        "color": "Graphite Heather",
         "image": "assets/product-samples/boo-boys-blackout/womens-quarter-zip/lst-253-graphite-heather.png",
         "filename": "lst-253-graphite-heather.png"
       },
       {
         "placement": "Standard",
-        "color": "253 White",
+        "color": "White",
         "image": "assets/product-samples/boo-boys-blackout/womens-quarter-zip/lst-253-white.png",
         "filename": "lst-253-white.png"
       }
@@ -3669,29 +3669,29 @@
     "id": "P076",
     "design": "coastal-ghost-baseball-wordmark",
     "productFolder": "womens-quarter-zip",
-    "styleId": "lst",
+    "styleId": "lst253",
     "mockups": [
       {
         "placement": "Standard",
-        "color": "253 Athletic Heather",
+        "color": "Athletic Heather",
         "image": "assets/product-samples/coastal-ghost-baseball-wordmark/womens-quarter-zip/lst-253-athletic-heather.png",
         "filename": "lst-253-athletic-heather.png"
       },
       {
         "placement": "Standard",
-        "color": "253 Black",
+        "color": "Black",
         "image": "assets/product-samples/coastal-ghost-baseball-wordmark/womens-quarter-zip/lst-253-black.png",
         "filename": "lst-253-black.png"
       },
       {
         "placement": "Standard",
-        "color": "253 Graphite Heather",
+        "color": "Graphite Heather",
         "image": "assets/product-samples/coastal-ghost-baseball-wordmark/womens-quarter-zip/lst-253-graphite-heather.png",
         "filename": "lst-253-graphite-heather.png"
       },
       {
         "placement": "Standard",
-        "color": "253 White",
+        "color": "White",
         "image": "assets/product-samples/coastal-ghost-baseball-wordmark/womens-quarter-zip/lst-253-white.png",
         "filename": "lst-253-white.png"
       }
@@ -4221,7 +4221,7 @@
     "id": "P088",
     "design": "coastal-ghost-baseball-gray-wordmark",
     "productFolder": "womens-quarter-zip",
-    "styleId": "lst",
+    "styleId": "lst253",
     "mockups": [
       {
         "placement": "Standard",
@@ -4969,12 +4969,6 @@
       },
       {
         "placement": "Large Front",
-        "color": "Gold",
-        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/g180-large-front-gold.png",
-        "filename": "g180-large-front-gold.png"
-      },
-      {
-        "placement": "Large Front",
         "color": "Purple",
         "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/g180-large-front-purple.png",
         "filename": "g180-large-front-purple.png"
@@ -5002,12 +4996,6 @@
         "color": "Charcoal",
         "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/g180-medium-front-charcoal.png",
         "filename": "g180-medium-front-charcoal.png"
-      },
-      {
-        "placement": "Medium Front",
-        "color": "Gold",
-        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/g180-medium-front-gold.png",
-        "filename": "g180-medium-front-gold.png"
       },
       {
         "placement": "Medium Front",
@@ -5049,12 +5037,6 @@
       },
       {
         "placement": "Left Chest",
-        "color": "Mustard",
-        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/3719-left-chest-mustard.png",
-        "filename": "3719-left-chest-mustard.png"
-      },
-      {
-        "placement": "Left Chest",
         "color": "Team Purple",
         "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/3719-left-chest-team-purple.png",
         "filename": "3719-left-chest-team-purple.png"
@@ -5076,12 +5058,6 @@
         "color": "Deep Heather",
         "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/3719-medium-front-deep-heather.png",
         "filename": "3719-medium-front-deep-heather.png"
-      },
-      {
-        "placement": "Medium Front",
-        "color": "Mustard",
-        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/3719-medium-front-mustard.png",
-        "filename": "3719-medium-front-mustard.png"
       },
       {
         "placement": "Medium Front",
@@ -5117,12 +5093,6 @@
       },
       {
         "placement": "Left Chest",
-        "color": "Gold",
-        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/g185-left-chest-gold.png",
-        "filename": "g185-left-chest-gold.png"
-      },
-      {
-        "placement": "Left Chest",
         "color": "Purple",
         "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/g185-left-chest-purple.png",
         "filename": "g185-left-chest-purple.png"
@@ -5144,12 +5114,6 @@
         "color": "Charcoal",
         "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/g185-medium-front-charcoal.png",
         "filename": "g185-medium-front-charcoal.png"
-      },
-      {
-        "placement": "Medium Front",
-        "color": "Gold",
-        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/g185-medium-front-gold.png",
-        "filename": "g185-medium-front-gold.png"
       },
       {
         "placement": "Medium Front",
@@ -5347,12 +5311,6 @@
       },
       {
         "placement": "Large Front",
-        "color": "Gold",
-        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-large-front-gold.png",
-        "filename": "g640-large-front-gold.png"
-      },
-      {
-        "placement": "Large Front",
         "color": "Graphite Heather",
         "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-large-front-graphite-heather.png",
         "filename": "g640-large-front-graphite-heather.png"
@@ -5389,12 +5347,6 @@
       },
       {
         "placement": "Left Chest",
-        "color": "Gold",
-        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-left-chest-gold.png",
-        "filename": "g640-left-chest-gold.png"
-      },
-      {
-        "placement": "Left Chest",
         "color": "Graphite Heather",
         "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-left-chest-graphite-heather.png",
         "filename": "g640-left-chest-graphite-heather.png"
@@ -5428,12 +5380,6 @@
         "color": "Charcoal Gray",
         "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-medium-front-charcoal-gray.png",
         "filename": "g640-medium-front-charcoal-gray.png"
-      },
-      {
-        "placement": "Medium Front",
-        "color": "Gold",
-        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-medium-front-gold.png",
-        "filename": "g640-medium-front-gold.png"
       },
       {
         "placement": "Medium Front",
@@ -5509,29 +5455,29 @@
     "id": "P111",
     "design": "ghost-wordmark",
     "productFolder": "womens-quarter-zip",
-    "styleId": "lst",
+    "styleId": "lst253",
     "mockups": [
       {
         "placement": "Standard",
-        "color": "253 Athletic Heather",
+        "color": "Athletic Heather",
         "image": "assets/product-samples/ghost-wordmark/womens-quarter-zip/lst-253-athletic-heather.png",
         "filename": "lst-253-athletic-heather.png"
       },
       {
         "placement": "Standard",
-        "color": "253 Black",
+        "color": "Black",
         "image": "assets/product-samples/ghost-wordmark/womens-quarter-zip/lst-253-black.png",
         "filename": "lst-253-black.png"
       },
       {
         "placement": "Standard",
-        "color": "253 Graphite Heather",
+        "color": "Graphite Heather",
         "image": "assets/product-samples/ghost-wordmark/womens-quarter-zip/lst-253-graphite-heather.png",
         "filename": "lst-253-graphite-heather.png"
       },
       {
         "placement": "Standard",
-        "color": "253 White",
+        "color": "White",
         "image": "assets/product-samples/ghost-wordmark/womens-quarter-zip/lst-253-white.png",
         "filename": "lst-253-white.png"
       }
@@ -5681,12 +5627,6 @@
       },
       {
         "placement": "Left Chest",
-        "color": "Gold",
-        "image": "assets/product-samples/ghost-wordmark/youth-hoodies/g185b-left-chest-gold.png",
-        "filename": "g185b-left-chest-gold.png"
-      },
-      {
-        "placement": "Left Chest",
         "color": "Purple",
         "image": "assets/product-samples/ghost-wordmark/youth-hoodies/g185b-left-chest-purple.png",
         "filename": "g185b-left-chest-purple.png"
@@ -5708,12 +5648,6 @@
         "color": "Charcoal",
         "image": "assets/product-samples/ghost-wordmark/youth-hoodies/g185b-medium-front-charcoal.png",
         "filename": "g185b-medium-front-charcoal.png"
-      },
-      {
-        "placement": "Medium Front",
-        "color": "Gold",
-        "image": "assets/product-samples/ghost-wordmark/youth-hoodies/g185b-medium-front-gold.png",
-        "filename": "g185b-medium-front-gold.png"
       },
       {
         "placement": "Medium Front",
