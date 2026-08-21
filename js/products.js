@@ -1769,7 +1769,7 @@ const personalization = {
   <div
     class="personalization-example-label"
   >
-    Personalization Preview
+    This is an example only. Your custom name and/or number will be used on your item.
   </div>
 
   <img
