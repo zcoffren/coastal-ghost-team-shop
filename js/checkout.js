@@ -670,77 +670,79 @@ const total =
         </div>
 
         <div class="checkout-order-items">
-          ${cart.map(renderCheckoutItem).join("")}
+  ${cart.map(renderCheckoutItem).join("")}
+</div>
+
+<div class="checkout-summary">
+
+  <div class="checkout-total-row">
+
+    <span>Subtotal</span>
+
+    <strong>
+      $${subtotal.toFixed(2)}
+    </strong>
+
+  </div>
+
+  ${
+    discount.valid
+      ? `
+        <div class="checkout-total-row checkout-discount-row">
+
+          <span>
+            Discount (${discount.code})
+          </span>
+
+          <strong>
+            -$${discount.discountAmount.toFixed(2)}
+          </strong>
+
         </div>
+      `
+      : ""
+  }
 
-        <div class="checkout-total-row">
+  <div
+    class="
+      checkout-total-row
+      checkout-grand-total
+    "
+  >
 
-  <span>Subtotal</span>
+    <span>Amount Due</span>
 
-  <strong>
-    $${subtotal.toFixed(2)}
-  </strong>
+    <strong>
+      $${total.toFixed(2)}
+    </strong>
+
+  </div>
 
 </div>
 
+<div class="checkout-actions">
 
-${
-  discount.valid
-    ? `
-      <div class="checkout-total-row checkout-discount-row">
+  <button
+    class="btn btn-secondary"
+    id="backToCustomerInfoBtn"
+    type="button"
+  >
+    Back
+  </button>
 
-        <span>
-          Discount (${discount.code})
-        </span>
-
-        <strong>
-          -$${discount.discountAmount.toFixed(2)}
-        </strong>
-
-      </div>
-    `
-    : ""
-}
-
-
-<div
-  class="
-    checkout-total-row
-    checkout-grand-total
-  "
->
-
-  <span>Amount Due</span>
-
-  <strong>
-    $${total.toFixed(2)}
-  </strong>
+  <button
+    class="btn btn-primary"
+    id="submitOrderBtn"
+    type="button"
+  >
+    Submit Order
+  </button>
 
 </div>
 
-          </div>
+</div>
 
-        </div>
-
-        <div class="checkout-actions">
-
-          <button
-            class="btn btn-secondary"
-            id="backToCustomerInfoBtn"
-            type="button"
-          >
-            Back
-          </button>
-
-          <button
-            class="btn btn-primary"
-            id="submitOrderBtn"
-            type="button"
-          >
-            Submit Order
-          </button>
-
-    </div>
+</div>
   `;
 
   document.body.appendChild(modal);
