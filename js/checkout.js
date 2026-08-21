@@ -512,10 +512,7 @@ modal.style.background = "rgba(0, 0, 0, 0.75)";
           .value
           .trim(),
 
-        notes: document
-  .getElementById("orderNotes")
-  .value
-  .trim(),
+        notes: "",
 
 discountCode: document
   .getElementById("discountCode")
