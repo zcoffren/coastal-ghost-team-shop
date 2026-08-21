@@ -110,7 +110,201 @@ function getCheckoutTotal(cart) {
   }, 0);
 }
 
+// ============================================
+// DISCOUNT CODES
+// ============================================
 
+function getItemQuantity(item) {
+
+  return Number(
+    item.qty ||
+    item.quantity ||
+    1
+  );
+
+}
+
+
+function getItemPrice(item) {
+
+  return Number(
+    item.unitPrice ||
+    item.price ||
+    item.basePrice ||
+    0
+  );
+
+}
+
+
+function getItemLineTotal(item) {
+
+  return (
+    getItemPrice(item) *
+    getItemQuantity(item)
+  );
+
+}
+
+
+function isDiscountExcludedItem(item) {
+
+  const searchableText = [
+
+    item.name,
+    item.productName,
+    item.product,
+    item.itemType,
+    item.option,
+    item.category,
+    item.type
+
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+
+
+  return (
+
+    searchableText.includes("dtf") ||
+
+    searchableText.includes(
+      "personalization"
+    ) ||
+
+    searchableText.includes(
+      "personalisation"
+    )
+
+  );
+
+}
+
+
+function getDiscountDetails(
+  cart,
+  discountCode
+) {
+
+  const subtotal =
+    getCheckoutTotal(cart);
+
+  const normalizedCode =
+    String(
+      discountCode || ""
+    )
+      .trim()
+      .toLowerCase();
+
+
+  let code = "";
+  let percent = 0;
+  let eligibleTotal = 0;
+
+
+  if (
+    normalizedCode ===
+    "myboo20"
+  ) {
+
+    code = "MyBoo20";
+    percent = 20;
+
+  } else if (
+
+    normalizedCode ===
+    "terrifying10"
+
+  ) {
+
+    code = "Terrifying10";
+    percent = 10;
+
+  } else if (
+
+    normalizedCode ===
+    "onthehauntedhouse"
+
+  ) {
+
+    code = "OnTheHauntedHouse";
+    percent = 100;
+
+  } else {
+
+    return {
+      valid: false,
+      code: "",
+      percent: 0,
+      subtotal,
+      eligibleTotal: 0,
+      discountAmount: 0,
+      total: subtotal
+    };
+
+  }
+
+
+  if (percent === 100) {
+
+    eligibleTotal =
+      subtotal;
+
+  } else {
+
+    eligibleTotal =
+      cart.reduce(
+        (total, item) => {
+
+          if (
+            isDiscountExcludedItem(item)
+          ) {
+
+            return total;
+
+          }
+
+          return (
+            total +
+            getItemLineTotal(item)
+          );
+
+        },
+        0
+      );
+
+  }
+
+
+  const discountAmount =
+
+    eligibleTotal *
+    (percent / 100);
+
+
+  return {
+
+    valid: true,
+
+    code,
+
+    percent,
+
+    subtotal,
+
+    eligibleTotal,
+
+    discountAmount,
+
+    total: Math.max(
+      0,
+      subtotal - discountAmount
+    )
+
+  };
+
+}
 // ============================================
 // OPEN CUSTOMER INFORMATION
 // ============================================
@@ -224,22 +418,40 @@ modal.style.background = "rgba(0, 0, 0, 0.75)";
               id="customerPhone"
               required
             >
-          </div>
-
           <div class="checkout-form-group">
-            <label for="orderNotes">
-              Order Notes
-              <span>(Optional)</span>
-            </label>
 
-            <textarea
-              id="orderNotes"
-              rows="4"
-              placeholder="Anything we should know about your order?"
-            ></textarea>
-          </div>
+  <label for="orderNotes">
+    Order Notes
+    <span>(Optional)</span>
+  </label>
 
-          <div class="checkout-actions">
+  <textarea
+    id="orderNotes"
+    rows="4"
+    placeholder="Anything we should know about your order?"
+  ></textarea>
+
+</div>
+
+
+<div class="checkout-form-group">
+
+  <label for="discountCode">
+    Discount Code
+    <span>(Optional)</span>
+  </label>
+
+  <input
+    type="text"
+    id="discountCode"
+    placeholder="Enter discount code"
+    autocomplete="off"
+  >
+
+</div>
+
+
+<div class="checkout-actions">
 
             <button
               class="btn btn-secondary"
@@ -317,11 +529,41 @@ modal.style.background = "rgba(0, 0, 0, 0.75)";
           .trim(),
 
         notes: document
-          .getElementById("orderNotes")
-          .value
-          .trim()
-      };
+  .getElementById("orderNotes")
+  .value
+  .trim(),
 
+discountCode: document
+  .getElementById("discountCode")
+  .value
+  .trim()
+      };
+const discount =
+  getDiscountDetails(
+    cart,
+    customer.discountCode
+  );
+
+
+if (
+
+  customer.discountCode &&
+
+  !discount.valid
+
+) {
+
+  showCheckoutToast(
+    "That discount code is not valid."
+  );
+
+  return;
+
+}
+
+
+customer.discount =
+  discount;
       openOrderReview(cart, customer);
     });
 }
@@ -334,7 +576,20 @@ modal.style.background = "rgba(0, 0, 0, 0.75)";
 function openOrderReview(cart, customer) {
   closeOrderReview();
 
-  const total = getCheckoutTotal(cart);
+  const subtotal =
+  getCheckoutTotal(cart);
+
+
+const discount =
+  customer.discount ||
+  getDiscountDetails(
+    cart,
+    customer.discountCode
+  );
+
+
+const total =
+  discount.total;
 
   const totalItems = cart.reduce((total, item) => {
     return total + Number(
@@ -437,30 +692,50 @@ function openOrderReview(cart, customer) {
           ${cart.map(renderCheckoutItem).join("")}
         </div>
 
-        <div class="checkout-summary">
+        <div class="checkout-total-row">
 
-          <div class="checkout-total-row">
+  <span>Subtotal</span>
 
-            <span>Total Items</span>
+  <strong>
+    $${subtotal.toFixed(2)}
+  </strong>
 
-            <strong>
-              ${totalItems}
-            </strong>
+</div>
 
-          </div>
 
-          <div
-            class="
-              checkout-total-row
-              checkout-grand-total
-            "
-          >
+${
+  discount.valid
+    ? `
+      <div class="checkout-total-row checkout-discount-row">
 
-            <span>Order Total</span>
+        <span>
+          Discount (${discount.code})
+        </span>
 
-            <strong>
-              $${total.toFixed(2)}
-            </strong>
+        <strong>
+          -$${discount.discountAmount.toFixed(2)}
+        </strong>
+
+      </div>
+    `
+    : ""
+}
+
+
+<div
+  class="
+    checkout-total-row
+    checkout-grand-total
+  "
+>
+
+  <span>Amount Due</span>
+
+  <strong>
+    $${total.toFixed(2)}
+  </strong>
+
+</div>
 
           </div>
 
@@ -517,9 +792,11 @@ function openOrderReview(cart, customer) {
     ?.addEventListener(
       "click",
       () => {
-        submitOrder(cart, customer);
-      }
-    );
+       submitOrder(
+  cart,
+  customer,
+  discount
+);
 }
 
 
@@ -552,38 +829,56 @@ function generateOrderNumber() {
 // SUBMIT ORDER
 // ============================================
 
-function submitOrder(cart, customer) {
+function submitOrder(
+  cart,
+  customer,
+  discount
+) {
 
   const orderNumber =
     generateOrderNumber();
 
 
-  const total =
-    getCheckoutTotal(cart);
+ const subtotal =
+  getCheckoutTotal(cart);
+
+
+const finalDiscount =
+  discount ||
+  getDiscountDetails(
+    cart,
+    customer?.discountCode
+  );
+
+
+const total =
+  finalDiscount.total;
 
 
   const order = {
+  orderNumber,
+  orderDate: new Date().toISOString(),
+  customer,
+  items: cart,
 
-    orderNumber,
+  subtotal,
 
-    orderDate:
-      new Date().toISOString(),
+  discountCode:
+    finalDiscount.valid
+      ? finalDiscount.code
+      : "",
 
-    customer,
+  discountPercent:
+    finalDiscount.percent,
 
-    items:
-      cart,
+  discountAmount:
+    finalDiscount.discountAmount,
 
-    total,
+  total,
 
-    paymentStatus:
-      "Pending",
-
-    productionStatus:
-      "New"
-
-  };
-
+  paymentStatus: "Pending",
+  productionStatus: "New"
+};
 
   // ==========================================
   // SEND ORDER TO GOOGLE SHEETS
