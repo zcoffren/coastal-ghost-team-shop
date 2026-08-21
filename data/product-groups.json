@@ -4866,7 +4866,867 @@
         "color": "White",
         "image": "assets/product-samples/fantom-club/youth-hoodies/g185b-medium-front-white.png",
         "filename": "g185b-medium-front-white.png"
+   }
+    ]
+  },
+   {
+    "id": "P102",
+    "design": "ghost-wordmark",
+    "productFolder": "unisex-crewneck",
+    "styleId": "1566",
+    "mockups": [
+      {
+        "placement": "Large Front",
+        "color": "Gray",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/1566-large-front-gray.png",
+        "filename": "1566-large-front-gray.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "Pepper",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/1566-large-front-pepper.png",
+        "filename": "1566-large-front-pepper.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "Violet",
+        "image": "assets/product-samples/boo-boys-blackout/unisex-crewneck/1566-large-front-violet.png",
+        "filename": "1566-large-front-violet.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/1566-large-front-white.png",
+        "filename": "1566-large-front-white.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Gray",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/1566-left-chest-gray.png",
+        "filename": "1566-left-chest-gray.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Pepper",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/1566-left-chest-pepper.png",
+        "filename": "1566-left-chest-pepper.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Violet",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/1566-left-chest-violet.png",
+        "filename": "1566-left-chest-violet.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/1566-left-chest-white.png",
+        "filename": "1566-left-chest-white.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Gray",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/1566-medium-front-gray.png",
+        "filename": "1566-medium-front-gray.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Pepper",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/1566-medium-front-pepper.png",
+        "filename": "1566-medium-front-pepper.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Violet",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/1566-medium-front-violet.png",
+        "filename": "1566-medium-front-violet.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/1566-medium-front-white.png",
+        "filename": "1566-medium-front-white.png"
       }
+    ]
+  },
+  {
+    "id": "P103",
+    "design": "ghost-wordmark",
+    "productFolder": "unisex-crewneck",
+    "styleId": "g180",
+    "mockups": [
+      {
+        "placement": "Large Front",
+        "color": "Black",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/g180-large-front-black.png",
+        "filename": "g180-large-front-black.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "Charcoal",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/g180-large-front-charcoal.png",
+        "filename": "g180-large-front-charcoal.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "Gold",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/g180-large-front-gold.png",
+        "filename": "g180-large-front-gold.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "Purple",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/g180-large-front-purple.png",
+        "filename": "g180-large-front-purple.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "Sport Gray",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/g180-large-front-sport-gray.png",
+        "filename": "g180-large-front-sport-gray.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/g180-large-front-white.png",
+        "filename": "g180-large-front-white.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/g180-medium-front-black.png",
+        "filename": "g180-medium-front-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Charcoal",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/g180-medium-front-charcoal.png",
+        "filename": "g180-medium-front-charcoal.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Gold",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/g180-medium-front-gold.png",
+        "filename": "g180-medium-front-gold.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Purple",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/g180-medium-front-purple.png",
+        "filename": "g180-medium-front-purple.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Sport Gray",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/g180-medium-front-sport-gray.png",
+        "filename": "g180-medium-front-sport-gray.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/unisex-crewneck/g180-medium-front-white.png",
+        "filename": "g180-medium-front-white.png"
+      }
+    ]
+  },
+  {
+    "id": "P104",
+    "design": "ghost-wordmark",
+    "productFolder": "unisex-hoodies",
+    "styleId": "3719",
+    "mockups": [
+      {
+        "placement": "Left Chest",
+        "color": "Black",
+        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/3719-left-chest-black.png",
+        "filename": "3719-left-chest-black.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Deep Heather",
+        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/3719-left-chest-deep-heather.png",
+        "filename": "3719-left-chest-deep-heather.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Mustard",
+        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/3719-left-chest-mustard.png",
+        "filename": "3719-left-chest-mustard.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Team Purple",
+        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/3719-left-chest-team-purple.png",
+        "filename": "3719-left-chest-team-purple.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/3719-left-chest-white.png",
+        "filename": "3719-left-chest-white.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/3719-medium-front-black.png",
+        "filename": "3719-medium-front-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Deep Heather",
+        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/3719-medium-front-deep-heather.png",
+        "filename": "3719-medium-front-deep-heather.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Mustard",
+        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/3719-medium-front-mustard.png",
+        "filename": "3719-medium-front-mustard.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Team Purple",
+        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/3719-medium-front-team-purple.png",
+        "filename": "3719-medium-front-team-purple.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/3719-medium-front-white.png",
+        "filename": "3719-medium-front-white.png"
+      }
+    ]
+  },
+  {
+    "id": "P105",
+    "design": "ghost-wordmark",
+    "productFolder": "unisex-hoodies",
+    "styleId": "g185",
+    "mockups": [
+      {
+        "placement": "Left Chest",
+        "color": "Black",
+        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/g185-left-chest-black.png",
+        "filename": "g185-left-chest-black.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Charcoal",
+        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/g185-left-chest-charcoal.png",
+        "filename": "g185-left-chest-charcoal.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Gold",
+        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/g185-left-chest-gold.png",
+        "filename": "g185-left-chest-gold.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Purple",
+        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/g185-left-chest-purple.png",
+        "filename": "g185-left-chest-purple.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/g185-left-chest-white.png",
+        "filename": "g185-left-chest-white.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/g185-medium-front-black.png",
+        "filename": "g185-medium-front-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Charcoal",
+        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/g185-medium-front-charcoal.png",
+        "filename": "g185-medium-front-charcoal.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Gold",
+        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/g185-medium-front-gold.png",
+        "filename": "g185-medium-front-gold.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Purple",
+        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/g185-medium-front-purple.png",
+        "filename": "g185-medium-front-purple.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/unisex-hoodies/g185-medium-front-white.png",
+        "filename": "g185-medium-front-white.png"
+      }
+    ]
+  },
+  {
+    "id": "P106",
+    "design": "ghost-wordmark",
+    "productFolder": "unisex-long-sleeve",
+    "styleId": "g540",
+    "mockups": [
+      {
+        "placement": "Large Front",
+        "color": "Black",
+        "image": "assets/product-samples/ghost-wordmark/unisex-long-sleeve/g540-large-front-black.png",
+        "filename": "g540-large-front-black.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "Charcoal Gray",
+        "image": "assets/product-samples/ghost-wordmark/unisex-long-sleeve/g540-large-front-charcoal-gray.png",
+        "filename": "g540-large-front-charcoal-gray.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "Purple",
+        "image": "assets/product-samples/ghost-wordmark/unisex-long-sleeve/g540-large-front-purple.png",
+        "filename": "g540-large-front-purple.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "Sport Gray",
+        "image": "assets/product-samples/ghost-wordmark/unisex-long-sleeve/g540-large-front-sport-gray.png",
+        "filename": "g540-large-front-sport-gray.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/unisex-long-sleeve/g540-large-front-white.png",
+        "filename": "g540-large-front-white.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Black",
+        "image": "assets/product-samples/ghost-wordmark/unisex-long-sleeve/g540-left-chest-black.png",
+        "filename": "g540-left-chest-black.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Charcoal Gray",
+        "image": "assets/product-samples/ghost-wordmark/unisex-long-sleeve/g540-left-chest-charcoal-gray.png",
+        "filename": "g540-left-chest-charcoal-gray.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Purple",
+        "image": "assets/product-samples/ghost-wordmark/unisex-long-sleeve/g540-left-chest-purple.png",
+        "filename": "g540-left-chest-purple.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Sport Gray",
+        "image": "assets/product-samples/ghost-wordmark/unisex-long-sleeve/g540-left-chest-sport-gray.png",
+        "filename": "g540-left-chest-sport-gray.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/unisex-long-sleeve/g540-left-chest-white.png",
+        "filename": "g540-left-chest-white.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/ghost-wordmark/unisex-long-sleeve/g540-medium-front-black.png",
+        "filename": "g540-medium-front-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Charcoal Gray",
+        "image": "assets/product-samples/ghost-wordmark/unisex-long-sleeve/g540-medium-front-charcoal-gray.png",
+        "filename": "g540-medium-front-charcoal-gray.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Purple",
+        "image": "assets/product-samples/ghost-wordmark/unisex-long-sleeve/g540-medium-front-purple.png",
+        "filename": "g540-medium-front-purple.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Sport Gray",
+        "image": "assets/product-samples/ghost-wordmark/unisex-long-sleeve/g540-medium-front-sport-gray.png",
+        "filename": "g540-medium-front-sport-gray.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/unisex-long-sleeve/g540-medium-front-white.png",
+        "filename": "g540-medium-front-white.png"
+      }
+    ]
+  },
+  {
+    "id": "P107",
+    "design": "ghost-wordmark",
+    "productFolder": "unisex-quarter-zip",
+    "styleId": "k807",
+    "mockups": [
+      {
+        "placement": "Standard",
+        "color": "Black",
+        "image": "assets/product-samples/ghost-wordmark/unisex-quarter-zip/k807-black.png",
+        "filename": "k807-black.png"
+      },
+      {
+        "placement": "Standard",
+        "color": "Charcoal Heather Gray",
+        "image": "assets/product-samples/ghost-wordmark/unisex-quarter-zip/k807-charcoal-heather-gray.png",
+        "filename": "k807-charcoal-heather-gray.png"
+      },
+      {
+        "placement": "Standard",
+        "color": "Heather Gray",
+        "image": "assets/product-samples/ghost-wordmark/unisex-quarter-zip/k807-heather-gray.png",
+        "filename": "k807-heather-gray.png"
+      }
+    ]
+  },
+  {
+    "id": "P108",
+    "design": "ghost-wordmark",
+    "productFolder": "unisex-quarter-zip",
+    "styleId": "st253",
+    "mockups": [
+      {
+        "placement": "Standard",
+        "color": "Athletic Heather Gray",
+        "image": "assets/product-samples/ghost-wordmark/unisex-quarter-zip/st253-athletic-heather-gray.png",
+        "filename": "st253-athletic-heather-gray.png"
+      },
+      {
+        "placement": "Standard",
+        "color": "Black",
+        "image": "assets/product-samples/ghost-wordmark/unisex-quarter-zip/st253-black.png",
+        "filename": "st253-black.png"
+      },
+      {
+        "placement": "Standard",
+        "color": "Graphite Heather",
+        "image": "assets/product-samples/ghost-wordmark/unisex-quarter-zip/st253-graphite-heather.png",
+        "filename": "st253-graphite-heather.png"
+      },
+      {
+        "placement": "Standard",
+        "color": "Vintage Heather Gray",
+        "image": "assets/product-samples/ghost-wordmark/unisex-quarter-zip/st253-vintage-heather-gray.png",
+        "filename": "st253-vintage-heather-gray.png"
+      },
+      {
+        "placement": "Standard",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/unisex-quarter-zip/st253-white.png",
+        "filename": "st253-white.png"
+      }
+    ]
+  },
+  {
+    "id": "P109",
+    "design": "ghost-wordmark",
+    "productFolder": "unisex-short-sleeve",
+    "styleId": "g640",
+    "mockups": [
+      {
+        "placement": "Large Front",
+        "color": "Black",
+        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-large-front-black.png",
+        "filename": "g640-large-front-black.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "Charcoal Gray",
+        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-large-front-charcoal-gray.png",
+        "filename": "g640-large-front-charcoal-gray.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "Gold",
+        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-large-front-gold.png",
+        "filename": "g640-large-front-gold.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "Graphite Heather",
+        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-large-front-graphite-heather.png",
+        "filename": "g640-large-front-graphite-heather.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "Heather Purple",
+        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-large-front-heather-purple.png",
+        "filename": "g640-large-front-heather-purple.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "Sport Gray",
+        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-large-front-sport-gray.png",
+        "filename": "g640-large-front-sport-gray.png"
+      },
+      {
+        "placement": "Large Front",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-large-front-white.png",
+        "filename": "g640-large-front-white.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Black",
+        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-left-chest-black.png",
+        "filename": "g640-left-chest-black.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Charcoal Gray",
+        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-left-chest-charcoal-gray.png",
+        "filename": "g640-left-chest-charcoal-gray.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Gold",
+        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-left-chest-gold.png",
+        "filename": "g640-left-chest-gold.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Graphite Heather",
+        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-left-chest-graphite-heather.png",
+        "filename": "g640-left-chest-graphite-heather.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Heather Purple",
+        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-left-chest-heather-purple.png",
+        "filename": "g640-left-chest-heather-purple.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Sport Gray",
+        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-left-chest-sport-gray.png",
+        "filename": "g640-left-chest-sport-gray.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-left-chest-white.png",
+        "filename": "g640-left-chest-white.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-medium-front-black.png",
+        "filename": "g640-medium-front-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Charcoal Gray",
+        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-medium-front-charcoal-gray.png",
+        "filename": "g640-medium-front-charcoal-gray.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Gold",
+        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-medium-front-gold.png",
+        "filename": "g640-medium-front-gold.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Graphite Heather",
+        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-medium-front-graphite-heather.png",
+        "filename": "g640-medium-front-graphite-heather.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Heather Purple",
+        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-medium-front-heather-purple.png",
+        "filename": "g640-medium-front-heather-purple.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Sport Gray",
+        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-medium-front-sport-gray.png",
+        "filename": "g640-medium-front-sport-gray.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/unisex-short-sleeve/g640-medium-front-white.png",
+        "filename": "g640-medium-front-white.png"
+      }
+    ]
+  },
+  {
+    "id": "P110",
+    "design": "ghost-wordmark",
+    "productFolder": "womens-long-sleeve",
+    "styleId": "b6500",
+    "mockups": [
+      {
+        "placement": "Left Chest",
+        "color": "Black",
+        "image": "assets/product-samples/ghost-wordmark/womens-long-sleeve/b6500-left-chest-black.png",
+        "filename": "b6500-left-chest-black.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Deep Heather",
+        "image": "assets/product-samples/ghost-wordmark/womens-long-sleeve/b6500-left-chest-deep-heather.png",
+        "filename": "b6500-left-chest-deep-heather.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/womens-long-sleeve/b6500-left-chest-white.png",
+        "filename": "b6500-left-chest-white.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/ghost-wordmark/womens-long-sleeve/b6500-medium-front-black.png",
+        "filename": "b6500-medium-front-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Deep Heather",
+        "image": "assets/product-samples/ghost-wordmark/womens-long-sleeve/b6500-medium-front-deep-heather.png",
+        "filename": "b6500-medium-front-deep-heather.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/womens-long-sleeve/b6500-medium-front-white.png",
+        "filename": "b6500-medium-front-white.png"
+      }
+    ]
+  },
+  {
+    "id": "P111",
+    "design": "ghost-wordmark",
+    "productFolder": "womens-quarter-zip",
+    "styleId": "lst",
+    "mockups": [
+      {
+        "placement": "Standard",
+        "color": "253 Athletic Heather",
+        "image": "assets/product-samples/ghost-wordmark/womens-quarter-zip/lst-253-athletic-heather.png",
+        "filename": "lst-253-athletic-heather.png"
+      },
+      {
+        "placement": "Standard",
+        "color": "253 Black",
+        "image": "assets/product-samples/ghost-wordmark/womens-quarter-zip/lst-253-black.png",
+        "filename": "lst-253-black.png"
+      },
+      {
+        "placement": "Standard",
+        "color": "253 Graphite Heather",
+        "image": "assets/product-samples/ghost-wordmark/womens-quarter-zip/lst-253-graphite-heather.png",
+        "filename": "lst-253-graphite-heather.png"
+      },
+      {
+        "placement": "Standard",
+        "color": "253 White",
+        "image": "assets/product-samples/ghost-wordmark/womens-quarter-zip/lst-253-white.png",
+        "filename": "lst-253-white.png"
+      }
+    ]
+  },
+  {
+    "id": "P112",
+    "design": "ghost-wordmark",
+    "productFolder": "womens-short-sleeve",
+    "styleId": "b6400",
+    "mockups": [
+      {
+        "placement": "Left Chest",
+        "color": "Asphalt Gray",
+        "image": "assets/product-samples/ghost-wordmark/womens-short-sleeve/b6400-left-chest-asphalt-gray.png",
+        "filename": "b6400-left-chest-asphalt-gray.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Athletic Gray",
+        "image": "assets/product-samples/ghost-wordmark/womens-short-sleeve/b6400-left-chest-athletic-gray.png",
+        "filename": "b6400-left-chest-athletic-gray.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Purple",
+        "image": "assets/product-samples/ghost-wordmark/womens-short-sleeve/b6400-left-chest-purple.png",
+        "filename": "b6400-left-chest-purple.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Vintage Black",
+        "image": "assets/product-samples/ghost-wordmark/womens-short-sleeve/b6400-left-chest-vintage-black.png",
+        "filename": "b6400-left-chest-vintage-black.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/womens-short-sleeve/b6400-left-chest-white.png",
+        "filename": "b6400-left-chest-white.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Asphalt Gray",
+        "image": "assets/product-samples/ghost-wordmark/womens-short-sleeve/b6400-medium-front-asphalt-gray.png",
+        "filename": "b6400-medium-front-asphalt-gray.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Athletic Gray",
+        "image": "assets/product-samples/ghost-wordmark/womens-short-sleeve/b6400-medium-front-athletic-gray.png",
+        "filename": "b6400-medium-front-athletic-gray.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Purple",
+        "image": "assets/product-samples/ghost-wordmark/womens-short-sleeve/b6400-medium-front-purple.png",
+        "filename": "b6400-medium-front-purple.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Vintage Black",
+        "image": "assets/product-samples/ghost-wordmark/womens-short-sleeve/b6400-medium-front-vintage-black.png",
+        "filename": "b6400-medium-front-vintage-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/womens-short-sleeve/b6400-medium-front-white.png",
+        "filename": "b6400-medium-front-white.png"
+      }
+    ]
+  },
+  {
+    "id": "P113",
+    "design": "ghost-wordmark",
+    "productFolder": "youth-crewneck",
+    "styleId": "g180b",
+    "mockups": [
+      {
+        "placement": "Left Chest",
+        "color": "Black",
+        "image": "assets/product-samples/ghost-wordmark/youth-crewneck/g180b-left-chest-black.png",
+        "filename": "g180b-left-chest-black.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Dark Heather",
+        "image": "assets/product-samples/ghost-wordmark/youth-crewneck/g180b-left-chest-dark-heather.png",
+        "filename": "g180b-left-chest-dark-heather.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Sport Gray",
+        "image": "assets/product-samples/ghost-wordmark/youth-crewneck/g180b-left-chest-sport-gray.png",
+        "filename": "g180b-left-chest-sport-gray.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/youth-crewneck/g180b-left-chest-white.png",
+        "filename": "g180b-left-chest-white.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/ghost-wordmark/youth-crewneck/g180b-medium-front-black.png",
+        "filename": "g180b-medium-front-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Dark Heather",
+        "image": "assets/product-samples/ghost-wordmark/youth-crewneck/g180b-medium-front-dark-heather.png",
+        "filename": "g180b-medium-front-dark-heather.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Sport Gray",
+        "image": "assets/product-samples/ghost-wordmark/youth-crewneck/g180b-medium-front-sport-gray.png",
+        "filename": "g180b-medium-front-sport-gray.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/youth-crewneck/g180b-medium-front-white.png",
+        "filename": "g180b-medium-front-white.png"
+      }
+    ]
+  },
+  {
+    "id": "P114",
+    "design": "ghost-wordmark",
+    "productFolder": "youth-hoodies",
+    "styleId": "g185b",
+    "mockups": [
+      {
+        "placement": "Left Chest",
+        "color": "Black",
+        "image": "assets/product-samples/ghost-wordmark/youth-hoodies/g185b-left-chest-black.png",
+        "filename": "g185b-left-chest-black.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Charcoal",
+        "image": "assets/product-samples/ghost-wordmark/youth-hoodies/g185b-left-chest-charcoal.png",
+        "filename": "g185b-left-chest-charcoal.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Gold",
+        "image": "assets/product-samples/ghost-wordmark/youth-hoodies/g185b-left-chest-gold.png",
+        "filename": "g185b-left-chest-gold.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Purple",
+        "image": "assets/product-samples/ghost-wordmark/youth-hoodies/g185b-left-chest-purple.png",
+        "filename": "g185b-left-chest-purple.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/youth-hoodies/g185b-left-chest-white.png",
+        "filename": "g185b-left-chest-white.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/ghost-wordmark/youth-hoodies/g185b-medium-front-black.png",
+        "filename": "g185b-medium-front-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Charcoal",
+        "image": "assets/product-samples/ghost-wordmark/youth-hoodies/g185b-medium-front-charcoal.png",
+        "filename": "g185b-medium-front-charcoal.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Gold",
+        "image": "assets/product-samples/ghost-wordmark/youth-hoodies/g185b-medium-front-gold.png",
+        "filename": "g185b-medium-front-gold.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Purple",
+        "image": "assets/product-samples/ghost-wordmark/youth-hoodies/g185b-medium-front-purple.png",
+        "filename": "g185b-medium-front-purple.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/youth-hoodies/g185b-medium-front-white.png",
+        "filename": "g185b-medium-front-white.png"
+      } 
     ]
   }
   ]
