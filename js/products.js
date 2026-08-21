@@ -180,12 +180,20 @@ function styleFor(styleId) {
 function groupsWithStyles(groups) {
 
   return groups.filter(
-    (group) =>
-      styleFor(group.styleId)
+    (group) => {
+
+      const style =
+        styleFor(group.styleId);
+
+      return (
+        style &&
+        style.active !== false
+      );
+
+    }
   );
 
 }
-
 
 function getBasePrice(style) {
 
