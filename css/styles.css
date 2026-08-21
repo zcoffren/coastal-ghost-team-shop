@@ -1401,7 +1401,7 @@ button { font-family: inherit; cursor: pointer; }
   border-radius: 8px;
 }
 /* =========================================
-   ORDER REVIEW ITEMS
+   ORDER REVIEW MODAL ADJUSTMENTS
    ========================================= */
 
 .checkout-order-items .checkout-item {
@@ -1416,4 +1416,19 @@ button { font-family: inherit; cursor: pointer; }
   height: 110px;
   object-fit: contain;
   flex-shrink: 0;
+}
+
+
+.checkout-order-items .checkout-item > div {
+  flex: 1;
+  min-width: 0;
+}
+
+
+.checkout-review-modal .checkout-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
 }
