@@ -10,7 +10,7 @@
     "basePrice": 20.0,
     "sizeUpcharges": {
       "2XL": 3.0,
-      "3XL": 4.0
+      "3XL": 5.0
     },
     "status": "Active"
   },
@@ -22,10 +22,10 @@
     "productName": "Short Sleeve Tee",
     "fit": "Adult / Relaxed",
     "sizeRange": "Adult",
-    "basePrice": 25.0,
+    "basePrice": 17.0,
     "sizeUpcharges": {
       "2XL": 3.0,
-      "3XL": 4.0
+      "3XL": 5.0
     },
     "status": "Active"
   },
@@ -37,10 +37,10 @@
     "productName": "Short Sleeve Tee",
     "fit": "Adult / Unisex",
     "sizeRange": "Adult",
-    "basePrice": 15.0,
+    "basePrice": 13.0,
     "sizeUpcharges": {
       "2XL": 3.0,
-      "3XL": 4.0
+      "3XL": 5.0
     },
     "status": "Active"
   },
@@ -52,10 +52,10 @@
     "productName": "1/4-Zip Sweatshirt",
     "fit": "Adult / Unisex",
     "sizeRange": "Adult",
-    "basePrice": 45.0,
+    "basePrice": 53.0,
     "sizeUpcharges": {
       "2XL": 3.0,
-      "3XL": 4.0
+      "3XL": 5.0
     },
     "status": "Active"
   },
@@ -67,10 +67,10 @@
     "productName": "Interlock 1/4-Zip",
     "fit": "Adult / Unisex",
     "sizeRange": "Adult",
-    "basePrice": 40.0,
+    "basePrice": 46.0,
     "sizeUpcharges": {
       "2XL": 3.0,
-      "3XL": 4.0
+      "3XL": 5.0
     },
     "status": "Active"
   },
@@ -82,12 +82,12 @@
     "productName": "Crewneck Sweatshirt",
     "fit": "Adult / Unisex",
     "sizeRange": "Adult",
-    "basePrice": null,
+    "basePrice": 56.0,
     "sizeUpcharges": {
-      "2XL": 0,
-      "3XL": 0
+      "2XL": 5.0,
+      "3XL": 7.0
     },
-    "status": "Draft"
+    "status": "Active"
   },
   {
     "styleId": "g180",
@@ -97,12 +97,12 @@
     "productName": "Crewneck Sweatshirt",
     "fit": "Adult / Unisex",
     "sizeRange": "Adult",
-    "basePrice": null,
+    "basePrice": 23.0,
     "sizeUpcharges": {
-      "2XL": 0,
-      "3XL": 0
+      "2XL": 5.0,
+      "3XL": 7.0
     },
-    "status": "Draft"
+    "status": "Active"
   },
   {
     "styleId": "3719",
@@ -112,12 +112,12 @@
     "productName": "Pullover Hoodie",
     "fit": "Adult / Unisex",
     "sizeRange": "Adult",
-    "basePrice": null,
+    "basePrice": 43.0,
     "sizeUpcharges": {
-      "2XL": 0,
-      "3XL": 0
+      "2XL": 5.0,
+      "3XL": 7.0
     },
-    "status": "Draft"
+    "status": "Active"
   },
   {
     "styleId": "g185",
@@ -127,12 +127,12 @@
     "productName": "Pullover Hoodie",
     "fit": "Adult / Unisex",
     "sizeRange": "Adult",
-    "basePrice": 27.0,
+    "basePrice": 28.0,
     "sizeUpcharges": {
-      "2XL": 0,
-      "3XL": 0
+      "2XL": 5.0,
+      "3XL": 7.0
     },
-    "status": "Draft"
+    "status": "Active"
   },
   {
     "styleId": "g185b",
@@ -142,12 +142,12 @@
     "productName": "Youth Hoodie",
     "fit": "Youth / Unisex",
     "sizeRange": "Youth",
-    "basePrice": 22.0,
+    "basePrice": 27.0,
     "sizeUpcharges": {
       "2XL": 0,
       "3XL": 0
     },
-    "status": "Draft"
+    "status": "Active"
   },
   {
     "styleId": "g180b",
@@ -157,12 +157,12 @@
     "productName": "Youth Crewneck",
     "fit": "Youth / Unisex",
     "sizeRange": "Youth",
-    "basePrice": null,
+    "basePrice": 21.0,
     "sizeUpcharges": {
       "2XL": 0,
       "3XL": 0
     },
-    "status": "Draft"
+    "status": "Active"
   },
   {
     "styleId": "b6500",
@@ -172,12 +172,12 @@
     "productName": "Women\u2019s Long Sleeve Tee",
     "fit": "Adult / Relaxed",
     "sizeRange": "Adult",
-    "basePrice": null,
+    "basePrice": 27.0,
     "sizeUpcharges": {
-      "2XL": 0,
-      "3XL": 0
+      "2XL": 5.0,
+      "3XL": 7.0
     },
-    "status": "Needs pricing"
+    "status": "Active"
   },
   {
     "styleId": "lst253",
@@ -187,11 +187,11 @@
     "productName": "Womens 1/4-Zip",
     "fit": "Adult / Relaxed",
     "sizeRange": "Adult",
-    "basePrice": null,
+    "basePrice": 50.00,
     "sizeUpcharges": {
-      "2XL": 0,
-      "3XL": 0
+      "2XL": 3.0,
+      "3XL": 5.0
     },
-    "status": "Needs pricing"
+    "status": "Active"
   }
 ]
