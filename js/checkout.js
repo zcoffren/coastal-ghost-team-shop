@@ -19,7 +19,6 @@ function initializeCheckout() {
   checkoutBtn.onclick = handleCheckout;
 }
 
-
 // ============================================
 // HANDLE CHECKOUT
 // ============================================
