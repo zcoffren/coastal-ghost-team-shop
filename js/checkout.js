@@ -417,21 +417,6 @@ modal.style.background = "rgba(0, 0, 0, 0.75)";
               id="customerPhone"
               required
             >
-          <div class="checkout-form-group">
-
-  <label for="orderNotes">
-    Order Notes
-    <span>(Optional)</span>
-  </label>
-
-  <textarea
-    id="orderNotes"
-    rows="4"
-    placeholder="Anything we should know about your order?"
-  ></textarea>
-
-</div>
-
 
 <div class="checkout-form-group">
 
