@@ -1365,3 +1365,38 @@ button { font-family: inherit; cursor: pointer; }
   width: 100%;
   margin-bottom: 8px;
 }
+/* =========================================================
+   PERSONALIZATION PREVIEW
+   ========================================================= */
+
+.personalization-example {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.15);
+}
+
+
+.personalization-example-label {
+  margin-bottom: 10px;
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  opacity: 0.85;
+}
+
+
+.personalization-example img {
+  display: block;
+
+  width: 100%;
+
+  max-width: 260px;
+
+  height: auto;
+
+  border-radius: 8px;
+}
