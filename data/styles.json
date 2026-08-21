@@ -20,6 +20,7 @@
       "2XL": 3.0,
       "3XL": 5.0
     },
+    "active": true,
     "status": "Active"
   },
   {
@@ -43,6 +44,7 @@
       "2XL": 3.0,
       "3XL": 5.0
     },
+    "active": true,
     "status": "Active"
   },
   {
@@ -67,6 +69,7 @@
       "2XL": 3.0,
       "3XL": 5.0
     },
+    "active": true,
     "status": "Active"
   },
   {
@@ -91,6 +94,7 @@
       "2XL": 3.0,
       "3XL": 5.0
     },
+    "active": true,
     "status": "Active"
   },
   {
@@ -115,6 +119,7 @@
       "2XL": 3.0,
       "3XL": 5.0
     },
+    "active": true,
     "status": "Active"
   },
   {
@@ -138,6 +143,7 @@
       "2XL": 5.0,
       "3XL": 7.0
     },
+    "active": true,
     "status": "Active"
   },
   {
@@ -161,6 +167,7 @@
       "2XL": 5.0,
       "3XL": 7.0
     },
+    "active": true,
     "status": "Active"
   },
   {
@@ -185,6 +192,7 @@
       "2XL": 5.0,
       "3XL": 7.0
     },
+    "active": true,
     "status": "Active"
   },
   {
@@ -208,6 +216,7 @@
       "2XL": 5.0,
       "3XL": 7.0
     },
+    "active": true,
     "status": "Active"
   },
   {
@@ -230,6 +239,7 @@
       "2XL": 0,
       "3XL": 0
     },
+    "active": true,
     "status": "Active"
   },
   {
@@ -252,6 +262,7 @@
       "2XL": 0,
       "3XL": 0
     },
+    "active": true,
     "status": "Active"
   },
   {
@@ -274,6 +285,7 @@
       "2XL": 5.0,
       "3XL": 7.0
     },
+    "active": true,
     "status": "Active"
   },
   {
@@ -289,6 +301,7 @@
       "2XL": 3.0,
       "3XL": 5.0
     },
+    "active": false,
     "status": "Active"
   }
 ]
