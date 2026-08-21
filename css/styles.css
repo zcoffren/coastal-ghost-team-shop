@@ -1511,3 +1511,37 @@ button { font-family: inherit; cursor: pointer; }
 .checkout-modal .checkout-form-group input:invalid {
   box-shadow: none;
 }
+/* =========================================
+   ORDER REVIEW ACTION BUTTONS
+   ========================================= */
+
+.checkout-review .checkout-actions {
+  position: static !important;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  margin-top: 24px;
+  padding-top: 24px;
+
+  border-top: 1px solid var(--border);
+}
+
+
+.checkout-review .checkout-actions .btn {
+  position: static !important;
+}
+
+
+.checkout-review .checkout-actions .btn-secondary {
+  margin-right: auto;
+}
+
+
+.checkout-review .checkout-actions .btn-primary {
+  margin-left: 12px;
+}
