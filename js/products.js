@@ -1741,21 +1741,44 @@ const personalization = {
   </label>
 
 
-  <div
-    class="personalization-input"
-    id="playerNumberField"
-    hidden
+ <div
+  class="personalization-input"
+  id="playerNumberField"
+  hidden
+>
+
+  <input
+    type="text"
+    id="playerNumber"
+    placeholder="Player Number"
+    inputmode="numeric"
+    maxlength="3"
   >
 
-    <input
-      type="text"
-      id="playerNumber"
-      placeholder="Player Number"
-      inputmode="numeric"
-      maxlength="3"
-    >
+</div>
 
+
+<!-- PERSONALIZATION EXAMPLE -->
+
+<div
+  class="personalization-example"
+  id="personalizationExample"
+  hidden
+>
+
+  <div
+    class="personalization-example-label"
+  >
+    Personalization Preview
   </div>
+
+  <img
+    id="personalizationExampleImage"
+    src=""
+    alt="Personalization example"
+  >
+
+</div>
 
 </div>
 
