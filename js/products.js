@@ -1912,6 +1912,24 @@ function updatePersonalizationExample() {
   example.hidden = false;
 
 }
+   document
+  .getElementById(
+    "addPlayerName"
+  )
+  .addEventListener(
+    "change",
+    updatePersonalizationExample
+  );
+
+
+document
+  .getElementById(
+    "addPlayerNumber"
+  )
+  .addEventListener(
+    "change",
+    updatePersonalizationExample
+  );
 /* =========================================================
    QUANTITY CONTROL
 ========================================================= */
