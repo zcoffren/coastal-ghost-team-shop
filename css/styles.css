@@ -1424,11 +1424,17 @@ button { font-family: inherit; cursor: pointer; }
   min-width: 0;
 }
 
-
 .checkout-review-modal .checkout-actions {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   gap: 12px;
+
+  width: 100%;
+  box-sizing: border-box;
+
   margin-top: 24px;
+  padding-top: 20px;
+
+  border-top: 1px solid var(--border);
 }
