@@ -1441,3 +1441,73 @@ button { font-family: inherit; cursor: pointer; }
 .checkout-review-modal .checkout-actions .btn:first-child {
   margin-right: auto;
 }
+/* =========================================
+   CHECKOUT CUSTOMER FORM
+   ========================================= */
+
+.checkout-modal .checkout-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+
+.checkout-modal .checkout-form-group label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--sheet-white);
+}
+
+
+.checkout-modal .checkout-form-group label span {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+
+.checkout-modal .checkout-form-group input {
+  width: 100%;
+  box-sizing: border-box;
+
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--sheet-white);
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  padding: 13px 14px;
+
+  font: inherit;
+  font-size: 1rem;
+
+  outline: none;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+
+.checkout-modal .checkout-form-group input::placeholder {
+  color: var(--text-muted);
+}
+
+
+.checkout-modal .checkout-form-group input:focus {
+  border-color: var(--ghastly-gold);
+
+  background:
+    rgba(0, 0, 0, 0.28);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(221, 156, 44, 0.12);
+}
+
+
+.checkout-modal .checkout-form-group input:invalid {
+  box-shadow: none;
+}
