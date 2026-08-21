@@ -785,19 +785,19 @@ ${
       }
     );
 
-
   document
-    .getElementById("submitOrderBtn")
-    ?.addEventListener(
-      "click",
-      () => {
-       submitOrder(
-  cart,
-  customer,
-  discount
-);
+  .getElementById("submitOrderBtn")
+  ?.addEventListener(
+    "click",
+    () => {
+      submitOrder(
+        cart,
+        customer,
+        discount
+      );
+    }
+  );
 }
-
 
 // ============================================
 // GENERATE ORDER NUMBER
