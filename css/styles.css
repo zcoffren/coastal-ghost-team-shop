@@ -1438,3 +1438,6 @@ button { font-family: inherit; cursor: pointer; }
 
   border-top: 1px solid var(--border);
 }
+.checkout-review-modal .checkout-actions .btn:first-child {
+  margin-right: auto;
+}
