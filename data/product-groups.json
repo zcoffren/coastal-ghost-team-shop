@@ -5580,34 +5580,7 @@
         "color": "White",
         "image": "assets/product-samples/ghost-wordmark/youth-hoodies/g185b-medium-front-white.png",
         "filename": "g185b-medium-front-white.png"
-      } 
-    ]
-  },
- {
-  "id": "P115",
-   "styleId": "1745",
-  "brand": "Comfort Colors",
-  "itemType": "Short Sleeve",
-  "productFolder": "short-sleeve",
-  "productName": "Unisex Short Sleeve Tee",
-  "fit": "Adult / Relaxed",
-  "sizeRange": "Adult",
-  "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL",
-    "2XL",
-    "3XL"
-  ],
-  "basePrice": 32.00,
-  "sizeUpcharges": {
-    "2XL": 5.0,
-    "3XL": 7.0
-  },
-  "active": true,
-  "status": "Active"
-}
+      }
     ]
   }
   ]
