@@ -1691,6 +1691,7 @@ const personalization = {
 
 <div
   class="option-field personalization-field"
+  id="personalizationSection"
 >
 
   <div
@@ -1808,7 +1809,7 @@ const personalization = {
 
 `;
 
-  const addPlayerName =
+ const addPlayerName =
   $('addPlayerName');
 
 const playerNameField =
@@ -1819,6 +1820,20 @@ const addPlayerNumber =
 
 const playerNumberField =
   $('playerNumberField');
+
+const personalizationSection =
+  $('personalizationSection');
+
+
+if (style.personalization === false) {
+
+  personalizationSection.hidden = true;
+
+} else {
+
+  personalizationSection.hidden = false;
+
+}
 
 
 addPlayerName?.addEventListener(
@@ -1843,6 +1858,15 @@ addPlayerNumber?.addEventListener(
 );
 
 
+addPlayerNumber?.addEventListener(
+  'change',
+  () => {
+
+    playerNumberField.hidden =
+      !addPlayerNumber.checked;
+
+  }
+);
 /* =========================================================
    PERSONALIZATION PREVIEW
 ========================================================= */
