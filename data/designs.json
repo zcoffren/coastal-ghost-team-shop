@@ -43,5 +43,10 @@
     "id": "phantom-purple",
     "name": "Phantom Purple",
     "thumbnail": "assets/product-samples/phantom-purple/unisex-long-sleeve/g540-medium-front-black.png"
+  },
+   {
+    "id": "fear-the-reaper",
+    "name": "Fear The Reaper",
+    "thumbnail": "assets/product-samples/fear-the-reaper/unisex-short-sleeve/1745-back-front-smoke.png"
   }
 ]
