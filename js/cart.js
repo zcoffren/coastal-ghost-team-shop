@@ -36,13 +36,27 @@
   }
 
   function getCartTotal() {
-    return cart.reduce((total, item) => {
-      return total + (
-        Number(item.qty || 0) *
-        Number(item.unitPrice || 0)
-      );
-    }, 0);
-  }
+  return cart.reduce((total, item) => {
+
+    const quantity = Number(
+      item.qty || 0
+    );
+
+    const unitPrice = Number(
+      item.unitPrice || 0
+    );
+
+    const personalizationPrice = Number(
+      item.personalizationPrice || 0
+    );
+
+    return total + (
+      (unitPrice + personalizationPrice) *
+      quantity
+    );
+
+  }, 0);
+}
 
   function updateCartCount() {
     const count = $('cartCount');
@@ -106,7 +120,10 @@ if (item.playerNumber) details.push('Number: ' + item.playerNumber);
             }
 
             <div class="cart-item-price">
-              ${money(item.unitPrice)} each
+             ${money(
+  Number(item.unitPrice || 0) +
+  Number(item.personalizationPrice || 0)
+)} each
             </div>
 
             <div class="cart-item-controls">
@@ -147,7 +164,13 @@ if (item.playerNumber) details.push('Number: ' + item.playerNumber);
             </div>
 
             <div class="cart-line-total">
-              ${money(Number(item.unitPrice) * Number(item.qty))}
+              ${money(
+  (
+    Number(item.unitPrice || 0) +
+    Number(item.personalizationPrice || 0)
+  ) *
+  Number(item.qty || 0)
+)}
             </div>
 
           </div>
