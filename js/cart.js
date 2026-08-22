@@ -182,31 +182,47 @@ if (item.playerNumber) details.push('Number: ' + item.playerNumber);
     });
   }
 
-  function addToCart(item) {
-    if (!item) return;
+function addToCart(item) {
 
-    const quantity = Math.max(
-      1,
-      Number(item.qty || 1)
-    );
+  if (!item) return;
 
-    const existingItem = cart.find(
-      cartItem => cartItem.id === item.id
-    );
+  const quantity = Math.max(
+    1,
+    Number(item.qty || 1)
+  );
 
-    if (existingItem) {
-      existingItem.qty += quantity;
-    } else {
-      cart.push({
-        ...item,
-        qty: quantity,
-        unitPrice: Number(item.unitPrice || 0)
-      });
-    }
+  const existingItem = cart.find(
+    cartItem => cartItem.id === item.id
+  );
 
-    saveCart();
-    renderCart();
-    openCart();
+  if (existingItem) {
+
+    existingItem.qty += quantity;
+
+  } else {
+
+    cart.push({
+      ...item,
+
+      qty: quantity,
+
+      unitPrice: Number(
+        item.unitPrice || 0
+      ),
+
+      personalizationPrice: Number(
+        item.personalizationPrice || 0
+      )
+
+    });
+
+  }
+
+  saveCart();
+  renderCart();
+  openCart();
+
+}
 
     showToast(`${item.name || 'Item'} added to Cart`);
   }
