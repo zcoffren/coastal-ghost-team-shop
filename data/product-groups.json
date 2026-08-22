@@ -905,13 +905,13 @@
         "placement": "Left Chest",
         "color": "Gray",
         "image": "assets/product-samples/boo-boys-blackout/youth-short-sleeve/c9018-left-chest-gray.png",
-        "filename": "c9018-medium-front-gray.png"
+        "filename": "c9018-left-chest-gray.png"
       },
       {
         "placement": "Left Chest",
         "color": "Violet",
         "image": "assets/product-samples/boo-boys-blackout/youth-short-sleeve/c9018-left-chest-violet.png",
-        "filename": "c9018-medium-left-chest.png"
+        "filename": "c9018-left-chest-violet.png"
       }
     ]
   },
@@ -4547,7 +4547,7 @@
   },
   {
     "id": "P096",
-    "design": "boo-boys-blackout",
+    "design": "fantom-club",
     "productFolder": "unisex-long-sleeve",
     "styleId": "g540",
     "mockups": [
