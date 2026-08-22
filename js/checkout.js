@@ -92,21 +92,39 @@ function getCartForCheckout() {
 // ============================================
 
 function getCheckoutTotal(cart) {
-  return cart.reduce((total, item) => {
-    const quantity = Number(
-      item.qty ||
-      item.quantity ||
-      1
-    );
 
-    const price = Number(
-      item.unitPrice ||
-      item.price ||
-      0
-    );
+  return cart.reduce(
+    (total, item) => {
 
-    return total + (price * quantity);
-  }, 0);
+      const quantity = Number(
+        item.qty ||
+        item.quantity ||
+        1
+      );
+
+      const unitPrice = Number(
+        item.unitPrice ||
+        item.price ||
+        0
+      );
+
+      const personalizationPrice = Number(
+        item.personalizationPrice ||
+        0
+      );
+
+      const itemTotal =
+        (
+          unitPrice +
+          personalizationPrice
+        ) * quantity;
+
+      return total + itemTotal;
+
+    },
+    0
+  );
+
 }
 
 // ============================================
