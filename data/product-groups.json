@@ -5586,7 +5586,7 @@
   {
     "id": "P115",
     "design": "fear-the-reaper",
-    "productFolder": "fear-the-reaper/unisex-short-sleeve",
+    "productFolder": "unisex-short-sleeve",
     "styleId": "1745",
     "mockups": [
       {
@@ -5600,7 +5600,7 @@
         "color": "Amethyst",
         "image": "assets/product-samples/fear-the-reaper/unisex-short-sleeve/1745-back-front-amethyst.png",
         "filename": "1745-back-front-amethyst.png"
-      }
-  ]
-    }
-  ]
+           }
+    ]
+  }
+]
