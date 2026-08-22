@@ -2518,12 +2518,12 @@ const unitPrice =
 
           qty,
 
+unitPrice,
 
-          unitPrice,
+personalizationPrice,
 
-
-          image:
-            match?.image || ''
+image:
+  match?.image || ''
 
         };
 
