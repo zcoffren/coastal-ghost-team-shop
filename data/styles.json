@@ -337,5 +337,28 @@
    "personalization": false,
     "active": true,
     "status": "Active"
-    }
+    },
+   {
+    "styleId": "c9018",
+    "brand": "Comfort Colors",
+    "itemType": "Short Sleeve",
+    "productFolder": "youth-short-sleeve",
+    "productName": "Youth Short Sleeve Tee",
+    "fit": "Youth / Unisex",
+    "sizeRange": "Youth",
+    "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+  ],
+    "basePrice": 20.0,
+    "sizeUpcharges": {
+      "2XL": 0.0,
+      "3XL": 0.0
+    },
+    "active": true,
+    "status": "Active"
+  }
 ]
