@@ -2559,33 +2559,9 @@
     "mockups": [
       {
         "placement": "Left Chest",
-        "color": "Asphalt Gray",
-        "image": "assets/product-samples/phantom-purple/womens-short-sleeve/b6400-left-chest-asphalt-gray.png",
-        "filename": "b6400-left-chest-asphalt-gray.png"
-      },
-      {
-        "placement": "Left Chest",
-        "color": "Purple",
-        "image": "assets/product-samples/phantom-purple/womens-short-sleeve/b6400-left-chest-purple.png",
-        "filename": "b6400-left-chest-purple.png"
-      },
-      {
-        "placement": "Left Chest",
         "color": "Vintage Black",
         "image": "assets/product-samples/phantom-purple/womens-short-sleeve/b6400-left-chest-vintage-black.png",
         "filename": "b6400-left-chest-vintage-black.png"
-      },
-      {
-        "placement": "Medium Front",
-        "color": "Asphalt Gray",
-        "image": "assets/product-samples/phantom-purple/womens-short-sleeve/b6400-medium-front-asphalt-gray.png",
-        "filename": "b6400-medium-front-asphalt-gray.png"
-      },
-      {
-        "placement": "Medium Front",
-        "color": "Purple",
-        "image": "assets/product-samples/phantom-purple/womens-short-sleeve/b6400-medium-front-purple.png",
-        "filename": "b6400-medium-front-purple.png"
       },
       {
         "placement": "Medium Front",
