@@ -1846,18 +1846,6 @@ addPlayerName?.addEventListener(
   }
 );
 
-
-addPlayerNumber?.addEventListener(
-  'change',
-  () => {
-
-    playerNumberField.hidden =
-      !addPlayerNumber.checked;
-
-  }
-);
-
-
 addPlayerNumber?.addEventListener(
   'change',
   () => {
@@ -2422,9 +2410,7 @@ modalPanel.addEventListener(
       }
     );
 
-
   updateProduct();
-
 
   $('addProductBtn')
 
@@ -2483,6 +2469,15 @@ const numberUpcharge =
 
 const unitPrice =
 
+const personalizationPrice =
+
+  nameUpcharge +
+
+  numberUpcharge;
+
+
+const unitPrice =
+
   basePrice === null
 
     ? 0
@@ -2497,32 +2492,7 @@ const unitPrice =
 
         selectedSize
 
-      ) +
-
-      nameUpcharge +
-
-      numberUpcharge;
-
-        const item = {
-
-           id:
-
-  `${group.id}-` +
-
-  `${selectedColor || 'default'}-` +
-
-  `${selectedPlacement || 'default'}-` +
-
-  `${selectedSize}-` +
-
-  `${playerName || 'no-name'}-` +
-
-  `${playerNumber || 'no-number'}`,
-
-          name:
-            groupLabel(
-              group
-            ),
+      );
 
           styleId:
             group.styleId,
