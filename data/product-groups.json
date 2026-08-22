@@ -856,7 +856,61 @@
         "color": "White",
         "image": "assets/product-samples/boo-boys-blackout/youth-hoodies/g185b-medium-front-white.png",
         "filename": "g185b-medium-front-white.png"
-      }
+      },
+       {
+    "id": "P116",
+    "design": "boo-boys-blackout",
+    "productFolder": "youth-short-sleeve",
+    "styleId": "c9018",
+    "mockups": [
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/boo-boys-blackout/youth-short-sleeve/c9018-medium-front-white.png",
+        "filename": "c9018-medium-front-white.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/boo-boys-blackout/youth-short-sleeve/c9018-medium-front-black.png",
+        "filename": "c9018-medium-front-black.png"
+      },
+       {
+        "placement": "Medium Front",
+        "color": "Gray",
+        "image": "assets/product-samples/boo-boys-blackout/youth-short-sleeve/c9018-medium-front-gray.png",
+        "filename": "c9018-medium-front-gray.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Violet",
+        "image": "assets/product-samples/boo-boys-blackout/youth-short-sleeve/c9018-medium-front-violet.png",
+        "filename": "c9018-medium-front-violet.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "White",
+        "image": "assets/product-samples/boo-boys-blackout/youth-short-sleeve/c9018-left-chest-white.png",
+        "filename": "c9018-left-chest-white.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Black",
+        "image": "assets/product-samples/boo-boys-blackout/youth-short-sleeve/c9018-left-chest-black.png",
+        "filename": "c9018-left-chest-black.png"
+      },
+       {
+        "placement": "Left Chest",
+        "color": "Gray",
+        "image": "assets/product-samples/boo-boys-blackout/youth-short-sleeve/c9018-left-chest-gray.png",
+        "filename": "c9018-medium-front-gray.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Violet",
+        "image": "assets/product-samples/boo-boys-blackout/youth-short-sleeve/c9018-left-chest-violet.png",
+        "filename": "c9018-medium-left-chest.png"
+      },
     ]
   },
   {
