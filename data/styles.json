@@ -17,7 +17,7 @@
   ],
     "basePrice": 20.0,
     "sizeUpcharges": {
-      "2XL": 3.0,
+      "": 3.0,
       "3XL": 5.0
     },
     "active": true,
@@ -302,7 +302,7 @@
     "M",
     "L",
     "XL",
-    "2XL"
+    "2XL",
     "3XL"
   ],
     "basePrice": 59.00,
@@ -326,7 +326,7 @@
     "M",
     "L",
     "XL",
-    "2XL"
+    "2XL",
     "3XL"
   ],
     "basePrice": 20.00,
@@ -347,7 +347,7 @@
     "M",
     "L",
     "XL",
-    "2XL"
+    "2XL",
     "3XL"
   ],
     "basePrice": 32.00,
