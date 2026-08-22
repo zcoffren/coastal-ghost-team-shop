@@ -5583,24 +5583,31 @@
       } 
     ]
   },
-  {
-    "id": "P115",
-    "design": "fear-the-reaper",
-    "productFolder": "unisex-short-sleeve",
-    "styleId": "1745",
-    "mockups": [
-      {
-        "placement": "Standard",
-        "color": "Smoke",
-        "image": "assets/product-samples/fear-the-reaper/unisex-short-sleeve/1745-back-front-smoke.png",
-        "filename": "1745-back-front-smoke.png"
-      },
-      {
-        "placement": "Standard",
-        "color": "Amethyst",
-        "image": "assets/product-samples/fear-the-reaper/unisex-short-sleeve/1745-back-front-amethyst.png",
-        "filename": "1745-back-front-amethyst.png"
-      } 
+ {
+  "id": "P115",
+   "styleId": "1745",
+  "brand": "Comfort Colors",
+  "itemType": "Short Sleeve",
+  "productFolder": "short-sleeve",
+  "productName": "Unisex Short Sleeve Tee",
+  "fit": "Adult / Relaxed",
+  "sizeRange": "Adult",
+  "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+  ],
+  "basePrice": 32.00,
+  "sizeUpcharges": {
+    "2XL": 5.0,
+    "3XL": 7.0
+  },
+  "active": true,
+  "status": "Active"
+}
     ]
   }
   ]
