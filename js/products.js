@@ -2466,9 +2466,6 @@ const numberUpcharge =
 
     : 0;
 
-
-const unitPrice =
-
 const personalizationPrice =
 
   nameUpcharge +
