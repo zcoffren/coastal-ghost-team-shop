@@ -313,15 +313,15 @@
     "active": true,
     "status": "Active"
   },
-   {
-    "styleId": "1717",
-    "brand": "Comfort Colors",
-    "itemType": "Short Sleeve",
-    "productFolder": "short-sleeve",
-    "productName": "Unisex Short Sleeve Tee",
-    "fit": "Adult / Relaxed",
-    "sizeRange": "Adult",
-     "sizes": [
+  {
+  "styleId": "1717",
+  "brand": "Comfort Colors",
+  "itemType": "Short Sleeve",
+  "productFolder": "short-sleeve",
+  "productName": "Unisex Short Sleeve Tee",
+  "fit": "Adult / Relaxed",
+  "sizeRange": "Adult",
+  "sizes": [
     "S",
     "M",
     "L",
@@ -329,21 +329,23 @@
     "2XL",
     "3XL"
   ],
-    "basePrice": 20.00,
-    "sizeUpcharges": {
-      "2XL": 5.0,
-      "3XL": 7.0
-   }
+  "basePrice": 20.00,
+  "sizeUpcharges": {
+    "2XL": 5.0,
+    "3XL": 7.0
+  },
+  "active": true,
+  "status": "Active"
 },
 {
-    "styleId": "1745",
-    "brand": "Comfort Colors",
-    "itemType": "Short Sleeve",
-    "productFolder": "short-sleeve",
-    "productName": "Unisex Short Sleeve Tee",
-    "fit": "Adult / Relaxed",
-    "sizeRange": "Adult",
-     "sizes": [
+  "styleId": "1745",
+  "brand": "Comfort Colors",
+  "itemType": "Short Sleeve",
+  "productFolder": "short-sleeve",
+  "productName": "Unisex Short Sleeve Tee",
+  "fit": "Adult / Relaxed",
+  "sizeRange": "Adult",
+  "sizes": [
     "S",
     "M",
     "L",
@@ -351,9 +353,12 @@
     "2XL",
     "3XL"
   ],
-    "basePrice": 32.00,
-    "sizeUpcharges": {
-      "2XL": 5.0,
-      "3XL": 7.0
-    }
+  "basePrice": 32.00,
+  "sizeUpcharges": {
+    "2XL": 5.0,
+    "3XL": 7.0
+  },
+  "active": true,
+  "status": "Active"
+}
 ]
