@@ -2210,32 +2210,6 @@
     ]
   },
   {
-    "id": "P041",
-    "design": "phantom-purple",
-    "productFolder": "unisex-crewneck",
-    "styleId": "1566",
-    "mockups": [
-      {
-        "placement": "Large Front",
-        "color": "Gray",
-        "image": "assets/product-samples/phantom-purple/unisex-crewneck/1566-large-front-gray.png",
-        "filename": "1566-large-front-gray.png"
-      },
-      {
-        "placement": "Left Chest",
-        "color": "Pepper",
-        "image": "assets/product-samples/phantom-purple/unisex-crewneck/1566-left-chest-pepper.png",
-        "filename": "1566-left-chest-pepper.png"
-      },
-      {
-        "placement": "Medium Front",
-        "color": "Pepper",
-        "image": "assets/product-samples/phantom-purple/unisex-crewneck/1566-medium-front-pepper.png",
-        "filename": "1566-medium-front-pepper.png"
-      }
-    ]
-  },
-  {
     "id": "P042",
     "design": "phantom-purple",
     "productFolder": "unisex-crewneck",
@@ -2634,22 +2608,10 @@
         "filename": "g180b-left-chest-black.png"
       },
       {
-        "placement": "Left Chest",
-        "color": "Dark Heather",
-        "image": "assets/product-samples/phantom-purple/youth-crewneck/g180b-left-chest-dark-heather.png",
-        "filename": "g180b-left-chest-dark-heather.png"
-      },
-      {
         "placement": "Medium Front",
         "color": "Black",
         "image": "assets/product-samples/phantom-purple/youth-crewneck/g180b-medium-front-black.png",
         "filename": "g180b-medium-front-black.png"
-      },
-      {
-        "placement": "Medium Front",
-        "color": "Dark Heather",
-        "image": "assets/product-samples/phantom-purple/youth-crewneck/g180b-medium-front-dark-heather.png",
-        "filename": "g180b-medium-front-dark-heather.png"
       }
     ]
   },
@@ -2720,24 +2682,6 @@
         "color": "White",
         "image": "assets/product-samples/cg-swva-alt-logo/unisex-crewneck/1566-large-front-white.png",
         "filename": "1566-large-front-white.png"
-      },
-      {
-        "placement": "Left Chest",
-        "color": "Pepper",
-        "image": "assets/product-samples/cg-swva-alt-logo/unisex-crewneck/1566-left-chest-pepper.png",
-        "filename": "1566-left-chest-pepper.png"
-      },
-      {
-        "placement": "Left Chest",
-        "color": "Violet",
-        "image": "assets/product-samples/cg-swva-alt-logo/unisex-crewneck/1566-left-chest-violet.png",
-        "filename": "1566-left-chest-violet.png"
-      },
-      {
-        "placement": "Left Chest",
-        "color": "White",
-        "image": "assets/product-samples/cg-swva-alt-logo/unisex-crewneck/1566-left-chest-white.png",
-        "filename": "1566-left-chest-white.png"
       },
       {
         "placement": "Medium Front",
@@ -3281,9 +3225,9 @@
       },
       {
         "placement": "Medium Front",
-        "color": "White2",
-        "image": "assets/product-samples/coastal-ghost-baseball-wordmark/unisex-hoodies/3719-medium-front-white2.png",
-        "filename": "3719-medium-front-white2.png"
+        "color": "White",
+        "image": "assets/product-samples/coastal-ghost-baseball-wordmark/unisex-hoodies/3719-medium-front-white.png",
+        "filename": "3719-medium-front-white.png"
       }
     ]
   },
