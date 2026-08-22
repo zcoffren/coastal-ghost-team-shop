@@ -5582,5 +5582,25 @@
         "filename": "g185b-medium-front-white.png"
       } 
     ]
+  },
+  {
+    "id": "P115",
+    "design": "fear-the-reaper",
+    "productFolder": "unisex-short-sleeve",
+    "styleId": "1745",
+    "mockups": [
+      {
+        "placement": "Standard",
+        "color": "Smoke",
+        "image": "assets/product-samples/fear-the-reaper/unisex-short-sleeve/1745-back-front-smoke.png",
+        "filename": "1745-back-front-smoke.png"
+      },
+      {
+        "placement": "Standard",
+        "color": "Amethyst",
+        "image": "assets/product-samples/fear-the-reaper/unisex-short-sleeve/1745-back-front-amethyst.png",
+        "filename": "1745-back-front-amethyst.png"
+      } 
+    ]
   }
   ]
