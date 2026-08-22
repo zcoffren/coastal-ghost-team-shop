@@ -5592,14 +5592,14 @@
       {
         "placement": "Standard",
         "color": "Smoke",
-        "image": "assets/product-samples/fear-the-reaper/unisex-short-sleeve/1745-back-front-smoke.png",
-        "filename": "1745-back-front-smoke.png"
+        "image": "assets/product-samples/fear-the-reaper/unisex-short-sleeve/1745-back-smoke.png",
+        "filename": "1745-back-smoke.png"
       },
       {
         "placement": "Standard",
         "color": "Amethyst",
-        "image": "assets/product-samples/fear-the-reaper/unisex-short-sleeve/1745-back-front-amethyst.png",
-        "filename": "1745-back-front-amethyst.png"
+        "image": "assets/product-samples/fear-the-reaper/unisex-short-sleeve/1745-back-amethyst.png",
+        "filename": "1745-back-amethyst.png"
            }
     ]
   }
