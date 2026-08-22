@@ -312,29 +312,5 @@
     },
     "active": true,
     "status": "Active"
-  },
-{
-  "styleId": "1745",
-  "brand": "Comfort Colors",
-  "itemType": "Short Sleeve",
-  "productFolder": "short-sleeve",
-  "productName": "Unisex Short Sleeve Tee",
-  "fit": "Adult / Relaxed",
-  "sizeRange": "Adult",
-  "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL",
-    "2XL",
-    "3XL"
-  ],
-  "basePrice": 32.00,
-  "sizeUpcharges": {
-    "2XL": 5.0,
-    "3XL": 7.0
-  },
-  "active": true,
-  "status": "Active"
-}
+  }
 ]
