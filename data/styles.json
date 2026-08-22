@@ -334,6 +334,7 @@
       "2XL": 5.0,
       "3XL": 7.0
     },
+   "personalization": false,
     "active": true,
     "status": "Active"
     }
