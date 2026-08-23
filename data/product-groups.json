@@ -2768,6 +2768,20 @@
     ]
   },
   {
+    "id": "P124",
+    "design": "phantom-purple",
+    "productFolder": "youth-short-sleeve",
+    "styleId": "c9018",
+    "mockups": [
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/youth-short-sleeve/c9018-medium-front-black.png",
+        "filename": "c9018-medium-front-black.png"
+      }
+    ]
+  },
+  {
     "id": "P054",
     "design": "haunting-home",
     "productFolder": "unisex-crewneck",
