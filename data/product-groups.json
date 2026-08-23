@@ -1777,6 +1777,62 @@
       }
     ]
   },
+   {
+    "id": "P117",
+    "design": "coastal-ghost",
+    "productFolder": "youth-short-sleeve",
+    "styleId": "c9018",
+    "mockups": [
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/coastal-ghost/youth-short-sleeve/c9018-medium-front-white.png",
+        "filename": "c9018-medium-front-white.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/coastal-ghost/youth-short-sleeve/c9018-medium-front-black.png",
+        "filename": "c9018-medium-front-black.png"
+      },
+       {
+        "placement": "Medium Front",
+        "color": "Gray",
+        "image": "assets/product-samples/coastal-ghost/youth-short-sleeve/c9018-medium-front-gray.png",
+        "filename": "c9018-medium-front-gray.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Violet",
+        "image": "assets/product-samples/coastal-ghost/youth-short-sleeve/c9018-medium-front-violet.png",
+        "filename": "c9018-medium-front-violet.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "White",
+        "image": "assets/product-samples/coastal-ghost/youth-short-sleeve/c9018-left-chest-white.png",
+        "filename": "c9018-left-chest-white.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Black",
+        "image": "assets/product-samples/coastal-ghost/youth-short-sleeve/c9018-left-chest-black.png",
+        "filename": "c9018-left-chest-black.png"
+      },
+       {
+        "placement": "Left Chest",
+        "color": "Gray",
+        "image": "assets/product-samples/coastal-ghost/youth-short-sleeve/c9018-left-chest-gray.png",
+        "filename": "c9018-left-chest-gray.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Violet",
+        "image": "assets/product-samples/coastal-ghost/youth-short-sleeve/c9018-left-chest-violet.png",
+        "filename": "c9018-left-chest-violet.png"
+      }
+    ]
+  },
   {
     "id": "P028",
     "design": "spooky-state",
@@ -2262,6 +2318,38 @@
         "color": "Purple",
         "image": "assets/product-samples/spooky-state/youth-hoodies/g185b-medium-front-purple.png",
         "filename": "g185b-medium-front-purple.png"
+      }
+    ]
+  },
+     {
+    "id": "P118",
+    "design": "spooky-state",
+    "productFolder": "youth-short-sleeve",
+    "styleId": "c9018",
+    "mockups": [
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/spooky-state/youth-short-sleeve/c9018-medium-front-white.png",
+        "filename": "c9018-medium-front-white.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/spooky-state/youth-short-sleeve/c9018-medium-front-black.png",
+        "filename": "c9018-medium-front-black.png"
+      },
+       {
+        "placement": "Medium Front",
+        "color": "Gray",
+        "image": "assets/product-samples/spooky-state/youth-short-sleeve/c9018-medium-front-gray.png",
+        "filename": "c9018-medium-front-gray.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Violet",
+        "image": "assets/product-samples/spooky-state/youth-short-sleeve/c9018-medium-front-violet.png",
+        "filename": "c9018-medium-front-violet.png"
       }
     ]
   },
@@ -3053,7 +3141,33 @@
       }
     ]
   },
-{
+     {
+    "id": "P119",
+    "design": "haunting-home",
+    "productFolder": "youth-short-sleeve",
+    "styleId": "c9018",
+    "mockups": [
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/cg-swva-alt-logo/youth-short-sleeve/c9018-medium-front-white.png",
+        "filename": "c9018-medium-front-white.png"
+      },
+       {
+        "placement": "Medium Front",
+        "color": "Gray",
+        "image": "assets/product-samples/cg-swva-alt-logo/youth-short-sleeve/c9018-medium-front-gray.png",
+        "filename": "c9018-medium-front-gray.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Violet",
+        "image": "assets/product-samples/cg-swva-alt-logo/youth-short-sleeve/c9018-medium-front-violet.png",
+        "filename": "c9018-medium-front-violet.png"
+      }
+    ]
+  },
+  {
     "id": "P067",
     "design": "coastal-ghost-baseball-wordmark",
     "productFolder": "unisex-crewneck",
