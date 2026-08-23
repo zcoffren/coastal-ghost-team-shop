@@ -5756,7 +5756,9 @@
         "color": "Amethyst",
         "image": "assets/product-samples/fear-the-reaper/unisex-short-sleeve/1745-back-amethyst.png",
         "filename": "1745-back-amethyst.png"
-      },
+      }
+    ]
+  },
       {
     "id": "P125",
     "design": "fear-the-reaper",
@@ -5775,6 +5777,12 @@
         "image": "assets/product-samples/fear-the-reaper/unisex-short-sleeve/c9018-back-gray-black.png",
         "filename": "c9018-back-gray-black.png"
       },
+       {
+        "placement": "Standard",
+        "color": "Gray-White",
+        "image": "assets/product-samples/fear-the-reaper/unisex-short-sleeve/c9018-back-gray-white.png",
+        "filename": "c9018-back-gray-white.png"
+      },
       {
         "placement": "Standard",
         "color": "Purple-Granite",
@@ -5786,6 +5794,12 @@
         "color": "Purple-Black",
         "image": "assets/product-samples/fear-the-reaper/unisex-short-sleeve/c9018-back-purple-black.png",
         "filename": "c9018-back-purple-black.png"
+      },
+       {
+        "placement": "Standard",
+        "color": "Purple-White",
+        "image": "assets/product-samples/fear-the-reaper/unisex-short-sleeve/c9018-back-purple-white.png",
+        "filename": "c9018-back-purple-white.png"
       }
     ]
   }
