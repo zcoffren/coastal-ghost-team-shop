@@ -2888,18 +2888,6 @@
     "styleId": "g185",
     "mockups": [
       {
-        "placement": "Left Chest",
-        "color": "Gold",
-        "image": "assets/product-samples/cg-swva-alt-logo/unisex-hoodies/g185-left-chest-gold.png",
-        "filename": "g185-left-chest-gold.png"
-      },
-      {
-        "placement": "Left Chest",
-        "color": "White",
-        "image": "assets/product-samples/cg-swva-alt-logo/unisex-hoodies/g185-left-chest-white.png",
-        "filename": "g185-left-chest-white.png"
-      },
-      {
         "placement": "Medium Front",
         "color": "Gold",
         "image": "assets/product-samples/cg-swva-alt-logo/unisex-hoodies/g185-medium-front-gold.png",
