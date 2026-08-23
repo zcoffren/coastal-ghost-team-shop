@@ -2360,34 +2360,10 @@
         "filename": "g180-large-front-black.png"
       },
       {
-        "placement": "Large Front",
-        "color": "Charcoal",
-        "image": "assets/product-samples/phantom-purple/unisex-crewneck/g180-large-front-charcoal.png",
-        "filename": "g180-large-front-charcoal.png"
-      },
-      {
-        "placement": "Large Front",
-        "color": "Purple",
-        "image": "assets/product-samples/phantom-purple/unisex-crewneck/g180-large-front-purple.png",
-        "filename": "g180-large-front-purple.png"
-      },
-      {
         "placement": "Medium Front",
         "color": "Black",
         "image": "assets/product-samples/phantom-purple/unisex-crewneck/g180-medium-front-black.png",
         "filename": "g180-medium-front-black.png"
-      },
-      {
-        "placement": "Medium Front",
-        "color": "Charcoal",
-        "image": "assets/product-samples/phantom-purple/unisex-crewneck/g180-medium-front-charcoal.png",
-        "filename": "g180-medium-front-charcoal.png"
-      },
-      {
-        "placement": "Medium Front",
-        "color": "Purple",
-        "image": "assets/product-samples/phantom-purple/unisex-crewneck/g180-medium-front-purple.png",
-        "filename": "g180-medium-front-purple.png"
       }
     ]
   },
@@ -2444,12 +2420,6 @@
         "filename": "g540-large-front-black.png"
       },
       {
-        "placement": "Left Chest",
-        "color": "Black",
-        "image": "assets/product-samples/phantom-purple/unisex-long-sleeve/g540-left-chest-black.png",
-        "filename": "g540-left-chest-black.png"
-      },
-      {
         "placement": "Medium Front",
         "color": "Black",
         "image": "assets/product-samples/phantom-purple/unisex-long-sleeve/g540-medium-front-black.png",
@@ -2496,12 +2466,6 @@
         "color": "Black",
         "image": "assets/product-samples/phantom-purple/unisex-short-sleeve/g640-large-front-black.png",
         "filename": "g640-large-front-black.png"
-      },
-      {
-        "placement": "Left Chest",
-        "color": "Black",
-        "image": "assets/product-samples/phantom-purple/unisex-short-sleeve/g640-left-chest-black.png",
-        "filename": "g640-left-chest-black.png"
       },
       {
         "placement": "Medium Front",
