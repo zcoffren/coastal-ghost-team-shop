@@ -3944,6 +3944,62 @@
     ]
   },
    {
+    "id": "P120",
+    "design": "coastal-ghost-baseball-wordmark",
+    "productFolder": "youth-short-sleeve",
+    "styleId": "c9018",
+    "mockups": [
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/coastal-ghost-baseball-wordmark/youth-short-sleeve/c9018-medium-front-white.png",
+        "filename": "c9018-medium-front-white.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/coastal-ghost-baseball-wordmark/youth-short-sleeve/c9018-medium-front-black.png",
+        "filename": "c9018-medium-front-black.png"
+      },
+       {
+        "placement": "Medium Front",
+        "color": "Gray",
+        "image": "assets/product-samples/coastal-ghost-baseball-wordmark/youth-short-sleeve/c9018-medium-front-gray.png",
+        "filename": "c9018-medium-front-gray.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Violet",
+        "image": "assets/product-samples/coastal-ghost-baseball-wordmark/youth-short-sleeve/c9018-medium-front-violet.png",
+        "filename": "c9018-medium-front-violet.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "White",
+        "image": "assets/product-samples/coastal-ghost-baseball-wordmark/youth-short-sleeve/c9018-left-chest-white.png",
+        "filename": "c9018-left-chest-white.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Black",
+        "image": "assets/product-samples/coastal-ghost-baseball-wordmark/youth-short-sleeve/c9018-left-chest-black.png",
+        "filename": "c9018-left-chest-black.png"
+      },
+       {
+        "placement": "Left Chest",
+        "color": "Gray",
+        "image": "assets/product-samples/coastal-ghost-baseball-wordmark/youth-short-sleeve/c9018-left-chest-gray.png",
+        "filename": "c9018-left-chest-gray.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Violet",
+        "image": "assets/product-samples/coastal-ghost-baseball-wordmark/youth-short-sleeve/c9018-left-chest-violet.png",
+        "filename": "c9018-left-chest-violet.png"
+      }
+    ]
+  },
+   {
     "id": "P080",
     "design": "coastal-ghost-baseball-gray-wordmark",
     "productFolder": "unisex-crewneck",
@@ -4083,7 +4139,7 @@
   },
   {
     "id": "P083",
-    "design": "boo-boys-blackout",
+    "design": "coastal-ghost-baseball-gray-wordmark",
     "productFolder": "unisex-hoodies",
     "styleId": "g185",
     "mockups": [
@@ -4265,7 +4321,7 @@
   },
   {
     "id": "P087",
-    "design": "boo-boys-blackout",
+    "design": "coastal-ghost-baseball-gray-wordmark",
     "productFolder": "womens-long-sleeve",
     "styleId": "b6500",
     "mockups": [
@@ -4426,6 +4482,26 @@
         "color": "White",
         "image": "assets/product-samples/coastal-ghost-baseball-gray-wordmark/youth-hoodies/g185b-medium-front-white.png",
         "filename": "g185b-medium-front-white.png"
+      }
+    ]
+  },
+     {
+    "id": "P121",
+    "design": "coastal-ghost-baseball-gray-wordmark",
+    "productFolder": "youth-short-sleeve",
+    "styleId": "c9018",
+    "mockups": [
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/coastal-ghost-baseball-wordmark/youth-short-sleeve/c9018-medium-front-white.png",
+        "filename": "c9018-medium-front-white.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "White",
+        "image": "assets/product-samples/coastal-ghost-baseball-gray-wordmark/youth-short-sleeve/c9018-left-chest-white.png",
+        "filename": "c9018-left-chest-white.png"
       }
     ]
   },
