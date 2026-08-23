@@ -353,7 +353,7 @@
     "L",
     "XL"
   ],
-    "basePrice": 20.0,
+    "basePrice": 23.0,
     "sizeUpcharges": {
       "2XL": 0.0,
       "3XL": 0.0
@@ -378,6 +378,49 @@
     "XL"
   ],
     "basePrice": 20.0,
+    "sizeUpcharges": {
+      "2XL": 0.0,
+      "3XL": 0.0
+    },
+    "active": true,
+    "status": "Active"
+  },
+    {
+    "styleId": "3501y2",
+    "brand": "Comfort Colors",
+    "itemType": "Long Sleeve",
+    "productFolder": "youth-long-sleeve",
+    "productName": "Youth Long Sleeve Tee",
+    "fit": "Youth / Unisex",
+    "sizeRange": "Youth",
+    "sizes": [
+    "S",
+    "M",
+    "L"
+  ],
+    "basePrice": 28.0,
+    "sizeUpcharges": {
+      "2XL": 0.0,
+      "3XL": 0.0
+    },
+    "personalization": false,
+    "active": true,
+    "status": "Active"
+  },
+   {
+    "styleId": "3501y",
+    "brand": "Comfort Colors",
+    "itemType": "Long Sleeve",
+    "productFolder": "youth-long-sleeve",
+    "productName": "Youth Long Sleeve Tee",
+    "fit": "Youth / Unisex",
+    "sizeRange": "Youth",
+    "sizes": [
+    "S",
+    "M",
+    "L"
+  ],
+    "basePrice": 25.0,
     "sizeUpcharges": {
       "2XL": 0.0,
       "3XL": 0.0
