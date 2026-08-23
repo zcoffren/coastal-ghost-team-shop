@@ -915,7 +915,51 @@
       }
     ]
   },
-  {
+   {
+    "id": "P126",
+    "design": "boo-boys-blackout",
+    "productFolder": "youth-long-sleeve",
+    "styleId": "3501y",
+    "mockups": [
+      {
+        "placement": "Left Chest",
+        "color": "Black",
+        "image": "assets/product-samples/boo-boys-blackout/youth-long-sleeve/3501y-left-chest-black.png",
+        "filename": "3501y-left-chest-black.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "White",
+        "image": "assets/product-samples/boo-boys-blackout/youth-long-sleeve/3501y-left-chest-white.png",
+        "filename": "3501y-left-chest-white.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Athletic Heather",
+        "image": "assets/product-samples/boo-boys-blackout/youth-long-sleeve/3501y-left-chest-athletic-heather.png",
+        "filename": "3501y-left-chest-athletic-heather.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/boo-boys-blackout/youth-long-sleeve/3501y-medium-front-black.png",
+        "filename": "3501y-medium-front-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/boo-boys-blackout/youth-long-sleeve/3501y-medium-front-white.png.png",
+        "filename": "3501y-medium-front-white.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Athletic Heather",
+        "image": "assets/product-samples/boo-boys-blackout/youth-long-sleeve/3501y-medium-front-athletic-heather.png",
+        "filename": "3501y-medium-front-athletic-heather.png"
+       }
+    ]
+  },
+      {
     "id": "P014",
     "design": "coastal-ghost",
     "productFolder": "unisex-crewneck",
@@ -992,7 +1036,7 @@
         "color": "White",
         "image": "assets/product-samples/coastal-ghost/unisex-crewneck/1566-medium-front-white.png",
         "filename": "1566-medium-front-white.png"
-      }
+      } 
     ]
   },
   {
@@ -1142,7 +1186,8 @@
         "filename": "3719-medium-front-white.png"
       }
     ]
-  },
+      },
+]
   {
     "id": "P017",
     "design": "coastal-ghost",
@@ -1833,7 +1878,51 @@
       }
     ]
   },
-  {
+   {
+    "id": "P127",
+    "design": "coastal-ghost",
+    "productFolder": "youth-long-sleeve",
+    "styleId": "3501y",
+    "mockups": [
+      {
+        "placement": "Left Chest",
+        "color": "Black",
+        "image": "assets/product-samples/coastal-ghost/youth-long-sleeve/3501y-left-chest-black.png",
+        "filename": "3501y-left-chest-black.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "White",
+        "image": "assets/product-samples/coastal-ghost/youth-long-sleeve/3501y-left-chest-white.png",
+        "filename": "3501y-left-chest-white.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Athletic Heather",
+        "image": "assets/product-samples/coastal-ghost/youth-long-sleeve/3501y-left-chest-athletic-heather.png",
+        "filename": "3501y-left-chest-athletic-heather.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/coastal-ghost/youth-long-sleeve/3501y-medium-front-black.png",
+        "filename": "3501y-medium-front-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/coastal-ghost/youth-long-sleeve/3501y-medium-front-white.png.png",
+        "filename": "3501y-medium-front-white.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Athletic Heather",
+        "image": "assets/product-samples/coastal-ghost/youth-long-sleeve/3501y-medium-front-athletic-heather.png",
+        "filename": "3501y-medium-front-athletic-heather.png"
+       }
+       ]
+  },
+      {
     "id": "P028",
     "design": "spooky-state",
     "productFolder": "unisex-crewneck",
@@ -2347,7 +2436,21 @@
       }
     ]
   },
-  {
+    {
+    "id": "P128",
+    "design": "spooky-state",
+    "productFolder": "youth-long-sleeve",
+    "styleId": "3501y",
+    "mockups": [
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/coastal-ghost/youth-long-sleeve/3501y-medium-front-black.png",
+        "filename": "3501y-medium-front-black.png"
+       }
+       ]
+  },
+      {
     "id": "P042",
     "design": "phantom-purple",
     "productFolder": "unisex-crewneck",
@@ -2577,7 +2680,27 @@
       }
     ]
   },
-  {
+     {
+    "id": "P129",
+    "design": "phantom-purple",
+    "productFolder": "youth-long-sleeve",
+    "styleId": "3501y",
+    "mockups": [
+      {
+        "placement": "Left Chest",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/youth-long-sleeve/3501y-left-chest-black.png",
+        "filename": "3501y-left-chest-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/phantom-purple/youth-long-sleeve/3501y-medium-front-black.png",
+        "filename": "3501y-medium-front-black.png"
+      }
+       ]
+  },
+      {
     "id": "P054",
     "design": "haunting-home",
     "productFolder": "unisex-crewneck",
@@ -2959,7 +3082,27 @@
       }
     ]
   },
-  {
+   {
+    "id": "P130",
+    "design": "cg-swva-alt-logo",
+    "productFolder": "youth-long-sleeve",
+    "styleId": "3501y",
+    "mockups": [
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/cg-swva-alt-logo/youth-long-sleeve/3501y-medium-front-white.png.png",
+        "filename": "3501y-medium-front-white.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Athletic Heather",
+        "image": "assets/product-samples/cg-swva-alt-logo/youth-long-sleeve/3501y-medium-front-athletic-heather.png",
+        "filename": "3501y-medium-front-athletic-heather.png"
+       }
+       ]
+  },
+      {
     "id": "P067",
     "design": "coastal-ghost-baseball-wordmark",
     "productFolder": "unisex-crewneck",
@@ -3809,7 +3952,51 @@
       }
     ]
   },
-   {
+    {
+    "id": "P131",
+    "design": "coastal-ghost-baseball-wordmark",
+    "productFolder": "youth-long-sleeve",
+    "styleId": "3501y",
+    "mockups": [
+      {
+        "placement": "Left Chest",
+        "color": "Black",
+        "image": "assets/product-samples/coastal-ghost-baseball-wordmark/youth-long-sleeve/3501y-left-chest-black.png",
+        "filename": "3501y-left-chest-black.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "White",
+        "image": "assets/product-samples/coastal-ghost-baseball-wordmark/youth-long-sleeve/3501y-left-chest-white.png",
+        "filename": "3501y-left-chest-white.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Athletic Heather",
+        "image": "assets/product-samples/coastal-ghost-baseball-wordmark/youth-long-sleeve/3501y-left-chest-athletic-heather.png",
+        "filename": "3501y-left-chest-athletic-heather.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/coastal-ghost-baseball-wordmark/youth-long-sleeve/3501y-medium-front-black.png",
+        "filename": "3501y-medium-front-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/coastal-ghost-baseball-wordmark/youth-long-sleeve/3501y-medium-front-white.png.png",
+        "filename": "3501y-medium-front-white.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Athletic Heather",
+        "image": "assets/product-samples/coastal-ghost-baseball-wordmark/youth-long-sleeve/3501y-medium-front-athletic-heather.png",
+        "filename": "3501y-medium-front-athletic-heather.png"
+       }
+       ]
+  },
+      {
     "id": "P080",
     "design": "coastal-ghost-baseball-gray-wordmark",
     "productFolder": "unisex-crewneck",
@@ -4315,7 +4502,27 @@
       }
     ]
   },
-   {
+    {
+    "id": "P131",
+    "design": "coastal-ghost-baseball-gray-wordmark",
+    "productFolder": "youth-long-sleeve",
+    "styleId": "3501y",
+    "mockups": [
+      {
+        "placement": "Left Chest",
+        "color": "White",
+        "image": "assets/product-samples/coastal-ghost-baseball-gray-wordmark/youth-long-sleeve/3501y-left-chest-white.png",
+        "filename": "3501y-left-chest-white.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/coastal-ghost-baseball-gray-wordmark/youth-long-sleeve/3501y-medium-front-white.png.png",
+        "filename": "3501y-medium-front-white.png"
+      }
+       ]
+  },
+      {
     "id": "P092",
     "design": "fantom-club",
     "productFolder": "unisex-crewneck",
@@ -4853,7 +5060,33 @@
        }
     ]
   },
-  {
+   {
+    "id": "P132",
+    "design": "fantom-club",
+    "productFolder": "youth-long-sleeve",
+    "styleId": "3501y",
+    "mockups": [
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/fantom-club/youth-long-sleeve/3501y-medium-front-black.png",
+        "filename": "3501y-medium-front-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/fantom-club/youth-long-sleeve/3501y-medium-front-white.png.png",
+        "filename": "3501y-medium-front-white.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Athletic Heather",
+        "image": "assets/product-samples/fantom-club/youth-long-sleeve/3501y-medium-front-athletic-heather.png",
+        "filename": "3501y-medium-front-athletic-heather.png"
+       }
+       ]
+  },
+      {
     "id": "P102",
     "design": "ghost-wordmark",
     "productFolder": "unisex-crewneck",
@@ -5703,7 +5936,51 @@
       }
     ]
   },
-  {
+   {
+    "id": "P133",
+    "design": "ghost-wordmark",
+    "productFolder": "youth-long-sleeve",
+    "styleId": "3501y",
+    "mockups": [
+      {
+        "placement": "Left Chest",
+        "color": "Black",
+        "image": "assets/product-samples/ghost-wordmark/youth-long-sleeve/3501y-left-chest-black.png",
+        "filename": "3501y-left-chest-black.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/youth-long-sleeve/3501y-left-chest-white.png",
+        "filename": "3501y-left-chest-white.png"
+      },
+      {
+        "placement": "Left Chest",
+        "color": "Athletic Heather",
+        "image": "assets/product-samples/ghost-wordmark/youth-long-sleeve/3501y-left-chest-athletic-heather.png",
+        "filename": "3501y-left-chest-athletic-heather.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Black",
+        "image": "assets/product-samples/ghost-wordmark/youth-long-sleeve/3501y-medium-front-black.png",
+        "filename": "3501y-medium-front-black.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "White",
+        "image": "assets/product-samples/ghost-wordmark/youth-long-sleeve/3501y-medium-front-white.png.png",
+        "filename": "3501y-medium-front-white.png"
+      },
+      {
+        "placement": "Medium Front",
+        "color": "Athletic Heather",
+        "image": "assets/product-samples/ghost-wordmark/youth-long-sleeve/3501y-medium-front-athletic-heather.png",
+        "filename": "3501y-medium-front-athletic-heather.png"
+       }
+       ]
+  },
+      {
     "id": "P115",
     "design": "fear-the-reaper",
     "productFolder": "unisex-short-sleeve",
@@ -5766,5 +6043,49 @@
         "filename": "c9018-back-purple-white.png"
       }
     ]
-  }
-]
+  },
+   {
+    "id": "P134",
+    "design": "fear-the-reaper",
+    "productFolder": "youth-long-sleeve",
+    "styleId": "3501y2",
+    "mockups": [
+      {
+        "placement": "Standard",
+        "color": "Gray-Athletic Heather",
+        "image": "assets/product-samples/fear-the-reaper/youth-long-sleeve/3501y-medium-back-gray-athletic-heather.png",
+        "filename": "3501y-medium-back-gray-athletic-heather.png"
+      },
+      {
+        "placement": "Standard",
+        "color": "Gray-Black",
+        "image": "assets/product-samples/fear-the-reaper/youth-long-sleeve/3501y-medium-back-gray-black.png",
+        "filename": "3501y-medium-back-gray-black.png"
+      },
+      {
+        "placement": "Standard",
+        "color": "Gray-White",
+        "image": "assets/product-samples/fear-the-reaper/youth-long-sleeve/3501y-medium-back-gray-white.png",
+        "filename": "3501y-medium-back-gray-white.png"
+      },
+       {
+        "placement": "Standard",
+        "color": "Purple-Athletic Heather",
+        "image": "assets/product-samples/fear-the-reaper/youth-long-sleeve/3501y-medium-back-purple-athletic-heather.png",
+        "filename": "3501y-medium-back-gray-athletic-heather.png"
+      },
+      {
+        "placement": "Standard",
+        "color": "Purple-Black",
+        "image": "assets/product-samples/fear-the-reaper/youth-long-sleeve/3501y-medium-back-purple-black.png",
+        "filename": "3501y-medium-back-gray-black.png"
+      },
+      {
+        "placement": "Standard",
+        "color": "Purple-White",
+        "image": "assets/product-samples/fear-the-reaper/youth-long-sleeve/3501y-medium-back-purple-white.png",
+        "filename": "3501y-medium-back-gray-white.png"
+      }
+       ]
+  },
+      {
