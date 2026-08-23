@@ -2329,12 +2329,6 @@
     "mockups": [
       {
         "placement": "Medium Front",
-        "color": "White",
-        "image": "assets/product-samples/spooky-state/youth-short-sleeve/c9018-medium-front-white.png",
-        "filename": "c9018-medium-front-white.png"
-      },
-      {
-        "placement": "Medium Front",
         "color": "Black",
         "image": "assets/product-samples/spooky-state/youth-short-sleeve/c9018-medium-front-black.png",
         "filename": "c9018-medium-front-black.png"
