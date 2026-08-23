@@ -948,7 +948,7 @@
       {
         "placement": "Medium Front",
         "color": "White",
-        "image": "assets/product-samples/boo-boys-blackout/youth-long-sleeve/3501y-medium-front-white.png.png",
+        "image": "assets/product-samples/boo-boys-blackout/youth-long-sleeve/3501y-medium-front-white.png",
         "filename": "3501y-medium-front-white.png"
       },
       {
@@ -1184,10 +1184,9 @@
         "color": "White",
         "image": "assets/product-samples/coastal-ghost/unisex-hoodies/3719-medium-front-white.png",
         "filename": "3719-medium-front-white.png"
-      }
+     }
     ]
-      },
-]
+  },
   {
     "id": "P017",
     "design": "coastal-ghost",
@@ -1911,7 +1910,7 @@
       {
         "placement": "Medium Front",
         "color": "White",
-        "image": "assets/product-samples/coastal-ghost/youth-long-sleeve/3501y-medium-front-white.png.png",
+        "image": "assets/product-samples/coastal-ghost/youth-long-sleeve/3501y-medium-front-white.png",
         "filename": "3501y-medium-front-white.png"
       },
       {
@@ -3091,7 +3090,7 @@
       {
         "placement": "Medium Front",
         "color": "White",
-        "image": "assets/product-samples/cg-swva-alt-logo/youth-long-sleeve/3501y-medium-front-white.png.png",
+        "image": "assets/product-samples/cg-swva-alt-logo/youth-long-sleeve/3501y-medium-front-white.png",
         "filename": "3501y-medium-front-white.png"
       },
       {
@@ -3985,7 +3984,7 @@
       {
         "placement": "Medium Front",
         "color": "White",
-        "image": "assets/product-samples/coastal-ghost-baseball-wordmark/youth-long-sleeve/3501y-medium-front-white.png.png",
+        "image": "assets/product-samples/coastal-ghost-baseball-wordmark/youth-long-sleeve/3501y-medium-front-white.png",
         "filename": "3501y-medium-front-white.png"
       },
       {
@@ -4517,7 +4516,7 @@
       {
         "placement": "Medium Front",
         "color": "White",
-        "image": "assets/product-samples/coastal-ghost-baseball-gray-wordmark/youth-long-sleeve/3501y-medium-front-white.png.png",
+        "image": "assets/product-samples/coastal-ghost-baseball-gray-wordmark/youth-long-sleeve/3501y-medium-front-white.png",
         "filename": "3501y-medium-front-white.png"
       }
        ]
@@ -5075,7 +5074,7 @@
       {
         "placement": "Medium Front",
         "color": "White",
-        "image": "assets/product-samples/fantom-club/youth-long-sleeve/3501y-medium-front-white.png.png",
+        "image": "assets/product-samples/fantom-club/youth-long-sleeve/3501y-medium-front-white.png",
         "filename": "3501y-medium-front-white.png"
       },
       {
@@ -5969,7 +5968,7 @@
       {
         "placement": "Medium Front",
         "color": "White",
-        "image": "assets/product-samples/ghost-wordmark/youth-long-sleeve/3501y-medium-front-white.png.png",
+        "image": "assets/product-samples/ghost-wordmark/youth-long-sleeve/3501y-medium-front-white.png",
         "filename": "3501y-medium-front-white.png"
       },
       {
