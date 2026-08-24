@@ -1224,6 +1224,10 @@ function renderCheckoutItem(item) {
 
   const details = [];
 
+  if (item.styleId) {
+  details.push("Style ID: " + item.styleId);
+}
+  
   if (item.color) {
     details.push(item.color);
   }
@@ -1333,7 +1337,7 @@ function showCheckoutToast(message) {
 function sendOrderToSpreadsheet(order) {
 
   const spreadsheetURL =
-  "https://script.google.com/macros/s/AKfycbzwKOyZIJOqY3P_VOZQ61oo0vpCpBmmfHqjSmMf98l6GckDEl_dzspNJb-1BG4AEoBWmw/exec";
+  "https://script.google.com/macros/s/AKfycbx6qYnT7BFHmfsvTBxyE13G8bmlX-ab0ulWBOgpFiOQUZ8NFBUkZPQ-MOzzWqCAJAUKUg/exec";
 
 
   fetch(
