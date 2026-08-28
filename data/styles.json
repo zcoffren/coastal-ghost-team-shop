@@ -28,7 +28,7 @@
     "brand": "Bella + Canvas",
     "itemType": "Short Sleeve",
     "productFolder": "unisex-short-sleeve",
-    "productName": "Short Sleeve Tee",
+    "productName": "Womens Short Sleeve Tee",
     "fit": "Adult / Relaxed",
     "sizeRange": "Adult",
      "sizes": [
@@ -77,7 +77,7 @@
     "brand": "Sport-Tek",
     "itemType": "Quarter Zip",
     "productFolder": "unisex-quarter-zip",
-    "productName": "1/4-Zip Sweatshirt",
+    "productName": "Unisex 1/4-Zip",
     "fit": "Adult / Unisex",
     "sizeRange": "Adult",
      "sizes": [
@@ -102,7 +102,7 @@
     "brand": "Port Authority",
     "itemType": "Quarter Zip",
     "productFolder": "unisex-quarter-zip",
-    "productName": "Interlock 1/4-Zip",
+    "productName": "Unisex 1/4-Zip",
     "fit": "Adult / Unisex",
     "sizeRange": "Adult",
      "sizes": [
@@ -268,7 +268,7 @@
   {
     "styleId": "b6500",
     "brand": "Bella + Canvas",
-    "itemType": "Long Sleeve",
+    "itemType": "Womens Long Sleeve",
     "productFolder": "womens-long-sleeve",
     "productName": "Womens Long Sleeve Tee",
     "fit": "Adult / Relaxed",
@@ -291,7 +291,7 @@
   {
     "styleId": "lst253",
     "brand": "Sport-Tek",
-    "itemType": "Quarter Zip",
+    "itemType": "Womens Quarter Zip",
     "productFolder": "womens-quarter-zip",
     "productName": "Womens 1/4-Zip",
     "fit": "Adult / Relaxed",
@@ -387,7 +387,7 @@
   },
     {
     "styleId": "3501y2",
-    "brand": "Comfort Colors",
+    "brand": "Bella + Canvas",
     "itemType": "Long Sleeve",
     "productFolder": "youth-long-sleeve",
     "productName": "Youth Long Sleeve Tee",
@@ -409,7 +409,7 @@
   },
    {
     "styleId": "3501y",
-    "brand": "Comfort Colors",
+    "brand": "Bella + Canvas",
     "itemType": "Long Sleeve",
     "productFolder": "youth-long-sleeve",
     "productName": "Youth Long Sleeve Tee",
