@@ -4,8 +4,8 @@
     "brand": "Gildan",
     "itemType": "Long Sleeve",
     "productFolder": "unisex-long-sleeve",
-    "productName": "Long Sleeve Tee",
-    "fit": "Adult / Unisex",
+    "productName": "Adult Long Sleeve Tee",
+    "fit": "Adult Unisex",
     "sizeRange": "Adult",
     "sizes": [
     "S",
@@ -29,7 +29,7 @@
     "itemType": "Short Sleeve",
     "productFolder": "unisex-short-sleeve",
     "productName": "Womens Short Sleeve Tee",
-    "fit": "Adult / Relaxed",
+    "fit": "Adult Womens",
     "sizeRange": "Adult",
      "sizes": [
     "S",
@@ -52,8 +52,8 @@
     "brand": "Gildan",
     "itemType": "Short Sleeve",
     "productFolder": "unisex-short-sleeve",
-    "productName": "Short Sleeve Tee",
-    "fit": "Adult / Unisex",
+    "productName": "Adult Short Sleeve Tee",
+    "fit": "Adult Unisex",
     "sizeRange": "Adult",
      "sizes": [
     "XS",
@@ -77,8 +77,8 @@
     "brand": "Sport-Tek",
     "itemType": "Quarter Zip",
     "productFolder": "unisex-quarter-zip",
-    "productName": "Unisex 1/4-Zip",
-    "fit": "Adult / Unisex",
+    "productName": "Adult 1/4-Zip Pullover",
+    "fit": "Adult Unisex",
     "sizeRange": "Adult",
      "sizes": [
     "XS",
@@ -102,8 +102,8 @@
     "brand": "Port Authority",
     "itemType": "Quarter Zip",
     "productFolder": "unisex-quarter-zip",
-    "productName": "Unisex 1/4-Zip",
-    "fit": "Adult / Unisex",
+    "productName": "Adult 1/4-Zip Pullover",
+    "fit": "Adult Unisex",
     "sizeRange": "Adult",
      "sizes": [
     "XS",
@@ -127,8 +127,8 @@
     "brand": "Comfort Colors",
     "itemType": "Crewneck",
     "productFolder": "unisex-crewneck",
-    "productName": "Crewneck Sweatshirt",
-    "fit": "Adult / Unisex",
+    "productName": "Adult Crewneck Sweatshirt",
+    "fit": "Adult Unisex",
     "sizeRange": "Adult",
      "sizes": [
     "S",
@@ -151,8 +151,8 @@
     "brand": "Gildan",
     "itemType": "Crewneck",
     "productFolder": "unisex-crewneck",
-    "productName": "Crewneck Sweatshirt",
-    "fit": "Adult / Unisex",
+    "productName": "Adult Crewneck Sweatshirt",
+    "fit": "Adult Unisex",
     "sizeRange": "Adult",
      "sizes": [
     "S",
@@ -175,8 +175,8 @@
     "brand": "Bella + Canvas",
     "itemType": "Hoodie",
     "productFolder": "unisex-hoodies",
-    "productName": "Pullover Hoodie",
-    "fit": "Adult / Unisex",
+    "productName": "Adult Pullover Hoodie",
+    "fit": "Adult Unisex",
     "sizeRange": "Adult",
      "sizes": [
     "XS",
@@ -200,8 +200,8 @@
     "brand": "Gildan",
     "itemType": "Hoodie",
     "productFolder": "unisex-hoodies",
-    "productName": "Pullover Hoodie",
-    "fit": "Adult / Unisex",
+    "productName": "Adult Pullover Hoodie",
+    "fit": "Adult Unisex",
     "sizeRange": "Adult",
      "sizes": [
     "S",
@@ -224,8 +224,8 @@
     "brand": "Gildan",
     "itemType": "Hoodie",
     "productFolder": "youth-hoodies",
-    "productName": "Youth Hoodie",
-    "fit": "Youth / Unisex",
+    "productName": "Youth Pullover Hoodie",
+    "fit": "Youth Unisex",
     "sizeRange": "Youth",
      "sizes": [
     "XS",
@@ -247,8 +247,8 @@
     "brand": "Gildan",
     "itemType": "Crewneck",
     "productFolder": "youth-crewneck",
-    "productName": "Youth Crewneck",
-    "fit": "Youth / Unisex",
+    "productName": "Youth Crewneck Sweatshirt",
+    "fit": "Youth Unisex",
     "sizeRange": "Youth",
      "sizes": [
     "XS",
@@ -268,10 +268,10 @@
   {
     "styleId": "b6500",
     "brand": "Bella + Canvas",
-    "itemType": "Womens Long Sleeve",
+    "itemType": "Long Sleeve",
     "productFolder": "womens-long-sleeve",
     "productName": "Womens Long Sleeve Tee",
-    "fit": "Adult / Relaxed",
+    "fit": "Adult Womens",
     "sizeRange": "Adult",
      "sizes": [
     "S",
@@ -291,10 +291,10 @@
   {
     "styleId": "lst253",
     "brand": "Sport-Tek",
-    "itemType": "Womens Quarter Zip",
+    "itemType": "Quarter Zip",
     "productFolder": "womens-quarter-zip",
-    "productName": "Womens 1/4-Zip",
-    "fit": "Adult / Relaxed",
+    "productName": "Womens 1/4-Zip Pullover",
+    "fit": "Adult Womens",
     "sizeRange": "Adult",
     "sizes": [
     "XS",
@@ -318,8 +318,8 @@
     "brand": "Comfort Colors",
     "itemType": "Short Sleeve",
     "productFolder": "unisex-short-sleeve",
-    "productName": "Short Sleeve Tee",
-    "fit": "Adult / Unisex",
+    "productName": "Adult Short Sleeve Tee",
+    "fit": "Adult Unisex",
     "sizeRange": "Adult",
     "sizes": [
     "S",
@@ -344,7 +344,7 @@
     "itemType": "Short Sleeve",
     "productFolder": "youth-short-sleeve",
     "productName": "Youth Short Sleeve Tee",
-    "fit": "Youth / Unisex",
+    "fit": "Youth Unisex",
     "sizeRange": "Youth",
     "sizes": [
     "XS",
@@ -368,7 +368,7 @@
     "itemType": "Short Sleeve",
     "productFolder": "youth-short-sleeve",
     "productName": "Youth Short Sleeve Tee",
-    "fit": "Youth / Unisex",
+    "fit": "Youth Unisex",
     "sizeRange": "Youth",
     "sizes": [
     "XS",
@@ -391,7 +391,7 @@
     "itemType": "Long Sleeve",
     "productFolder": "youth-long-sleeve",
     "productName": "Youth Long Sleeve Tee",
-    "fit": "Youth / Unisex",
+    "fit": "Youth Unisex",
     "sizeRange": "Youth",
     "sizes": [
     "S",
@@ -413,7 +413,7 @@
     "itemType": "Long Sleeve",
     "productFolder": "youth-long-sleeve",
     "productName": "Youth Long Sleeve Tee",
-    "fit": "Youth / Unisex",
+    "fit": "Youth Unisex",
     "sizeRange": "Youth",
     "sizes": [
     "S",
